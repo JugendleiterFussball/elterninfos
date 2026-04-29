@@ -3,24 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dokumente für Eltern</title>
+  <title>Vereinsdokumente</title>
+
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: #f4f6f8;
-      color: #333;
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: white;
     }
 
     header {
-      background: #2c3e50;
-      color: white;
-      padding: 20px;
+      background: #0b3d1f;
       text-align: center;
+      padding: 30px 20px;
+    }
+
+    .logo {
+      width: 110px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin: 10px 0 5px;
+      font-size: 26px;
+    }
+
+    p {
+      margin: 0;
+      opacity: 0.8;
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 900px;
       margin: 30px auto;
       padding: 0 20px;
     }
@@ -33,24 +49,25 @@
 
     .card {
       background: white;
+      color: black;
       padding: 15px;
       border-radius: 10px;
       text-decoration: none;
-      color: #2c3e50;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: 0.2s;
+      font-weight: bold;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
+      transition: 0.2s;
+      border-left: 6px solid #0b3d1f;
     }
 
     .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      transform: scale(1.03);
+      background: #f2f2f2;
     }
 
     .badge {
-      background: #3498db;
+      background: #0b3d1f;
       color: white;
       padding: 5px 10px;
       border-radius: 20px;
@@ -61,7 +78,7 @@
       text-align: center;
       padding: 20px;
       font-size: 12px;
-      color: #777;
+      opacity: 0.6;
     }
   </style>
 </head>
@@ -69,8 +86,11 @@
 <body>
 
 <header>
-  <h1>📄 Dokumente für Eltern</h1>
-  <p>Alle wichtigen Formulare schnell und einfach verfügbar</p>
+  <!-- 🔥 LOGO DATEINAME HIER ANPASSEN -->
+  <img src="reenshot am 30.03.2026 120734.png" alt="Vereinslogo" class="logo">
+
+  <h1>⚽ Vereinsdokumente</h1>
+  <p>Alle wichtigen Formulare für Eltern & Spieler</p>
 </header>
 
 <div class="container">
@@ -78,7 +98,7 @@
   <div class="grid">
 
     <a class="card" href="Aenderung_Bankverbindung.pdf" target="_blank">
-      Änderung Bankverbindung <span class="badge">PDF</span>
+      Bankverbindung ändern <span class="badge">PDF</span>
     </a>
 
     <a class="card" href="Aufnahmeantrag.pdf" target="_blank">
@@ -110,7 +130,7 @@
 </div>
 
 <footer>
-  © Dokumentenportal – einfach & schnell zugänglich
+  🟢 ⚪ ⚫ Vereinsportal – einfach & schnell erreichbar
 </footer>
 
 </body>
