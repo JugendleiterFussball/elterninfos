@@ -1,13 +1,668 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USV Jugendfußball – Trainerbereich</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Trainerbereich – USV Jugendfußball</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #080a0b;
+      color: #f2f2f2;
+      font-family: Arial, Helvetica, sans-serif;
+      min-height: 100vh;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px 24px 60px;
+    }
+
+
+    /* =========================================
+       HEADER
+    ========================================= */
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+
+      padding-bottom: 25px;
+      border-bottom: 1px solid #24292a;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      min-width: 0;
+    }
+
+    .brand-logo {
+      width: 125px;
+      height: auto;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .brand-text {
+      min-width: 0;
+    }
+
+    .brand-text h1 {
+      margin: 0;
+      font-size: 26px;
+      line-height: 1.15;
+      font-weight: 700;
+    }
+
+    .brand-text p {
+      margin: 6px 0 0;
+      color: #9ba1a3;
+      font-size: 14px;
+    }
+
+
+    /* =========================================
+       BUTTONS
+    ========================================= */
+
+    .logout-button {
+      appearance: none;
+      border: 1px solid #3a4041;
+      background: #141819;
+      color: #ffffff;
+
+      padding: 11px 18px;
+      border-radius: 8px;
+
+      font-size: 14px;
+      cursor: pointer;
+
+      white-space: nowrap;
+    }
+
+    .logout-button:hover {
+      background: #202526;
+      border-color: #555c5d;
+    }
+
+
+    /* =========================================
+       MAIN
+    ========================================= */
+
+    main {
+      padding-top: 45px;
+    }
+
+
+    /* =========================================
+       WELCOME
+    ========================================= */
+
+    .welcome {
+      margin-bottom: 42px;
+    }
+
+    .welcome h2 {
+      margin: 0 0 10px;
+
+      font-size: 34px;
+      line-height: 1.15;
+      font-weight: 700;
+    }
+
+    .welcome p {
+      margin: 0;
+
+      max-width: 720px;
+
+      color: #a8adaf;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+
+    /* =========================================
+       SECTION
+    ========================================= */
+
+    .section {
+      margin-bottom: 42px;
+    }
+
+    .section-title {
+      margin: 0 0 17px;
+
+      font-size: 21px;
+      font-weight: 700;
+    }
+
+
+    /* =========================================
+       QUICK LINKS
+    ========================================= */
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .quick-card {
+      display: block;
+
+      padding: 25px;
+
+      color: inherit;
+      text-decoration: none;
+
+      background: #111516;
+      border: 1px solid #252b2c;
+      border-radius: 14px;
+
+      transition:
+        transform 0.15s ease,
+        border-color 0.15s ease,
+        background 0.15s ease;
+    }
+
+    .quick-card:hover {
+      transform: translateY(-2px);
+      background: #151a1b;
+      border-color: #414849;
+    }
+
+    .quick-icon {
+      width: 48px;
+      height: 48px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-bottom: 18px;
+
+      border-radius: 10px;
+      background: #1a2021;
+
+      font-size: 24px;
+    }
+
+    .quick-card h3 {
+      margin: 0 0 8px;
+
+      font-size: 19px;
+      line-height: 1.3;
+    }
+
+    .quick-card p {
+      margin: 0;
+
+      color: #92999b;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+
+    /* =========================================
+       DOCUMENTE
+    ========================================= */
+
+    .documents-box {
+      background: #101415;
+      border: 1px solid #252b2c;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .documents-header {
+      padding: 22px 24px;
+
+      border-bottom: 1px solid #252b2c;
+    }
+
+    .documents-header h3 {
+      margin: 0 0 6px;
+
+      font-size: 20px;
+    }
+
+    .documents-header p {
+      margin: 0;
+
+      color: #92999b;
+      font-size: 14px;
+    }
+
+    .documents-content {
+      padding: 28px 24px;
+    }
+
+    .documents-placeholder {
+      padding: 24px;
+
+      background: #0c0f10;
+      border: 1px dashed #343a3b;
+      border-radius: 10px;
+
+      text-align: center;
+    }
+
+    .documents-placeholder-icon {
+      margin-bottom: 12px;
+
+      font-size: 30px;
+    }
+
+    .documents-placeholder strong {
+      display: block;
+
+      margin-bottom: 7px;
+
+      font-size: 15px;
+    }
+
+    .documents-placeholder span {
+      display: block;
+
+      color: #858c8e;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+
+    /* =========================================
+       INFORMATION
+    ========================================= */
+
+    .info-box {
+      padding: 20px 22px;
+
+      background: #101415;
+      border: 1px solid #252b2c;
+      border-radius: 12px;
+
+      color: #a4aaac;
+
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .info-box strong {
+      color: #f0f0f0;
+    }
+
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+
+    footer {
+      margin-top: 50px;
+      padding-top: 20px;
+
+      border-top: 1px solid #24292a;
+
+      color: #707779;
+
+      font-size: 13px;
+      text-align: center;
+    }
+
+
+    /* =========================================
+       MOBILE
+    ========================================= */
+
+    @media (max-width: 700px) {
+
+      .page {
+        padding: 20px 16px 45px;
+      }
+
+      .topbar {
+        align-items: flex-start;
+      }
+
+      .brand {
+        gap: 12px;
+      }
+
+      .brand-logo {
+        width: 88px;
+      }
+
+      .brand-text h1 {
+        font-size: 20px;
+      }
+
+      .brand-text p {
+        font-size: 13px;
+      }
+
+      .logout-button {
+        padding: 9px 12px;
+        font-size: 13px;
+      }
+
+      main {
+        padding-top: 32px;
+      }
+
+      .welcome {
+        margin-bottom: 32px;
+      }
+
+      .welcome h2 {
+        font-size: 28px;
+      }
+
+      .welcome p {
+        font-size: 15px;
+      }
+
+      .quick-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .quick-card {
+        padding: 21px;
+      }
+
+      .documents-header,
+      .documents-content {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+    }
+
+  </style>
 </head>
+
+
 <body>
 
-    <h1>Trainerbereich</h1>
+  <div class="page">
+
+
+    <!-- =====================================
+         HEADER
+    ====================================== -->
+
+    <header class="topbar">
+
+      <div class="brand">
+
+        <img
+          src="../assets/Logo.png"
+          alt="USV Jugendfußball"
+          class="brand-logo"
+        >
+
+        <div class="brand-text">
+
+          <h1>
+            Trainerbereich
+          </h1>
+
+          <p>
+            USV Jugendfußball
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <button
+        type="button"
+        class="logout-button"
+        id="logoutButton"
+      >
+        Abmelden
+      </button>
+
+    </header>
+
+
+
+    <!-- =====================================
+         MAIN
+    ====================================== -->
+
+    <main>
+
+
+      <!-- WILLKOMMEN -->
+
+      <section class="welcome">
+
+        <h2>
+          Willkommen im Trainerbereich
+        </h2>
+
+        <p>
+          Hier findest du die internen Informationen,
+          Unterlagen und Dokumente für unsere Trainer.
+        </p>
+
+      </section>
+
+
+
+      <!-- SCHNELLZUGRIFF -->
+
+      <section class="section">
+
+        <h2 class="section-title">
+          Schnellzugriff
+        </h2>
+
+
+        <div class="quick-grid">
+
+
+          <!-- TRAINER-DOKUMENTE -->
+
+          <a
+            href="#dokumente"
+            class="quick-card"
+          >
+
+            <div class="quick-icon">
+              📄
+            </div>
+
+            <h3>
+              Trainer-Dokumente
+            </h3>
+
+            <p>
+              Interne Formulare, Informationen und
+              Unterlagen für Trainings- und Spielbetrieb.
+            </p>
+
+          </a>
+
+
+
+          <!-- STARTSEITE -->
+
+          <a
+            href="../index.html"
+            class="quick-card"
+          >
+
+            <div class="quick-icon">
+              🏠
+            </div>
+
+            <h3>
+              Zur Startseite
+            </h3>
+
+            <p>
+              Zur öffentlichen Startseite des
+              USV Jugendfußballs zurückkehren.
+            </p>
+
+          </a>
+
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =====================================
+           DOKUMENTE
+      ====================================== -->
+
+      <section
+        class="section"
+        id="dokumente"
+      >
+
+        <h2 class="section-title">
+          Interne Unterlagen
+        </h2>
+
+
+        <div class="documents-box">
+
+
+          <div class="documents-header">
+
+            <h3>
+              Trainer-Dokumente
+            </h3>
+
+            <p>
+              Interne Unterlagen für den Trainerbereich
+            </p>
+
+          </div>
+
+
+          <div class="documents-content">
+
+            <div class="documents-placeholder">
+
+              <div class="documents-placeholder-icon">
+                📁
+              </div>
+
+              <strong>
+                Dokumente werden hier bereitgestellt
+              </strong>
+
+              <span>
+                Die Trainer-Dokumente werden später
+                direkt aus dem privaten Supabase Storage
+                geladen.
+              </span>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =====================================
+           INFORMATION
+      ====================================== -->
+
+      <section class="section">
+
+        <div class="info-box">
+
+          <strong>
+            Interner Bereich
+          </strong>
+
+          <br>
+
+          Dieser Bereich ist ausschließlich für
+          berechtigte Trainer und Verantwortliche
+          vorgesehen.
+
+        </div>
+
+      </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer>
+
+      USV Jugendfußball · Trainerbereich
+
+    </footer>
+
+
+  </div>
+
+
+
+  <!-- =====================================
+       JAVASCRIPT
+
+       SUPABASE KOMMT ERST SPÄTER HIER HINEIN.
+       ====================================== -->
+
+  <script>
+
+    /*
+     * Der Logout wird erst mit Supabase Auth
+     * verbunden, sobald der Auth-Dienst wieder
+     * erreichbar ist.
+     *
+     * Bis dahin führt der Button lediglich
+     * zurück zur Login-Seite.
+     */
+
+    document
+      .getElementById("logoutButton")
+      .addEventListener("click", function () {
+
+        window.location.href = "login.html";
+
+      });
+
+  </script>
+
 
 </body>
+
 </html>
