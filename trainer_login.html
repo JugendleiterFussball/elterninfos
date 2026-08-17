@@ -35,7 +35,7 @@ button:disabled{opacity:.65;cursor:wait}
 <main class="wrap">
   <div class="brand">
     <!-- Logo.png liegt im GitHub-Repository im gleichen Ordner wie diese Datei. -->
-    <div class="logo"><img src="Logo.png" alt="USV Jugendfußball"></div>
+    <div class="logo"><img src="Logo.png" alt="USV Jugendfußball" onerror="this.style.display='none'"></div>
     <h1>USV Jugendfußball</h1>
     <p>Geschützter Trainerbereich</p>
   </div>
@@ -70,7 +70,7 @@ button:disabled{opacity:.65;cursor:wait}
    SUPABASE KONFIGURATION
    HIER NUR DIESE BEIDEN WERTE EINTRAGEN.
    ============================================================ */
-const SUPABASE_URL = "DEINE_SUPABASE_PROJECT_URL";
+const SUPABASE_URL = "https://sluoffqjtofnhmfqfac.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY = "DEIN_SB_PUBLISHABLE_KEY";
 
 /* ============================================================
@@ -79,6 +79,13 @@ const SUPABASE_PUBLISHABLE_KEY = "DEIN_SB_PUBLISHABLE_KEY";
    Deshalb darf hier KEINE Variable "supabase" neu deklariert
    werden. Wir verwenden bewusst "supabaseClient".
    ============================================================ */
+if (!/^https?:\\/\\//.test(SUPABASE_URL)) {
+  throw new Error("Supabase URL ist nicht korrekt eingetragen.");
+}
+if (!SUPABASE_PUBLISHABLE_KEY.startsWith("sb_publishable_")) {
+  throw new Error("Der Supabase Publishable Key ist noch nicht korrekt eingetragen.");
+}
+
 const supabaseClient = window.supabase.createClient(
   SUPABASE_URL,
   SUPABASE_PUBLISHABLE_KEY
