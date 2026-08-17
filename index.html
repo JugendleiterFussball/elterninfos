@@ -2,7 +2,6 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <style>
 
@@ -296,37 +295,34 @@ a{color:inherit}
    ========================================================= */
 .hero-top-right{
   position:absolute;
-  top:34px;
-  right:7%;
+  top:28px;
+  right:28px;
   z-index:8;
   display:flex;
-  flex-direction:column;
   align-items:center;
-  gap:20px;
+  gap:12px;
 }
 .hero-logo{
-  width:165px;
-  height:165px;
+  width:54px;
+  height:54px;
   object-fit:contain;
   background:#fff;
-  border-radius:22px;
-  padding:10px;
-  box-shadow:0 12px 32px rgba(0,0,0,.25);
-  order:2;
+  border-radius:13px;
+  padding:5px;
+  box-shadow:0 8px 24px rgba(0,0,0,.22);
 }
 .hero-login{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  min-height:46px;
-  padding:0 18px;
+  min-height:44px;
+  padding:0 15px;
   border-radius:10px;
   background:#1769e0;
   color:#fff;
   text-decoration:none;
   font-weight:750;
   box-shadow:0 8px 22px rgba(0,0,0,.22);
-  order:1;
 }
 .hero-login:hover{background:#0f5dcc}
 
@@ -410,159 +406,6 @@ a{color:inherit}
   }
 }
 
-
-/* =========================================================
-   📞 KONTAKT – DEUTLICHER UND BESSER LESBAR
-   ========================================================= */
-.footer{
-  background:#06120b;
-  color:#fff;
-}
-.footer-inner{
-  max-width:1180px;
-  margin:auto;
-  padding:52px 24px 58px;
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  gap:35px;
-}
-.footer h2{
-  margin:0 0 12px;
-  font-size:30px;
-  line-height:1.1;
-  letter-spacing:-.025em;
-}
-.footer p{
-  margin:0;
-  color:#d0d8d3;
-  font-size:16px;
-  line-height:1.55;
-}
-.footer a{
-  color:#fff;
-  font-size:16px;
-  font-weight:700;
-  text-decoration:none;
-}
-.footer a:hover{text-decoration:underline}
-
-@media(max-width:520px){
-  .footer-inner{
-    padding:42px 18px 48px;
-    gap:22px;
-  }
-  .footer h2{
-    font-size:27px;
-  }
-  .footer p,
-  .footer a{
-    font-size:15px;
-  }
-}
-
-
-/* =========================================================
-   📞 KONTAKT – ZWEI GROSSE BUTTONS
-   ========================================================= */
-.footer-contact{
-  width:100%;
-}
-.footer-contact h2{
-  margin:0 0 7px;
-  font-size:30px;
-  line-height:1.1;
-}
-.footer-contact p{
-  margin:0 0 22px;
-  color:#cbd5ce;
-  font-size:16px;
-}
-.contact-buttons{
-  display:flex;
-  gap:14px;
-  flex-wrap:wrap;
-}
-.contact-button{
-  min-height:54px;
-  min-width:180px;
-  padding:0 22px;
-  border-radius:13px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:9px;
-  text-decoration:none !important;
-  font-size:16px;
-  font-weight:800;
-  box-shadow:0 8px 22px rgba(0,0,0,.18);
-  transition:transform .15s ease;
-}
-.contact-button:hover{transform:translateY(-1px)}
-.contact-mail{
-  background:#fff;
-  color:#0b6b35 !important;
-}
-.contact-whatsapp{
-  background:#159447;
-  color:#fff !important;
-}
-@media(max-width:520px){
-  .contact-buttons{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-  }
-  .contact-button{
-    min-width:0;
-    min-height:56px;
-    padding:0 10px;
-    font-size:15px;
-  }
-}
-
-</style>
-
-<style>
-@media (min-width:801px){
-  .hero-top-right{top:34px;right:7%;gap:20px}
-  .hero-logo{width:165px;height:165px}
-}
-@media (max-width:800px){
-  .hero-top-right{top:18px;right:15px;gap:10px}
-  .hero-logo{width:82px;height:82px;border-radius:15px;padding:6px}
-  .hero-login{min-height:39px;padding:0 11px;font-size:12px}
-}
-</style>
-
-
-<style>
-html, body {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-.hero {
-  margin-top: 0 !important;
-}
-@media (min-width:801px){
-  .hero-logo{
-    width:145px !important;
-    height:145px !important;
-  }
-}
-@media (max-width:800px){
-  .hero-logo{
-    width:76px !important;
-    height:76px !important;
-  }
-}
-</style>
-
-
-<style>
-html, body { margin:0 !important; padding:0 !important; }
-body { overflow-x:hidden; }
-.hero { margin-top:0 !important; }
 </style>
 </head>
 <body>
@@ -570,13 +413,13 @@ body { overflow-x:hidden; }
   <section class="hero" id="start">
 
 <div class="hero-top-right">
-  <img src="../Logo.png" alt="USV Jugendfußball" class="hero-logo">
-  <a href="#trainerbereich" class="hero-login">🔐 Trainer-Login</a>
+  <img src="assets/Logo.png" alt="USV Jugendfußball" class="hero-logo">
+  <a href="trainer/login.html" class="hero-login">🔐 Trainer-Login</a>
 </div>
 
 <div class="hero-inner">
       <div class="hero-copy">
-        <div class="eyebrow">Fußballjugend-Portal</div>
+        <div class="eyebrow">Vereinsportal</div>
 
         <h1>
           Willkommen beim
@@ -778,7 +621,7 @@ body { overflow-x:hidden; }
             <span class="document-title"><span class="document-icon">PDF</span><span><span class="document-name">Bank ändern</span><span class="document-type">Bankverbindung · PDF</span></span></span>
             <span class="document-chevron">⌄</span>
           </summary>
-          <div class="document-details"><div class="document-description">Formular zur Änderung der Bankverbindung.</div><a class="document-link" href="Aenderung_Bankverbindung.pdf">Dokument öffnen →</a></div>
+          <div class="document-details"><div class="document-description">Formular zur Änderung der Bankverbindung.</div><a class="document-link" href="dokumente/Aenderung_Bankverbindung.pdf">Dokument öffnen →</a></div>
         </details>
 
         <!-- 🔧 DOKUMENT 2 -->
@@ -787,7 +630,7 @@ body { overflow-x:hidden; }
             <span class="document-title"><span class="document-icon">PDF</span><span><span class="document-name">Aufnahmeantrag</span><span class="document-type">Vereinsaufnahme · PDF</span></span></span>
             <span class="document-chevron">⌄</span>
           </summary>
-          <div class="document-details"><div class="document-description">Antrag auf Aufnahme in den Verein.</div><a class="document-link" href="Aufnahmeantrag.pdf">Dokument öffnen →</a></div>
+          <div class="document-details"><div class="document-description">Antrag auf Aufnahme in den Verein.</div><a class="document-link" href="dokumente/Aufnahmeantrag.pdf">Dokument öffnen →</a></div>
         </details>
 
         <!-- 🔧 DOKUMENT 3 -->
@@ -796,7 +639,7 @@ body { overflow-x:hidden; }
             <span class="document-title"><span class="document-icon">PDF</span><span><span class="document-name">Austritt</span><span class="document-type">Vereinsaustritt · PDF</span></span></span>
             <span class="document-chevron">⌄</span>
           </summary>
-          <div class="document-details"><div class="document-description">Erklärung zum Austritt aus dem Verein.</div><a class="document-link" href="Austrittserklaerung.pdf">Dokument öffnen →</a></div>
+          <div class="document-details"><div class="document-description">Erklärung zum Austritt aus dem Verein.</div><a class="document-link" href="dokumente/Austrittserklaerung.pdf">Dokument öffnen →</a></div>
         </details>
 
         <!-- 🔧 DOKUMENT 4 -->
@@ -805,7 +648,7 @@ body { overflow-x:hidden; }
             <span class="document-title"><span class="document-icon">PDF</span><span><span class="document-name">Fotoerlaubnis</span><span class="document-type">Fotoverwendung · PDF</span></span></span>
             <span class="document-chevron">⌄</span>
           </summary>
-          <div class="document-details"><div class="document-description">Formular zur Einwilligung in die Fotoverwendung.</div><a class="document-link" href="Fotogenehmigung_einzeln.pdf">Dokument öffnen →</a></div>
+          <div class="document-details"><div class="document-description">Formular zur Einwilligung in die Fotoverwendung.</div><a class="document-link" href="dokumente/Fotogenehmigung_einzeln.pdf">Dokument öffnen →</a></div>
         </details>
 
         <!-- 🔧 DOKUMENT 5 -->
@@ -814,7 +657,7 @@ body { overflow-x:hidden; }
             <span class="document-title"><span class="document-icon">PDF</span><span><span class="document-name">Spielerlaubnis</span><span class="document-type">Spielbetrieb · PDF</span></span></span>
             <span class="document-chevron">⌄</span>
           </summary>
-          <div class="document-details"><div class="document-description">Antrag auf Spielerlaubnis beim SFV.</div><a class="document-link" href="Spielerlaubnisantrag_SFV_neu.pdf">Dokument öffnen →</a></div>
+          <div class="document-details"><div class="document-description">Antrag auf Spielerlaubnis beim SFV.</div><a class="document-link" href="dokumente/Spielerlaubnisantrag_SFV_neu.pdf">Dokument öffnen →</a></div>
         </details>
 
         <!-- 🔧 DOKUMENT 6 -->
@@ -823,7 +666,7 @@ body { overflow-x:hidden; }
             <span class="document-title"><span class="document-icon">PDF</span><span><span class="document-name">Unfallmeldung</span><span class="document-type">Unfall / Verletzung · PDF</span></span></span>
             <span class="document-chevron">⌄</span>
           </summary>
-          <div class="document-details"><div class="document-description">Formular zur Meldung eines Unfalls.</div><a class="document-link" href="Unfallmeldung.pdf">Dokument öffnen →</a></div>
+          <div class="document-details"><div class="document-description">Formular zur Meldung eines Unfalls.</div><a class="document-link" href="dokumente/Unfallmeldung.pdf">Dokument öffnen →</a></div>
         </details>
 
         <!-- 🔧 DOKUMENT 7 -->
@@ -832,7 +675,7 @@ body { overflow-x:hidden; }
             <span class="document-title"><span class="document-icon">PDF</span><span><span class="document-name">Internationale Freigabe</span><span class="document-type">Spielberechtigung · PDF</span></span></span>
             <span class="document-chevron">⌄</span>
           </summary>
-          <div class="document-details"><div class="document-description">Antrag auf internationale Freigabe.</div><a class="document-link" href="antrag_internationalefreigabe_012026.pdf">Dokument öffnen →</a></div>
+          <div class="document-details"><div class="document-description">Antrag auf internationale Freigabe.</div><a class="document-link" href="dokumente/antrag_internationalefreigabe_012026.pdf">Dokument öffnen →</a></div>
         </details>
 
       </div>
@@ -853,22 +696,26 @@ body { overflow-x:hidden; }
         stehen hier geschützt für unser Trainerteam bereit.
       </p>
     </div>
-    <a href="#trainer-login" class="trainer-bottom-login">🔐 Zum Trainerbereich</a>
+    <a href="trainer/login.html" class="trainer-bottom-login">🔐 Zum Trainerbereich</a>
   </div>
 </section>
 
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-contact">
-      <h2>Kontakt</h2>
-      <p>USV Jugendfußball</p>
-      <div class="contact-buttons">
-        <a class="contact-button contact-mail" href="mailto:fussballjugend@usv-tu-dresden.de?subject=Kontakt%20Verein">✉️ E-Mail</a>
-        <a class="contact-button contact-whatsapp" href="https://wa.me/49017661908879">💬 WhatsApp</a>
+<footer id="kontakt">
+    <div class="footer-inner">
+      <div class="contact-title">Kontakt Jugendfußball</div>
+
+      <div class="footer-links">
+        <a href="https://wa.me/49017661908879" target="_blank" rel="noopener noreferrer">
+          💬 WhatsApp
+        </a>
+        <a href="mailto:fussballjugend@usv-tu-dresden.de?subject=Kontakt%20Verein">
+          ✉️ E-Mail
+        </a>
       </div>
+
+      <div class="copyright">© USV Jugendfußball</div>
     </div>
-  </div>
-</footer>
+  </footer>
 
 
 </body>
