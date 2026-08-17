@@ -1,14 +1,545 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trainer-Login – USV Jugendfußball</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trainer-Login – USV Jugendfußball</title>
+
+  <style>
+    /* =========================================================
+       GRUNDLAYOUT
+       ========================================================= */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(145deg, #062d1b, #0b5a30, #062d1b);
+      color: #17221d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .login-wrapper {
+      width: 100%;
+      max-width: 460px;
+    }
+
+    /* =========================================================
+       LOGO / KOPFBEREICH
+       ========================================================= */
+    .brand {
+      text-align: center;
+      color: white;
+      margin-bottom: 22px;
+    }
+
+    .logo {
+      width: 95px;
+      height: 95px;
+      margin: 0 auto 15px;
+      object-fit: contain;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .brand p {
+      margin: 8px 0 0;
+      color: rgba(255,255,255,.8);
+    }
+
+    /* =========================================================
+       LOGIN-KARTE
+       ========================================================= */
+    .login-card {
+      background: white;
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: 0 25px 70px rgba(0,0,0,.25);
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: #0d7a3d;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .login-card h2 {
+      margin: 0 0 8px;
+      font-size: 30px;
+    }
+
+    .intro {
+      margin: 0 0 26px;
+      color: #718078;
+      line-height: 1.5;
+    }
+
+    /* =========================================================
+       FORMULAR
+       ========================================================= */
+    .field {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      padding: 15px 16px;
+      border: 1px solid #dfe7e2;
+      border-radius: 13px;
+      font-size: 16px;
+      outline: none;
+      background: #fbfcfb;
+    }
+
+    input:focus {
+      border-color: #0d7a3d;
+      box-shadow: 0 0 0 3px rgba(13,122,61,.1);
+    }
+
+    /* =========================================================
+       LOGIN-BUTTON
+       ========================================================= */
+    button {
+      width: 100%;
+      border: 0;
+      border-radius: 14px;
+      padding: 16px;
+      background: #0d7a3d;
+      color: white;
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #096632;
+    }
+
+    button:disabled {
+      opacity: .65;
+      cursor: wait;
+    }
+
+    /* =========================================================
+       MELDUNGEN
+       ========================================================= */
+    .message {
+      display: none;
+      margin-top: 18px;
+      padding: 13px 15px;
+      border-radius: 12px;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .message.error {
+      display: block;
+      color: #b42318;
+      background: #fff1f0;
+      border: 1px solid #ffd5d2;
+    }
+
+    .message.success {
+      display: block;
+      color: #086c37;
+      background: #eaf6ef;
+      border: 1px solid #ccebd8;
+    }
+
+    /* =========================================================
+       ZURÜCK
+       ========================================================= */
+    .back {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: rgba(255,255,255,.85);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .back:hover {
+      color: white;
+    }
+
+    /* =========================================================
+       MOBILE
+       ========================================================= */
+    @media (max-width: 520px) {
+
+      body {
+        padding: 16px;
+      }
+
+      .login-card {
+        padding: 26px 22px;
+        border-radius: 22px;
+      }
+
+      .brand h1 {
+        font-size: 24px;
+      }
+
+      .logo {
+        width: 78px;
+        height: 78px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-    <h1>Trainer-Login</h1>
-    <p>Die Login-Seite ist erreichbar.</p>
+  <main class="login-wrapper">
+
+    <!-- =======================================================
+         LOGO UND ÜBERSCHRIFT
+         ======================================================= -->
+    <div class="brand">
+
+      <!--
+        Das Logo liegt im Repository unter:
+        assets/Logo.png
+
+        Von trainer/login.html aus müssen wir deshalb
+        eine Ebene nach oben und dann in assets:
+        ../assets/Logo.png
+      -->
+      <img
+        src="../assets/Logo.png"
+        alt="USV Jugendfußball"
+        class="logo"
+      >
+
+      <h1>USV Jugendfußball</h1>
+      <p>Geschützter Trainerbereich</p>
+
+    </div>
+
+
+    <!-- =======================================================
+         LOGIN
+         ======================================================= -->
+    <section class="login-card">
+
+      <p class="eyebrow">Trainerbereich</p>
+
+      <h2>Trainer-Login</h2>
+
+      <p class="intro">
+        Bitte mit deiner hinterlegten E-Mail-Adresse und deinem
+        Passwort anmelden.
+      </p>
+
+
+      <form id="loginForm">
+
+        <div class="field">
+
+          <label for="email">
+            E-Mail-Adresse
+          </label>
+
+          <input
+            id="email"
+            type="email"
+            autocomplete="username"
+            placeholder="name@beispiel.de"
+            required
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label for="password">
+            Passwort
+          </label>
+
+          <input
+            id="password"
+            type="password"
+            autocomplete="current-password"
+            placeholder="Passwort"
+            required
+          >
+
+        </div>
+
+
+        <button
+          id="loginButton"
+          type="submit"
+        >
+          Zum Trainerbereich
+        </button>
+
+
+        <div
+          id="message"
+          class="message"
+        ></div>
+
+      </form>
+
+    </section>
+
+
+    <!-- =======================================================
+         ZURÜCK ZUR STARTSEITE
+         ======================================================= -->
+    <a
+      class="back"
+      href="../index.html"
+    >
+      ← Zurück zur Startseite
+    </a>
+
+  </main>
+
+
+  <!-- =========================================================
+       SUPABASE
+       ========================================================= -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+  <script>
+
+    /* =========================================================
+       SUPABASE KONFIGURATION
+       ========================================================= */
+
+    const SUPABASE_URL =
+      "https://sluoffqjtofnhmfqfac.supabase.co";
+
+    const SUPABASE_PUBLISHABLE_KEY =
+      "sb_publishable_MbxdNe22XUoLVfF5_K-6xA_Wkos9EmS";
+
+
+    /* =========================================================
+       SUPABASE CLIENT
+       
+       WICHTIG:
+       Wir nennen die Variable "supabaseClient".
+
+       Nicht "supabase", weil die Supabase-Bibliothek bereits
+       window.supabase verwendet.
+       ========================================================= */
+
+    const supabaseClient =
+      window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+      );
+
+
+    /* =========================================================
+       TRAINERBEREICH
+       
+       Nach erfolgreicher Anmeldung geht es zu:
+       
+       trainer/index.html
+       ========================================================= */
+
+    const TRAINER_BEREICH =
+      "index.html";
+
+
+    /* =========================================================
+       MELDUNG ANZEIGEN
+       ========================================================= */
+
+    function showMessage(text, type) {
+
+      const message =
+        document.getElementById("message");
+
+      message.textContent = text;
+
+      message.className =
+        "message " + type;
+    }
+
+
+    /* =========================================================
+       LOGIN
+       ========================================================= */
+
+    document
+      .getElementById("loginForm")
+      .addEventListener("submit", async function(event) {
+
+        event.preventDefault();
+
+
+        const email =
+          document
+            .getElementById("email")
+            .value
+            .trim();
+
+
+        const password =
+          document
+            .getElementById("password")
+            .value;
+
+
+        const button =
+          document.getElementById("loginButton");
+
+
+        /* Button sperren */
+
+        button.disabled = true;
+
+        button.textContent =
+          "Anmeldung läuft …";
+
+
+        document
+          .getElementById("message")
+          .className = "message";
+
+
+        try {
+
+          /* ===================================================
+             1. SUPABASE AUTHENTIFIZIERUNG
+             =================================================== */
+
+          const {
+            data: authData,
+            error: authError
+          } =
+            await supabaseClient.auth.signInWithPassword({
+              email: email,
+              password: password
+            });
+
+
+          if (authError) {
+            throw authError;
+          }
+
+
+          /* ===================================================
+             2. TRAINER-PROFIL PRÜFEN
+             
+             Die ID des angemeldeten Users muss in
+             trainer_profiles vorhanden sein.
+             =================================================== */
+
+          const {
+            data: profile,
+            error: profileError
+          } =
+            await supabaseClient
+              .from("trainer_profiles")
+              .select("role")
+              .eq("id", authData.user.id)
+              .single();
+
+
+          if (profileError || !profile) {
+
+            await supabaseClient.auth.signOut();
+
+            throw new Error(
+              "Dein Zugang ist noch nicht für den Trainerbereich freigeschaltet."
+            );
+          }
+
+
+          /* ===================================================
+             3. ROLLE PRÜFEN
+             =================================================== */
+
+          if (
+            profile.role !== "trainer" &&
+            profile.role !== "admin"
+          ) {
+
+            await supabaseClient.auth.signOut();
+
+            throw new Error(
+              "Für diesen Zugang wurde keine gültige Trainerrolle gefunden."
+            );
+          }
+
+
+          /* ===================================================
+             4. LOGIN ERFOLGREICH
+             =================================================== */
+
+          showMessage(
+            "Anmeldung erfolgreich. Trainerbereich wird geöffnet …",
+            "success"
+          );
+
+
+          button.textContent =
+            "Angemeldet ✓";
+
+
+          /* ===================================================
+             5. TRAINERBEREICH ÖFFNEN
+             =================================================== */
+
+          setTimeout(function() {
+
+            window.location.href =
+              TRAINER_BEREICH;
+
+          }, 700);
+
+
+        } catch (error) {
+
+          console.error(
+            "Trainer-Login:",
+            error
+          );
+
+
+          showMessage(
+            error.message ||
+            "Die Anmeldung konnte nicht durchgeführt werden.",
+            "error"
+          );
+
+
+          button.disabled = false;
+
+          button.textContent =
+            "Zum Trainerbereich";
+
+        }
+
+      });
+
+  </script>
 
 </body>
 </html>
