@@ -1,185 +1,874 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vereinsportal</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <style>
-    :root{
-      --green: #0b5d2a;
-      --light: #f5f7f6;
-      --card: #ffffff;
-      --text: #1a1a1a;
-    }
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: var(--light);
-      color: var(--text);
-    }
+:root{
+  --green:#0b6b35;
+  --green-2:#159447;
+  --dark:#07130c;
+  --text:#17201b;
+  --muted:#6d7771;
+  --bg:#f4f7f5;
+  --card:#fff;
+  --line:#e2e8e4;
+  --blue:#1769e0;
+}
 
-    /* 🔝 HEADER */
-    header {
-      background: linear-gradient(135deg, #0b5d2a, #147a3b);
-      color: white;
-      text-align: center;
-      padding: 25px 15px;
-      position: relative;
-    }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0;padding:0}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+a{color:inherit}
 
-    /* 🖼️ LOGO BOX (hebt sich ab!) */
-    .logo-wrapper {
-      display: inline-block;
-      background: white;
-      padding: 10px;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      margin-bottom: 10px;
-    }
+/* =========================================================
+   HERO
+   Kein weißer Abstand oberhalb des Portals.
+   ========================================================= */
+.hero{
+  position:relative;
+  min-height:560px;
+  overflow:hidden;
+  color:white;
+  margin:0;
+  background:
+    radial-gradient(circle at 78% 24%,rgba(31,145,72,.34),transparent 32%),
+    linear-gradient(110deg,#06100a 0%,#0b2a17 58%,#103d22 100%);
+}
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.28),transparent 55%),
+    repeating-linear-gradient(120deg,rgba(255,255,255,.025) 0 1px,transparent 1px 70px);
+  pointer-events:none;
+}
+.hero-inner{
+  position:relative;z-index:2;
+  max-width:1180px;min-height:560px;margin:auto;
+  padding:105px 24px 70px;
+  display:flex;align-items:center;
+}
+.hero-copy{max-width:650px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:750;letter-spacing:.08em;
+  text-transform:uppercase;color:#b8e7c8;margin-bottom:16px;
+}
+.eyebrow:before{
+  content:"";width:28px;height:2px;background:var(--green-2);border-radius:2px;
+}
+.hero h1{
+  margin:0;font-size:clamp(42px,6vw,72px);
+  line-height:.98;letter-spacing:-.045em;
+}
+.hero h1 strong{display:block;color:#fff}
+.hero p{
+  max-width:560px;margin:22px 0 28px;
+  color:#d7e1db;font-size:18px;line-height:1.55;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.primary,.secondary{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:48px;padding:0 20px;border-radius:11px;
+  text-decoration:none;font-weight:750;
+}
+.primary{
+  background:var(--green-2);color:white;
+  box-shadow:0 9px 25px rgba(21,148,71,.25);
+}
+.secondary{
+  border:1px solid rgba(255,255,255,.28);
+  background:rgba(255,255,255,.07);color:white;
+  backdrop-filter:blur(8px);
+}
+.hero-glow{
+  position:absolute;right:-120px;bottom:-180px;
+  width:650px;height:650px;border-radius:50%;
+  border:1px solid rgba(151,232,176,.12);
+  box-shadow:0 0 0 80px rgba(151,232,176,.025),
+             0 0 0 160px rgba(151,232,176,.018);
+}
 
-    .logo {
-      width: 90px;
-      max-width: 25vw;
-      height: auto;
-      display: block;
-    }
+/* =========================================================
+   CONTENT / ELTERN
+   ========================================================= */
+.main{
+  max-width:1180px;
+  margin:-42px auto 100px;
+  padding:0 24px;
+  position:relative;
+  z-index:3;
+}
+.section-head{
+  display:flex;align-items:end;justify-content:space-between;
+  gap:20px;margin:0 0 16px;
+}
+.section-head h2{margin:0;font-size:23px;letter-spacing:-.02em}
+.section-head p{margin:5px 0 0;color:var(--muted);font-size:14px}
+.cards{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+}
+.card{
+  display:block;background:var(--card);border:1px solid var(--line);
+  border-radius:18px;padding:24px;text-decoration:none;
+  box-shadow:0 10px 28px rgba(12,36,22,.07);
+}
+.icon{
+  width:45px;height:45px;display:grid;place-items:center;
+  border-radius:12px;background:#e9f5ed;color:var(--green);
+  font-size:21px;margin-bottom:18px;
+}
+.card h3{margin:0 0 8px;font-size:18px}
+.card p{margin:0;color:var(--muted);font-size:14px;line-height:1.45}
+.card .more{
+  display:inline-block;margin-top:18px;color:var(--green);
+  font-size:13px;font-weight:750;
+}
 
-    h1 {
-      margin: 10px 0 5px;
-      font-size: 26px;
-    }
+/* =========================================================
+   MANNSCHAFTEN
+   ========================================================= */
+.teams{margin-top:34px}
+.section-title{margin:0 0 14px;padding:0 2px}
+.section-title h2{
+  margin:0;font-size:23px;line-height:1.1;letter-spacing:-.03em;
+}
+.section-title p{margin:6px 0 0;color:#7a847e;font-size:13px}
+.team-list{display:grid;grid-template-columns:1fr;gap:10px}
+.team-card{
+  background:white;border:1px solid var(--line);border-radius:17px;
+  overflow:hidden;box-shadow:0 7px 20px rgba(9,38,21,.05);
+}
+.team-summary{
+  min-height:62px;box-sizing:border-box;width:100%;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:15px;padding:15px 17px;border:0;background:white;
+  color:var(--text);text-align:left;cursor:pointer;
+  font:inherit;list-style:none;
+}
+.team-summary::-webkit-details-marker{display:none}
+.team-summary:hover{background:#fbfcfb}
+.team-name{font-size:15px;font-weight:800;letter-spacing:-.015em}
+.team-chevron{
+  width:28px;height:28px;display:grid;place-items:center;
+  border-radius:50%;background:#f3f6f4;color:#6d7871;
+  transition:transform .2s ease,background .2s ease;
+}
+.team-card[open] .team-chevron{
+  transform:rotate(180deg);background:#eaf5ee;color:var(--green);
+}
+.team-details{
+  padding:0 17px 15px;border-top:1px solid #edf0ee;
+  background:#fbfcfb;
+}
+.team-row{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:11px 0;border-bottom:1px solid #e9eeeb;
+  font-size:13px;line-height:1.4;
+}
+.team-row:last-child{border-bottom:0}
+.team-label{width:110px;flex:0 0 110px;color:#7b857f;font-weight:650}
+.team-value{color:#26312b;font-weight:650}
+.team-times{display:grid;gap:4px}
 
-    p {
-      margin: 0;
-      opacity: 0.9;
-    }
+/* =========================================================
+   DOKUMENTE
+   Exakt dieselbe Kartenlogik wie Mannschaften.
+   ========================================================= */
+.documents{
+  margin-top:34px;
+  background:transparent;
+  border:0;
+  border-radius:0;
+  overflow:visible;
+  box-shadow:none;
+}
+.document-list{display:grid;grid-template-columns:1fr;gap:10px}
+.document-item{
+  background:white;border:1px solid var(--line);border-radius:17px;
+  overflow:hidden;box-shadow:0 7px 20px rgba(9,38,21,.05);
+}
+.document-summary{
+  min-height:62px;box-sizing:border-box;width:100%;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:14px;padding:15px 17px;background:white;
+  color:var(--text);text-align:left;cursor:pointer;
+  font:inherit;list-style:none;
+}
+.document-summary::-webkit-details-marker{display:none}
+.document-summary:hover{background:#fbfcfb}
+.document-title{
+  display:flex;align-items:center;gap:13px;min-width:0;
+}
+.document-icon{
+  width:40px;height:40px;flex:0 0 40px;display:grid;
+  place-items:center;border-radius:11px;background:#eaf5ee;
+  color:var(--green);font-size:10px;font-weight:900;
+  letter-spacing:.02em;
+}
+.document-name{
+  display:block;font-size:14px;font-weight:800;
+  letter-spacing:-.015em;color:#1d2822;
+}
+.document-type{
+  display:block;margin-top:4px;color:#89928d;
+  font-size:11px;font-weight:550;
+}
+.document-chevron{
+  width:28px;height:28px;display:grid;place-items:center;
+  flex:0 0 28px;border-radius:50%;background:#f3f6f4;
+  color:#6d7871;font-size:17px;
+  transition:transform .2s ease,background .2s ease;
+}
+.document-item[open] .document-chevron{
+  transform:rotate(180deg);background:#eaf5ee;color:var(--green);
+}
+.document-details{
+  padding:0 17px 15px;border-top:1px solid #edf0ee;
+  background:#fbfcfb;color:#68736c;font-size:13px;line-height:1.5;
+}
+.document-description{padding:12px 0 7px}
+.document-link{display:inline-block;color:var(--green);font-weight:800;text-decoration:none}
 
-    /* 📦 CONTENT */
-    .container {
-      max-width: 1000px;
-      margin: 25px auto 90px;
-      padding: 0 15px;
-    }
+/* =========================================================
+   TRAINER / FOOTER
+   ========================================================= */
+.trainer-section{
+  margin-top:34px;border-radius:22px;overflow:hidden;
+  background:radial-gradient(circle at 85% 20%,rgba(41,126,255,.28),transparent 34%),
+             linear-gradient(115deg,#07111c,#0d1d2d);
+  color:white;box-shadow:0 16px 35px rgba(0,0,0,.12);
+}
+.trainer-inner{
+  padding:30px;display:flex;align-items:center;
+  justify-content:space-between;gap:25px;
+}
+.trainer-copy{max-width:680px}
+.trainer-copy .small{color:#9fc3f7;font-size:12px;font-weight:800}
+.trainer-copy h2{margin:7px 0 8px;font-size:25px}
+.trainer-copy p{margin:0;color:#c8d2dd;line-height:1.5;font-size:14px}
+.footer{
+  background:#06120b;color:white;
+}
+.footer-inner{
+  max-width:1180px;margin:auto;padding:45px 24px;
+  display:flex;justify-content:space-between;gap:30px;
+}
+.footer h2{margin:0 0 8px}
+.footer p{margin:0;color:#aeb9b2}
+.footer a{color:white;text-decoration:none}
 
-    .section-title {
-      margin: 20px 0 10px;
-      font-weight: bold;
-      color: var(--green);
-      font-size: 16px;
-    }
+/* =========================================================
+   MOBILE
+   ========================================================= */
+@media(max-width:800px){
+  .cards{grid-template-columns:1fr}
+  .main{padding:0 15px;margin-top:-28px}
+  .hero-inner{padding:125px 18px 60px}
+  .hero h1{font-size:45px}
+  .hero p{font-size:16px}
+}
+@media(max-width:520px){
+  .hero-inner{padding:115px 18px 60px}
+  .hero h1{font-size:45px}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .primary,.secondary{width:100%}
+  .team-summary,.document-summary{padding:15px 16px}
+  .team-details,.document-details{padding-left:16px;padding-right:16px}
+  .team-row{gap:10px}
+  .team-label{width:92px;flex-basis:92px}
+  .trainer-inner{padding:24px;display:block}
+  .footer-inner{flex-direction:column;padding:36px 18px}
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 12px;
-    }
+  
+/* =========================================================
+   🔐 HERO – LOGO + TRAINER-LOGIN OBEN RECHTS
+   ========================================================= */
+.hero-top-right{
+  position:absolute;
+  top:34px;
+  right:7%;
+  z-index:8;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:20px;
+}
+.hero-logo{
+  width:165px;
+  height:165px;
+  object-fit:contain;
+  background:#fff;
+  border-radius:22px;
+  padding:10px;
+  box-shadow:0 12px 32px rgba(0,0,0,.25);
+  order:2;
+}
+.hero-login{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:46px;
+  padding:0 18px;
+  border-radius:10px;
+  background:#1769e0;
+  color:#fff;
+  text-decoration:none;
+  font-weight:750;
+  box-shadow:0 8px 22px rgba(0,0,0,.22);
+  order:1;
+}
+.hero-login:hover{background:#0f5dcc}
 
-    .card {
-      background: var(--card);
-      border-radius: 12px;
-      padding: 15px;
-      text-decoration: none;
-      color: var(--text);
-      font-weight: bold;
-      border-left: 5px solid var(--green);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      transition: 0.2s;
-    }
+/* =========================================================
+   🔐 TRAINERBEREICH UNTEN
+   ========================================================= */
+.trainer-section{
+  margin-top:34px;
+  border-radius:22px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 85% 20%,rgba(41,126,255,.28),transparent 34%),
+    linear-gradient(115deg,#07111c,#0d1d2d);
+  color:#fff;
+  box-shadow:0 16px 35px rgba(0,0,0,.12);
+}
+.trainer-inner{
+  padding:30px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+.trainer-copy{max-width:680px}
+.trainer-copy .small{
+  color:#9fc3f7;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.08em;
+}
+.trainer-copy h2{
+  margin:7px 0 8px;
+  font-size:25px;
+}
+.trainer-copy p{
+  margin:0;
+  color:#c8d2dd;
+  line-height:1.5;
+  font-size:14px;
+}
+.trainer-bottom-login{
+  flex:0 0 auto;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:46px;
+  padding:0 18px;
+  border-radius:11px;
+  background:#1769e0;
+  color:#fff;
+  text-decoration:none;
+  font-weight:750;
+  white-space:nowrap;
+}
 
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-    }
+/* Mobile */
+@media(max-width:520px){
+  .hero-top-right{
+    top:18px;
+    right:15px;
+    gap:8px;
+  }
+  .hero-logo{
+    width:43px;
+    height:43px;
+    border-radius:10px;
+    padding:4px;
+  }
+  .hero-login{
+    min-height:39px;
+    padding:0 11px;
+    font-size:12px;
+  }
+  .trainer-inner{
+    padding:24px;
+    display:block;
+  }
+  .trainer-bottom-login{
+    margin-top:18px;
+    width:100%;
+  }
+}
 
-    .badge {
-      float: right;
-      background: var(--green);
-      color: white;
-      padding: 3px 10px;
-      border-radius: 20px;
-      font-size: 11px;
-    }
 
-    /* 📱 APP NAVIGATION (unten) */
-    .nav {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: white;
-      display: flex;
-      justify-content: space-around;
-      padding: 10px 0;
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-    }
+/* =========================================================
+   📞 KONTAKT – DEUTLICHER UND BESSER LESBAR
+   ========================================================= */
+.footer{
+  background:#06120b;
+  color:#fff;
+}
+.footer-inner{
+  max-width:1180px;
+  margin:auto;
+  padding:52px 24px 58px;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:35px;
+}
+.footer h2{
+  margin:0 0 12px;
+  font-size:30px;
+  line-height:1.1;
+  letter-spacing:-.025em;
+}
+.footer p{
+  margin:0;
+  color:#d0d8d3;
+  font-size:16px;
+  line-height:1.55;
+}
+.footer a{
+  color:#fff;
+  font-size:16px;
+  font-weight:700;
+  text-decoration:none;
+}
+.footer a:hover{text-decoration:underline}
 
-    .nav a {
-      text-decoration: none;
-      color: #444;
-      font-size: 12px;
-      text-align: center;
-      flex: 1;
-    }
+@media(max-width:520px){
+  .footer-inner{
+    padding:42px 18px 48px;
+    gap:22px;
+  }
+  .footer h2{
+    font-size:27px;
+  }
+  .footer p,
+  .footer a{
+    font-size:15px;
+  }
+}
 
-    .nav a span {
-      display: block;
-      font-size: 18px;
-      margin-bottom: 2px;
-    }
 
-    .nav a:hover {
-      color: var(--green);
-    }
+/* =========================================================
+   📞 KONTAKT – ZWEI GROSSE BUTTONS
+   ========================================================= */
+.footer-contact{
+  width:100%;
+}
+.footer-contact h2{
+  margin:0 0 7px;
+  font-size:30px;
+  line-height:1.1;
+}
+.footer-contact p{
+  margin:0 0 22px;
+  color:#cbd5ce;
+  font-size:16px;
+}
+.contact-buttons{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.contact-button{
+  min-height:54px;
+  min-width:180px;
+  padding:0 22px;
+  border-radius:13px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  text-decoration:none !important;
+  font-size:16px;
+  font-weight:800;
+  box-shadow:0 8px 22px rgba(0,0,0,.18);
+  transition:transform .15s ease;
+}
+.contact-button:hover{transform:translateY(-1px)}
+.contact-mail{
+  background:#fff;
+  color:#0b6b35 !important;
+}
+.contact-whatsapp{
+  background:#159447;
+  color:#fff !important;
+}
+@media(max-width:520px){
+  .contact-buttons{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .contact-button{
+    min-width:0;
+    min-height:56px;
+    padding:0 10px;
+    font-size:15px;
+  }
+}
 
-  </style>
+</style>
+
+<style>
+@media (min-width:801px){
+  .hero-top-right{top:34px;right:7%;gap:20px}
+  .hero-logo{width:165px;height:165px}
+}
+@media (max-width:800px){
+  .hero-top-right{top:18px;right:15px;gap:10px}
+  .hero-logo{width:82px;height:82px;border-radius:15px;padding:6px}
+  .hero-login{min-height:39px;padding:0 11px;font-size:12px}
+}
+</style>
+
+
+<style>
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.hero {
+  margin-top: 0 !important;
+}
+@media (min-width:801px){
+  .hero-logo{
+    width:145px !important;
+    height:145px !important;
+  }
+}
+@media (max-width:800px){
+  .hero-logo{
+    width:76px !important;
+    height:76px !important;
+  }
+}
+</style>
+
+
+<style>
+html, body { margin:0 !important; padding:0 !important; }
+body { overflow-x:hidden; }
+.hero { margin-top:0 !important; }
+</style>
 </head>
-
 <body>
 
-<header>
-  <div class="logo-wrapper">
-    <!-- 🔥 HIER DEIN LOGO DATEINAME -->
-    <img src="Logo.png" alt="Vereinslogo" class="logo">
-  </div>
+  <section class="hero" id="start">
 
-  <h1>⚽ Vereinsportal</h1>
-  <p>Dokumente für Eltern & Mitglieder</p>
-</header>
-
-<div class="container">
-
-  <div class="section-title">📄 Elternbereich</div>
-
-  <div class="grid">
-    <a class="card" href="Aenderung_Bankverbindung.pdf">Bank ändern <span class="badge">PDF</span></a>
-    <a class="card" href="Aufnahmeantrag.pdf">Aufnahmeantrag <span class="badge">PDF</span></a>
-    <a class="card" href="Austrittserklaerung.pdf">Austritt <span class="badge">PDF</span></a>
-    <a class="card" href="Fotogenehmigung_einzeln.pdf">Fotoerlaubnis <span class="badge">PDF</span></a>
-    <a class="card" href="Spielerlaubnisantrag_SFV_neu.pdf">Spielerlaubnis <span class="badge">PDF</span></a>
-    <a class="card" href="Unfallmeldung.pdf">Unfallmeldung <span class="badge">PDF</span></a>
-    <a class="card" href="antrag_internationalefreigabe_012026.pdf">Internationale Freigabe <span class="badge">PDF</span></a>
-  </div>
-
+<div class="hero-top-right">
+  <img src="logo.png" alt="USV Jugendfußball" class="hero-logo">
+  <a href="#trainerbereich" class="hero-login">🔐 Trainer-Login</a>
 </div>
 
-<!-- 📱 KONTAKTLEISTE -->
-<div class="nav">
+<div class="hero-inner">
+      <div class="hero-copy">
+        <div class="eyebrow">Fußballjugend-Portal</div>
 
-  <!-- WhatsApp -->
-  <a href="https://wa.me/49017661908879" target="_blank">
-    <span>💬</span>
-    WhatsApp
-  </a>
+        <h1>
+          Willkommen beim
+          <strong>USV Jugendfußball</strong>
+        </h1>
 
-  <!-- E-Mail -->
-  <a href="mailto:fussballjugend@usv-tu-dresden.de?subject=Kontakt%20Verein&body=Hallo,%0A%0Aich%20möchte%20mich%20melden...">
-    <span>✉️</span>
-    E-Mail
-  </a>
+        <p>
+          Wichtige Informationen, Formulare und Unterlagen
+          für Eltern, Mitglieder und unser Trainerteam –
+          übersichtlich an einem Ort.
+        </p>
 
-</div>
+        <div class="hero-actions">
+          <a class="primary" href="#eltern">Elterninformationen</a>
+          <a class="secondary" href="#dokumente">Dokumente ansehen</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-glow"></div>
+  </section>
+
+  <main class="main">
+
+    <section id="eltern">
+      <div class="section-head">
+        <div>
+          <h2>Alles Wichtige auf einen Blick</h2>
+          <p>Informationen und Unterlagen für Eltern & Mitglieder</p>
+        </div>
+      </div>
+
+      <div class="cards">
+
+        <a class="card" href="#dokumente">
+          <div class="icon">▣</div>
+          <h3>Elterninformationen</h3>
+          <p>Wichtige Formulare und Unterlagen rund um Mitgliedschaft, Organisation und Spielbetrieb.</p>
+          <span class="more">Mehr erfahren →</span>
+        </a>
+
+        <a class="card" href="#dokumente">
+          <div class="icon">▤</div>
+          <h3>Dokumente</h3>
+          <p>Formulare, Merkblätter und weitere Unterlagen direkt zum Öffnen oder Herunterladen.</p>
+          <span class="more">Dokumente öffnen →</span>
+        </a>
+
+        <a class="card" href="#kontakt">
+          <div class="icon">✉</div>
+          <h3>Kontakt</h3>
+          <p>Du hast eine Frage? Das Jugendfußball-Team ist direkt per WhatsApp oder E-Mail erreichbar.</p>
+          <span class="more">Kontakt aufnehmen →</span>
+        </a>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================================
+         🔧 MANNSCHAFTEN – DATEN HIER ÄNDERN
+         =========================================================
+         ÖFFENTLICHE INFORMATIONEN PRO MANNSCHAFT:
+
+         - Mannschaftsname
+         - Trainer
+         - Trainingszeiten
+         - Trainingsplatz
+         - Spieltag
+         - Saison
+
+         Die Mannschaften sind aufklappbar, damit die Startseite
+         kompakt bleibt.
+
+         WICHTIG:
+         Kontakt wird NICHT pro Mannschaft gepflegt.
+         Der Kontakt steht zentral unten im Footer.
+
+         SPÄTER:
+         Diese Daten können direkt aus Supabase geladen werden.
+         ========================================================= -->
+
+    <section class="teams" id="mannschaften">
+      <div class="section-title">
+        <div>
+          <h2>Unsere Mannschaften</h2>
+          <p>Trainingszeiten, Trainer und Spieltage</p>
+        </div>
+      </div>
+
+      <div class="team-list">
+
+        <!-- 🔧 B-JUGEND -->
+        <details class="team-card">
+          <summary class="team-summary">
+            <span class="team-name">B-Jugend</span>
+            <span class="team-chevron">⌄</span>
+          </summary>
+          <div class="team-details">
+            <div class="team-row"><span class="team-label">Trainer</span><span class="team-value">Max Mustermann</span></div>
+            <div class="team-row"><span class="team-label">Training</span><span class="team-value team-times"><span>Dienstag · 17:00–18:30</span><span>Donnerstag · 17:00–18:30</span></span></div>
+            <div class="team-row"><span class="team-label">Trainingsplatz</span><span class="team-value">Sportplatz Beispiel</span></div>
+            <div class="team-row"><span class="team-label">Spieltag</span><span class="team-value">Samstag</span></div>
+            <div class="team-row"><span class="team-label">Saison</span><span class="team-value">2026/27</span></div>
+          </div>
+        </details>
+
+        <!-- 🔧 C-JUGEND -->
+        <details class="team-card">
+          <summary class="team-summary">
+            <span class="team-name">C-Jugend</span>
+            <span class="team-chevron">⌄</span>
+          </summary>
+          <div class="team-details">
+            <div class="team-row"><span class="team-label">Trainer</span><span class="team-value">Thomas Müller</span></div>
+            <div class="team-row"><span class="team-label">Training</span><span class="team-value team-times"><span>Montag · 17:00–18:30</span><span>Mittwoch · 17:00–18:30</span></span></div>
+            <div class="team-row"><span class="team-label">Trainingsplatz</span><span class="team-value">Sportplatz Beispiel</span></div>
+            <div class="team-row"><span class="team-label">Spieltag</span><span class="team-value">Samstag</span></div>
+            <div class="team-row"><span class="team-label">Saison</span><span class="team-value">2026/27</span></div>
+          </div>
+        </details>
+
+        <!-- 🔧 D-JUGEND -->
+        <details class="team-card">
+          <summary class="team-summary">
+            <span class="team-name">D-Jugend</span>
+            <span class="team-chevron">⌄</span>
+          </summary>
+          <div class="team-details">
+            <div class="team-row"><span class="team-label">Trainer</span><span class="team-value">Trainer Name</span></div>
+            <div class="team-row"><span class="team-label">Training</span><span class="team-value team-times"><span>Dienstag · 16:30–18:00</span><span>Donnerstag · 16:30–18:00</span></span></div>
+            <div class="team-row"><span class="team-label">Trainingsplatz</span><span class="team-value">Sportplatz Beispiel</span></div>
+            <div class="team-row"><span class="team-label">Spieltag</span><span class="team-value">Samstag</span></div>
+            <div class="team-row"><span class="team-label">Saison</span><span class="team-value">2026/27</span></div>
+          </div>
+        </details>
+
+        <!-- 🔧 E-JUGEND -->
+        <details class="team-card">
+          <summary class="team-summary">
+            <span class="team-name">E-Jugend</span>
+            <span class="team-chevron">⌄</span>
+          </summary>
+          <div class="team-details">
+            <div class="team-row"><span class="team-label">Trainer</span><span class="team-value">Trainer Name</span></div>
+            <div class="team-row"><span class="team-label">Training</span><span class="team-value team-times"><span>Montag · 16:30–18:00</span><span>Mittwoch · 16:30–18:00</span></span></div>
+            <div class="team-row"><span class="team-label">Trainingsplatz</span><span class="team-value">Sportplatz Beispiel</span></div>
+            <div class="team-row"><span class="team-label">Spieltag</span><span class="team-value">Samstag</span></div>
+            <div class="team-row"><span class="team-label">Saison</span><span class="team-value">2026/27</span></div>
+          </div>
+        </details>
+
+        <!-- 🔧 F-JUGEND -->
+        <details class="team-card">
+          <summary class="team-summary">
+            <span class="team-name">F-Jugend</span>
+            <span class="team-chevron">⌄</span>
+          </summary>
+          <div class="team-details">
+            <div class="team-row"><span class="team-label">Trainer</span><span class="team-value">Trainer Name</span></div>
+            <div class="team-row"><span class="team-label">Training</span><span class="team-value team-times"><span>Dienstag · 16:00–17:30</span><span>Donnerstag · 16:00–17:30</span></span></div>
+            <div class="team-row"><span class="team-label">Trainingsplatz</span><span class="team-value">Sportplatz Beispiel</span></div>
+            <div class="team-row"><span class="team-label">Spieltag</span><span class="team-value">Samstag</span></div>
+            <div class="team-row"><span class="team-label">Saison</span><span class="team-value">2026/27</span></div>
+          </div>
+        </details>
+
+        <!-- 🔧 BAMBINIS -->
+        <details class="team-card">
+          <summary class="team-summary">
+            <span class="team-name">Bambinis</span>
+            <span class="team-chevron">⌄</span>
+          </summary>
+          <div class="team-details">
+            <div class="team-row"><span class="team-label">Trainer</span><span class="team-value">Trainer Name</span></div>
+            <div class="team-row"><span class="team-label">Training</span><span class="team-value team-times"><span>Freitag · 16:00–17:00</span></span></div>
+            <div class="team-row"><span class="team-label">Trainingsplatz</span><span class="team-value">Sportplatz Beispiel</span></div>
+            <div class="team-row"><span class="team-label">Spieltag</span><span class="team-value">Nach Spielplan</span></div>
+            <div class="team-row"><span class="team-label">Saison</span><span class="team-value">2026/27</span></div>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <section class="documents" id="dokumente">
+      <div class="section-title">
+        <div>
+          <h2>Dokumente</h2>
+          <p>Wichtige Unterlagen &amp; Formulare</p>
+        </div>
+      </div>
+
+      <div class="document-list">
+
+        <!-- 🔧 DOKUMENT 1 -->
+        <details class="document-item">
+          <summary class="document-summary">
+            <span class="document-title"><span class="document-icon">PDF</span><span><span class="document-name">Bank ändern</span><span class="document-type">Bankverbindung · PDF</span></span></span>
+            <span class="document-chevron">⌄</span>
+          </summary>
+          <div class="document-details"><div class="document-description">Formular zur Änderung der Bankverbindung.</div><a class="document-link" href="Aenderung_Bankverbindung.pdf">Dokument öffnen →</a></div>
+        </details>
+
+        <!-- 🔧 DOKUMENT 2 -->
+        <details class="document-item">
+          <summary class="document-summary">
+            <span class="document-title"><span class="document-icon">PDF</span><span><span class="document-name">Aufnahmeantrag</span><span class="document-type">Vereinsaufnahme · PDF</span></span></span>
+            <span class="document-chevron">⌄</span>
+          </summary>
+          <div class="document-details"><div class="document-description">Antrag auf Aufnahme in den Verein.</div><a class="document-link" href="Aufnahmeantrag.pdf">Dokument öffnen →</a></div>
+        </details>
+
+        <!-- 🔧 DOKUMENT 3 -->
+        <details class="document-item">
+          <summary class="document-summary">
+            <span class="document-title"><span class="document-icon">PDF</span><span><span class="document-name">Austritt</span><span class="document-type">Vereinsaustritt · PDF</span></span></span>
+            <span class="document-chevron">⌄</span>
+          </summary>
+          <div class="document-details"><div class="document-description">Erklärung zum Austritt aus dem Verein.</div><a class="document-link" href="Austrittserklaerung.pdf">Dokument öffnen →</a></div>
+        </details>
+
+        <!-- 🔧 DOKUMENT 4 -->
+        <details class="document-item">
+          <summary class="document-summary">
+            <span class="document-title"><span class="document-icon">PDF</span><span><span class="document-name">Fotoerlaubnis</span><span class="document-type">Fotoverwendung · PDF</span></span></span>
+            <span class="document-chevron">⌄</span>
+          </summary>
+          <div class="document-details"><div class="document-description">Formular zur Einwilligung in die Fotoverwendung.</div><a class="document-link" href="Fotogenehmigung_einzeln.pdf">Dokument öffnen →</a></div>
+        </details>
+
+        <!-- 🔧 DOKUMENT 5 -->
+        <details class="document-item">
+          <summary class="document-summary">
+            <span class="document-title"><span class="document-icon">PDF</span><span><span class="document-name">Spielerlaubnis</span><span class="document-type">Spielbetrieb · PDF</span></span></span>
+            <span class="document-chevron">⌄</span>
+          </summary>
+          <div class="document-details"><div class="document-description">Antrag auf Spielerlaubnis beim SFV.</div><a class="document-link" href="Spielerlaubnisantrag_SFV_neu.pdf">Dokument öffnen →</a></div>
+        </details>
+
+        <!-- 🔧 DOKUMENT 6 -->
+        <details class="document-item">
+          <summary class="document-summary">
+            <span class="document-title"><span class="document-icon">PDF</span><span><span class="document-name">Unfallmeldung</span><span class="document-type">Unfall / Verletzung · PDF</span></span></span>
+            <span class="document-chevron">⌄</span>
+          </summary>
+          <div class="document-details"><div class="document-description">Formular zur Meldung eines Unfalls.</div><a class="document-link" href="Unfallmeldung.pdf">Dokument öffnen →</a></div>
+        </details>
+
+        <!-- 🔧 DOKUMENT 7 -->
+        <details class="document-item">
+          <summary class="document-summary">
+            <span class="document-title"><span class="document-icon">PDF</span><span><span class="document-name">Internationale Freigabe</span><span class="document-type">Spielberechtigung · PDF</span></span></span>
+            <span class="document-chevron">⌄</span>
+          </summary>
+          <div class="document-details"><div class="document-description">Antrag auf internationale Freigabe.</div><a class="document-link" href="antrag_internationalefreigabe_012026.pdf">Dokument öffnen →</a></div>
+        </details>
+
+      </div>
+    </section>
+
+
+
+  </main>
+
+  
+<section class="trainer-section" id="trainerbereich">
+  <div class="trainer-inner">
+    <div class="trainer-copy">
+      <div class="small">TRAINERBEREICH</div>
+      <h2>Alles für unser Trainerteam</h2>
+      <p>
+        Interne Unterlagen, Sitzungsprotokolle und wichtige Informationen
+        stehen hier geschützt für unser Trainerteam bereit.
+      </p>
+    </div>
+    <a href="#trainer-login" class="trainer-bottom-login">🔐 Zum Trainerbereich</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-contact">
+      <h2>Kontakt</h2>
+      <p>USV Jugendfußball</p>
+      <div class="contact-buttons">
+        <a class="contact-button contact-mail" href="mailto:fussballjugend@usv-tu-dresden.de?subject=Kontakt%20Verein">✉️ E-Mail</a>
+        <a class="contact-button contact-whatsapp" href="https://wa.me/49017661908879">💬 WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
 
 </body>
-</html>
