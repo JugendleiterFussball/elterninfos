@@ -2,12 +2,29 @@
 <html lang="de">
 
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
 
   <title>Trainerbereich – USV Jugendfußball</title>
 
   <style>
+
+    :root {
+      --green: #0b6b35;
+      --green-2: #159447;
+      --dark: #06120b;
+      --text: #17201b;
+      --muted: #6d7771;
+      --bg: #f4f7f5;
+      --card: #ffffff;
+      --line: #e2e8e4;
+      --blue: #1769e0;
+    }
 
     * {
       box-sizing: border-box;
@@ -19,418 +36,806 @@
 
     body {
       margin: 0;
-      background: #080a0b;
-      color: #f2f2f2;
-      font-family: Arial, Helvetica, sans-serif;
-      min-height: 100vh;
+      padding: 0;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+      background: var(--bg);
+      color: var(--text);
     }
 
-    .page {
-      width: 100%;
+    a {
+      color: inherit;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      position: relative;
+      min-height: 500px;
+      overflow: hidden;
+      color: white;
+
+      background:
+        radial-gradient(
+          circle at 78% 24%,
+          rgba(31, 145, 72, .34),
+          transparent 32%
+        ),
+        linear-gradient(
+          110deg,
+          #06100a 0%,
+          #0b2a17 58%,
+          #103d22 100%
+        );
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0, 0, 0, .28),
+          transparent 55%
+        ),
+        repeating-linear-gradient(
+          120deg,
+          rgba(255, 255, 255, .025) 0 1px,
+          transparent 1px 70px
+        );
+
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+
       max-width: 1180px;
-      margin: 0 auto;
-      padding: 28px 24px 60px;
-    }
+      min-height: 500px;
 
+      margin: auto;
+      padding: 90px 24px 70px;
 
-    /* =========================================
-       HEADER
-    ========================================= */
-
-    .topbar {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-
-      padding-bottom: 25px;
-      border-bottom: 1px solid #24292a;
     }
 
-    .brand {
+    .hero-copy {
+      max-width: 680px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      margin-bottom: 16px;
+
+      font-size: 13px;
+      font-weight: 750;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+
+      color: #b8e7c8;
+    }
+
+    .eyebrow::before {
+      content: "";
+
+      width: 28px;
+      height: 2px;
+
+      background: var(--green-2);
+      border-radius: 2px;
+    }
+
+    .hero h1 {
+      margin: 0;
+
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: .98;
+      letter-spacing: -.045em;
+    }
+
+    .hero h1 strong {
+      display: block;
+      color: #ffffff;
+    }
+
+    .hero p {
+      max-width: 580px;
+
+      margin: 22px 0 28px;
+
+      color: #d7e1db;
+
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    /* =========================
+       HERO BUTTONS
+    ========================= */
+
+    .hero-actions {
       display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .primary,
+    .secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 48px;
+      padding: 0 20px;
+
+      border-radius: 11px;
+
+      text-decoration: none;
+      font-weight: 750;
+    }
+
+    .primary {
+      background: var(--green-2);
+      color: white;
+
+      box-shadow:
+        0 9px 25px rgba(21, 148, 71, .25);
+    }
+
+    .primary:hover {
+      background: #0f833d;
+    }
+
+    .secondary {
+      border: 1px solid rgba(255, 255, 255, .28);
+      background: rgba(255, 255, 255, .07);
+
+      color: white;
+
+      backdrop-filter: blur(8px);
+    }
+
+    .secondary:hover {
+      background: rgba(255, 255, 255, .12);
+    }
+
+    /* =========================
+       LOGO + ABMELDEN
+    ========================= */
+
+    .hero-top-right {
+      position: absolute;
+
+      top: 34px;
+      right: 7%;
+
+      z-index: 8;
+
+      display: flex;
+      flex-direction: column;
       align-items: center;
       gap: 18px;
-      min-width: 0;
     }
 
-    .brand-logo {
-      width: 125px;
-      height: auto;
+    .hero-logo {
+      width: 145px;
+      height: 145px;
+
+      object-fit: contain;
       display: block;
-      flex-shrink: 0;
+
+      background: transparent;
+      border: 0;
+      padding: 0;
     }
-
-    .brand-text {
-      min-width: 0;
-    }
-
-    .brand-text h1 {
-      margin: 0;
-      font-size: 26px;
-      line-height: 1.15;
-      font-weight: 700;
-    }
-
-    .brand-text p {
-      margin: 6px 0 0;
-      color: #9ba1a3;
-      font-size: 14px;
-    }
-
-
-    /* =========================================
-       BUTTONS
-    ========================================= */
 
     .logout-button {
-      appearance: none;
-      border: 1px solid #3a4041;
-      background: #141819;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 46px;
+      padding: 0 18px;
+
+      border: 0;
+      border-radius: 10px;
+
+      background: #1769e0;
       color: #ffffff;
 
-      padding: 11px 18px;
-      border-radius: 8px;
+      font: inherit;
+      font-weight: 750;
 
-      font-size: 14px;
       cursor: pointer;
 
-      white-space: nowrap;
+      box-shadow:
+        0 8px 22px rgba(0, 0, 0, .22);
     }
 
     .logout-button:hover {
-      background: #202526;
-      border-color: #555c5d;
+      background: #0f5dcc;
     }
 
+    /* =========================
+       HERO GLOW
+    ========================= */
 
-    /* =========================================
+    .hero-glow {
+      position: absolute;
+
+      right: -120px;
+      bottom: -180px;
+
+      width: 650px;
+      height: 650px;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(151, 232, 176, .12);
+
+      box-shadow:
+        0 0 0 80px rgba(151, 232, 176, .025),
+        0 0 0 160px rgba(151, 232, 176, .018);
+    }
+
+    /* =========================
        MAIN
-    ========================================= */
+    ========================= */
 
-    main {
-      padding-top: 45px;
+    .main {
+      max-width: 1180px;
+
+      margin: -42px auto 100px;
+
+      padding: 0 24px;
+
+      position: relative;
+      z-index: 3;
     }
 
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
 
-    /* =========================================
-       WELCOME
-    ========================================= */
+      gap: 20px;
 
-    .welcome {
-      margin-bottom: 42px;
+      margin: 0 0 16px;
     }
 
-    .welcome h2 {
-      margin: 0 0 10px;
-
-      font-size: 34px;
-      line-height: 1.15;
-      font-weight: 700;
-    }
-
-    .welcome p {
+    .section-head h2 {
       margin: 0;
 
-      max-width: 720px;
-
-      color: #a8adaf;
-      font-size: 16px;
-      line-height: 1.6;
+      font-size: 23px;
+      letter-spacing: -.02em;
     }
 
+    .section-head p {
+      margin: 5px 0 0;
 
-    /* =========================================
-       SECTION
-    ========================================= */
-
-    .section {
-      margin-bottom: 42px;
+      color: var(--muted);
+      font-size: 14px;
     }
 
-    .section-title {
-      margin: 0 0 17px;
+    /* =========================
+       KARTEN
+    ========================= */
 
-      font-size: 21px;
-      font-weight: 700;
-    }
-
-
-    /* =========================================
-       QUICK LINKS
-    ========================================= */
-
-    .quick-grid {
+    .cards {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 16px;
     }
 
-    .quick-card {
+    .card {
       display: block;
 
-      padding: 25px;
+      padding: 24px;
+
+      background: var(--card);
+
+      border: 1px solid var(--line);
+      border-radius: 18px;
 
       color: inherit;
       text-decoration: none;
 
-      background: #111516;
-      border: 1px solid #252b2c;
-      border-radius: 14px;
+      box-shadow:
+        0 10px 28px rgba(12, 36, 22, .07);
 
       transition:
-        transform 0.15s ease,
-        border-color 0.15s ease,
-        background 0.15s ease;
+        transform .15s ease,
+        border-color .15s ease;
     }
 
-    .quick-card:hover {
-      transform: translateY(-2px);
-      background: #151a1b;
-      border-color: #414849;
+    .card:hover {
+      border-color: #d5dfd9;
+      transform: translateY(-1px);
     }
 
-    .quick-icon {
-      width: 48px;
-      height: 48px;
+    .icon {
+      width: 45px;
+      height: 45px;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: grid;
+      place-items: center;
 
       margin-bottom: 18px;
 
-      border-radius: 10px;
-      background: #1a2021;
+      border-radius: 12px;
 
-      font-size: 24px;
+      background: #e9f5ed;
+      color: var(--green);
+
+      font-size: 21px;
     }
 
-    .quick-card h3 {
+    .card h3 {
       margin: 0 0 8px;
 
-      font-size: 19px;
-      line-height: 1.3;
+      font-size: 18px;
     }
 
-    .quick-card p {
+    .card p {
       margin: 0;
 
-      color: #92999b;
+      color: var(--muted);
+
       font-size: 14px;
-      line-height: 1.55;
+      line-height: 1.45;
     }
 
+    .card .more {
+      display: inline-block;
 
-    /* =========================================
-       DOCUMENTE
-    ========================================= */
+      margin-top: 18px;
 
-    .documents-box {
-      background: #101415;
-      border: 1px solid #252b2c;
-      border-radius: 14px;
+      color: var(--green);
+
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    /* =========================
+       DOKUMENTE
+    ========================= */
+
+    .documents {
+      margin-top: 34px;
+    }
+
+    .section-title {
+      margin: 0 0 14px;
+      padding: 0 2px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+
+      font-size: 23px;
+      line-height: 1.1;
+      letter-spacing: -.03em;
+    }
+
+    .section-title p {
+      margin: 6px 0 0;
+
+      color: #7a847e;
+      font-size: 13px;
+    }
+
+    .document-list {
+      display: grid;
+
+      grid-template-columns: 1fr;
+
+      gap: 10px;
+    }
+
+    .document-item {
+      background: #ffffff;
+
+      border: 1px solid var(--line);
+      border-radius: 17px;
+
       overflow: hidden;
+
+      box-shadow:
+        0 7px 20px rgba(9, 38, 21, .05);
     }
 
-    .documents-header {
-      padding: 22px 24px;
+    .document-summary {
+      width: 100%;
+      min-height: 62px;
 
-      border-bottom: 1px solid #252b2c;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 14px;
+
+      padding: 15px 17px;
+
+      border: 0;
+      background: #ffffff;
+
+      color: var(--text);
+
+      text-align: left;
+      cursor: pointer;
+
+      font: inherit;
+      list-style: none;
     }
 
-    .documents-header h3 {
-      margin: 0 0 6px;
-
-      font-size: 20px;
+    .document-summary::-webkit-details-marker {
+      display: none;
     }
 
-    .documents-header p {
-      margin: 0;
+    .document-summary:hover {
+      background: #fbfcfb;
+    }
 
-      color: #92999b;
+    .document-title {
+      display: flex;
+      align-items: center;
+
+      gap: 13px;
+
+      min-width: 0;
+    }
+
+    .document-icon {
+      width: 40px;
+      height: 40px;
+
+      flex: 0 0 40px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 11px;
+
+      background: #eaf5ee;
+      color: var(--green);
+
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .02em;
+    }
+
+    .document-name {
+      display: block;
+
+      color: #1d2822;
+
       font-size: 14px;
+      font-weight: 800;
+      letter-spacing: -.015em;
     }
 
-    .documents-content {
-      padding: 28px 24px;
-    }
-
-    .documents-placeholder {
-      padding: 24px;
-
-      background: #0c0f10;
-      border: 1px dashed #343a3b;
-      border-radius: 10px;
-
-      text-align: center;
-    }
-
-    .documents-placeholder-icon {
-      margin-bottom: 12px;
-
-      font-size: 30px;
-    }
-
-    .documents-placeholder strong {
+    .document-type {
       display: block;
 
-      margin-bottom: 7px;
+      margin-top: 4px;
 
-      font-size: 15px;
+      color: #89928d;
+
+      font-size: 11px;
+      font-weight: 550;
     }
 
-    .documents-placeholder span {
-      display: block;
+    .document-chevron {
+      width: 28px;
+      height: 28px;
 
-      color: #858c8e;
+      flex: 0 0 28px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: #f3f6f4;
+      color: #6d7871;
+
+      font-size: 17px;
+
+      transition:
+        transform .2s ease,
+        background .2s ease;
+    }
+
+    .document-item[open]
+    .document-chevron {
+      transform: rotate(180deg);
+
+      background: #eaf5ee;
+      color: var(--green);
+    }
+
+    .document-details {
+      padding: 0 17px 15px;
+
+      border-top: 1px solid #edf0ee;
+
+      background: #fbfcfb;
+
+      color: #68736c;
+
       font-size: 13px;
       line-height: 1.5;
     }
 
+    .document-description {
+      padding: 12px 0 7px;
+    }
 
-    /* =========================================
-       INFORMATION
-    ========================================= */
+    .document-status {
+      display: inline-block;
+
+      margin-top: 5px;
+
+      color: #89928d;
+
+      font-size: 12px;
+    }
+
+    /* =========================
+       INFO
+    ========================= */
 
     .info-box {
-      padding: 20px 22px;
+      margin-top: 34px;
 
-      background: #101415;
-      border: 1px solid #252b2c;
-      border-radius: 12px;
+      padding: 22px;
 
-      color: #a4aaac;
+      background: #ffffff;
 
-      font-size: 14px;
-      line-height: 1.6;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+
+      box-shadow:
+        0 7px 20px rgba(9, 38, 21, .05);
     }
 
     .info-box strong {
-      color: #f0f0f0;
+      display: block;
+
+      margin-bottom: 6px;
+
+      color: var(--text);
     }
 
+    .info-box p {
+      margin: 0;
 
-    /* =========================================
+      color: var(--muted);
+
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* =========================
        FOOTER
-    ========================================= */
+    ========================= */
 
-    footer {
-      margin-top: 50px;
-      padding-top: 20px;
-
-      border-top: 1px solid #24292a;
-
-      color: #707779;
-
-      font-size: 13px;
-      text-align: center;
+    .footer {
+      background: #06120b;
+      color: white;
     }
 
+    .footer-inner {
+      max-width: 1180px;
 
-    /* =========================================
+      margin: auto;
+
+      padding: 52px 24px 58px;
+
+      display: flex;
+
+      justify-content: space-between;
+      align-items: flex-start;
+
+      gap: 35px;
+    }
+
+    .footer-contact {
+      width: 100%;
+    }
+
+    .footer-contact h2 {
+      margin: 0 0 7px;
+
+      font-size: 30px;
+      line-height: 1.1;
+    }
+
+    .footer-contact p {
+      margin: 0 0 22px;
+
+      color: #cbd5ce;
+
+      font-size: 16px;
+    }
+
+    .contact-buttons {
+      display: flex;
+
+      gap: 14px;
+
+      flex-wrap: wrap;
+    }
+
+    .contact-button {
+      min-height: 54px;
+      min-width: 180px;
+
+      padding: 0 22px;
+
+      border-radius: 13px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 9px;
+
+      text-decoration: none;
+
+      font-size: 16px;
+      font-weight: 800;
+
+      box-shadow:
+        0 8px 22px rgba(0, 0, 0, .18);
+    }
+
+    .contact-mail {
+      background: #ffffff;
+      color: var(--green);
+    }
+
+    .contact-whatsapp {
+      background: #159447;
+      color: #ffffff;
+    }
+
+    /* =========================
        MOBILE
-    ========================================= */
+    ========================= */
 
-    @media (max-width: 700px) {
+    @media (max-width: 800px) {
 
-      .page {
-        padding: 20px 16px 45px;
-      }
-
-      .topbar {
-        align-items: flex-start;
-      }
-
-      .brand {
-        gap: 12px;
-      }
-
-      .brand-logo {
-        width: 88px;
-      }
-
-      .brand-text h1 {
-        font-size: 20px;
-      }
-
-      .brand-text p {
-        font-size: 13px;
-      }
-
-      .logout-button {
-        padding: 9px 12px;
-        font-size: 13px;
-      }
-
-      main {
-        padding-top: 32px;
-      }
-
-      .welcome {
-        margin-bottom: 32px;
-      }
-
-      .welcome h2 {
-        font-size: 28px;
-      }
-
-      .welcome p {
-        font-size: 15px;
-      }
-
-      .quick-grid {
+      .cards {
         grid-template-columns: 1fr;
       }
 
-      .quick-card {
-        padding: 21px;
+      .main {
+        padding: 0 15px;
+        margin-top: -28px;
       }
 
-      .documents-header,
-      .documents-content {
-        padding-left: 18px;
-        padding-right: 18px;
+      .hero-inner {
+        padding: 125px 18px 60px;
       }
 
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      .hero-inner {
+        padding: 115px 18px 60px;
+      }
+
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .primary,
+      .secondary {
+        width: 100%;
+      }
+
+      .hero-top-right {
+        top: 18px;
+        right: 15px;
+        gap: 10px;
+      }
+
+      .hero-logo {
+        width: 76px;
+        height: 76px;
+      }
+
+      .logout-button {
+        min-height: 39px;
+        padding: 0 11px;
+        font-size: 12px;
+      }
+
+      .document-summary {
+        padding: 15px 16px;
+      }
+
+      .document-details {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .contact-buttons {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
+      }
+
+      .contact-button {
+        min-width: 0;
+        min-height: 56px;
+
+        padding: 0 10px;
+
+        font-size: 15px;
+      }
+
+      .footer-inner {
+        padding: 42px 18px 48px;
+      }
     }
 
   </style>
+
 </head>
 
 
 <body>
 
-  <div class="page">
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <section class="hero">
 
 
-    <!-- =====================================
-         HEADER
-    ====================================== -->
+    <div class="hero-top-right">
 
-    <header class="topbar">
 
-      <div class="brand">
-
-        <img
-          src="../assets/Logo.png"
-          alt="USV Jugendfußball"
-          class="brand-logo"
-        >
-
-        <div class="brand-text">
-
-          <h1>
-            Trainerbereich
-          </h1>
-
-          <p>
-            USV Jugendfußball
-          </p>
-
-        </div>
-
-      </div>
+      <img
+        src="../assets/Logo.png"
+        alt="USV Jugendfußball"
+        class="hero-logo"
+      >
 
 
       <button
@@ -441,216 +846,372 @@
         Abmelden
       </button>
 
-    </header>
+
+    </div>
+
+
+    <div class="hero-inner">
+
+
+      <div class="hero-copy">
+
+
+        <div class="eyebrow">
+          Internes Trainerportal
+        </div>
+
+
+        <h1>
+
+          Willkommen im
+
+          <strong>
+            Trainerbereich
+          </strong>
+
+        </h1>
+
+
+        <p>
+
+          Interne Informationen, Unterlagen und
+          wichtige Dokumente für unser Trainerteam –
+          geschützt und übersichtlich an einem Ort.
+
+        </p>
+
+
+        <div class="hero-actions">
+
+
+          <a
+            class="primary"
+            href="#dokumente"
+          >
+            Trainer-Dokumente
+          </a>
+
+
+          <a
+            class="secondary"
+            href="../index.html"
+          >
+            Zur Startseite
+          </a>
+
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+    <div class="hero-glow"></div>
+
+
+  </section>
 
 
 
-    <!-- =====================================
-         MAIN
-    ====================================== -->
+  <!-- =========================
+       HAUPTBEREICH
+  ========================= -->
 
-    <main>
+  <main class="main">
 
 
-      <!-- WILLKOMMEN -->
+    <!-- SCHNELLZUGRIFF -->
 
-      <section class="welcome">
+    <section>
+
+
+      <div class="section-head">
+
+        <div>
+
+          <h2>
+            Alles Wichtige auf einen Blick
+          </h2>
+
+          <p>
+            Interne Informationen für unser Trainerteam
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="cards">
+
+
+        <a
+          class="card"
+          href="#dokumente"
+        >
+
+          <div class="icon">
+            ▤
+          </div>
+
+          <h3>
+            Trainer-Dokumente
+          </h3>
+
+          <p>
+            Formulare, Merkblätter und wichtige
+            Unterlagen für den Trainings- und Spielbetrieb.
+          </p>
+
+          <span class="more">
+            Dokumente öffnen →
+          </span>
+
+        </a>
+
+
+        <a
+          class="card"
+          href="../index.html"
+        >
+
+          <div class="icon">
+            ⌂
+          </div>
+
+          <h3>
+            Elternbereich
+          </h3>
+
+          <p>
+            Zur öffentlichen Startseite des
+            USV Jugendfußballs.
+          </p>
+
+          <span class="more">
+            Zur Startseite →
+          </span>
+
+        </a>
+
+
+        <a
+          class="card"
+          href="#kontakt"
+        >
+
+          <div class="icon">
+            ✉
+          </div>
+
+          <h3>
+            Kontakt
+          </h3>
+
+          <p>
+            Direkter Kontakt zum Jugendfußball-Team
+            per E-Mail oder WhatsApp.
+          </p>
+
+          <span class="more">
+            Kontakt aufnehmen →
+          </span>
+
+        </a>
+
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         TRAINER-DOKUMENTE
+    ========================= -->
+
+    <section
+      class="documents"
+      id="dokumente"
+    >
+
+
+      <div class="section-title">
 
         <h2>
-          Willkommen im Trainerbereich
+          Trainer-Dokumente
         </h2>
 
         <p>
-          Hier findest du die internen Informationen,
-          Unterlagen und Dokumente für unsere Trainer.
+          Interne Unterlagen &amp; Formulare
         </p>
 
-      </section>
+      </div>
 
 
-
-      <!-- SCHNELLZUGRIFF -->
-
-      <section class="section">
-
-        <h2 class="section-title">
-          Schnellzugriff
-        </h2>
+      <div class="document-list">
 
 
-        <div class="quick-grid">
+        <details class="document-item">
 
 
-          <!-- TRAINER-DOKUMENTE -->
-
-          <a
-            href="#dokumente"
-            class="quick-card"
-          >
-
-            <div class="quick-icon">
-              📄
-            </div>
-
-            <h3>
-              Trainer-Dokumente
-            </h3>
-
-            <p>
-              Interne Formulare, Informationen und
-              Unterlagen für Trainings- und Spielbetrieb.
-            </p>
-
-          </a>
+          <summary class="document-summary">
 
 
-
-          <!-- STARTSEITE -->
-
-          <a
-            href="../index.html"
-            class="quick-card"
-          >
-
-            <div class="quick-icon">
-              🏠
-            </div>
-
-            <h3>
-              Zur Startseite
-            </h3>
-
-            <p>
-              Zur öffentlichen Startseite des
-              USV Jugendfußballs zurückkehren.
-            </p>
-
-          </a>
+            <span class="document-title">
 
 
-        </div>
-
-      </section>
-
-
-
-      <!-- =====================================
-           DOKUMENTE
-      ====================================== -->
-
-      <section
-        class="section"
-        id="dokumente"
-      >
-
-        <h2 class="section-title">
-          Interne Unterlagen
-        </h2>
-
-
-        <div class="documents-box">
-
-
-          <div class="documents-header">
-
-            <h3>
-              Trainer-Dokumente
-            </h3>
-
-            <p>
-              Interne Unterlagen für den Trainerbereich
-            </p>
-
-          </div>
-
-
-          <div class="documents-content">
-
-            <div class="documents-placeholder">
-
-              <div class="documents-placeholder-icon">
-                📁
-              </div>
-
-              <strong>
-                Dokumente werden hier bereitgestellt
-              </strong>
-
-              <span>
-                Die Trainer-Dokumente werden später
-                direkt aus dem privaten Supabase Storage
-                geladen.
+              <span class="document-icon">
+                PDF
               </span>
 
+
+              <span>
+
+                <span class="document-name">
+                  Trainer-Dokumente
+                </span>
+
+                <span class="document-type">
+                  Interne Unterlagen · PDF
+                </span>
+
+              </span>
+
+
+            </span>
+
+
+            <span class="document-chevron">
+              ⌄
+            </span>
+
+
+          </summary>
+
+
+          <div class="document-details">
+
+            <div class="document-description">
+
+              Die verfügbaren Trainer-Unterlagen
+              werden später automatisch aus dem
+              geschützten Supabase Storage geladen.
+
             </div>
+
+            <span class="document-status">
+              Noch keine Dokumente geladen
+            </span>
 
           </div>
 
 
+        </details>
+
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         INFO
+    ========================= -->
+
+    <div class="info-box">
+
+      <strong>
+        Interner Trainerbereich
+      </strong>
+
+      <p>
+
+        Dieser Bereich ist ausschließlich für
+        berechtigte Trainer und Verantwortliche
+        vorgesehen. Die Dokumente werden später
+        nicht über GitHub, sondern über den
+        geschützten Supabase Storage bereitgestellt.
+
+      </p>
+
+    </div>
+
+
+  </main>
+
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer
+    class="footer"
+    id="kontakt"
+  >
+
+
+    <div class="footer-inner">
+
+
+      <div class="footer-contact">
+
+        <h2>
+          Kontakt
+        </h2>
+
+        <p>
+          USV Jugendfußball
+        </p>
+
+
+        <div class="contact-buttons">
+
+
+          <a
+            class="contact-button contact-mail"
+            href="mailto:fussballjugend@usv-tu-dresden.de?subject=Kontakt%20Trainerbereich"
+          >
+            ✉️ E-Mail
+          </a>
+
+
+          <a
+            class="contact-button contact-whatsapp"
+            href="https://wa.me/49017661908879"
+          >
+            💬 WhatsApp
+          </a>
+
+
         </div>
 
-      </section>
+      </div>
 
 
-
-      <!-- =====================================
-           INFORMATION
-      ====================================== -->
-
-      <section class="section">
-
-        <div class="info-box">
-
-          <strong>
-            Interner Bereich
-          </strong>
-
-          <br>
-
-          Dieser Bereich ist ausschließlich für
-          berechtigte Trainer und Verantwortliche
-          vorgesehen.
-
-        </div>
-
-      </section>
+    </div>
 
 
-    </main>
+  </footer>
 
 
-
-    <!-- =====================================
-         FOOTER
-    ====================================== -->
-
-    <footer>
-
-      USV Jugendfußball · Trainerbereich
-
-    </footer>
-
-
-  </div>
-
-
-
-  <!-- =====================================
-       JAVASCRIPT
-
-       SUPABASE KOMMT ERST SPÄTER HIER HINEIN.
-       ====================================== -->
 
   <script>
 
     /*
-     * Der Logout wird erst mit Supabase Auth
-     * verbunden, sobald der Auth-Dienst wieder
-     * erreichbar ist.
-     *
-     * Bis dahin führt der Button lediglich
-     * zurück zur Login-Seite.
-     */
+      Supabase Auth wird im nächsten Schritt
+      eingebunden.
+
+      Bis dahin führt der Abmelden-Button
+      zurück zur Login-Seite.
+    */
 
     document
       .getElementById("logoutButton")
