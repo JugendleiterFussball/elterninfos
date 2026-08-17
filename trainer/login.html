@@ -326,31 +326,184 @@
 
   <script>
 
-    /* =========================================================
-       SUPABASE KONFIGURATION
-       ========================================================= */
+    <script>
 
-   const SUPABASE_URL = "https://sluoffqujtofnhmfqfac.supabase.co";
+  /* =========================================================
+     SUPABASE
+     ========================================================= */
 
-    const SUPABASE_PUBLISHABLE_KEY =
-      "sb_publishable_MbxdNe22XUoLVfF5_K-6xA_Wkos9EmS";
+  const SUPABASE_URL =
+    "https://sluoffqujtofnhmfqfac.supabase.co";
+
+  const SUPABASE_PUBLISHABLE_KEY =
+    "sb_publishable_MbxdNe22XUoLVfF5_K-6xA_Wkos9EmS";
 
 
-    /* =========================================================
-       SUPABASE CLIENT
-       
-       WICHTIG:
-       Wir nennen die Variable "supabaseClient".
+  const supabaseClient =
+    window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_PUBLISHABLE_KEY
+    );
 
-       Nicht "supabase", weil die Supabase-Bibliothek bereits
-       window.supabase verwendet.
-       ========================================================= */
 
-    const supabaseClient =
-      window.supabase.createClient(
-        SUPABASE_URL,
-        SUPABASE_PUBLISHABLE_KEY
-      );
+  /* =========================================================
+     MELDUNG
+     ========================================================= */
+
+  function showMessage(text, type) {
+
+    const message =
+      document.getElementById("message");
+
+    message.textContent = text;
+
+    message.className =
+      "message " + type;
+  }
+
+
+  /* =========================================================
+     LOGIN
+     ========================================================= */
+
+  document
+    .getElementById("loginForm")
+    .addEventListener("submit", async function(event) {
+
+      event.preventDefault();
+
+
+      const email =
+        document
+          .getElementById("email")
+          .value
+          .trim();
+
+
+      const password =
+        document
+          .getElementById("password")
+          .value;
+
+
+      const button =
+        document.getElementById("loginButton");
+
+
+      button.disabled = true;
+      button.textContent = "Anmeldung läuft …";
+
+
+      document
+        .getElementById("message")
+        .className = "message";
+
+
+      try {
+
+        console.log(
+          "Supabase URL:",
+          SUPABASE_URL
+        );
+
+
+        console.log(
+          "Starte Supabase-Login für:",
+          email
+        );
+
+
+        const {
+          data,
+          error
+        } =
+          await supabaseClient.auth.signInWithPassword({
+
+            email: email,
+
+            password: password
+
+          });
+
+
+        console.log(
+          "Supabase Antwort:",
+          data,
+          error
+        );
+
+
+        if (error) {
+          throw error;
+        }
+
+
+        if (!data || !data.user) {
+
+          throw new Error(
+            "Supabase hat keinen Benutzer zurückgegeben."
+          );
+
+        }
+
+
+        /* ===================================================
+           LOGIN ERFOLGREICH
+           =================================================== */
+
+        showMessage(
+          "Anmeldung erfolgreich. Trainerbereich wird geöffnet …",
+          "success"
+        );
+
+
+        button.textContent =
+          "Angemeldet ✓";
+
+
+        console.log(
+          "Angemeldet als:",
+          data.user.email
+        );
+
+
+        /* ===================================================
+           ZUM TRAINERBEREICH
+           =================================================== */
+
+        setTimeout(function() {
+
+          window.location.href =
+            "index.html";
+
+        }, 700);
+
+
+      } catch (error) {
+
+        console.error(
+          "Trainer-Login:",
+          error
+        );
+
+
+        showMessage(
+          error.message ||
+          "Die Anmeldung konnte nicht durchgeführt werden.",
+          "error"
+        );
+
+
+        button.disabled = false;
+
+        button.textContent =
+          "Zum Trainerbereich";
+
+      }
+
+    });
+
+</script>
 
 
     /* =========================================================
