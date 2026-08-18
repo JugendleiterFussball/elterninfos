@@ -1102,7 +1102,10 @@
 
             </div>
 
-            <span class="document-status" id="documentStatus">
+            <span
+              class="document-status"
+              id="documentStatus"
+            >
               Dokumente werden vorbereitet …
             </span>
 
@@ -1208,209 +1211,299 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
 
-<script>
+    const SUPABASE_URL =
+      "https://sluoffqujtofnhmfqfac.supabase.co";
 
-const SUPABASE_URL =
-  "https://sluoffqujtofnhmfqfac.supabase.co";
-
-const SUPABASE_PUBLISHABLE_KEY =
-  "sb_publishable_MbxdNe22XUoLVfF5_K-6xA_Wkos9EmS";
-
-const supabaseClient =
-  window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_PUBLISHABLE_KEY
-  );
+    const SUPABASE_PUBLISHABLE_KEY =
+      "sb_publishable_MbxdNe22XUoLVfF5_K-6xA_Wkos9EmS";
 
 
-/* =========================================================
-   TRAINERBEREICH LADEN
-   ========================================================= */
-
-async function loadTrainer() {
-
-  console.log("=================================");
-  console.log("TRAINERBEREICH START");
-  console.log("=================================");
-
-
-  try {
-
-    /* -----------------------------------------
-       1. SESSION
-       ----------------------------------------- */
-
-    const {
-      data,
-      error
-    } = await supabaseClient.auth.getSession();
-
-
-    console.log("SESSION:", data);
-    console.log("SESSION ERROR:", error);
-
-
-    if (error) {
-
-      console.error(
-        "Fehler beim Lesen der Session:",
-        error
-      );
-
-      return;
-
-    }
-
-
-    if (!data.session) {
-
-      console.error(
-        "KEINE SESSION VORHANDEN"
-      );
-
-      return;
-
-    }
-
-
-    console.log(
-      "EINGELOGGTER USER:",
-      data.session.user
-    );
-
-
-    /* -----------------------------------------
-       2. TRAINERPROFIL TESTEN
-       ----------------------------------------- */
-
-    console.log(
-      "Lade trainer_profiles..."
-    );
-
-
-    const {
-      data: profile,
-      error: profileError
-    } =
-      await supabaseClient
-        .from("trainer_profiles")
-        .select("*")
-        .eq("id", data.session.user.id)
-        .single();
-
-
-    console.log(
-      "TRAINERPROFIL:",
-      profile
-    );
-
-    console.log(
-      "TRAINERPROFIL FEHLER:",
-      profileError
-    );
-
-
-    /* -----------------------------------------
-       3. PROFIL NICHT VORHANDEN
-       ----------------------------------------- */
-
-    if (profileError) {
-
-      console.error(
-        "PROFIL KONNTE NICHT GELADEN WERDEN"
-      );
-
-      return;
-
-    }
-
-
-    /* -----------------------------------------
-       4. NAMEN ANZEIGEN
-       ----------------------------------------- */
-
-    const trainerName =
-      document.getElementById(
-        "trainerName"
+    const supabaseClient =
+      window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
       );
 
 
-    if (
-      trainerName &&
-      profile.name
-    ) {
+    /* =========================================================
+       TRAINERBEREICH LADEN
+    ========================================================= */
 
-      trainerName.textContent =
-        profile.name;
+    async function loadTrainer() {
+
+      console.log("=================================");
+      console.log("TRAINERBEREICH START");
+      console.log("=================================");
+
+
+      try {
+
+        /* -----------------------------------------
+           1. SESSION LADEN
+        ----------------------------------------- */
+
+        const {
+          data,
+          error
+        } = await supabaseClient.auth.getSession();
+
+
+        console.log(
+          "SESSION:",
+          data
+        );
+
+        console.log(
+          "SESSION ERROR:",
+          error
+        );
+
+
+        if (error) {
+
+          console.error(
+            "Fehler beim Lesen der Session:",
+            error
+          );
+
+          return;
+
+        }
+
+
+        if (!data.session) {
+
+          console.error(
+            "KEINE SESSION VORHANDEN"
+          );
+
+          return;
+
+        }
+
+
+        const user =
+          data.session.user;
+
+
+        console.log(
+          "EINGELOGGTER USER:",
+          user
+        );
+
+
+        /* -----------------------------------------
+           2. TRAINERPROFIL LADEN
+        ----------------------------------------- */
+
+        console.log(
+          "Lade trainer_profiles..."
+        );
+
+
+        const {
+          data: profile,
+          error: profileError
+        } =
+          await supabaseClient
+            .from("trainer_profiles")
+            .select("*")
+            .eq("id", user.id)
+            .single();
+
+
+        console.log(
+          "TRAINERPROFIL:",
+          profile
+        );
+
+        console.log(
+          "TRAINERPROFIL FEHLER:",
+          profileError
+        );
+
+
+        /* -----------------------------------------
+           3. NAMEN ERMITTELN
+           
+           Reihenfolge:
+           
+           1. first_name aus trainer_profiles
+           2. name aus trainer_profiles
+           3. first_name aus User-Metadaten
+           4. name aus User-Metadaten
+           5. "Trainer"
+        ----------------------------------------- */
+
+        let vorname = "";
+
+
+        if (
+          profile &&
+          profile.first_name
+        ) {
+
+          vorname =
+            String(
+              profile.first_name
+            ).trim();
+
+        }
+
+
+        if (
+          !vorname &&
+          profile &&
+          profile.name
+        ) {
+
+          vorname =
+            String(
+              profile.name
+            ).trim();
+
+        }
+
+
+        if (
+          !vorname &&
+          user.user_metadata &&
+          user.user_metadata.first_name
+        ) {
+
+          vorname =
+            String(
+              user.user_metadata.first_name
+            ).trim();
+
+        }
+
+
+        if (
+          !vorname &&
+          user.user_metadata &&
+          user.user_metadata.name
+        ) {
+
+          vorname =
+            String(
+              user.user_metadata.name
+            ).trim();
+
+        }
+
+
+        if (!vorname) {
+
+          vorname =
+            "Trainer";
+
+        }
+
+
+        /* -----------------------------------------
+           4. NAMEN ANZEIGEN
+        ----------------------------------------- */
+
+        const trainerName =
+          document.getElementById(
+            "trainerName"
+          );
+
+
+        if (trainerName) {
+
+          trainerName.textContent =
+            vorname;
+
+        }
+
+
+        /* -----------------------------------------
+           5. STATUS ANZEIGEN
+        ----------------------------------------- */
+
+        const documentStatus =
+          document.getElementById(
+            "documentStatus"
+          );
+
+
+        if (documentStatus) {
+
+          documentStatus.textContent =
+            "Anmeldung aktiv · Trainerbereich geschützt";
+
+        }
+
+
+        console.log(
+          "ANGEZEIGTER VORNAME:",
+          vorname
+        );
+
+
+        console.log(
+          "TRAINERBEREICH ERFOLGREICH GELADEN"
+        );
+
+      }
+
+
+      catch (error) {
+
+        console.error(
+          "UNERWARTETER FEHLER:",
+          error
+        );
+
+      }
 
     }
 
 
-    /* -----------------------------------------
-       5. STATUS
-       ----------------------------------------- */
+    /* =========================================================
+       ABMELDEN
+    ========================================================= */
 
-    const documentStatus =
-      document.getElementById(
-        "documentStatus"
+    document
+      .getElementById("logoutButton")
+      .addEventListener(
+        "click",
+        async function () {
+
+          try {
+
+            await supabaseClient.auth.signOut();
+
+          }
+
+          catch (error) {
+
+            console.error(
+              "Fehler beim Abmelden:",
+              error
+            );
+
+          }
+
+
+          window.location.href =
+            "login.html";
+
+        }
       );
 
 
-    if (documentStatus) {
+    /* =========================================================
+       START
+    ========================================================= */
 
-      documentStatus.textContent =
-        "Anmeldung aktiv · Trainerbereich geschützt";
+    loadTrainer();
 
-    }
-
-
-    console.log(
-      "TRAINERBEREICH ERFOLGREICH GELADEN"
-    );
-
-  }
-
-
-  catch (error) {
-
-    console.error(
-      "UNERWARTETER FEHLER:",
-      error
-    );
-
-  }
-
-}
-
-
-/* =========================================================
-   ABMELDEN
-   ========================================================= */
-
-document
-  .getElementById("logoutButton")
-  .addEventListener(
-    "click",
-    async function () {
-
-      await supabaseClient.auth.signOut();
-
-      window.location.href =
-        "login.html";
-
-    }
-  );
-
-
-/* =========================================================
-   START
-   ========================================================= */
-
-loadTrainer();
-
-</script>
+  </script>
 
 
 </body>
