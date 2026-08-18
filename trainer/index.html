@@ -700,30 +700,23 @@
     }
 
 
-    .file-loading {
+    .file-loading,
+    .file-empty,
+    .file-error {
       padding: 16px 0 4px;
-
-      color: #89928d;
 
       font-size: 13px;
     }
 
 
+    .file-loading,
     .file-empty {
-      padding: 16px 0 4px;
-
       color: #89928d;
-
-      font-size: 13px;
     }
 
 
     .file-error {
-      padding: 16px 0 4px;
-
       color: #b42318;
-
-      font-size: 13px;
     }
 
 
@@ -1383,13 +1376,11 @@
 
             </span>
 
-
             <span class="storage-chevron">
               ⌄
             </span>
 
           </summary>
-
 
           <div class="storage-content">
 
@@ -1432,13 +1423,11 @@
 
             </span>
 
-
             <span class="storage-chevron">
               ⌄
             </span>
 
           </summary>
-
 
           <div class="storage-content">
 
@@ -1481,13 +1470,11 @@
 
             </span>
 
-
             <span class="storage-chevron">
               ⌄
             </span>
 
           </summary>
-
 
           <div class="storage-content">
 
@@ -1530,13 +1517,11 @@
 
             </span>
 
-
             <span class="storage-chevron">
               ⌄
             </span>
 
           </summary>
-
 
           <div class="storage-content">
 
@@ -1579,13 +1564,11 @@
 
             </span>
 
-
             <span class="storage-chevron">
               ⌄
             </span>
 
           </summary>
-
 
           <div class="storage-content">
 
@@ -1640,9 +1623,7 @@
     id="kontakt"
   >
 
-
     <div class="footer-inner">
-
 
       <div class="footer-contact">
 
@@ -1654,9 +1635,7 @@
           USV Jugendfußball
         </p>
 
-
         <div class="contact-buttons">
-
 
           <a
             class="contact-button contact-mail"
@@ -1673,14 +1652,11 @@
             💬 WhatsApp
           </a>
 
-
         </div>
 
       </div>
 
-
     </div>
-
 
   </footer>
 
@@ -1694,7 +1670,6 @@
 
 
   <script>
-
 
     /* =========================================================
        SUPABASE KONFIGURATION
@@ -1727,12 +1702,19 @@
     async function loadTrainer() {
 
       console.log(
+        "================================="
+      );
+
+      console.log(
         "TRAINERBEREICH START"
+      );
+
+      console.log(
+        "================================="
       );
 
 
       try {
-
 
         const {
           data,
@@ -1862,11 +1844,15 @@
 
 
         /* =====================================================
-           STORAGE BEREICHE VORBEREITEN
+           STORAGE BEREICHE AKTIVIEREN
         ===================================================== */
 
         setupStorageFolders();
 
+
+        console.log(
+          "TRAINERBEREICH BEREIT"
+        );
 
       }
 
@@ -1885,11 +1871,10 @@
 
 
     /* =========================================================
-       STORAGE BEREICHE
+       STORAGE BEREICHE EINRICHTEN
     ========================================================= */
 
     function setupStorageFolders() {
-
 
       const folders =
         document.querySelectorAll(
@@ -1900,11 +1885,9 @@
       folders.forEach(
         function (folderElement) {
 
-
           folderElement.addEventListener(
             "toggle",
             function () {
-
 
               if (
                 folderElement.open
@@ -1919,7 +1902,6 @@
             }
           );
 
-
         }
       );
 
@@ -1928,13 +1910,12 @@
 
 
     /* =========================================================
-       ORDNER AUS SUPABASE STORAGE LADEN
+       STORAGE-ORDNER LADEN
     ========================================================= */
 
     async function loadFolder(
       folderElement
     ) {
-
 
       const folderName =
         folderElement.dataset.folder;
@@ -1958,16 +1939,24 @@
       `;
 
 
+      console.log(
+        "================================="
+      );
+
 
       console.log(
-        "Lade Storage-Ordner:",
+        "LADE STORAGE-ORDNER:",
         folderName
       );
 
 
+      console.log(
+        "BUCKET:",
+        SUPABASE_BUCKET
+      );
+
 
       try {
-
 
         const {
           data: files,
@@ -1990,14 +1979,13 @@
 
 
         console.log(
-          "Storage:",
-          folderName,
+          "DATEIEN:",
           files
         );
 
 
         console.log(
-          "Storage Fehler:",
+          "STORAGE-FEHLER:",
           error
         );
 
@@ -2007,6 +1995,8 @@
           content.innerHTML = `
             <div class="file-error">
               Die Dokumente konnten nicht geladen werden.
+              <br><br>
+              <small>${escapeHtml(error.message || "Unbekannter Fehler")}</small>
             </div>
           `;
 
@@ -2033,7 +2023,7 @@
 
 
         /* =====================================================
-           NUR DATEIEN ANZEIGEN
+           NUR ECHTE DATEIEN
         ===================================================== */
 
         const realFiles =
@@ -2041,6 +2031,7 @@
             function (file) {
 
               return (
+                file &&
                 file.name &&
                 file.id
               );
@@ -2066,7 +2057,7 @@
 
 
         /* =====================================================
-           DATEILISTE ERSTELLEN
+           DATEILISTE
         ===================================================== */
 
         const list =
@@ -2084,11 +2075,16 @@
           of realFiles
         ) {
 
-
           const filePath =
             folderName +
             "/" +
             file.name;
+
+
+          console.log(
+            "Erzeuge signierte URL:",
+            filePath
+          );
 
 
 
@@ -2116,7 +2112,7 @@
           ) {
 
             console.error(
-              "Fehler bei Datei:",
+              "SIGNIERTE URL FEHLER:",
               file.name,
               signedError
             );
@@ -2128,7 +2124,7 @@
 
 
           /* ===================================================
-             DATEI-ELEMENT
+             DATEIELEMENT
           =================================================== */
 
           const item =
@@ -2192,6 +2188,10 @@
 
 
 
+          /* ===================================================
+             ÖFFNEN BUTTON
+          =================================================== */
+
           const open =
             document.createElement(
               "a"
@@ -2235,6 +2235,21 @@
         }
 
 
+        if (
+          list.children.length === 0
+        ) {
+
+          content.innerHTML = `
+            <div class="file-empty">
+              Die Dateien konnten nicht geöffnet werden.
+            </div>
+          `;
+
+          return;
+
+        }
+
+
         content.innerHTML = "";
 
 
@@ -2243,14 +2258,18 @@
         );
 
 
+        console.log(
+          "ORDNER ERFOLGREICH GELADEN:",
+          folderName
+        );
+
       }
 
 
       catch (error) {
 
-
         console.error(
-          "Storage Fehler:",
+          "STORAGE FEHLER:",
           error
         );
 
@@ -2258,6 +2277,8 @@
         content.innerHTML = `
           <div class="file-error">
             Beim Laden der Dokumente ist ein Fehler aufgetreten.
+            <br><br>
+            <small>${escapeHtml(error.message || "Unbekannter Fehler")}</small>
           </div>
         `;
 
@@ -2274,7 +2295,6 @@
     function getFileType(
       fileName
     ) {
-
 
       const extension =
         fileName
@@ -2322,7 +2342,53 @@
       }
 
 
+      if (
+        extension === "JPG" ||
+        extension === "JPEG" ||
+        extension === "PNG" ||
+        extension === "WEBP"
+      ) {
+
+        return "BILD";
+
+      }
+
+
       return "DATEI";
+
+    }
+
+
+
+    /* =========================================================
+       HTML SICHER AUSGEBEN
+    ========================================================= */
+
+    function escapeHtml(
+      value
+    ) {
+
+      return String(value)
+        .replace(
+          /&/g,
+          "&amp;"
+        )
+        .replace(
+          /</g,
+          "&lt;"
+        )
+        .replace(
+          />/g,
+          "&gt;"
+        )
+        .replace(
+          /"/g,
+          "&quot;"
+        )
+        .replace(
+          /'/g,
+          "&#039;"
+        );
 
     }
 
@@ -2339,7 +2405,6 @@
       .addEventListener(
         "click",
         async function () {
-
 
           await supabaseClient
             .auth
@@ -2359,7 +2424,6 @@
     ========================================================= */
 
     loadTrainer();
-
 
   </script>
 
