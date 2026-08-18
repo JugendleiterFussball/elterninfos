@@ -12,6 +12,7 @@
 
   <title>Trainerbereich – USV Jugendfußball</title>
 
+
   <style>
 
     :root {
@@ -26,17 +27,21 @@
       --blue: #1769e0;
     }
 
+
     * {
       box-sizing: border-box;
     }
+
 
     html {
       scroll-behavior: smooth;
     }
 
+
     body {
       margin: 0;
       padding: 0;
+
       font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -44,13 +49,16 @@
         Roboto,
         Arial,
         sans-serif;
+
       background: var(--bg);
       color: var(--text);
     }
 
+
     a {
       color: inherit;
     }
+
 
     /* =========================
        HERO
@@ -58,8 +66,11 @@
 
     .hero {
       position: relative;
+
       min-height: 500px;
+
       overflow: hidden;
+
       color: white;
 
       background:
@@ -76,8 +87,10 @@
         );
     }
 
+
     .hero::after {
       content: "";
+
       position: absolute;
       inset: 0;
 
@@ -96,6 +109,7 @@
       pointer-events: none;
     }
 
+
     .hero-inner {
       position: relative;
       z-index: 2;
@@ -104,30 +118,38 @@
       min-height: 500px;
 
       margin: auto;
+
       padding: 90px 24px 70px;
 
       display: flex;
       align-items: center;
     }
 
+
     .hero-copy {
       max-width: 680px;
     }
 
+
     .eyebrow {
       display: inline-flex;
+
       align-items: center;
+
       gap: 8px;
 
       margin-bottom: 16px;
 
       font-size: 13px;
       font-weight: 750;
+
       letter-spacing: .08em;
+
       text-transform: uppercase;
 
       color: #b8e7c8;
     }
+
 
     .eyebrow::before {
       content: "";
@@ -136,21 +158,28 @@
       height: 2px;
 
       background: var(--green-2);
+
       border-radius: 2px;
     }
+
 
     .hero h1 {
       margin: 0;
 
       font-size: clamp(42px, 6vw, 68px);
+
       line-height: .98;
+
       letter-spacing: -.045em;
     }
 
+
     .hero h1 strong {
       display: block;
+
       color: #ffffff;
     }
+
 
     .hero p {
       max-width: 580px;
@@ -160,8 +189,10 @@
       color: #d7e1db;
 
       font-size: 18px;
+
       line-height: 1.55;
     }
+
 
     /* =========================
        HERO BUTTONS
@@ -169,39 +200,50 @@
 
     .hero-actions {
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 12px;
     }
+
 
     .primary,
     .secondary {
       display: inline-flex;
+
       align-items: center;
       justify-content: center;
 
       min-height: 48px;
+
       padding: 0 20px;
 
       border-radius: 11px;
 
       text-decoration: none;
+
       font-weight: 750;
     }
 
+
     .primary {
       background: var(--green-2);
+
       color: white;
 
       box-shadow:
         0 9px 25px rgba(21, 148, 71, .25);
     }
 
+
     .primary:hover {
       background: #0f833d;
     }
 
+
     .secondary {
       border: 1px solid rgba(255, 255, 255, .28);
+
       background: rgba(255, 255, 255, .07);
 
       color: white;
@@ -209,9 +251,11 @@
       backdrop-filter: blur(8px);
     }
 
+
     .secondary:hover {
       background: rgba(255, 255, 255, .12);
     }
+
 
     /* =========================
        LOGO + ABMELDEN
@@ -226,38 +270,51 @@
       z-index: 8;
 
       display: flex;
+
       flex-direction: column;
+
       align-items: center;
+
       gap: 18px;
     }
+
 
     .hero-logo {
       width: 145px;
       height: 145px;
 
       object-fit: contain;
+
       display: block;
 
       background: transparent;
+
       border: 0;
+
       padding: 0;
     }
 
+
     .logout-button {
       display: inline-flex;
+
       align-items: center;
       justify-content: center;
 
       min-height: 46px;
+
       padding: 0 18px;
 
       border: 0;
+
       border-radius: 10px;
 
       background: #1769e0;
+
       color: #ffffff;
 
       font: inherit;
+
       font-weight: 750;
 
       cursor: pointer;
@@ -266,9 +323,11 @@
         0 8px 22px rgba(0, 0, 0, .22);
     }
 
+
     .logout-button:hover {
       background: #0f5dcc;
     }
+
 
     /* =========================
        HERO GLOW
@@ -292,6 +351,7 @@
         0 0 0 160px rgba(151, 232, 176, .018);
     }
 
+
     /* =========================
        MAIN
     ========================= */
@@ -304,12 +364,16 @@
       padding: 0 24px;
 
       position: relative;
+
       z-index: 3;
     }
 
+
     .section-head {
       display: flex;
+
       align-items: end;
+
       justify-content: space-between;
 
       gap: 20px;
@@ -317,19 +381,24 @@
       margin: 0 0 16px;
     }
 
+
     .section-head h2 {
       margin: 0;
 
       font-size: 23px;
+
       letter-spacing: -.02em;
     }
+
 
     .section-head p {
       margin: 5px 0 0;
 
       color: var(--muted);
+
       font-size: 14px;
     }
+
 
     /* =========================
        KARTEN
@@ -344,6 +413,7 @@
       gap: 16px;
     }
 
+
     .card {
       display: block;
 
@@ -352,9 +422,11 @@
       background: var(--card);
 
       border: 1px solid var(--line);
+
       border-radius: 18px;
 
       color: inherit;
+
       text-decoration: none;
 
       box-shadow:
@@ -365,16 +437,20 @@
         border-color .15s ease;
     }
 
+
     .card:hover {
       border-color: #d5dfd9;
+
       transform: translateY(-1px);
     }
+
 
     .icon {
       width: 45px;
       height: 45px;
 
       display: grid;
+
       place-items: center;
 
       margin-bottom: 18px;
@@ -382,10 +458,12 @@
       border-radius: 12px;
 
       background: #e9f5ed;
+
       color: var(--green);
 
       font-size: 21px;
     }
+
 
     .card h3 {
       margin: 0 0 8px;
@@ -393,14 +471,17 @@
       font-size: 18px;
     }
 
+
     .card p {
       margin: 0;
 
       color: var(--muted);
 
       font-size: 14px;
+
       line-height: 1.45;
     }
+
 
     .card .more {
       display: inline-block;
@@ -410,8 +491,10 @@
       color: var(--green);
 
       font-size: 13px;
+
       font-weight: 750;
     }
+
 
     /* =========================
        DOKUMENTE
@@ -421,27 +504,39 @@
       margin-top: 34px;
     }
 
+
     .section-title {
       margin: 0 0 14px;
+
       padding: 0 2px;
     }
+
 
     .section-title h2 {
       margin: 0;
 
       font-size: 23px;
+
       line-height: 1.1;
+
       letter-spacing: -.03em;
     }
+
 
     .section-title p {
       margin: 6px 0 0;
 
       color: #7a847e;
+
       font-size: 13px;
     }
 
-    .document-list {
+
+    /* =========================
+       STORAGE BEREICHE
+    ========================= */
+
+    .storage-list {
       display: grid;
 
       grid-template-columns: 1fr;
@@ -449,10 +544,12 @@
       gap: 10px;
     }
 
-    .document-item {
+
+    .storage-item {
       background: #ffffff;
 
       border: 1px solid var(--line);
+
       border-radius: 17px;
 
       overflow: hidden;
@@ -461,12 +558,16 @@
         0 7px 20px rgba(9, 38, 21, .05);
     }
 
-    .document-summary {
+
+    .storage-summary {
       width: 100%;
-      min-height: 62px;
+
+      min-height: 70px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
 
       gap: 14px;
@@ -474,27 +575,34 @@
       padding: 15px 17px;
 
       border: 0;
+
       background: #ffffff;
 
       color: var(--text);
 
       text-align: left;
+
       cursor: pointer;
 
       font: inherit;
+
       list-style: none;
     }
 
-    .document-summary::-webkit-details-marker {
+
+    .storage-summary::-webkit-details-marker {
       display: none;
     }
 
-    .document-summary:hover {
+
+    .storage-summary:hover {
       background: #fbfcfb;
     }
 
-    .document-title {
+
+    .storage-title {
       display: flex;
+
       align-items: center;
 
       gap: 13px;
@@ -502,36 +610,41 @@
       min-width: 0;
     }
 
-    .document-icon {
-      width: 40px;
-      height: 40px;
 
-      flex: 0 0 40px;
+    .storage-icon {
+      width: 42px;
+      height: 42px;
+
+      flex: 0 0 42px;
 
       display: grid;
+
       place-items: center;
 
-      border-radius: 11px;
+      border-radius: 12px;
 
       background: #eaf5ee;
+
       color: var(--green);
 
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: .02em;
+      font-size: 20px;
     }
 
-    .document-name {
+
+    .storage-name {
       display: block;
 
       color: #1d2822;
 
-      font-size: 14px;
+      font-size: 15px;
+
       font-weight: 800;
+
       letter-spacing: -.015em;
     }
 
-    .document-type {
+
+    .storage-description {
       display: block;
 
       margin-top: 4px;
@@ -539,64 +652,188 @@
       color: #89928d;
 
       font-size: 11px;
+
       font-weight: 550;
     }
 
-    .document-chevron {
-      width: 28px;
-      height: 28px;
 
-      flex: 0 0 28px;
+    .storage-chevron {
+      width: 30px;
+      height: 30px;
+
+      flex: 0 0 30px;
 
       display: grid;
+
       place-items: center;
 
       border-radius: 50%;
 
       background: #f3f6f4;
+
       color: #6d7871;
 
-      font-size: 17px;
+      font-size: 18px;
 
       transition:
         transform .2s ease,
         background .2s ease;
     }
 
-    .document-item[open]
-    .document-chevron {
+
+    .storage-item[open]
+    .storage-chevron {
       transform: rotate(180deg);
 
       background: #eaf5ee;
+
       color: var(--green);
     }
 
-    .document-details {
-      padding: 0 17px 15px;
+
+    .storage-content {
+      padding: 0 17px 17px;
 
       border-top: 1px solid #edf0ee;
 
       background: #fbfcfb;
-
-      color: #68736c;
-
-      font-size: 13px;
-      line-height: 1.5;
     }
 
-    .document-description {
-      padding: 12px 0 7px;
-    }
 
-    .document-status {
-      display: inline-block;
-
-      margin-top: 5px;
+    .file-loading {
+      padding: 16px 0 4px;
 
       color: #89928d;
 
-      font-size: 12px;
+      font-size: 13px;
     }
+
+
+    .file-empty {
+      padding: 16px 0 4px;
+
+      color: #89928d;
+
+      font-size: 13px;
+    }
+
+
+    .file-error {
+      padding: 16px 0 4px;
+
+      color: #b42318;
+
+      font-size: 13px;
+    }
+
+
+    .file-list {
+      display: grid;
+
+      gap: 8px;
+
+      padding-top: 12px;
+    }
+
+
+    .file-item {
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 12px;
+
+      padding: 12px 13px;
+
+      background: #ffffff;
+
+      border: 1px solid #e5ebe7;
+
+      border-radius: 11px;
+    }
+
+
+    .file-info {
+      min-width: 0;
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+    }
+
+
+    .file-symbol {
+      width: 34px;
+      height: 34px;
+
+      flex: 0 0 34px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 9px;
+
+      background: #eef4f0;
+
+      color: var(--green);
+
+      font-size: 10px;
+
+      font-weight: 900;
+    }
+
+
+    .file-name {
+      overflow: hidden;
+
+      text-overflow: ellipsis;
+
+      white-space: nowrap;
+
+      color: #26312b;
+
+      font-size: 13px;
+
+      font-weight: 700;
+    }
+
+
+    .file-open {
+      flex: 0 0 auto;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      min-height: 36px;
+
+      padding: 0 12px;
+
+      border-radius: 9px;
+
+      background: var(--green);
+
+      color: #ffffff;
+
+      text-decoration: none;
+
+      font-size: 12px;
+
+      font-weight: 750;
+    }
+
+
+    .file-open:hover {
+      background: #095b2c;
+    }
+
 
     /* =========================
        INFO
@@ -610,11 +847,13 @@
       background: #ffffff;
 
       border: 1px solid var(--line);
+
       border-radius: 17px;
 
       box-shadow:
         0 7px 20px rgba(9, 38, 21, .05);
     }
+
 
     .info-box strong {
       display: block;
@@ -624,14 +863,17 @@
       color: var(--text);
     }
 
+
     .info-box p {
       margin: 0;
 
       color: var(--muted);
 
       font-size: 14px;
+
       line-height: 1.5;
     }
+
 
     /* =========================
        FOOTER
@@ -639,8 +881,10 @@
 
     .footer {
       background: #06120b;
+
       color: white;
     }
+
 
     .footer-inner {
       max-width: 1180px;
@@ -652,21 +896,26 @@
       display: flex;
 
       justify-content: space-between;
+
       align-items: flex-start;
 
       gap: 35px;
     }
 
+
     .footer-contact {
       width: 100%;
     }
+
 
     .footer-contact h2 {
       margin: 0 0 7px;
 
       font-size: 30px;
+
       line-height: 1.1;
     }
+
 
     .footer-contact p {
       margin: 0 0 22px;
@@ -676,6 +925,7 @@
       font-size: 16px;
     }
 
+
     .contact-buttons {
       display: flex;
 
@@ -684,8 +934,10 @@
       flex-wrap: wrap;
     }
 
+
     .contact-button {
       min-height: 54px;
+
       min-width: 180px;
 
       padding: 0 22px;
@@ -693,7 +945,9 @@
       border-radius: 13px;
 
       display: inline-flex;
+
       align-items: center;
+
       justify-content: center;
 
       gap: 9px;
@@ -701,21 +955,27 @@
       text-decoration: none;
 
       font-size: 16px;
+
       font-weight: 800;
 
       box-shadow:
         0 8px 22px rgba(0, 0, 0, .18);
     }
 
+
     .contact-mail {
       background: #ffffff;
+
       color: var(--green);
     }
 
+
     .contact-whatsapp {
       background: #159447;
+
       color: #ffffff;
     }
+
 
     /* =========================
        MOBILE
@@ -727,23 +987,30 @@
         grid-template-columns: 1fr;
       }
 
+
       .main {
         padding: 0 15px;
+
         margin-top: -28px;
       }
+
 
       .hero-inner {
         padding: 125px 18px 60px;
       }
 
+
       .hero h1 {
         font-size: 45px;
       }
 
+
       .hero p {
         font-size: 16px;
       }
+
     }
+
 
     @media (max-width: 520px) {
 
@@ -751,45 +1018,74 @@
         padding: 115px 18px 60px;
       }
 
+
       .hero h1 {
         font-size: 45px;
       }
 
+
       .hero-actions {
         flex-direction: column;
+
         align-items: stretch;
       }
+
 
       .primary,
       .secondary {
         width: 100%;
       }
 
+
       .hero-top-right {
         top: 18px;
+
         right: 15px;
+
         gap: 10px;
       }
+
 
       .hero-logo {
         width: 76px;
         height: 76px;
       }
 
+
       .logout-button {
         min-height: 39px;
+
         padding: 0 11px;
+
         font-size: 12px;
       }
 
-      .document-summary {
+
+      .storage-summary {
         padding: 15px 16px;
       }
 
-      .document-details {
+
+      .storage-content {
         padding-left: 16px;
+
         padding-right: 16px;
       }
+
+
+      .file-item {
+        align-items: flex-start;
+      }
+
+
+      .file-open {
+        min-height: 34px;
+
+        padding: 0 10px;
+
+        font-size: 11px;
+      }
+
 
       .contact-buttons {
         display: grid;
@@ -799,8 +1095,10 @@
         gap: 10px;
       }
 
+
       .contact-button {
         min-width: 0;
+
         min-height: 56px;
 
         padding: 0 10px;
@@ -808,9 +1106,11 @@
         font-size: 15px;
       }
 
+
       .footer-inner {
         padding: 42px 18px 48px;
       }
+
     }
 
   </style>
@@ -1051,66 +1351,249 @@
       </div>
 
 
-      <div class="document-list">
+      <div class="storage-list">
 
 
-        <details class="document-item">
+        <!-- VERTRAGSUNTERLAGEN -->
 
+        <details
+          class="storage-item"
+          data-folder="Vertragsunterlagen"
+        >
 
-          <summary class="document-summary">
+          <summary class="storage-summary">
 
+            <span class="storage-title">
 
-            <span class="document-title">
-
-
-              <span class="document-icon">
-                PDF
+              <span class="storage-icon">
+                📄
               </span>
-
 
               <span>
 
-                <span class="document-name">
-                  Trainer-Dokumente
+                <span class="storage-name">
+                  Vertragsunterlagen
                 </span>
 
-                <span class="document-type">
-                  Interne Unterlagen · Supabase Storage
+                <span class="storage-description">
+                  Verträge und persönliche Unterlagen
                 </span>
 
               </span>
 
-
             </span>
 
 
-            <span class="document-chevron">
+            <span class="storage-chevron">
               ⌄
             </span>
-
 
           </summary>
 
 
-          <div class="document-details">
+          <div class="storage-content">
 
-            <div class="document-description">
-
-              Die verfügbaren Trainer-Unterlagen
-              werden aus dem geschützten Supabase
-              Storage geladen.
-
+            <div class="file-loading">
+              Dokumente werden geladen …
             </div>
-
-            <span
-              class="document-status"
-              id="documentStatus"
-            >
-              Dokumente werden vorbereitet …
-            </span>
 
           </div>
 
+        </details>
+
+
+
+        <!-- KONZEPTE -->
+
+        <details
+          class="storage-item"
+          data-folder="Konzepte"
+        >
+
+          <summary class="storage-summary">
+
+            <span class="storage-title">
+
+              <span class="storage-icon">
+                📘
+              </span>
+
+              <span>
+
+                <span class="storage-name">
+                  Konzepte
+                </span>
+
+                <span class="storage-description">
+                  Konzepte und interne Arbeitsunterlagen
+                </span>
+
+              </span>
+
+            </span>
+
+
+            <span class="storage-chevron">
+              ⌄
+            </span>
+
+          </summary>
+
+
+          <div class="storage-content">
+
+            <div class="file-loading">
+              Dokumente werden geladen …
+            </div>
+
+          </div>
+
+        </details>
+
+
+
+        <!-- SPENDEN -->
+
+        <details
+          class="storage-item"
+          data-folder="Spenden"
+        >
+
+          <summary class="storage-summary">
+
+            <span class="storage-title">
+
+              <span class="storage-icon">
+                💚
+              </span>
+
+              <span>
+
+                <span class="storage-name">
+                  Spenden
+                </span>
+
+                <span class="storage-description">
+                  Informationen und Unterlagen zu Spenden
+                </span>
+
+              </span>
+
+            </span>
+
+
+            <span class="storage-chevron">
+              ⌄
+            </span>
+
+          </summary>
+
+
+          <div class="storage-content">
+
+            <div class="file-loading">
+              Dokumente werden geladen …
+            </div>
+
+          </div>
+
+        </details>
+
+
+
+        <!-- ABRECHNUNG -->
+
+        <details
+          class="storage-item"
+          data-folder="Abrechnung"
+        >
+
+          <summary class="storage-summary">
+
+            <span class="storage-title">
+
+              <span class="storage-icon">
+                💶
+              </span>
+
+              <span>
+
+                <span class="storage-name">
+                  Abrechnung
+                </span>
+
+                <span class="storage-description">
+                  Abrechnungen und finanzielle Unterlagen
+                </span>
+
+              </span>
+
+            </span>
+
+
+            <span class="storage-chevron">
+              ⌄
+            </span>
+
+          </summary>
+
+
+          <div class="storage-content">
+
+            <div class="file-loading">
+              Dokumente werden geladen …
+            </div>
+
+          </div>
+
+        </details>
+
+
+
+        <!-- PROTOKOLLE -->
+
+        <details
+          class="storage-item"
+          data-folder="Protokolle"
+        >
+
+          <summary class="storage-summary">
+
+            <span class="storage-title">
+
+              <span class="storage-icon">
+                📝
+              </span>
+
+              <span>
+
+                <span class="storage-name">
+                  Protokolle
+                </span>
+
+                <span class="storage-description">
+                  Sitzungs- und Besprechungsprotokolle
+                </span>
+
+              </span>
+
+            </span>
+
+
+            <span class="storage-chevron">
+              ⌄
+            </span>
+
+          </summary>
+
+
+          <div class="storage-content">
+
+            <div class="file-loading">
+              Dokumente werden geladen …
+            </div>
+
+          </div>
 
         </details>
 
@@ -1136,9 +1619,8 @@
 
         Dieser Bereich ist ausschließlich für
         berechtigte Trainer und Verantwortliche
-        vorgesehen. Die Dokumente werden nicht
-        über GitHub, sondern über den geschützten
-        Supabase Storage bereitgestellt.
+        vorgesehen. Die Dokumente werden aus dem
+        geschützten Supabase Storage bereitgestellt.
 
       </p>
 
@@ -1213,11 +1695,21 @@
 
   <script>
 
+
+    /* =========================================================
+       SUPABASE KONFIGURATION
+    ========================================================= */
+
     const SUPABASE_URL =
       "https://sluoffqujtofnhmfqfac.supabase.co";
 
+
     const SUPABASE_PUBLISHABLE_KEY =
       "sb_publishable_MbxdNe22XUoLVfF5_K-6xA_Wkos9EmS";
+
+
+    const SUPABASE_BUCKET =
+      "trainer-dokumente";
 
 
     const supabaseClient =
@@ -1227,33 +1719,35 @@
       );
 
 
+
     /* =========================================================
-       TRAINERBEREICH LADEN
+       TRAINERPROFIL LADEN
     ========================================================= */
 
     async function loadTrainer() {
 
-      console.log("=================================");
-      console.log("TRAINERBEREICH START");
-      console.log("=================================");
+      console.log(
+        "TRAINERBEREICH START"
+      );
 
 
       try {
 
-        /* -----------------------------------------
-           1. SESSION LADEN
-        ----------------------------------------- */
 
         const {
           data,
           error
-        } = await supabaseClient.auth.getSession();
+        } =
+          await supabaseClient
+            .auth
+            .getSession();
 
 
         console.log(
           "SESSION:",
           data
         );
+
 
         console.log(
           "SESSION ERROR:",
@@ -1294,14 +1788,10 @@
         );
 
 
-        /* -----------------------------------------
-           2. TRAINERPROFIL LADEN
-        ----------------------------------------- */
 
-        console.log(
-          "Lade trainer_profiles..."
-        );
-
+        /* =====================================================
+           TRAINERPROFIL
+        ===================================================== */
 
         const {
           data: profile,
@@ -1319,93 +1809,31 @@
           profile
         );
 
+
         console.log(
           "TRAINERPROFIL FEHLER:",
           profileError
         );
 
 
-        /* -----------------------------------------
-           3. NAMEN ERMITTELN
-           
-           Reihenfolge:
-           
-           1. first_name aus trainer_profiles
-           2. name aus trainer_profiles
-           3. first_name aus User-Metadaten
-           4. name aus User-Metadaten
-           5. "Trainer"
-        ----------------------------------------- */
-
-        let vorname = "";
-
-
         if (
-          profile &&
-          profile.first_name
+          profileError ||
+          !profile
         ) {
 
-          vorname =
-            String(
-              profile.first_name
-            ).trim();
+          console.error(
+            "TRAINERPROFIL KONNTE NICHT GELADEN WERDEN"
+          );
+
+          return;
 
         }
 
 
-        if (
-          !vorname &&
-          profile &&
-          profile.name
-        ) {
 
-          vorname =
-            String(
-              profile.name
-            ).trim();
-
-        }
-
-
-        if (
-          !vorname &&
-          user.user_metadata &&
-          user.user_metadata.first_name
-        ) {
-
-          vorname =
-            String(
-              user.user_metadata.first_name
-            ).trim();
-
-        }
-
-
-        if (
-          !vorname &&
-          user.user_metadata &&
-          user.user_metadata.name
-        ) {
-
-          vorname =
-            String(
-              user.user_metadata.name
-            ).trim();
-
-        }
-
-
-        if (!vorname) {
-
-          vorname =
-            "Trainer";
-
-        }
-
-
-        /* -----------------------------------------
-           4. NAMEN ANZEIGEN
-        ----------------------------------------- */
+        /* =====================================================
+           VORNAME ANZEIGEN
+        ===================================================== */
 
         const trainerName =
           document.getElementById(
@@ -1413,41 +1841,32 @@
           );
 
 
-        if (trainerName) {
+        if (
+          trainerName &&
+          profile.name
+        ) {
+
+          const fullName =
+            profile.name.trim();
+
+
+          const firstName =
+            fullName.split(/\s+/)[0];
+
 
           trainerName.textContent =
-            vorname;
+            firstName;
 
         }
 
 
-        /* -----------------------------------------
-           5. STATUS ANZEIGEN
-        ----------------------------------------- */
 
-        const documentStatus =
-          document.getElementById(
-            "documentStatus"
-          );
+        /* =====================================================
+           STORAGE BEREICHE VORBEREITEN
+        ===================================================== */
 
+        setupStorageFolders();
 
-        if (documentStatus) {
-
-          documentStatus.textContent =
-            "Anmeldung aktiv · Trainerbereich geschützt";
-
-        }
-
-
-        console.log(
-          "ANGEZEIGTER VORNAME:",
-          vorname
-        );
-
-
-        console.log(
-          "TRAINERBEREICH ERFOLGREICH GELADEN"
-        );
 
       }
 
@@ -1464,30 +1883,467 @@
     }
 
 
+
+    /* =========================================================
+       STORAGE BEREICHE
+    ========================================================= */
+
+    function setupStorageFolders() {
+
+
+      const folders =
+        document.querySelectorAll(
+          ".storage-item"
+        );
+
+
+      folders.forEach(
+        function (folderElement) {
+
+
+          folderElement.addEventListener(
+            "toggle",
+            function () {
+
+
+              if (
+                folderElement.open
+              ) {
+
+                loadFolder(
+                  folderElement
+                );
+
+              }
+
+            }
+          );
+
+
+        }
+      );
+
+    }
+
+
+
+    /* =========================================================
+       ORDNER AUS SUPABASE STORAGE LADEN
+    ========================================================= */
+
+    async function loadFolder(
+      folderElement
+    ) {
+
+
+      const folderName =
+        folderElement.dataset.folder;
+
+
+      const content =
+        folderElement.querySelector(
+          ".storage-content"
+        );
+
+
+      if (!content) {
+        return;
+      }
+
+
+      content.innerHTML = `
+        <div class="file-loading">
+          Dokumente werden geladen …
+        </div>
+      `;
+
+
+
+      console.log(
+        "Lade Storage-Ordner:",
+        folderName
+      );
+
+
+
+      try {
+
+
+        const {
+          data: files,
+          error
+        } =
+          await supabaseClient
+            .storage
+            .from(SUPABASE_BUCKET)
+            .list(
+              folderName,
+              {
+                limit: 100,
+                offset: 0,
+                sortBy: {
+                  column: "name",
+                  order: "asc"
+                }
+              }
+            );
+
+
+        console.log(
+          "Storage:",
+          folderName,
+          files
+        );
+
+
+        console.log(
+          "Storage Fehler:",
+          error
+        );
+
+
+        if (error) {
+
+          content.innerHTML = `
+            <div class="file-error">
+              Die Dokumente konnten nicht geladen werden.
+            </div>
+          `;
+
+          return;
+
+        }
+
+
+        if (
+          !files ||
+          files.length === 0
+        ) {
+
+          content.innerHTML = `
+            <div class="file-empty">
+              In diesem Bereich sind aktuell keine Dokumente vorhanden.
+            </div>
+          `;
+
+          return;
+
+        }
+
+
+
+        /* =====================================================
+           NUR DATEIEN ANZEIGEN
+        ===================================================== */
+
+        const realFiles =
+          files.filter(
+            function (file) {
+
+              return (
+                file.name &&
+                file.id
+              );
+
+            }
+          );
+
+
+        if (
+          realFiles.length === 0
+        ) {
+
+          content.innerHTML = `
+            <div class="file-empty">
+              In diesem Bereich sind aktuell keine Dokumente vorhanden.
+            </div>
+          `;
+
+          return;
+
+        }
+
+
+
+        /* =====================================================
+           DATEILISTE ERSTELLEN
+        ===================================================== */
+
+        const list =
+          document.createElement(
+            "div"
+          );
+
+
+        list.className =
+          "file-list";
+
+
+        for (
+          const file
+          of realFiles
+        ) {
+
+
+          const filePath =
+            folderName +
+            "/" +
+            file.name;
+
+
+
+          /* ===================================================
+             SIGNIERTE URL
+          =================================================== */
+
+          const {
+            data: signedData,
+            error: signedError
+          } =
+            await supabaseClient
+              .storage
+              .from(SUPABASE_BUCKET)
+              .createSignedUrl(
+                filePath,
+                3600
+              );
+
+
+          if (
+            signedError ||
+            !signedData ||
+            !signedData.signedUrl
+          ) {
+
+            console.error(
+              "Fehler bei Datei:",
+              file.name,
+              signedError
+            );
+
+            continue;
+
+          }
+
+
+
+          /* ===================================================
+             DATEI-ELEMENT
+          =================================================== */
+
+          const item =
+            document.createElement(
+              "div"
+            );
+
+
+          item.className =
+            "file-item";
+
+
+          const info =
+            document.createElement(
+              "div"
+            );
+
+
+          info.className =
+            "file-info";
+
+
+          const symbol =
+            document.createElement(
+              "div"
+            );
+
+
+          symbol.className =
+            "file-symbol";
+
+
+          symbol.textContent =
+            getFileType(
+              file.name
+            );
+
+
+          const name =
+            document.createElement(
+              "div"
+            );
+
+
+          name.className =
+            "file-name";
+
+
+          name.textContent =
+            file.name;
+
+
+          info.appendChild(
+            symbol
+          );
+
+
+          info.appendChild(
+            name
+          );
+
+
+
+          const open =
+            document.createElement(
+              "a"
+            );
+
+
+          open.className =
+            "file-open";
+
+
+          open.href =
+            signedData.signedUrl;
+
+
+          open.target =
+            "_blank";
+
+
+          open.rel =
+            "noopener noreferrer";
+
+
+          open.textContent =
+            "Öffnen →";
+
+
+          item.appendChild(
+            info
+          );
+
+
+          item.appendChild(
+            open
+          );
+
+
+          list.appendChild(
+            item
+          );
+
+        }
+
+
+        content.innerHTML = "";
+
+
+        content.appendChild(
+          list
+        );
+
+
+      }
+
+
+      catch (error) {
+
+
+        console.error(
+          "Storage Fehler:",
+          error
+        );
+
+
+        content.innerHTML = `
+          <div class="file-error">
+            Beim Laden der Dokumente ist ein Fehler aufgetreten.
+          </div>
+        `;
+
+      }
+
+    }
+
+
+
+    /* =========================================================
+       DATEITYP ERMITTELN
+    ========================================================= */
+
+    function getFileType(
+      fileName
+    ) {
+
+
+      const extension =
+        fileName
+          .split(".")
+          .pop()
+          .toUpperCase();
+
+
+      if (
+        extension === "PDF"
+      ) {
+
+        return "PDF";
+
+      }
+
+
+      if (
+        extension === "DOC" ||
+        extension === "DOCX"
+      ) {
+
+        return "DOC";
+
+      }
+
+
+      if (
+        extension === "XLS" ||
+        extension === "XLSX"
+      ) {
+
+        return "XLS";
+
+      }
+
+
+      if (
+        extension === "PPT" ||
+        extension === "PPTX"
+      ) {
+
+        return "PPT";
+
+      }
+
+
+      return "DATEI";
+
+    }
+
+
+
     /* =========================================================
        ABMELDEN
     ========================================================= */
 
     document
-      .getElementById("logoutButton")
+      .getElementById(
+        "logoutButton"
+      )
       .addEventListener(
         "click",
         async function () {
 
-          try {
 
-            await supabaseClient.auth.signOut();
-
-          }
-
-          catch (error) {
-
-            console.error(
-              "Fehler beim Abmelden:",
-              error
-            );
-
-          }
+          await supabaseClient
+            .auth
+            .signOut();
 
 
           window.location.href =
@@ -1497,11 +2353,13 @@
       );
 
 
+
     /* =========================================================
        START
     ========================================================= */
 
     loadTrainer();
+
 
   </script>
 
