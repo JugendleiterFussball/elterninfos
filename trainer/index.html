@@ -863,10 +863,10 @@
 
         <h1>
 
-          Willkommen im
+          Willkommen,
 
-          <strong>
-            Trainerbereich
+          <strong id="trainerName">
+            Trainer
           </strong>
 
         </h1>
@@ -922,8 +922,6 @@
 
   <main class="main">
 
-
-    <!-- SCHNELLZUGRIFF -->
 
     <section>
 
@@ -1077,7 +1075,7 @@
                 </span>
 
                 <span class="document-type">
-                  Interne Unterlagen · PDF
+                  Interne Unterlagen · Supabase Storage
                 </span>
 
               </span>
@@ -1099,13 +1097,13 @@
             <div class="document-description">
 
               Die verfügbaren Trainer-Unterlagen
-              werden später automatisch aus dem
-              geschützten Supabase Storage geladen.
+              werden aus dem geschützten Supabase
+              Storage geladen.
 
             </div>
 
-            <span class="document-status">
-              Noch keine Dokumente geladen
+            <span class="document-status" id="documentStatus">
+              Dokumente werden vorbereitet …
             </span>
 
           </div>
@@ -1135,9 +1133,9 @@
 
         Dieser Bereich ist ausschließlich für
         berechtigte Trainer und Verantwortliche
-        vorgesehen. Die Dokumente werden später
-        nicht über GitHub, sondern über den
-        geschützten Supabase Storage bereitgestellt.
+        vorgesehen. Die Dokumente werden nicht
+        über GitHub, sondern über den geschützten
+        Supabase Storage bereitgestellt.
 
       </p>
 
@@ -1203,23 +1201,235 @@
 
 
 
+  <!-- =========================
+       SUPABASE
+  ========================= -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
   <script>
 
-    /*
-      Supabase Auth wird im nächsten Schritt
-      eingebunden.
+    /* =========================================================
+       SUPABASE KONFIGURATION
+    ========================================================= */
 
-      Bis dahin führt der Abmelden-Button
-      zurück zur Login-Seite.
-    */
+    const SUPABASE_URL =
+      "https://sluoffqujtofnhmfqfac.supabase.co";
+
+    const SUPABASE_PUBLISHABLE_KEY =
+      "sb_publishable_MbxdNe22XUoLVfF5_K-6xA_Wkos9EmS";
+
+
+    const supabaseClient =
+      window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+      );
+
+
+    /* =========================================================
+       TRAINERPROFIL LADEN
+    ========================================================= */
+
+    async function loadTrainerProfile() {
+
+      try {
+
+        /*
+         * Prüfen, ob überhaupt eine gültige
+         * Supabase-Anmeldung vorhanden ist.
+         */
+
+        const {
+          data: sessionData,
+          error: sessionError
+        } =
+          await supabaseClient.auth.getSession();
+
+
+        if (sessionError) {
+          throw sessionError;
+        }
+
+
+        const session =
+          sessionData.session;
+
+
+        /*
+         * Keine Anmeldung vorhanden
+         */
+
+        if (!session || !session.user) {
+
+          window.location.href =
+            "login.html";
+
+          return;
+
+        }
+
+
+        /*
+         * Trainerprofil laden.
+         *
+         * WICHTIG:
+         * Die Tabelle trainer_profiles benötigt
+         * eine Spalte "name".
+         */
+
+        const {
+          data: profile,
+          error: profileError
+        } =
+          await supabaseClient
+            .from("trainer_profiles")
+            .select("name, role")
+            .eq("id", session.user.id)
+            .single();
+
+
+        if (profileError) {
+
+          console.error(
+            "Trainerprofil:",
+            profileError
+          );
+
+          throw new Error(
+            "Das Trainerprofil konnte nicht geladen werden."
+          );
+
+        }
+
+
+        /*
+         * Rolle kontrollieren
+         */
+
+        if (
+          profile.role !== "trainer" &&
+          profile.role !== "admin"
+        ) {
+
+          await supabaseClient.auth.signOut();
+
+          window.location.href =
+            "login.html";
+
+          return;
+
+        }
+
+
+        /*
+         * Namen einsetzen
+         */
+
+        const trainerName =
+          document.getElementById("trainerName");
+
+
+        if (
+          profile.name &&
+          profile.name.trim() !== ""
+        ) {
+
+          trainerName.textContent =
+            profile.name.trim();
+
+        } else {
+
+          trainerName.textContent =
+            "Trainer";
+
+        }
+
+
+        /*
+         * Dokumentstatus aktualisieren
+         */
+
+        const documentStatus =
+          document.getElementById("documentStatus");
+
+
+        if (documentStatus) {
+
+          documentStatus.textContent =
+            "Geschützter Bereich · Anmeldung aktiv";
+
+        }
+
+
+      } catch (error) {
+
+        console.error(
+          "Trainerbereich:",
+          error
+        );
+
+        /*
+         * Wenn das Profil nicht geladen werden kann,
+         * nicht einfach den Bereich offen lassen.
+         */
+
+        await supabaseClient.auth.signOut();
+
+        window.location.href =
+          "login.html";
+
+      }
+
+    }
+
+
+    /* =========================================================
+       ABMELDEN
+    ========================================================= */
 
     document
       .getElementById("logoutButton")
-      .addEventListener("click", function () {
+      .addEventListener(
+        "click",
+        async function () {
 
-        window.location.href = "login.html";
+          const button =
+            document.getElementById("logoutButton");
 
-      });
+          button.disabled = true;
+
+          button.textContent =
+            "Abmelden …";
+
+
+          try {
+
+            await supabaseClient.auth.signOut();
+
+          } catch (error) {
+
+            console.error(
+              "Abmelden:",
+              error
+            );
+
+          }
+
+
+          window.location.href =
+            "login.html";
+
+        }
+      );
+
+
+    /* =========================================================
+       START
+    ========================================================= */
+
+    loadTrainerProfile();
 
   </script>
 
