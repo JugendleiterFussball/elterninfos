@@ -2,7 +2,6 @@
 <html lang="de">
 
 <head>
-
   <meta charset="UTF-8">
 
   <meta
@@ -11,7 +10,6 @@
   >
 
   <title>USV Jugendfußball</title>
-
 
   <style>
 
@@ -27,11 +25,6 @@
       --line:#dfe7e2;
       --blue:#1769e0;
     }
-
-
-    /* =========================================================
-       GRUNDLAGEN
-    ========================================================= */
 
     *{
       box-sizing:border-box;
@@ -66,21 +59,15 @@
     }
 
 
-
     /* =========================================================
        HERO
     ========================================================= */
 
     .hero{
       position:relative;
-
       min-height:560px;
-
       overflow:hidden;
-
       color:#ffffff;
-
-      margin:0;
 
       background:
         radial-gradient(
@@ -96,12 +83,9 @@
         );
     }
 
-
     .hero:after{
       content:"";
-
       position:absolute;
-
       inset:0;
 
       background:
@@ -119,10 +103,8 @@
       pointer-events:none;
     }
 
-
     .hero-inner{
       position:relative;
-
       z-index:2;
 
       max-width:1180px;
@@ -130,34 +112,24 @@
 
       margin:auto;
 
-      padding:
-        105px
-        24px
-        70px;
+      padding:105px 24px 70px;
 
       display:flex;
-
       align-items:center;
     }
-
 
     .hero-copy{
       max-width:650px;
     }
 
-
     .eyebrow{
       display:inline-flex;
-
       align-items:center;
-
       gap:8px;
 
       font-size:13px;
       font-weight:800;
-
       letter-spacing:.08em;
-
       text-transform:uppercase;
 
       color:#bff0ce;
@@ -165,56 +137,37 @@
       margin-bottom:16px;
     }
 
-
     .eyebrow:before{
       content:"";
-
       width:28px;
       height:2px;
-
       background:var(--green-3);
-
       border-radius:2px;
     }
-
 
     .hero h1{
       margin:0;
 
-      font-size:
-        clamp(
-          42px,
-          6vw,
-          72px
-        );
-
+      font-size:clamp(42px,6vw,72px);
       line-height:.98;
-
       letter-spacing:-.045em;
 
       color:#ffffff;
     }
 
-
     .hero h1 strong{
       display:block;
-
       color:#ffffff;
     }
-
 
     .hero p{
       max-width:560px;
 
-      margin:
-        22px
-        0
-        28px;
+      margin:22px 0 28px;
 
       color:#eef5f1;
 
       font-size:18px;
-
       line-height:1.55;
 
       text-shadow:
@@ -223,38 +176,29 @@
     }
 
 
-
     /* =========================================================
        HERO BUTTONS
     ========================================================= */
 
     .hero-actions{
       display:flex;
-
       flex-wrap:wrap;
-
       gap:12px;
     }
-
 
     .primary,
     .secondary{
       display:inline-flex;
-
       align-items:center;
-
       justify-content:center;
 
       min-height:48px;
 
-      padding:
-        0
-        20px;
+      padding:0 20px;
 
       border-radius:11px;
 
       text-decoration:none;
-
       font-weight:800;
 
       transition:
@@ -263,10 +207,8 @@
         box-shadow .15s ease;
     }
 
-
     .primary{
       background:var(--green-3);
-
       color:#ffffff !important;
 
       box-shadow:
@@ -274,14 +216,10 @@
         rgba(21,148,71,.30);
     }
 
-
     .primary:hover{
       background:#20bd61;
-
-      transform:
-        translateY(-1px);
+      transform:translateY(-1px);
     }
-
 
     .secondary{
       border:
@@ -293,19 +231,15 @@
 
       color:#ffffff !important;
 
-      backdrop-filter:
-        blur(8px);
+      backdrop-filter:blur(8px);
     }
-
 
     .secondary:hover{
       background:
         rgba(255,255,255,.15);
 
-      transform:
-        translateY(-1px);
+      transform:translateY(-1px);
     }
-
 
 
     /* =========================================================
@@ -316,7 +250,6 @@
       position:absolute;
 
       right:-120px;
-
       bottom:-180px;
 
       width:650px;
@@ -329,13 +262,9 @@
         rgba(151,232,176,.12);
 
       box-shadow:
-        0 0 0 80px
-        rgba(151,232,176,.025),
-
-        0 0 0 160px
-        rgba(151,232,176,.018);
+        0 0 0 80px rgba(151,232,176,.025),
+        0 0 0 160px rgba(151,232,176,.018);
     }
-
 
 
     /* =========================================================
@@ -351,14 +280,10 @@
       z-index:8;
 
       display:flex;
-
       flex-direction:column;
-
       align-items:center;
-
       gap:16px;
     }
-
 
     .hero-logo{
       width:190px;
@@ -377,19 +302,14 @@
         rgba(0,0,0,.22);
     }
 
-
     .hero-login{
       display:inline-flex;
-
       align-items:center;
-
       justify-content:center;
 
       min-height:44px;
 
-      padding:
-        0
-        15px;
+      padding:0 15px;
 
       border-radius:10px;
 
@@ -398,38 +318,24 @@
       color:#ffffff !important;
 
       text-decoration:none;
-
       font-weight:800;
 
       box-shadow:
         0 8px 22px
         rgba(0,0,0,.22);
-
-      transition:
-        background .15s ease,
-        transform .15s ease;
     }
-
 
     .hero-login:hover{
       background:#0f5dcc;
-
-      transform:
-        translateY(-1px);
     }
 
 
-
     /* =========================================================
-       HAUPTINHALT
-
-       Kein negatives margin.
-       Dadurch liegt die Überschrift sauber unter dem Hero.
+       MAIN
     ========================================================= */
 
     .main{
       width:100%;
-
       max-width:1180px;
 
       margin:0 auto;
@@ -438,78 +344,42 @@
         42px
         24px
         100px;
-
-      position:relative;
-
-      z-index:3;
     }
-
 
 
     /* =========================================================
-       ÜBERSCHRIFT
+       SCHNELLZUGRIFF
     ========================================================= */
 
     .section-head{
-      display:flex;
-
-      align-items:flex-end;
-
-      justify-content:space-between;
-
-      gap:20px;
-
-      margin:
-        0
-        0
-        16px;
+      margin:0 0 16px;
     }
-
 
     .section-head h2{
       margin:0;
 
       font-size:23px;
-
       line-height:1.2;
 
       letter-spacing:-.02em;
-
-      color:#17201b;
     }
-
 
     .section-head p{
-      margin:
-        6px
-        0
-        0;
+      margin:6px 0 0;
 
-      color:#66716b;
+      color:var(--muted);
 
       font-size:14px;
-
-      line-height:1.45;
     }
-
-
-
-    /* =========================================================
-       KARTEN
-    ========================================================= */
 
     .cards{
       display:grid;
 
       grid-template-columns:
-        repeat(
-          3,
-          1fr
-        );
+        repeat(3,1fr);
 
       gap:16px;
     }
-
 
     .card{
       display:block;
@@ -535,23 +405,19 @@
         box-shadow .15s ease;
     }
 
-
     .card:hover{
-      transform:
-        translateY(-2px);
+      transform:translateY(-2px);
 
       box-shadow:
         0 14px 32px
         rgba(12,36,22,.10);
     }
 
-
     .icon{
       width:45px;
       height:45px;
 
       display:grid;
-
       place-items:center;
 
       border-radius:12px;
@@ -565,29 +431,20 @@
       margin-bottom:18px;
     }
 
-
     .card h3{
-      margin:
-        0
-        0
-        8px;
+      margin:0 0 8px;
 
       font-size:18px;
-
-      color:#17201b;
     }
-
 
     .card p{
       margin:0;
 
-      color:#66716b;
+      color:var(--muted);
 
       font-size:14px;
-
       line-height:1.5;
     }
-
 
     .card .more{
       display:inline-block;
@@ -597,68 +454,51 @@
       color:var(--green);
 
       font-size:13px;
-
       font-weight:800;
     }
 
+
+    /* =========================================================
+       ABSCHNITTE
+    ========================================================= */
+
+    .teams,
+    .documents{
+      margin-top:40px;
+    }
+
+    .section-title{
+      margin:0 0 14px;
+      padding:0 2px;
+    }
+
+    .section-title h2{
+      margin:0;
+
+      font-size:23px;
+      line-height:1.15;
+
+      letter-spacing:-.03em;
+    }
+
+    .section-title p{
+      margin:6px 0 0;
+
+      color:var(--muted);
+
+      font-size:13px;
+    }
 
 
     /* =========================================================
        MANNSCHAFTEN
     ========================================================= */
 
-    .teams{
-      margin-top:34px;
-    }
-
-
-    .section-title{
-      margin:
-        0
-        0
-        14px;
-
-      padding:
-        0
-        2px;
-    }
-
-
-    .section-title h2{
-      margin:0;
-
-      font-size:23px;
-
-      line-height:1.15;
-
-      letter-spacing:-.03em;
-
-      color:#17201b;
-    }
-
-
-    .section-title p{
-      margin:
-        6px
-        0
-        0;
-
-      color:#66716b;
-
-      font-size:13px;
-
-      line-height:1.45;
-    }
-
-
     .team-list{
       display:grid;
-
       grid-template-columns:1fr;
-
       gap:10px;
     }
-
 
     .team-card{
       background:#ffffff;
@@ -676,23 +516,17 @@
         rgba(9,38,21,.05);
     }
 
-
     .team-summary{
       min-height:62px;
-
       width:100%;
 
       display:flex;
-
       align-items:center;
-
       justify-content:space-between;
 
       gap:15px;
 
-      padding:
-        15px
-        17px;
+      padding:15px 17px;
 
       border:0;
 
@@ -709,32 +543,24 @@
       list-style:none;
     }
 
-
     .team-summary::-webkit-details-marker{
       display:none;
     }
-
 
     .team-summary:hover{
       background:#fbfcfb;
     }
 
-
     .team-name{
       font-size:15px;
-
       font-weight:800;
-
-      letter-spacing:-.015em;
     }
-
 
     .team-chevron{
       width:28px;
       height:28px;
 
       display:grid;
-
       place-items:center;
 
       border-radius:50%;
@@ -748,16 +574,14 @@
         background .2s ease;
     }
 
-
-    .team-card[open] .team-chevron{
-      transform:
-        rotate(180deg);
+    .team-card[open]
+    .team-chevron{
+      transform:rotate(180deg);
 
       background:#eaf5ee;
 
       color:var(--green);
     }
-
 
     .team-details{
       padding:
@@ -772,89 +596,56 @@
       background:#fbfcfb;
     }
 
-
     .team-row{
       display:flex;
-
       align-items:flex-start;
 
       gap:14px;
 
-      padding:
-        11px
-        0;
+      padding:11px 0;
 
       border-bottom:
         1px solid
         #e9eeeb;
 
       font-size:13px;
-
       line-height:1.4;
     }
-
 
     .team-row:last-child{
       border-bottom:0;
     }
 
-
     .team-label{
       width:110px;
 
-      flex:
-        0
-        0
-        110px;
+      flex:0 0 110px;
 
-      color:#66716b;
+      color:var(--muted);
 
       font-weight:700;
     }
 
-
     .team-value{
       color:#26312b;
-
       font-weight:650;
     }
 
-
     .team-times{
       display:grid;
-
       gap:4px;
     }
-
 
 
     /* =========================================================
        DOKUMENTE
     ========================================================= */
 
-    .documents{
-      margin-top:34px;
-
-      background:transparent;
-
-      border:0;
-
-      border-radius:0;
-
-      overflow:visible;
-
-      box-shadow:none;
-    }
-
-
     .document-list{
       display:grid;
-
       grid-template-columns:1fr;
-
       gap:10px;
     }
-
 
     .document-item{
       background:#ffffff;
@@ -872,51 +663,37 @@
         rgba(9,38,21,.05);
     }
 
-
     .document-summary{
       min-height:62px;
-
       width:100%;
 
       display:flex;
-
       align-items:center;
-
       justify-content:space-between;
 
       gap:14px;
 
-      padding:
-        15px
-        17px;
+      padding:15px 17px;
 
       background:#ffffff;
 
       color:var(--text);
 
-      text-align:left;
-
       cursor:pointer;
-
-      font:inherit;
 
       list-style:none;
     }
-
 
     .document-summary::-webkit-details-marker{
       display:none;
     }
 
-
     .document-summary:hover{
       background:#fbfcfb;
     }
 
-
     .document-title{
       display:flex;
-
       align-items:center;
 
       gap:13px;
@@ -924,18 +701,13 @@
       min-width:0;
     }
 
-
     .document-icon{
       width:40px;
       height:40px;
 
-      flex:
-        0
-        0
-        40px;
+      flex:0 0 40px;
 
       display:grid;
-
       place-items:center;
 
       border-radius:11px;
@@ -945,21 +717,15 @@
       color:var(--green);
 
       font-size:10px;
-
       font-weight:900;
     }
-
 
     .document-name{
       display:block;
 
       font-size:14px;
-
       font-weight:800;
-
-      color:#1d2822;
     }
-
 
     .document-type{
       display:block;
@@ -969,23 +735,17 @@
       color:#737e78;
 
       font-size:11px;
-
       font-weight:600;
     }
-
 
     .document-chevron{
       width:28px;
       height:28px;
 
       display:grid;
-
       place-items:center;
 
-      flex:
-        0
-        0
-        28px;
+      flex:0 0 28px;
 
       border-radius:50%;
 
@@ -1000,17 +760,14 @@
         background .2s ease;
     }
 
-
     .document-item[open]
     .document-chevron{
-      transform:
-        rotate(180deg);
+      transform:rotate(180deg);
 
       background:#eaf5ee;
 
       color:var(--green);
     }
-
 
     .document-details{
       padding:
@@ -1024,21 +781,15 @@
 
       background:#fbfcfb;
 
-      color:#66716b;
+      color:var(--muted);
 
       font-size:13px;
-
       line-height:1.5;
     }
 
-
     .document-description{
-      padding:
-        12px
-        0
-        7px;
+      padding:12px 0 7px;
     }
-
 
     .document-link{
       display:inline-block;
@@ -1051,23 +802,11 @@
     }
 
 
-    .document-link:hover{
-      text-decoration:underline;
-    }
-
-
-
     /* =========================================================
-       TRAINERBEREICH UNTEN
+       TRAINERBEREICH
     ========================================================= */
 
     .trainer-section{
-      margin:0;
-
-      border-radius:0;
-
-      overflow:hidden;
-
       background:
         radial-gradient(
           circle at 85% 20%,
@@ -1081,88 +820,58 @@
         );
 
       color:#ffffff;
-
-      box-shadow:
-        0 -5px 25px
-        rgba(0,0,0,.04);
     }
-
 
     .trainer-inner{
       max-width:1180px;
 
       margin:auto;
 
-      padding:
-        30px
-        24px;
+      padding:30px 24px;
 
       display:flex;
-
       align-items:center;
-
       justify-content:space-between;
 
       gap:25px;
     }
 
-
     .trainer-copy{
       max-width:680px;
     }
-
 
     .trainer-copy .small{
       color:#a9caf6;
 
       font-size:12px;
-
       font-weight:800;
 
       letter-spacing:.08em;
     }
 
-
     .trainer-copy h2{
-      margin:
-        7px
-        0
-        8px;
+      margin:7px 0 8px;
 
       font-size:25px;
-
-      color:#ffffff;
     }
-
 
     .trainer-copy p{
       margin:0;
 
       color:#d4dde6;
 
-      line-height:1.5;
-
       font-size:14px;
+      line-height:1.5;
     }
 
-
     .trainer-bottom-login{
-      flex:
-        0
-        0
-        auto;
-
       display:inline-flex;
-
       align-items:center;
-
       justify-content:center;
 
       min-height:46px;
 
-      padding:
-        0
-        18px;
+      padding:0 18px;
 
       border-radius:11px;
 
@@ -1175,17 +884,7 @@
       font-weight:800;
 
       white-space:nowrap;
-
-      box-shadow:
-        0 8px 20px
-        rgba(0,0,0,.18);
     }
-
-
-    .trainer-bottom-login:hover{
-      background:#0f5dcc;
-    }
-
 
 
     /* =========================================================
@@ -1194,24 +893,18 @@
 
     footer{
       background:#06120b;
-
       color:#ffffff;
     }
-
 
     .footer-inner{
       max-width:1180px;
 
       margin:auto;
 
-      padding:
-        38px
-        24px;
+      padding:38px 24px;
 
       display:flex;
-
       align-items:center;
-
       justify-content:space-between;
 
       gap:30px;
@@ -1219,22 +912,17 @@
       flex-wrap:wrap;
     }
 
-
     .contact-title{
       font-size:18px;
-
       font-weight:800;
     }
 
-
     .footer-links{
       display:flex;
-
       align-items:center;
 
       gap:20px;
     }
-
 
     .footer-links a{
       color:#ffffff;
@@ -1246,35 +934,10 @@
       font-size:14px;
     }
 
-
-    .footer-links a:hover{
-      text-decoration:underline;
-    }
-
-
     .copyright{
       color:#aeb9b2;
-
       font-size:13px;
     }
-
-
-
-    /* =========================================================
-       SEHR BREITE BILDSCHIRME
-    ========================================================= */
-
-    @media(min-width:1500px){
-
-      .hero-inner,
-      .main,
-      .trainer-inner,
-      .footer-inner{
-        max-width:1180px;
-      }
-
-    }
-
 
 
     /* =========================================================
@@ -1287,7 +950,6 @@
         grid-template-columns:1fr;
       }
 
-
       .hero-inner{
         padding:
           125px
@@ -1298,9 +960,8 @@
     }
 
 
-
     /* =========================================================
-       MOBILE
+       SMARTPHONE
     ========================================================= */
 
     @media(max-width:520px){
@@ -1309,7 +970,6 @@
         min-height:540px;
       }
 
-
       .hero-inner{
         min-height:540px;
 
@@ -1317,121 +977,66 @@
           115px
           18px
           55px;
-
-        align-items:center;
       }
-
 
       .hero h1{
         font-size:45px;
       }
 
-
       .hero p{
         font-size:16px;
-
-        color:#f0f7f3;
       }
-
 
       .hero-actions{
         flex-direction:column;
-
         align-items:stretch;
       }
-
 
       .primary,
       .secondary{
         width:100%;
       }
 
-
       .hero-top-right{
         top:18px;
-
         right:15px;
 
         gap:10px;
       }
 
-
       .hero-logo{
         width:82px;
         height:82px;
-
-        border-radius:12px;
-
-        padding:5px;
       }
-
 
       .hero-login{
         min-height:39px;
 
-        padding:
-          0
-          11px;
+        padding:0 11px;
 
         font-size:12px;
       }
-
 
       .main{
         padding:
           30px
           15px
           70px;
-
-        margin:0;
       }
-
 
       .section-head h2,
       .section-title h2{
         font-size:21px;
       }
 
-
-      .section-head p,
-      .section-title p{
-        font-size:13px;
-
-        color:#5f6b64;
-      }
-
-
       .card{
         padding:21px;
       }
 
-
-      .team-summary,
-      .document-summary{
-        padding:
-          15px
-          16px;
-      }
-
-
-      .team-details,
-      .document-details{
-        padding-left:16px;
-        padding-right:16px;
-      }
-
-
-      .team-row{
-        gap:10px;
-      }
-
-
       .team-label{
         width:92px;
-
         flex-basis:92px;
       }
-
 
       .trainer-inner{
         padding:24px;
@@ -1439,72 +1044,24 @@
         display:block;
       }
 
-
       .trainer-bottom-login{
         margin-top:18px;
 
         width:100%;
       }
 
-
       .footer-inner{
         flex-direction:column;
-
         align-items:flex-start;
 
-        padding:
-          34px
-          18px;
+        padding:34px 18px;
       }
-
 
       .footer-links{
         flex-direction:column;
-
         align-items:flex-start;
 
         gap:12px;
-      }
-
-    }
-
-
-
-    /* =========================================================
-       SEHR KLEINE SMARTPHONES
-    ========================================================= */
-
-    @media(max-width:380px){
-
-      .hero h1{
-        font-size:39px;
-      }
-
-
-      .hero{
-        min-height:520px;
-      }
-
-
-      .hero-inner{
-        min-height:520px;
-
-        padding:
-          105px
-          16px
-          45px;
-      }
-
-
-      .hero p{
-        font-size:15px;
-      }
-
-
-      .main{
-        padding-left:12px;
-
-        padding-right:12px;
       }
 
     }
@@ -1517,7 +1074,6 @@
 <body>
 
 
-
 <!-- =========================================================
      HERO
 ========================================================= -->
@@ -1527,9 +1083,7 @@
   id="start"
 >
 
-
   <div class="hero-top-right">
-
 
     <a
       href="trainer/login.html"
@@ -1538,59 +1092,44 @@
       🔐 Trainer-Login
     </a>
 
-
     <img
       src="assets/Logo.png"
       alt="USV Jugendfußball"
       class="hero-logo"
     >
 
-
   </div>
-
 
 
   <div class="hero-inner">
 
-
     <div class="hero-copy">
-
 
       <div class="eyebrow">
         Jugendfußball-Portal
       </div>
 
-
       <h1>
-
         Willkommen beim
-
         <strong>
           USV Jugendfußball
         </strong>
-
       </h1>
 
-
       <p>
-
         Wichtige Informationen, Formulare und Unterlagen
         für Eltern, Mitglieder und unser Trainerteam –
         übersichtlich an einem Ort.
-
       </p>
-
 
       <div class="hero-actions">
 
-
         <a
           class="primary"
-          href="#eltern"
+          href="#mannschaften"
         >
-          Elterninformationen
+          Mannschaften
         </a>
-
 
         <a
           class="secondary"
@@ -1599,18 +1138,13 @@
           Dokumente ansehen
         </a>
 
-
       </div>
-
 
     </div>
 
-
   </div>
 
-
   <div class="hero-glow"></div>
-
 
 </section>
 
@@ -1624,104 +1158,29 @@
 
 
   <!-- =======================================================
-       ELTERN
+       SCHNELLZUGRIFF
   ======================================================== -->
 
-  <section id="eltern">
-
+  <section>
 
     <div class="section-head">
 
-
       <div>
 
-
         <h2>
-          Alles Wichtige auf einen Blick
+          Schnellzugriff
         </h2>
 
-
         <p>
-          Informationen und Unterlagen für Eltern &amp; Mitglieder
+          Direkt zu den wichtigsten Bereichen
         </p>
 
-
       </div>
-
 
     </div>
 
 
-
     <div class="cards">
-
-
-      <!-- ELTERNINFORMATIONEN -->
-
-      <a
-        class="card"
-        href="#dokumente"
-      >
-
-        <div class="icon">
-          ▣
-        </div>
-
-
-        <h3>
-          Elterninformationen
-        </h3>
-
-
-        <p>
-
-          Wichtige Formulare und Unterlagen rund um
-          Mitgliedschaft, Organisation und Spielbetrieb.
-
-        </p>
-
-
-        <span class="more">
-          Mehr erfahren →
-        </span>
-
-
-      </a>
-
-
-
-      <!-- DOKUMENTE -->
-
-      <a
-        class="card"
-        href="#dokumente"
-      >
-
-        <div class="icon">
-          ▤
-        </div>
-
-
-        <h3>
-          Dokumente
-        </h3>
-
-
-        <p>
-
-          Formulare, Merkblätter und weitere Unterlagen
-          direkt zum Öffnen oder Herunterladen.
-
-        </p>
-
-
-        <span class="more">
-          Dokumente öffnen →
-        </span>
-
-
-      </a>
-
 
 
       <!-- PROBETRAINING -->
@@ -1737,31 +1196,79 @@
           ⚽
         </div>
 
-
         <h3>
           Probetraining
         </h3>
 
-
         <p>
-
           Interesse an einem Probetraining?
           Hier könnt ihr einen Termin auswählen
           und euch direkt anmelden.
-
         </p>
-
 
         <span class="more">
           Probetraining anmelden →
         </span>
 
+      </a>
+
+
+      <!-- TRAINER LOGIN -->
+
+      <a
+        class="card"
+        href="trainer/login.html"
+      >
+
+        <div class="icon">
+          🔐
+        </div>
+
+        <h3>
+          Trainer-Login
+        </h3>
+
+        <p>
+          Geschützter Zugang für Trainer
+          und Verantwortliche des USV Jugendfußballs.
+        </p>
+
+        <span class="more">
+          Zum Trainerbereich →
+        </span>
+
+      </a>
+
+
+      <!-- KONTAKT -->
+
+      <a
+        class="card"
+        href="#kontakt"
+      >
+
+        <div class="icon">
+          ✉
+        </div>
+
+        <h3>
+          Kontakt
+        </h3>
+
+        <p>
+          Fragen zum Jugendfußball?
+          Ihr erreicht uns direkt per
+          WhatsApp oder E-Mail.
+        </p>
+
+        <span class="more">
+          Kontakt aufnehmen →
+        </span>
 
       </a>
 
 
     </div>
-
 
   </section>
 
@@ -1776,38 +1283,25 @@
     id="mannschaften"
   >
 
-
     <div class="section-title">
 
+      <h2>
+        Unsere Mannschaften
+      </h2>
 
-      <div>
-
-
-        <h2>
-          Unsere Mannschaften
-        </h2>
-
-
-        <p>
-          Trainingszeiten, Trainer und Spieltage
-        </p>
-
-
-      </div>
-
+      <p>
+        Trainingszeiten, Trainer und Trainingsorte
+      </p>
 
     </div>
-
 
 
     <div class="team-list">
 
 
-
       <!-- B-JUGEND -->
 
       <details class="team-card">
-
 
         <summary class="team-summary">
 
@@ -1821,9 +1315,7 @@
 
         </summary>
 
-
         <div class="team-details">
-
 
           <div class="team-row">
 
@@ -1836,7 +1328,6 @@
             </span>
 
           </div>
-
 
           <div class="team-row">
 
@@ -1858,11 +1349,10 @@
 
           </div>
 
-
           <div class="team-row">
 
             <span class="team-label">
-              Trainingsplatz
+              Ort
             </span>
 
             <span class="team-value">
@@ -1871,9 +1361,7 @@
 
           </div>
 
-
         </div>
-
 
       </details>
 
@@ -1882,7 +1370,6 @@
       <!-- C-JUGEND -->
 
       <details class="team-card">
-
 
         <summary class="team-summary">
 
@@ -1896,9 +1383,7 @@
 
         </summary>
 
-
         <div class="team-details">
-
 
           <div class="team-row">
 
@@ -1911,7 +1396,6 @@
             </span>
 
           </div>
-
 
           <div class="team-row">
 
@@ -1933,11 +1417,10 @@
 
           </div>
 
-
           <div class="team-row">
 
             <span class="team-label">
-              Trainingsplatz
+              Ort
             </span>
 
             <span class="team-value">
@@ -1946,9 +1429,7 @@
 
           </div>
 
-
         </div>
-
 
       </details>
 
@@ -1957,7 +1438,6 @@
       <!-- D-JUGEND -->
 
       <details class="team-card">
-
 
         <summary class="team-summary">
 
@@ -1971,9 +1451,7 @@
 
         </summary>
 
-
         <div class="team-details">
-
 
           <div class="team-row">
 
@@ -1986,7 +1464,6 @@
             </span>
 
           </div>
-
 
           <div class="team-row">
 
@@ -2008,11 +1485,10 @@
 
           </div>
 
-
           <div class="team-row">
 
             <span class="team-label">
-              Trainingsplatz
+              Ort
             </span>
 
             <span class="team-value">
@@ -2021,9 +1497,7 @@
 
           </div>
 
-
         </div>
-
 
       </details>
 
@@ -2032,7 +1506,6 @@
       <!-- E-JUGEND -->
 
       <details class="team-card">
-
 
         <summary class="team-summary">
 
@@ -2046,9 +1519,7 @@
 
         </summary>
 
-
         <div class="team-details">
-
 
           <div class="team-row">
 
@@ -2061,7 +1532,6 @@
             </span>
 
           </div>
-
 
           <div class="team-row">
 
@@ -2083,11 +1553,10 @@
 
           </div>
 
-
           <div class="team-row">
 
             <span class="team-label">
-              Trainingsplatz
+              Ort
             </span>
 
             <span class="team-value">
@@ -2096,9 +1565,7 @@
 
           </div>
 
-
         </div>
-
 
       </details>
 
@@ -2107,7 +1574,6 @@
       <!-- F-JUGEND -->
 
       <details class="team-card">
-
 
         <summary class="team-summary">
 
@@ -2121,9 +1587,7 @@
 
         </summary>
 
-
         <div class="team-details">
-
 
           <div class="team-row">
 
@@ -2137,28 +1601,22 @@
 
           </div>
 
-
           <div class="team-row">
 
             <span class="team-label">
               Training
             </span>
 
-            <span class="team-value team-times">
-
-              <span>
-                Dienstag · 16:30–18:00
-              </span>
-
+            <span class="team-value">
+              Dienstag · 16:30–18:00
             </span>
 
           </div>
 
-
           <div class="team-row">
 
             <span class="team-label">
-              Trainingsplatz
+              Ort
             </span>
 
             <span class="team-value">
@@ -2167,9 +1625,7 @@
 
           </div>
 
-
         </div>
-
 
       </details>
 
@@ -2178,7 +1634,6 @@
       <!-- BAMBINIS -->
 
       <details class="team-card">
-
 
         <summary class="team-summary">
 
@@ -2192,9 +1647,7 @@
 
         </summary>
 
-
         <div class="team-details">
-
 
           <div class="team-row">
 
@@ -2208,28 +1661,22 @@
 
           </div>
 
-
           <div class="team-row">
 
             <span class="team-label">
               Training
             </span>
 
-            <span class="team-value team-times">
-
-              <span>
-                Dienstag · 16:30–18:00
-              </span>
-
+            <span class="team-value">
+              Dienstag · 16:30–18:00
             </span>
 
           </div>
 
-
           <div class="team-row">
 
             <span class="team-label">
-              Trainingsplatz
+              Ort
             </span>
 
             <span class="team-value">
@@ -2238,15 +1685,12 @@
 
           </div>
 
-
         </div>
-
 
       </details>
 
 
     </div>
-
 
   </section>
 
@@ -2261,38 +1705,27 @@
     id="dokumente"
   >
 
-
     <div class="section-title">
 
+      <h2>
+        Dokumente
+      </h2>
 
-      <div>
-
-        <h2>
-          Dokumente
-        </h2>
-
-        <p>
-          Wichtige Unterlagen &amp; Formulare
-        </p>
-
-      </div>
-
+      <p>
+        Wichtige Unterlagen &amp; Formulare
+      </p>
 
     </div>
 
 
-
     <div class="document-list">
-
 
 
       <!-- BANKVERBINDUNG -->
 
       <details class="document-item">
 
-
         <summary class="document-summary">
-
 
           <span class="document-title">
 
@@ -2314,33 +1747,27 @@
 
           </span>
 
-
           <span class="document-chevron">
             ⌄
           </span>
 
-
         </summary>
 
-
         <div class="document-details">
-
 
           <div class="document-description">
             Formular zur Änderung der Bankverbindung.
           </div>
 
-
           <a
             class="document-link"
             href="dokumente/Aenderung_Bankverbindung.pdf"
+            target="_blank"
           >
             Dokument öffnen →
           </a>
 
-
         </div>
-
 
       </details>
 
@@ -2350,9 +1777,7 @@
 
       <details class="document-item">
 
-
         <summary class="document-summary">
-
 
           <span class="document-title">
 
@@ -2374,33 +1799,27 @@
 
           </span>
 
-
           <span class="document-chevron">
             ⌄
           </span>
 
-
         </summary>
 
-
         <div class="document-details">
-
 
           <div class="document-description">
             Antrag auf Aufnahme in den Verein.
           </div>
 
-
           <a
             class="document-link"
             href="dokumente/Aufnahmeantrag.pdf"
+            target="_blank"
           >
             Dokument öffnen →
           </a>
 
-
         </div>
-
 
       </details>
 
@@ -2410,9 +1829,7 @@
 
       <details class="document-item">
 
-
         <summary class="document-summary">
-
 
           <span class="document-title">
 
@@ -2434,33 +1851,27 @@
 
           </span>
 
-
           <span class="document-chevron">
             ⌄
           </span>
 
-
         </summary>
 
-
         <div class="document-details">
-
 
           <div class="document-description">
             Erklärung zum Austritt aus dem Verein.
           </div>
 
-
           <a
             class="document-link"
             href="dokumente/Austrittserklaerung.pdf"
+            target="_blank"
           >
             Dokument öffnen →
           </a>
 
-
         </div>
-
 
       </details>
 
@@ -2470,9 +1881,7 @@
 
       <details class="document-item">
 
-
         <summary class="document-summary">
-
 
           <span class="document-title">
 
@@ -2494,33 +1903,27 @@
 
           </span>
 
-
           <span class="document-chevron">
             ⌄
           </span>
 
-
         </summary>
 
-
         <div class="document-details">
-
 
           <div class="document-description">
             Formular zur Einwilligung in die Fotoverwendung.
           </div>
 
-
           <a
             class="document-link"
             href="dokumente/Fotogenehmigung_einzeln.pdf"
+            target="_blank"
           >
             Dokument öffnen →
           </a>
 
-
         </div>
-
 
       </details>
 
@@ -2530,9 +1933,7 @@
 
       <details class="document-item">
 
-
         <summary class="document-summary">
-
 
           <span class="document-title">
 
@@ -2554,33 +1955,27 @@
 
           </span>
 
-
           <span class="document-chevron">
             ⌄
           </span>
 
-
         </summary>
 
-
         <div class="document-details">
-
 
           <div class="document-description">
             Antrag auf Spielerlaubnis beim SFV.
           </div>
 
-
           <a
             class="document-link"
             href="dokumente/Spielerlaubnisantrag_SFV_neu.pdf"
+            target="_blank"
           >
             Dokument öffnen →
           </a>
 
-
         </div>
-
 
       </details>
 
@@ -2590,9 +1985,7 @@
 
       <details class="document-item">
 
-
         <summary class="document-summary">
-
 
           <span class="document-title">
 
@@ -2614,33 +2007,27 @@
 
           </span>
 
-
           <span class="document-chevron">
             ⌄
           </span>
 
-
         </summary>
 
-
         <div class="document-details">
-
 
           <div class="document-description">
             Formular zur Meldung eines Unfalls.
           </div>
 
-
           <a
             class="document-link"
             href="dokumente/Unfallmeldung.pdf"
+            target="_blank"
           >
             Dokument öffnen →
           </a>
 
-
         </div>
-
 
       </details>
 
@@ -2650,9 +2037,7 @@
 
       <details class="document-item">
 
-
         <summary class="document-summary">
-
 
           <span class="document-title">
 
@@ -2674,39 +2059,32 @@
 
           </span>
 
-
           <span class="document-chevron">
             ⌄
           </span>
 
-
         </summary>
 
-
         <div class="document-details">
-
 
           <div class="document-description">
             Antrag auf internationale Freigabe.
           </div>
 
-
           <a
             class="document-link"
             href="dokumente/antrag_internationalefreigabe_012026.pdf"
+            target="_blank"
           >
             Dokument öffnen →
           </a>
 
-
         </div>
-
 
       </details>
 
 
     </div>
-
 
   </section>
 
@@ -2719,40 +2097,27 @@
      TRAINERBEREICH
 ========================================================= -->
 
-<section
-  class="trainer-section"
-  id="trainerbereich"
->
-
+<section class="trainer-section">
 
   <div class="trainer-inner">
 
-
     <div class="trainer-copy">
-
 
       <div class="small">
         TRAINERBEREICH
       </div>
 
-
       <h2>
         Alles für unser Trainerteam
       </h2>
 
-
       <p>
-
         Interne Unterlagen, Sitzungsprotokolle und wichtige
         Informationen stehen hier geschützt für unser
         Trainerteam bereit.
-
       </p>
 
-
     </div>
-
-
 
     <a
       href="trainer/login.html"
@@ -2761,9 +2126,7 @@
       🔐 Zum Trainerbereich
     </a>
 
-
   </div>
-
 
 </section>
 
@@ -2775,18 +2138,13 @@
 
 <footer id="kontakt">
 
-
   <div class="footer-inner">
-
 
     <div class="contact-title">
       Kontakt Jugendfußball
     </div>
 
-
-
     <div class="footer-links">
-
 
       <a
         href="https://wa.me/49017661908879"
@@ -2796,25 +2154,19 @@
         💬 WhatsApp
       </a>
 
-
       <a
-        href="mailto:fussballjugend@usv-tu-dresden.de?subject=Kontakt%20Verein"
+        href="mailto:fussballjugend@usv-tu-dresden.de?subject=Kontakt%20Jugendfußball"
       >
         ✉️ E-Mail
       </a>
 
-
     </div>
-
-
 
     <div class="copyright">
       © USV Jugendfußball
     </div>
 
-
   </div>
-
 
 </footer>
 
