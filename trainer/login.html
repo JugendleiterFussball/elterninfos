@@ -110,11 +110,6 @@
       z-index:2;
 
       width:100%;
-
-      /*
-       * Nicht zu breit auf großen Monitoren.
-       * Gleichzeitig ausreichend Platz auf Tablets.
-       */
       max-width:520px;
 
       margin:auto;
@@ -158,13 +153,11 @@
         clamp(24px,4vw,31px);
 
       line-height:1.1;
-
       letter-spacing:-.025em;
     }
 
     .brand p{
-      margin:
-        8px 0 0;
+      margin:8px 0 0;
 
       color:
         rgba(255,255,255,.82);
@@ -205,8 +198,7 @@
        ========================================================= */
 
     .eyebrow{
-      margin:
-        0 0 8px;
+      margin:0 0 8px;
 
       color:var(--green);
 
@@ -214,21 +206,17 @@
         clamp(11px,1.8vw,13px);
 
       font-weight:800;
-
       letter-spacing:.12em;
-
       text-transform:uppercase;
     }
 
     .login-card h2{
-      margin:
-        0 0 9px;
+      margin:0 0 9px;
 
       font-size:
         clamp(27px,5vw,32px);
 
       line-height:1.1;
-
       letter-spacing:-.025em;
     }
 
@@ -269,11 +257,9 @@
       display:block;
 
       width:100%;
-
       min-height:52px;
 
-      padding:
-        13px 15px;
+      padding:13px 15px;
 
       border:
         1px solid var(--line);
@@ -281,15 +267,12 @@
       border-radius:13px;
 
       background:#fbfcfb;
-
       color:var(--text);
 
       font-family:inherit;
-
       font-size:16px;
 
       outline:none;
-
       appearance:none;
 
       transition:
@@ -304,7 +287,6 @@
 
     input:focus{
       background:#fff;
-
       border-color:var(--green);
 
       box-shadow:
@@ -322,20 +304,16 @@
       justify-content:center;
 
       width:100%;
-
       min-height:54px;
 
       margin-top:4px;
 
-      padding:
-        14px 18px;
+      padding:14px 18px;
 
       border:0;
-
       border-radius:14px;
 
       background:var(--green-2);
-
       color:white;
 
       font-family:inherit;
@@ -357,8 +335,7 @@
     }
 
     button:hover{
-      background:
-        #11813d;
+      background:#11813d;
 
       box-shadow:
         0 11px 28px rgba(21,148,71,.27);
@@ -377,6 +354,46 @@
 
 
     /* =========================================================
+       PASSWORT VERGESSEN
+       ========================================================= */
+
+    .forgot-password{
+      display:block;
+
+      width:max-content;
+      max-width:100%;
+
+      margin:17px auto 0;
+
+      padding:4px 8px;
+
+      color:var(--green);
+
+      text-decoration:none;
+
+      font-size:
+        clamp(13px,2vw,14px);
+
+      font-weight:750;
+
+      line-height:1.4;
+
+      border-radius:8px;
+
+      transition:
+        color .18s ease,
+        background .18s ease;
+    }
+
+    .forgot-password:hover{
+      color:var(--green-dark);
+
+      background:
+        rgba(11,107,53,.07);
+    }
+
+
+    /* =========================================================
        MELDUNGEN
        ========================================================= */
 
@@ -385,13 +402,11 @@
 
       margin-top:18px;
 
-      padding:
-        13px 15px;
+      padding:13px 15px;
 
       border-radius:12px;
 
       font-size:14px;
-
       line-height:1.45;
     }
 
@@ -571,17 +586,13 @@
 
     /* =========================================================
        QUERFORMAT / KLEINE HÖHE
-       Verhindert, dass auf einem Handy im Querformat
-       der Login oben oder unten abgeschnitten wird.
        ========================================================= */
 
     @media(max-height:700px) and (orientation:landscape){
 
       body{
         align-items:flex-start;
-
-        padding:
-          16px;
+        padding:16px;
       }
 
       .login-wrapper{
@@ -595,7 +606,6 @@
       .logo{
         width:58px;
         height:58px;
-
         margin-bottom:6px;
       }
 
@@ -746,6 +756,15 @@
         </button>
 
 
+        <a
+          href="#"
+          id="forgotPassword"
+          class="forgot-password"
+        >
+          Passwort vergessen?
+        </a>
+
+
         <div
           id="message"
           class="message"
@@ -795,6 +814,10 @@
       );
 
 
+    /* =========================================================
+       MELDUNG ANZEIGEN
+       ========================================================= */
+
     function showMessage(text, type) {
 
       const message =
@@ -808,6 +831,20 @@
     }
 
 
+    function clearMessage() {
+
+      const message =
+        document.getElementById("message");
+
+      message.textContent = "";
+      message.className = "message";
+    }
+
+
+    /* =========================================================
+       LOGIN
+       ========================================================= */
+
     document
       .getElementById("loginForm")
       .addEventListener(
@@ -815,6 +852,8 @@
         async function(event) {
 
           event.preventDefault();
+
+          clearMessage();
 
 
           const email =
@@ -838,12 +877,6 @@
 
           button.textContent =
             "Anmeldung läuft …";
-
-
-          document
-            .getElementById("message")
-            .className =
-              "message";
 
 
           try {
@@ -923,6 +956,117 @@
               "Zum Trainerbereich";
 
           }
+
+        }
+      );
+
+
+    /* =========================================================
+       PASSWORT VERGESSEN
+       ========================================================= */
+
+    document
+      .getElementById("forgotPassword")
+      .addEventListener(
+        "click",
+        async function(event) {
+
+          event.preventDefault();
+
+          clearMessage();
+
+
+          const email =
+            document
+              .getElementById("email")
+              .value
+              .trim();
+
+
+          if (!email) {
+
+            showMessage(
+              "Bitte zuerst deine E-Mail-Adresse eingeben.",
+              "error"
+            );
+
+            document
+              .getElementById("email")
+              .focus();
+
+            return;
+          }
+
+
+          const forgotLink =
+            document.getElementById(
+              "forgotPassword"
+            );
+
+
+          const originalText =
+            forgotLink.textContent;
+
+
+          forgotLink.style.pointerEvents =
+            "none";
+
+          forgotLink.style.opacity =
+            ".6";
+
+          forgotLink.textContent =
+            "E-Mail wird gesendet …";
+
+
+          try {
+
+            const {
+              error
+            } =
+              await supabaseClient.auth.resetPasswordForEmail(
+                email,
+                {
+                  redirectTo:
+                    "https://jugendleiterfussball.github.io/elterninfos/trainer/update-password.html"
+                }
+              );
+
+
+            if (error) {
+              throw error;
+            }
+
+
+            showMessage(
+              "Wir haben dir eine E-Mail zum Zurücksetzen des Passworts geschickt. Bitte prüfe auch deinen Spam-Ordner.",
+              "success"
+            );
+
+
+          } catch (error) {
+
+            console.error(
+              "Passwort zurücksetzen:",
+              error
+            );
+
+
+            showMessage(
+              "Die E-Mail konnte nicht gesendet werden. Bitte prüfe die E-Mail-Adresse und versuche es erneut.",
+              "error"
+            );
+
+          }
+
+
+          forgotLink.style.pointerEvents =
+            "auto";
+
+          forgotLink.style.opacity =
+            "1";
+
+          forgotLink.textContent =
+            originalText;
 
         }
       );
