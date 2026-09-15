@@ -379,6 +379,14 @@ h2{
 }
 
 
+
+.hero .wrap{position:relative}
+.hero-logo{position:absolute;top:0;width:108px;height:108px;object-fit:contain;filter:drop-shadow(0 5px 10px rgba(0,0,0,.28));z-index:2}
+.hero-logo.left{left:-135px}
+.hero-logo.right{right:-135px}
+@media(max-width:1400px){.hero-logo.left{left:0}.hero-logo.right{right:0}.hero .wrap{padding-left:125px;padding-right:125px}}
+@media(max-width:800px){.hero-logo{width:70px;height:70px;top:2px}.hero-logo.left{left:0}.hero-logo.right{right:0}.hero .wrap{padding-left:82px;padding-right:82px}.back{font-size:13px}}
+@media(max-width:500px){.hero-logo{width:54px;height:54px}.hero .wrap{padding-left:0;padding-right:0}.hero-logo.left{left:auto;right:62px}.hero-logo.right{right:0}.back{padding-right:120px}.tag{margin-top:46px}}
 .filterbox{background:white;border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:18px}.filters{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.field label{display:block;font-size:12px;font-weight:900;color:var(--muted);margin-bottom:6px}.field select{width:100%;padding:11px;border:1px solid var(--line);border-radius:10px;background:#fff;font:inherit}.practice-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.secondary{background:white;color:var(--green);border:1px solid var(--green);border-radius:10px;padding:11px 14px;font-weight:900;cursor:pointer}.statline{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 18px}.stat{background:#eef5f0;border-radius:999px;padding:7px 10px;font-size:12px;font-weight:800}.scenario{margin-top:12px;padding:13px;background:#f6f9f7;border-left:4px solid var(--green2);border-radius:8px;line-height:1.5}.modehint{font-size:12px;color:var(--muted);margin-top:8px}.ans:disabled{cursor:default}.feedback.good{background:#e6f7ec}.feedback.bad{background:#fdecec}.hidden{display:none!important}@media(max-width:700px){.filters{grid-template-columns:1fr}}
 
 @media(max-width:800px){
@@ -439,6 +447,9 @@ h2{
 <header class="hero">
 
   <div class="wrap">
+
+    <img class="hero-logo left" src="../assets/Logo.png" alt="USV TU Dresden">
+    <img class="hero-logo right" src="../assets/Logo.png" alt="USV TU Dresden">
 
     <a class="back" href="../index.html">
       ← Zur Elterninformation
@@ -682,7 +693,7 @@ h2{
       <div class="filters">
         <div class="field"><label for="practiceRule">REGEL</label><select id="practiceRule"><option value="all">Alle Regeln</option></select></div>
         <div class="field"><label for="practiceDifficulty">SCHWIERIGKEIT</label><select id="practiceDifficulty"><option value="all">Alle</option><option value="easy">Leicht</option><option value="medium">Mittel</option><option value="hard">Schwer</option></select></div>
-        <div class="field"><label for="practiceMode">MODUS</label><select id="practiceMode"><option value="normal">Normal üben</option><option value="hrt">HRT-nah / schwer</option><option value="wrong">Falsche wiederholen</option></select></div>
+        <div class="field"><label for="practiceMode">MODUS</label><select id="practiceMode"><option value="all">Alle Fragen</option><option value="knowledge">Grundwissen</option><option value="situation">Spielsituationen</option><option value="wrong">Falsche wiederholen</option></select></div>
       </div>
       <div class="practice-actions"><button class="reset" id="newPractice">Training neu mischen</button><button class="secondary" id="resetProgress">Lernstand zurücksetzen</button></div>
       <div class="modehint">Antwort auswählen → sofortige Auflösung mit Erklärung. Dein Lernstand wird nur auf diesem Gerät gespeichert.</div>
@@ -755,7 +766,7 @@ function getProgress(){try{const p=JSON.parse(localStorage.getItem('schiriProgre
 function saveProgress(q,correct){const p=getProgress();p.answered++;if(correct)p.correct++;const id=q.id;if(correct)p.wrongIds=p.wrongIds.filter(x=>x!==id);else if(!p.wrongIds.includes(id))p.wrongIds.push(id);const r=String(q.rule);p.byRule[r]=p.byRule[r]||{answered:0,correct:0};p.byRule[r].answered++;if(correct)p.byRule[r].correct++;localStorage.setItem('schiriProgressV2',JSON.stringify(p));showProgress();showPracticeStats()}
 function showProgress(){const p=getProgress(),pct=p.answered?Math.round(p.correct/p.answered*100):0;$('#homebar').style.width=pct+'%';$('#hometext').textContent=p.answered?`${p.answered} beantwortet · ${p.correct} richtig · ${pct}% Trefferquote · ${p.wrongIds.length} zum Wiederholen`:'Noch keine Fragen beantwortet.'}
 function populateRuleFilter(){const s=$('#practiceRule');RULES.forEach(r=>{const o=document.createElement('option');o.value=String(r.id);o.textContent=`Regel ${r.id} – ${r.title}`;s.appendChild(o)})}
-function practiceFiltered(){let q=verifiedQuestions();const rule=$('#practiceRule').value,diff=$('#practiceDifficulty').value,mode=$('#practiceMode').value;if(rule!=='all')q=q.filter(x=>String(x.rule)===rule);if(diff!=='all')q=q.filter(x=>x.difficulty===diff);if(mode==='hrt')q=q.filter(x=>x.type==='hrt_like'||x.difficulty==='hard'||(x.sources||[]).includes('svf_hrt'));if(mode==='wrong'){const wrong=new Set(getProgress().wrongIds);q=q.filter(x=>wrong.has(x.id))}return q}
+function practiceFiltered(){let q=verifiedQuestions();const rule=$('#practiceRule').value,diff=$('#practiceDifficulty').value,mode=$('#practiceMode').value;if(rule!=='all')q=q.filter(x=>String(x.rule)===rule);if(diff!=='all')q=q.filter(x=>x.difficulty===diff);if(mode==='knowledge')q=q.filter(x=>x.type==='knowledge');if(mode==='situation')q=q.filter(x=>x.type==='situation');if(mode==='wrong'){const wrong=new Set(getProgress().wrongIds);q=q.filter(x=>wrong.has(x.id))}return q}
 function dedupeConcepts(qs){const groups=new Map();qs.forEach(q=>{const k=q.conceptId||q.id;if(!groups.has(k))groups.set(k,[]);groups.get(k).push(q)});return shuffle([...groups.values()]).map(g=>shuffle(g)[0])}
 function buildPracticeQueue(){practiceQueue=dedupeConcepts(practiceFiltered());practicePos=0;practiceSessionCorrect=0;practiceAnswered=false;showPractice()}
 function showPracticeStats(){const p=getProgress(),pct=p.answered?Math.round(p.correct/p.answered*100):0;$('#practiceStats').innerHTML=`<span class="stat">Gesamt: ${p.answered}</span><span class="stat">Richtig: ${p.correct}</span><span class="stat">Quote: ${pct}%</span><span class="stat">Wiederholen: ${p.wrongIds.length}</span>`}
