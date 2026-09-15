@@ -1,0 +1,104 @@
+[
+  {
+    "id": 1,
+    "title": "Spielfeld",
+    "summary": "Linien, Strafraum, Tore und technische Bereiche richtig einordnen.",
+    "status": "Grundlage"
+  },
+  {
+    "id": 2,
+    "title": "Ball",
+    "summary": "Anforderungen an den Spielball und Vorgehen bei einem defekten Ball.",
+    "status": "Grundlage"
+  },
+  {
+    "id": 3,
+    "title": "Spieler",
+    "summary": "Spielerzahl, Auswechslungen und zusätzliche Personen auf dem Spielfeld.",
+    "status": "Grundlage"
+  },
+  {
+    "id": 4,
+    "title": "Ausrüstung der Spieler",
+    "summary": "Pflichtausrüstung, Schmuck und Sicherheitsanforderungen.",
+    "status": "Grundlage"
+  },
+  {
+    "id": 5,
+    "title": "Schiedsrichter",
+    "summary": "Rechte, Pflichten, Vorteil und Entscheidungen des Schiedsrichters.",
+    "status": "Kernregel"
+  },
+  {
+    "id": 6,
+    "title": "Weitere Spieloffizielle",
+    "summary": "Aufgaben der Assistenten und weiterer Spieloffizieller.",
+    "status": "Grundlage"
+  },
+  {
+    "id": 7,
+    "title": "Dauer des Spiels",
+    "summary": "Spielzeit, Halbzeitpause und Nachspielzeit.",
+    "status": "Grundlage"
+  },
+  {
+    "id": 8,
+    "title": "Beginn und Fortsetzung",
+    "summary": "Anstoß, Schiedsrichterball und andere Fortsetzungen.",
+    "status": "Kernregel"
+  },
+  {
+    "id": 9,
+    "title": "Ball im und aus dem Spiel",
+    "summary": "Wann der Ball im Spiel ist und wann nicht.",
+    "status": "Grundlage"
+  },
+  {
+    "id": 10,
+    "title": "Bestimmung des Spielausgangs",
+    "summary": "Torerzielung und Verfahren zur Ermittlung eines Siegers.",
+    "status": "Grundlage"
+  },
+  {
+    "id": 11,
+    "title": "Abseits",
+    "summary": "Abseitsstellung, strafbares Abseits und Ausnahmen.",
+    "status": "Kernregel"
+  },
+  {
+    "id": 12,
+    "title": "Fouls und sonstiges Fehlverhalten",
+    "summary": "Direkte und indirekte Freistöße sowie persönliche Strafen.",
+    "status": "Kernregel"
+  },
+  {
+    "id": 13,
+    "title": "Freistöße",
+    "summary": "Direkte und indirekte Freistöße, Abstand und Ausführung.",
+    "status": "Kernregel"
+  },
+  {
+    "id": 14,
+    "title": "Strafstoß",
+    "summary": "Voraussetzungen, Ausführung und Vergehen beim Strafstoß.",
+    "status": "Kernregel"
+  },
+  {
+    "id": 15,
+    "title": "Einwurf",
+    "summary": "Korrekte Ausführung und typische Fehler.",
+    "status": "Grundlage"
+  },
+  {
+    "id": 16,
+    "title": "Abstoß",
+    "summary": "Ausführung, Gegnerabstand und Ball im Spiel.",
+    "status": "Grundlage"
+  },
+  {
+    "id": 17,
+    "title": "Eckstoß",
+    "summary": "Ausführung und Abstände beim Eckstoß.",
+    "status": "Grundlage"
+  }
+]
