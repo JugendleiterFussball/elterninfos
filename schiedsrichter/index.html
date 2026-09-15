@@ -598,48 +598,23 @@ function showRuleVersion(){
    REGELN
    ========================================================= */
 
-function renderRules(){
+function renderRules() {
+  const container = $('#rulesGrid');
 
-  const container = $('#rules');
+  if (!container) return;
 
-  if(!RULES.length){
-
-    container.innerHTML =
-      '<div class="card">' +
-      '<h3>Regeln konnten nicht geladen werden.</h3>' +
-      '<p>Bitte später erneut versuchen.</p>' +
-      '</div>';
-
-    return;
-  }
-
-
-  container.innerHTML = RULES.map(rule => {
-
-    return `
-      <div class="card">
-
-        <span class="pill">
-          REGEL ${rule.id}
-        </span>
-
-        <h3>
-          ${rule.title}
-        </h3>
-
-        <p>
-          ${rule.summary}
-        </p>
-
-        <span class="pill">
-          ${rule.status}
-        </span>
-
-      </div>
-    `;
-
-  }).join('');
-
+  container.innerHTML = RULES.map(rule => `
+    <a
+      href="regeln/?regel=${rule.id}"
+      class="rule-card"
+      style="text-decoration:none;color:inherit;display:block;"
+    >
+      <div class="rule-num">REGEL ${rule.id}</div>
+      <h3>${rule.title}</h3>
+      <p>${rule.summary}</p>
+      <span class="badge">${rule.status}</span>
+    </a>
+  `).join('');
 }
 
 
