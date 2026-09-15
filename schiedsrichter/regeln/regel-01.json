@@ -1,0 +1,57 @@
+{
+  "id": 1,
+  "title": "Spielfeld",
+  "intro": "Bevor ein Spiel beginnen kann, muss das Spielfeld sicher und regelgerecht sein. Als Schiedsrichter prüfst du deshalb vor dem Spiel den Platz und seine wichtigsten Bestandteile.",
+
+  "sections": [
+    {
+      "title": "Das musst du wissen",
+      "items": [
+        "Das Spielfeld ist rechteckig.",
+        "Die längeren Begrenzungslinien heißen Seitenlinien.",
+        "Die kürzeren Begrenzungslinien heißen Torlinien.",
+        "Die Linien gehören jeweils zu dem Bereich, den sie begrenzen.",
+        "Die Mittellinie teilt das Spielfeld in zwei Hälften.",
+        "Zur Spielfeldmarkierung gehören unter anderem Mittelkreis, Strafräume, Torräume und Eckbereiche."
+      ]
+    },
+    {
+      "title": "Wichtige Maße",
+      "items": [
+        "Der Mittelkreis hat einen Radius von 9,15 m.",
+        "Der Strafstoßpunkt liegt 11 m von der Mitte der Torlinie entfernt.",
+        "Der Strafraum reicht 16,5 m ins Spielfeld.",
+        "Der Torraum reicht 5,5 m ins Spielfeld.",
+        "Der Eckbereich hat einen Radius von 1 m.",
+        "Die Eckfahnenstangen müssen mindestens 1,5 m hoch sein."
+      ]
+    },
+    {
+      "title": "Vor dem Spiel prüfen",
+      "items": [
+        "Ist das Spielfeld sicher bespielbar?",
+        "Sind die Linien ausreichend erkennbar?",
+        "Sind die Tore sicher befestigt und unbeschädigt?",
+        "Sind Tornetze und Eckfahnen in Ordnung?",
+        "Gibt es Gegenstände oder Schäden, die Spieler gefährden könnten?"
+      ]
+    },
+    {
+      "title": "Als Schiedsrichter entscheiden",
+      "items": [
+        "Festgestellte Mängel sollen vor Spielbeginn beseitigt werden.",
+        "Die Sicherheit der Spieler hat Vorrang.",
+        "Ist eine Gefährdung nicht zu beseitigen oder eine ordnungsgemäße Durchführung nicht möglich, darf das Spiel nicht einfach unter ungeeigneten Bedingungen begonnen werden."
+      ]
+    }
+  ],
+
+  "memory": [
+    "Linien gehören zu dem Bereich, den sie begrenzen.",
+    "Strafstoßpunkt = 11 m.",
+    "Strafraum = 16,5 m.",
+    "Torraum = 5,5 m.",
+    "Abstand beim Eckbereich = Radius 1 m.",
+    "Sicherheit geht vor Spielbeginn."
+  ]
+}
