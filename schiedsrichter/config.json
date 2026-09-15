@@ -1,10 +1,36 @@
 {
+  "app": {
+    "name": "Schiri-Trainer",
+    "club": "USV TU Dresden",
+    "area": "Jugendfußball"
+  },
+
   "rules": {
     "season": "2026/27",
+    "count": 17,
     "status": "current"
   },
+
+  "training": {
+    "practiceEnabled": true,
+    "examEnabled": true,
+    "examQuestions": 30
+  },
+
   "sources": {
-    "dfb": "DFB Fußball-Regeln",
-    "svf": "Stadtverband Fußball Dresden"
+    "dfb": {
+      "name": "DFB Fußball-Regeln",
+      "url": "https://www.dfb.de/mehr-fussball/fussball-regeln"
+    },
+
+    "svf": {
+      "name": "Stadtverband Fußball Dresden",
+      "url": "https://www.svf-dresden.de/schiedsrichter/"
+    },
+
+    "training": {
+      "name": "Schiedsrichter-Ausbildung Dresden",
+      "url": "https://www.svf-dresden.de/schiedsrichter/ausbildung-zum-schiedsrichter/"
+    }
   }
 }
