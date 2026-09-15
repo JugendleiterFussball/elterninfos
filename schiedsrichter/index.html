@@ -8,28 +8,43 @@
 
 <style>
 :root{
-  --g:#0b6b35;
-  --g2:#1bad58;
-  --d:#07130c;
+  --green:#0b6b35;
+  --green2:#1bad58;
+  --dark:#07130c;
+  --dark2:#0b2a17;
   --bg:#f4f7f5;
-  --mut:#66716b;
+  --white:#ffffff;
+  --text:#17201b;
+  --muted:#66716b;
   --line:#dfe7e2;
   --yellow:#f3c623;
 }
 
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
 
 body{
   margin:0;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
   background:var(--bg);
-  color:#17201b;
+  color:var(--text);
+}
+
+button,
+a{
+  -webkit-tap-highlight-color:transparent;
 }
 
 .hero{
-  background:linear-gradient(110deg,#06100a,#0b2a17 60%,#103d22);
+  background:
+    linear-gradient(110deg,#06100a,#0b2a17 60%,#103d22);
   color:white;
-  padding:26px 20px 58px;
+  padding:26px 20px 54px;
 }
 
 .wrap{
@@ -38,20 +53,25 @@ body{
 }
 
 .back{
+  display:inline-block;
   color:#dff3e6;
   text-decoration:none;
   font-weight:800;
 }
 
+.back:hover{
+  color:white;
+}
+
 .tag{
-  margin-top:55px;
+  margin-top:52px;
   color:#c9f1d5;
   font-size:12px;
   font-weight:900;
   letter-spacing:.08em;
 }
 
-.tag:before{
+.tag::before{
   content:"";
   display:inline-block;
   width:28px;
@@ -67,24 +87,25 @@ body{
   margin:14px 0;
 }
 
-.hero p{
-  max-width:700px;
+.hero-text{
+  max-width:720px;
   color:#e9f2ec;
   font-size:17px;
+  line-height:1.45;
 }
 
 .rule-version{
-  display:none;
-  margin-top:10px;
+  margin-top:13px;
   color:#c9f1d5;
   font-size:13px;
+  font-weight:700;
 }
 
 .nav{
   display:flex;
   gap:9px;
   flex-wrap:wrap;
-  margin-top:24px;
+  margin-top:25px;
 }
 
 .nav button{
@@ -95,11 +116,16 @@ body{
   padding:11px 15px;
   font-weight:800;
   cursor:pointer;
+  font-size:14px;
+}
+
+.nav button:hover{
+  background:#ffffff20;
 }
 
 .nav button.active{
-  background:var(--g2);
-  border-color:var(--g2);
+  background:var(--green2);
+  border-color:var(--green2);
 }
 
 main{
@@ -116,24 +142,37 @@ main{
   display:block;
 }
 
+h2{
+  margin-top:0;
+  font-size:27px;
+}
+
+.lead{
+  color:var(--muted);
+  line-height:1.55;
+  margin-bottom:25px;
+}
+
 .official{
   background:#fff9dd;
   border:1px solid #eadb92;
   border-left:6px solid var(--yellow);
   padding:20px;
   border-radius:16px;
-  margin-bottom:25px;
+  margin-bottom:28px;
+  line-height:1.5;
 }
 
 .official a{
-  color:var(--g);
+  color:var(--green);
   font-weight:900;
+  text-decoration:none;
 }
 
 .grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:13px;
+  gap:14px;
 }
 
 .card{
@@ -141,22 +180,72 @@ main{
   border:1px solid var(--line);
   border-radius:16px;
   padding:20px;
-  box-shadow:0 7px 22px #0c24160c;
+  box-shadow:0 7px 22px rgba(12,36,22,.05);
 }
 
 .card h3{
-  margin:0 0 7px;
+  margin:9px 0 7px;
 }
 
 .card p{
-  color:var(--mut);
+  color:var(--muted);
   font-size:14px;
+  line-height:1.5;
+}
+
+.home-card{
+  cursor:pointer;
+  transition:
+    transform .15s ease,
+    box-shadow .15s ease;
+}
+
+.home-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 28px rgba(12,36,22,.10);
+}
+
+.rule-card{
+  display:block;
+  color:inherit;
+  text-decoration:none;
+  cursor:pointer;
+  transition:
+    transform .15s ease,
+    box-shadow .15s ease,
+    border-color .15s ease;
+}
+
+.rule-card:hover{
+  transform:translateY(-2px);
+  border-color:#b7d4c0;
+  box-shadow:0 10px 28px rgba(12,36,22,.10);
+}
+
+.rule-number{
+  color:var(--green);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.06em;
+}
+
+.rule-card h3{
+  font-size:20px;
+  margin:7px 0 8px;
+}
+
+.open-rule{
+  display:block;
+  margin-top:17px;
+  color:var(--green);
+  font-size:13px;
+  font-weight:900;
 }
 
 .pill{
   display:inline-block;
   background:#e9f5ed;
-  color:var(--g);
+  color:var(--green);
   border-radius:999px;
   padding:5px 9px;
   font-size:11px;
@@ -173,12 +262,22 @@ main{
 
 .bar{
   height:100%;
-  background:var(--g2);
+  background:var(--green2);
   width:0;
+  transition:width .3s ease;
 }
 
 .quiz{
-  max-width:760px;
+  max-width:780px;
+}
+
+.quiztop{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:10px;
 }
 
 .question{
@@ -204,6 +303,10 @@ main{
   cursor:pointer;
 }
 
+.ans:hover{
+  border-color:#9ebca8;
+}
+
 .ans.correct{
   background:#e6f7ec;
   border-color:#77bf8e;
@@ -220,32 +323,11 @@ main{
   border-radius:10px;
   background:#eef5f0;
   display:none;
-}
-
-.quiztop{
-  display:flex;
-  justify-content:space-between;
-  gap:15px;
-  color:var(--mut);
-  font-size:13px;
-  margin-bottom:10px;
-}
-
-.big{
-  font-size:36px;
-  font-weight:900;
-}
-
-.result{
-  background:white;
-  border-radius:18px;
-  border:1px solid var(--line);
-  padding:25px;
-  display:none;
+  line-height:1.5;
 }
 
 .reset{
-  background:var(--g);
+  background:var(--green);
   color:white;
   border:0;
   border-radius:10px;
@@ -254,26 +336,97 @@ main{
   cursor:pointer;
 }
 
-.source{
-  font-size:12px;
-  color:var(--mut);
-  margin-top:25px;
+.reset:hover{
+  background:#07592b;
 }
 
-.data-warning{
+.result{
+  background:white;
+  border-radius:18px;
+  border:1px solid var(--line);
+  padding:25px;
   display:none;
-  background:#fdecec;
-  border:1px solid #d78c8c;
-  color:#7c2525;
-  padding:14px 16px;
-  border-radius:12px;
-  margin-bottom:20px;
+  margin-top:18px;
+}
+
+.big{
+  font-size:36px;
+  font-weight:900;
+}
+
+.empty{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:25px;
+  line-height:1.55;
+}
+
+.empty strong{
+  color:var(--green);
+}
+
+.source{
+  font-size:12px;
+  color:var(--muted);
+  margin-top:28px;
+  line-height:1.5;
+}
+
+.source a{
+  color:var(--green);
+  font-weight:800;
 }
 
 @media(max-width:800px){
+
   .grid{
     grid-template-columns:1fr;
   }
+
+  .hero{
+    padding-bottom:40px;
+  }
+
+  .tag{
+    margin-top:40px;
+  }
+
+  .hero h1{
+    font-size:46px;
+  }
+
+}
+
+@media(max-width:500px){
+
+  .hero{
+    padding-left:17px;
+    padding-right:17px;
+  }
+
+  main{
+    padding-left:14px;
+    padding-right:14px;
+  }
+
+  .nav{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+  }
+
+  .nav button{
+    width:100%;
+  }
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .card{
+    padding:18px;
+  }
+
 }
 </style>
 </head>
@@ -281,143 +434,296 @@ main{
 <body>
 
 <header class="hero">
+
   <div class="wrap">
 
     <a class="back" href="../index.html">
       ← Zur Elterninformation
     </a>
 
-    <div class="tag">SCHIEDSRICHTER</div>
+    <div class="tag">
+      SCHIEDSRICHTER
+    </div>
 
-    <h1>Schiri-Trainer</h1>
+    <h1>
+      Schiri-Trainer
+    </h1>
 
-    <p>
-      Regeln kennenlernen, Spielsituationen beurteilen und dich
-      Schritt für Schritt auf den Anwärterlehrgang vorbereiten.
+    <p class="hero-text">
+      Regeln kennenlernen, Spielsituationen beurteilen
+      und dich Schritt für Schritt auf den
+      Anwärterlehrgang vorbereiten.
     </p>
 
-    <div class="rule-version" id="ruleVersion"></div>
+    <div
+      class="rule-version"
+      id="ruleVersion"
+    ></div>
 
     <div class="nav">
-      <button class="active" data-view="start">Start</button>
-      <button data-view="lernen">Regeln lernen</button>
-      <button data-view="ueben">Üben</button>
-      <button data-view="pruefung">Prüfung</button>
+
+      <button
+        class="active"
+        data-view="start"
+      >
+        Start
+      </button>
+
+      <button
+        data-view="lernen"
+      >
+        Regeln lernen
+      </button>
+
+      <button
+        data-view="ueben"
+      >
+        Üben
+      </button>
+
+      <button
+        data-view="pruefung"
+      >
+        Prüfung
+      </button>
+
     </div>
 
   </div>
+
 </header>
+
 
 <main>
 
-  <div class="data-warning" id="dataWarning"></div>
+  <!-- START -->
 
-  <section id="start" class="view active">
+  <section
+    id="start"
+    class="view active"
+  >
 
     <div class="official">
-      <strong>Offizielle Ausbildung & Anmeldung</strong><br>
 
-      Verbindliche Informationen zu Voraussetzungen, Lehrgang und
-      Prüfung gibt es beim Stadtverband Fußball Dresden.
+      <strong>
+        Offizielle Ausbildung & Anmeldung
+      </strong>
+
+      <br>
+
+      Der Schiri-Trainer ist eine Lernhilfe.
+      Verbindliche Informationen zu Voraussetzungen,
+      Lehrgang und Prüfung gibt es beim
+      Stadtverband Fußball Dresden.
 
       <br><br>
 
       <a
-        href="https://www.svf-dresden.de/schiedsrichter/ausbildung-zum-schiedsrichter/"
+        id="trainingLink"
+        href="#"
         target="_blank"
         rel="noopener"
       >
-        SVF Dresden öffnen →
+        Ausbildung beim SVF Dresden öffnen →
       </a>
+
     </div>
 
-    <h2>Dein Lernstand</h2>
+
+    <h2>
+      Dein Schiri-Training
+    </h2>
+
+    <p class="lead">
+      Beginne mit den 17 Fußballregeln.
+      Übungsfragen und Prüfungssimulation werden
+      nur mit vorher geprüften Fragen freigeschaltet.
+    </p>
+
+
+    <h3>
+      Dein Lernstand
+    </h3>
 
     <div class="progress">
-      <div class="bar" id="homebar"></div>
+      <div
+        class="bar"
+        id="homebar"
+      ></div>
     </div>
 
     <p id="hometext">
       Noch keine Fragen beantwortet.
     </p>
 
+
     <div class="grid">
 
-      <div class="card">
-        <span class="pill">17 REGELN</span>
-        <h3>📚 Lernen</h3>
+      <div
+        class="card home-card"
+        data-open="lernen"
+      >
+
+        <span class="pill">
+          17 REGELN
+        </span>
+
+        <h3>
+          📚 Regeln lernen
+        </h3>
+
         <p>
-          Alle Regelbereiche als übersichtliche Lernstruktur.
+          Alle 17 Regelbereiche mit Lerntexten,
+          wichtigen Entscheidungen und Merksätzen.
         </p>
+
       </div>
 
-      <div class="card">
-        <span class="pill">SOFORT-FEEDBACK</span>
-        <h3>🧠 Üben</h3>
+
+      <div
+        class="card home-card"
+        data-open="ueben"
+      >
+
+        <span class="pill">
+          SOFORT-FEEDBACK
+        </span>
+
+        <h3>
+          🧠 Üben
+        </h3>
+
         <p>
-          Frage beantworten und die Entscheidung direkt erklärt bekommen.
+          Spielsituationen beurteilen und direkt
+          erfahren, warum eine Entscheidung richtig
+          oder falsch ist.
         </p>
+
       </div>
 
-      <div class="card">
-        <span class="pill">SIMULATION</span>
-        <h3>🏆 Prüfung</h3>
+
+      <div
+        class="card home-card"
+        data-open="pruefung"
+      >
+
+        <span class="pill">
+          30 FRAGEN
+        </span>
+
+        <h3>
+          🏆 Prüfung
+        </h3>
+
         <p>
-          Prüfungssimulation mit geprüften Fragen aus unserem Fragenpool.
+          Später folgt hier eine Simulation mit
+          geprüften Fragen zur Vorbereitung auf
+          den Regeltest.
         </p>
+
       </div>
 
     </div>
+
   </section>
 
 
-  <section id="lernen" class="view">
+  <!-- REGELN -->
 
-    <h2>Die 17 Fußballregeln</h2>
+  <section
+    id="lernen"
+    class="view"
+  >
 
-    <p>
-      Die Inhalte werden schrittweise zu echten Lernkarten ausgebaut.
+    <h2>
+      Die 17 Fußballregeln
+    </h2>
+
+    <p class="lead">
+      Wähle eine Regel aus.
+      Jede Regel öffnet eine eigene Lernansicht
+      mit den wichtigsten Grundlagen und Merksätzen.
     </p>
 
-    <div class="grid" id="rules"></div>
+    <div
+      class="grid"
+      id="rules"
+    ></div>
 
     <p class="source">
-      Grundstruktur nach den 17 Laws of the Game.
-      Für verbindliche Regelauslegung gilt das aktuelle offizielle Regelwerk.
+      Lernhilfe auf Grundlage der 17 Fußballregeln.
+      Für verbindliche Entscheidungen gilt immer
+      das aktuelle offizielle Regelwerk.
     </p>
 
   </section>
 
 
-  <section id="ueben" class="view quiz">
+  <!-- ÜBEN -->
 
-    <h2>Übungstest</h2>
+  <section
+    id="ueben"
+    class="view quiz"
+  >
+
+    <h2>
+      Übungstest
+    </h2>
+
+    <p class="lead">
+      Hier werden ausschließlich Fragen verwendet,
+      die zuvor fachlich geprüft und freigegeben wurden.
+    </p>
 
     <div class="quiztop">
+
       <span id="uCount"></span>
+
       <span id="uScore"></span>
+
     </div>
 
-    <div class="question" id="uQuestion"></div>
+    <div
+      class="question"
+      id="uQuestion"
+    ></div>
 
   </section>
 
 
-  <section id="pruefung" class="view quiz">
+  <!-- PRÜFUNG -->
 
-    <h2>Prüfungssimulation</h2>
+  <section
+    id="pruefung"
+    class="view quiz"
+  >
 
-    <p>
-      Die Auflösung erfolgt erst am Ende der Prüfung.
+    <h2>
+      Prüfungssimulation
+    </h2>
+
+    <p class="lead">
+      Die Antworten werden während der Simulation
+      nicht aufgelöst. Das Ergebnis erscheint erst
+      am Ende.
     </p>
 
-    <button class="reset" id="startExam">
+    <button
+      class="reset"
+      id="startExam"
+    >
       Prüfung starten
     </button>
 
-    <div id="examBox" style="margin-top:18px"></div>
+    <div
+      id="examBox"
+      style="margin-top:18px"
+    ></div>
 
-    <div class="result" id="examResult"></div>
+    <div
+      class="result"
+      id="examResult"
+    ></div>
 
   </section>
 
@@ -428,50 +734,23 @@ main{
 
 let CONFIG = {};
 let RULES = [];
-let QS = [];
+let QUESTIONS = [];
 
-let uIndex = 0;
-let uScore = 0;
-let uAnswered = false;
+let practiceIndex = 0;
+let practiceScore = 0;
+let practiceAnswered = false;
 
 let exam = [];
 let examIndex = 0;
 let examScore = 0;
 
-const $ = selector => document.querySelector(selector);
+
+const $ = selector =>
+  document.querySelector(selector);
 
 
 /* =========================================================
-   NAVIGATION
-   ========================================================= */
-
-document.querySelectorAll('.nav button').forEach(button => {
-
-  button.addEventListener('click', () => {
-
-    document.querySelectorAll('.nav button').forEach(b => {
-      b.classList.remove('active');
-    });
-
-    document.querySelectorAll('.view').forEach(view => {
-      view.classList.remove('active');
-    });
-
-    button.classList.add('active');
-
-    const target = document.getElementById(button.dataset.view);
-
-    if(target){
-      target.classList.add('active');
-    }
-
-  });
-
-});
-
-
-/* =========================================================
-   JSON SICHER LADEN
+   JSON LADEN
    ========================================================= */
 
 async function loadJson(filename, fallback){
@@ -481,17 +760,18 @@ async function loadJson(filename, fallback){
     const response = await fetch(
       new URL(filename, window.location.href),
       {
-        cache: 'no-store'
+        cache:"no-store"
       }
     );
 
     if(!response.ok){
       throw new Error(
-        filename + ' – HTTP ' + response.status
+        filename + " – HTTP " + response.status
       );
     }
 
-    const text = await response.text();
+    const text =
+      await response.text();
 
     if(!text.trim()){
       return fallback;
@@ -499,70 +779,113 @@ async function loadJson(filename, fallback){
 
     return JSON.parse(text);
 
-  }catch(error){
+  }
+  catch(error){
 
     console.error(
-      'Fehler beim Laden von ' + filename,
+      "Fehler beim Laden von " + filename,
       error
     );
 
     return fallback;
+
   }
 
 }
 
 
 /* =========================================================
-   START
+   ANSICHT WECHSELN
    ========================================================= */
 
-async function init(){
+function openView(viewName){
 
-  CONFIG = await loadJson(
-    'config.json',
-    {}
-  );
+  document
+    .querySelectorAll(".view")
+    .forEach(view => {
 
-  RULES = await loadJson(
-    'rules.json',
-    []
-  );
+      view.classList.toggle(
+        "active",
+        view.id === viewName
+      );
 
-  QS = await loadJson(
-    'questions.json',
-    []
-  );
+    });
 
 
-  if(!Array.isArray(RULES)){
-    RULES = [];
+  document
+    .querySelectorAll(".nav button")
+    .forEach(button => {
+
+      button.classList.toggle(
+        "active",
+        button.dataset.view === viewName
+      );
+
+    });
+
+
+  if(
+    history.replaceState
+  ){
+
+    const hash =
+      viewName === "start"
+        ? ""
+        : "#" + viewName;
+
+    history.replaceState(
+      null,
+      "",
+      window.location.pathname +
+      window.location.search +
+      hash
+    );
+
   }
 
 
-  if(!Array.isArray(QS)){
-    QS = [];
-  }
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
 
 
-  /*
-    Nur ausdrücklich geprüfte Fragen werden verwendet.
-    Eine leere questions.json mit [] ist völlig in Ordnung.
-  */
+document
+  .querySelectorAll(".nav button")
+  .forEach(button => {
 
-  QS = QS.filter(question => {
-    return question.status === 'verified';
+    button.addEventListener(
+      "click",
+      () => {
+
+        openView(
+          button.dataset.view
+        );
+
+      }
+    );
+
   });
 
 
-  showRuleVersion();
+document
+  .querySelectorAll("[data-open]")
+  .forEach(card => {
 
-  renderRules();
+    card.addEventListener(
+      "click",
+      () => {
 
-  loadProgress();
+        openView(
+          card.dataset.open
+        );
 
-  showPractice();
+      }
+    );
 
-}
+  });
 
 
 /* =========================================================
@@ -571,7 +894,8 @@ async function init(){
 
 function showRuleVersion(){
 
-  const element = $('#ruleVersion');
+  const element =
+    $("#ruleVersion");
 
   if(
     CONFIG &&
@@ -580,14 +904,14 @@ function showRuleVersion(){
   ){
 
     element.innerHTML =
-      '<strong>Regelstand:</strong> ' +
+      "<strong>Regelstand:</strong> " +
       CONFIG.rules.season;
 
-    element.style.display = 'block';
+  }
+  else{
 
-  }else{
-
-    element.style.display = 'none';
+    element.textContent =
+      "Regelstand konnte nicht geladen werden.";
 
   }
 
@@ -595,70 +919,178 @@ function showRuleVersion(){
 
 
 /* =========================================================
-   REGELN
+   EXTERNE LINKS
    ========================================================= */
 
-function renderRules() {
-  const container = $('#rules');
+function configureLinks(){
 
-  if (!container) return;
+  if(
+    CONFIG &&
+    CONFIG.sources &&
+    CONFIG.sources.training &&
+    CONFIG.sources.training.url
+  ){
 
-  container.innerHTML = RULES.map(rule => `
-    <a
-      href="regeln/?regel=${rule.id}"
-      class="rule-card"
-      style="text-decoration:none;color:inherit;display:block;"
-    >
-      <div class="rule-num">REGEL ${rule.id}</div>
-      <h3>${rule.title}</h3>
-      <p>${rule.summary}</p>
-      <span class="badge">${rule.status}</span>
-    </a>
-  `).join('');
+    $("#trainingLink").href =
+      CONFIG.sources.training.url;
+
+  }
+
 }
 
 
 /* =========================================================
-   ÜBUNG
+   REGELKARTEN
    ========================================================= */
 
-function showPractice(){
+function renderRules(){
 
-  if(!QS.length){
+  const container =
+    $("#rules");
 
-    $('#uCount').textContent =
-      'Noch keine geprüften Fragen';
-
-    $('#uScore').textContent = '';
-
-    $('#uQuestion').innerHTML = `
-      <strong>
-        Der Fragenpool wird vorbereitet.
-      </strong>
-
-      <p>
-        Hier erscheinen nur Fragen, die geprüft
-        und als „verified“ freigegeben wurden.
-      </p>
-    `;
-
+  if(!container){
     return;
   }
 
 
+  if(!RULES.length){
+
+    container.innerHTML = `
+      <div class="empty">
+        <strong>
+          Die Regeldaten konnten nicht geladen werden.
+        </strong>
+      </div>
+    `;
+
+    return;
+
+  }
+
+
+  container.innerHTML =
+    RULES.map(rule => `
+
+      <a
+        class="card rule-card"
+        href="regeln/?regel=${rule.id}"
+      >
+
+        <div class="rule-number">
+          REGEL ${rule.id}
+        </div>
+
+        <h3>
+          ${rule.title}
+        </h3>
+
+        <p>
+          ${rule.summary}
+        </p>
+
+        <span class="pill">
+          ${rule.status}
+        </span>
+
+        <span class="open-rule">
+          Regel lernen →
+        </span>
+
+      </a>
+
+    `).join("");
+
+}
+
+
+/* =========================================================
+   FRAGEN FILTERN
+   ========================================================= */
+
+function verifiedQuestions(){
+
+  if(!Array.isArray(QUESTIONS)){
+    return [];
+  }
+
+  return QUESTIONS.filter(
+    question =>
+      question.status === "verified"
+  );
+
+}
+
+
+/* =========================================================
+   ÜBEN
+   ========================================================= */
+
+function showPractice(){
+
+  const questions =
+    verifiedQuestions();
+
+
+  if(!questions.length){
+
+    $("#uCount").textContent =
+      "Noch keine freigegebenen Fragen";
+
+    $("#uScore").textContent =
+      "";
+
+    $("#uQuestion").innerHTML = `
+
+      <div class="empty">
+
+        <strong>
+          Der Fragenpool wird vorbereitet.
+        </strong>
+
+        <p>
+          Hier erscheinen erst Fragen,
+          nachdem sie fachlich geprüft und
+          ausdrücklich freigegeben wurden.
+        </p>
+
+        <p>
+          Die 17 Regelbereiche kannst du
+          bereits vollständig lernen.
+        </p>
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
   const question =
-    QS[uIndex % QS.length];
+    questions[
+      practiceIndex %
+      questions.length
+    ];
 
 
-  $('#uCount').textContent =
-    `Frage ${uIndex % QS.length + 1} von ${QS.length}`;
+  $("#uCount").textContent =
+    "Frage " +
+    (
+      practiceIndex %
+      questions.length +
+      1
+    ) +
+    " von " +
+    questions.length;
 
 
-  $('#uScore').textContent =
-    `Richtig: ${uScore}`;
+  $("#uScore").textContent =
+    "Richtig: " +
+    practiceScore;
 
 
-  $('#uQuestion').innerHTML = `
+  $("#uQuestion").innerHTML = `
 
     <strong>
       ${question.q}
@@ -666,95 +1098,131 @@ function showPractice(){
 
     <div class="answers">
 
-      ${question.answers.map((answer,index) => `
+      ${question.answers
+        .map(
+          (answer,index) => `
 
-        <button
-          class="ans"
-          onclick="practiceAnswer(${index})"
-        >
-          ${String.fromCharCode(65 + index)} · ${answer}
-        </button>
+            <button
+              class="ans"
+              onclick="practiceAnswer(${index})"
+            >
+              ${String.fromCharCode(65 + index)}
+              ·
+              ${answer}
+            </button>
 
-      `).join('')}
+          `
+        )
+        .join("")}
 
     </div>
 
     <div
       class="feedback"
-      id="uFeedback"
+      id="practiceFeedback"
     ></div>
 
   `;
 
 
-  uAnswered = false;
+  practiceAnswered =
+    false;
 
 }
 
 
 function practiceAnswer(index){
 
-  if(uAnswered){
+  if(practiceAnswered){
     return;
   }
 
 
-  uAnswered = true;
+  const questions =
+    verifiedQuestions();
+
+  if(!questions.length){
+    return;
+  }
+
+
+  practiceAnswered =
+    true;
 
 
   const question =
-    QS[uIndex % QS.length];
+    questions[
+      practiceIndex %
+      questions.length
+    ];
 
 
   const buttons =
     document.querySelectorAll(
-      '#uQuestion .ans'
+      "#uQuestion .ans"
     );
 
 
-  buttons[
-    question.correct
-  ].classList.add(
-    'correct'
-  );
+  if(
+    buttons[
+      question.correct
+    ]
+  ){
+
+    buttons[
+      question.correct
+    ].classList.add(
+      "correct"
+    );
+
+  }
 
 
   const correct =
-    index === question.correct;
+    index ===
+    question.correct;
 
 
-  if(!correct){
+  if(correct){
+
+    practiceScore++;
+
+  }
+  else if(buttons[index]){
 
     buttons[
       index
     ].classList.add(
-      'wrong'
+      "wrong"
     );
-
-  }else{
-
-    uScore++;
 
   }
 
 
   const feedback =
-    $('#uFeedback');
+    $("#practiceFeedback");
 
 
   feedback.style.display =
-    'block';
+    "block";
 
 
   feedback.innerHTML = `
 
     <strong>
-      ${correct ? '✓ Richtig' : '✗ Nicht richtig'}
+      ${
+        correct
+          ? "✓ Richtig"
+          : "✗ Nicht richtig"
+      }
     </strong>
 
-    <br>
+    <br><br>
 
-    ${question.explanation || ''}
+    ${
+      question.explanation ||
+      ""
+    }
 
     <br><br>
 
@@ -768,14 +1236,16 @@ function practiceAnswer(index){
   `;
 
 
-  saveProgress(correct);
+  saveProgress(
+    correct
+  );
 
 }
 
 
 function nextPractice(){
 
-  uIndex++;
+  practiceIndex++;
 
   showPractice();
 
@@ -786,27 +1256,44 @@ function nextPractice(){
    LERNSTAND
    ========================================================= */
 
-function saveProgress(correct){
-
-  let progress;
+function getProgress(){
 
   try{
 
-    progress = JSON.parse(
-      localStorage.getItem(
-        'schiriProgress'
-      ) ||
-      '{"answered":0,"correct":0}'
-    );
+    const stored =
+      JSON.parse(
+        localStorage.getItem(
+          "schiriProgress"
+        ) ||
+        '{"answered":0,"correct":0}'
+      );
 
-  }catch(error){
 
-    progress = {
+    return {
+      answered:
+        Number(stored.answered) || 0,
+
+      correct:
+        Number(stored.correct) || 0
+    };
+
+  }
+  catch(error){
+
+    return {
       answered:0,
       correct:0
     };
 
   }
+
+}
+
+
+function saveProgress(correct){
+
+  const progress =
+    getProgress();
 
 
   progress.answered++;
@@ -818,37 +1305,20 @@ function saveProgress(correct){
 
 
   localStorage.setItem(
-    'schiriProgress',
+    "schiriProgress",
     JSON.stringify(progress)
   );
 
 
-  loadProgress();
+  showProgress();
 
 }
 
 
-function loadProgress(){
+function showProgress(){
 
-  let progress;
-
-  try{
-
-    progress = JSON.parse(
-      localStorage.getItem(
-        'schiriProgress'
-      ) ||
-      '{"answered":0,"correct":0}'
-    );
-
-  }catch(error){
-
-    progress = {
-      answered:0,
-      correct:0
-    };
-
-  }
+  const progress =
+    getProgress();
 
 
   const percent =
@@ -861,14 +1331,19 @@ function loadProgress(){
       : 0;
 
 
-  $('#homebar').style.width =
-    percent + '%';
+  $("#homebar").style.width =
+    percent + "%";
 
 
-  $('#hometext').textContent =
+  $("#hometext").textContent =
     progress.answered
-      ? `${progress.answered} beantwortet · ${progress.correct} richtig · ${percent}% Trefferquote`
-      : 'Noch keine Fragen beantwortet.';
+      ? progress.answered +
+        " beantwortet · " +
+        progress.correct +
+        " richtig · " +
+        percent +
+        "% Trefferquote"
+      : "Noch keine Fragen beantwortet.";
 
 }
 
@@ -877,28 +1352,30 @@ function loadProgress(){
    PRÜFUNG
    ========================================================= */
 
-$('#startExam').addEventListener(
-  'click',
-  startExam
-);
-
-
 function startExam(){
 
-  if(!QS.length){
+  const questions =
+    verifiedQuestions();
 
-    $('#examBox').innerHTML = `
 
-      <div class="question">
+  $("#examResult").style.display =
+    "none";
+
+
+  if(!questions.length){
+
+    $("#examBox").innerHTML = `
+
+      <div class="empty">
 
         <strong>
           Noch keine Prüfung verfügbar.
         </strong>
 
         <p>
-          Eine Prüfung wird freigeschaltet,
-          sobald geprüfte Fragen im Fragenpool
-          vorhanden sind.
+          Die Prüfung wird freigeschaltet,
+          sobald genügend fachlich geprüfte
+          Fragen im Fragenpool vorhanden sind.
         </p>
 
       </div>
@@ -906,24 +1383,42 @@ function startExam(){
     `;
 
     return;
+
   }
 
 
-  exam = [...QS]
-    .sort(() => Math.random() - 0.5)
-    .slice(
-      0,
-      Math.min(10,QS.length)
-    );
+  const configuredAmount =
+    CONFIG &&
+    CONFIG.training &&
+    Number(
+      CONFIG.training.examQuestions
+    )
+      ? Number(
+          CONFIG.training.examQuestions
+        )
+      : 30;
 
 
-  examIndex = 0;
+  exam =
+    [...questions]
+      .sort(
+        () =>
+          Math.random() - 0.5
+      )
+      .slice(
+        0,
+        Math.min(
+          configuredAmount,
+          questions.length
+        )
+      );
 
-  examScore = 0;
 
+  examIndex =
+    0;
 
-  $('#examResult').style.display =
-    'none';
+  examScore =
+    0;
 
 
   showExam();
@@ -933,14 +1428,27 @@ function startExam(){
 
 function showExam(){
 
-  if(examIndex >= exam.length){
+  if(
+    examIndex >=
+    exam.length
+  ){
 
     const result =
-      $('#examResult');
+      $("#examResult");
 
 
     result.style.display =
-      'block';
+      "block";
+
+
+    const percent =
+      exam.length
+        ? Math.round(
+            examScore /
+            exam.length *
+            100
+          )
+        : 0;
 
 
     result.innerHTML = `
@@ -950,7 +1458,8 @@ function showExam(){
       </div>
 
       <p>
-        Fragen richtig beantwortet.
+        ${percent}% der Fragen
+        wurden richtig beantwortet.
       </p>
 
       <button
@@ -963,29 +1472,33 @@ function showExam(){
     `;
 
 
-    $('#examBox').innerHTML =
-      '';
-
+    $("#examBox").innerHTML =
+      "";
 
     return;
+
   }
 
 
   const question =
-    exam[examIndex];
+    exam[
+      examIndex
+    ];
 
 
-  $('#examBox').innerHTML = `
+  $("#examBox").innerHTML = `
 
     <div class="quiztop">
 
       <span>
-        Frage ${examIndex + 1}
-        von ${exam.length}
+        Frage
+        ${examIndex + 1}
+        von
+        ${exam.length}
       </span>
 
       <span>
-        Keine Auflösung bis zum Ende
+        Auflösung am Ende
       </span>
 
     </div>
@@ -997,19 +1510,24 @@ function showExam(){
         ${question.q}
       </strong>
 
-
       <div class="answers">
 
-        ${question.answers.map((answer,index) => `
+        ${question.answers
+          .map(
+            (answer,index) => `
 
-          <button
-            class="ans"
-            onclick="examAnswer(${index})"
-          >
-            ${String.fromCharCode(65 + index)} · ${answer}
-          </button>
+              <button
+                class="ans"
+                onclick="examAnswer(${index})"
+              >
+                ${String.fromCharCode(65 + index)}
+                ·
+                ${answer}
+              </button>
 
-        `).join('')}
+            `
+          )
+          .join("")}
 
       </div>
 
@@ -1023,10 +1541,22 @@ function showExam(){
 function examAnswer(index){
 
   if(
-    index ===
-    exam[examIndex].correct
+    !exam.length ||
+    !exam[examIndex]
   ){
+    return;
+  }
+
+
+  if(
+    index ===
+    exam[
+      examIndex
+    ].correct
+  ){
+
     examScore++;
+
   }
 
 
@@ -1038,8 +1568,108 @@ function examAnswer(index){
 
 
 /* =========================================================
+   STARTANSICHT AUS URL
+   ========================================================= */
+
+function restoreView(){
+
+  const requested =
+    window.location.hash
+      .replace("#","");
+
+
+  const allowed =
+    [
+      "start",
+      "lernen",
+      "ueben",
+      "pruefung"
+    ];
+
+
+  if(
+    allowed.includes(
+      requested
+    )
+  ){
+
+    openView(
+      requested
+    );
+
+  }
+
+}
+
+
+/* =========================================================
    APP STARTEN
    ========================================================= */
+
+async function init(){
+
+  CONFIG =
+    await loadJson(
+      "config.json",
+      {}
+    );
+
+
+  RULES =
+    await loadJson(
+      "rules.json",
+      []
+    );
+
+
+  QUESTIONS =
+    await loadJson(
+      "questions.json",
+      []
+    );
+
+
+  if(
+    !Array.isArray(RULES)
+  ){
+    RULES = [];
+  }
+
+
+  if(
+    !Array.isArray(QUESTIONS)
+  ){
+    QUESTIONS = [];
+  }
+
+
+  showRuleVersion();
+
+  configureLinks();
+
+  renderRules();
+
+  showPractice();
+
+  showProgress();
+
+  restoreView();
+
+}
+
+
+$("#startExam")
+  .addEventListener(
+    "click",
+    startExam
+  );
+
+
+window.addEventListener(
+  "hashchange",
+  restoreView
+);
+
 
 init();
 
