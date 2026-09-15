@@ -1,2977 +1,3004 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "season": "2026/27",
-  "questionCount": 128,
+  "questionCount": 135,
   "answerIndexing": "zero_based",
-  "notes": {
-    "conceptRule": "Varianten derselben conceptId sollen innerhalb einer einzelnen Prüfung nicht gemeinsam gezogen werden.",
-    "sourceHierarchy": [
-      "dfb_rules",
-      "sfv_downloads",
-      "svf_hrt"
-    ],
-    "updatePolicy": "Bei Änderung einer abhängigen Quelle betroffene Fragen auf review_required setzen."
-  },
   "questions": [
     {
-      "id": "R01-LINIEN-V1",
-      "conceptId": "R01-LINIEN",
+      "id": "Q001",
+      "conceptId": "C001",
       "rule": 1,
       "type": "knowledge",
       "difficulty": "easy",
-      "question": "Regel 1: Welche Antwort ist richtig?",
-      "scenario": "Linien gehören zu dem Raum, den sie begrenzen.",
+      "question": "Welche Linie muss länger sein?",
       "options": [
-        "Nur im Strafraum zum Bereich",
-        "Zu keinem Bereich",
-        "Immer zum Aus",
-        "Zu dem Bereich, den sie begrenzen."
+        "Torlinie",
+        "Seitenlinie",
+        "Beide müssen gleich lang sein",
+        "Das ist nicht festgelegt"
       ],
-      "correct": 3,
-      "explanation": "Linien gehören zu dem Raum, den sie begrenzen.",
+      "correct": 1,
+      "explanation": "Die Seitenlinie muss länger sein als die Torlinie.",
       "sources": [
-        "dfb_rules",
-        "sfv_downloads"
+        "dfb_rules"
       ],
       "verifiedFor": "2026/27",
-      "status": "verified"
+      "status": "verified",
+      "tags": []
     },
     {
-      "id": "R01-LINIEN-V2",
-      "conceptId": "R01-LINIEN",
-      "rule": 1,
-      "type": "quickcheck",
-      "difficulty": "easy",
-      "question": "Regel 1 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Linien gehören zu dem Raum, den sie begrenzen.",
-      "options": [
-        "Zu dem Bereich, den sie begrenzen.",
-        "Zu keinem Bereich",
-        "Nur im Strafraum zum Bereich",
-        "Immer zum Aus"
-      ],
-      "correct": 0,
-      "explanation": "Linien gehören zu dem Raum, den sie begrenzen.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R01-LINIEN-V3",
-      "conceptId": "R01-LINIEN",
-      "rule": 1,
-      "type": "decision",
-      "difficulty": "easy",
-      "question": "Regel 1 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Linien gehören zu dem Raum, den sie begrenzen.",
-      "options": [
-        "Nur im Strafraum zum Bereich",
-        "Zu keinem Bereich",
-        "Immer zum Aus",
-        "Zu dem Bereich, den sie begrenzen."
-      ],
-      "correct": 3,
-      "explanation": "Linien gehören zu dem Raum, den sie begrenzen.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R01-LINIEN-V4",
-      "conceptId": "R01-LINIEN",
-      "rule": 1,
-      "type": "exam",
-      "difficulty": "easy",
-      "question": "Regel 1 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Linien gehören zu dem Raum, den sie begrenzen.",
-      "options": [
-        "Nur im Strafraum zum Bereich",
-        "Zu keinem Bereich",
-        "Immer zum Aus",
-        "Zu dem Bereich, den sie begrenzen."
-      ],
-      "correct": 3,
-      "explanation": "Linien gehören zu dem Raum, den sie begrenzen.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R01-MITTELKREIS-V1",
-      "conceptId": "R01-MITTELKREIS",
+      "id": "Q002",
+      "conceptId": "C002",
       "rule": 1,
       "type": "knowledge",
       "difficulty": "easy",
-      "question": "Regel 1: Welche Antwort ist richtig?",
-      "scenario": "Der Mittelkreis hat einen Radius von 9,15 m.",
+      "question": "Wie weit ist der Strafstoßpunkt von der Torlinie entfernt?",
       "options": [
         "5,50 m",
         "9,15 m",
-        "16,50 m",
-        "11 m"
+        "11 m",
+        "16,50 m"
       ],
-      "correct": 1,
-      "explanation": "Der Mittelkreis hat einen Radius von 9,15 m.",
+      "correct": 2,
+      "explanation": "Der Strafstoßpunkt liegt 11 m von der Torlinie entfernt.",
       "sources": [
-        "dfb_rules",
-        "sfv_downloads"
+        "dfb_rules"
       ],
       "verifiedFor": "2026/27",
-      "status": "verified"
+      "status": "verified",
+      "tags": []
     },
     {
-      "id": "R01-MITTELKREIS-V2",
-      "conceptId": "R01-MITTELKREIS",
+      "id": "Q003",
+      "conceptId": "C003",
       "rule": 1,
-      "type": "quickcheck",
+      "type": "knowledge",
       "difficulty": "easy",
-      "question": "Regel 1 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Der Mittelkreis hat einen Radius von 9,15 m.",
+      "question": "Wie weit reicht der Strafraum von der Innenseite jedes Torpfostens seitlich nach außen?",
       "options": [
         "5,50 m",
-        "16,50 m",
+        "9,15 m",
         "11 m",
+        "16,50 m"
+      ],
+      "correct": 3,
+      "explanation": "Die Strafraumlinien beginnen 16,50 m von der Innenseite der Torpfosten.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q004",
+      "conceptId": "C004",
+      "rule": 1,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Welchen Radius hat der Viertelkreis am Eckbereich?",
+      "options": [
+        "0,5 m",
+        "1 m",
+        "2 m",
+        "9,15 m"
+      ],
+      "correct": 1,
+      "explanation": "Der Eckbereich wird durch einen Viertelkreis mit 1 m Radius markiert.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q005",
+      "conceptId": "C005",
+      "rule": 1,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Vor dem Anpfiff stellt der Schiedsrichter fest, dass ein Tor nicht sicher im Boden verankert ist. Was ist richtig?",
+      "options": [
+        "Spiel trotzdem beginnen",
+        "Nur den Heimtrainer informieren",
+        "Spiel erst beginnen, wenn das Tor sicher befestigt ist",
+        "Torlinie verkürzen"
+      ],
+      "correct": 2,
+      "explanation": "Die Tore müssen sicher befestigt sein. Die Sicherheit geht vor.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q006",
+      "conceptId": "C006",
+      "rule": 2,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Welchen Umfang muss ein regulärer Spielball haben?",
+      "options": [
+        "60–62 cm",
+        "64–66 cm",
+        "68–70 cm",
+        "72–74 cm"
+      ],
+      "correct": 2,
+      "explanation": "Der vorgeschriebene Umfang beträgt 68–70 cm.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q007",
+      "conceptId": "C007",
+      "rule": 2,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Welches Gewicht muss der Ball zu Spielbeginn haben?",
+      "options": [
+        "350–390 g",
+        "410–450 g",
+        "460–500 g",
+        "500–550 g"
+      ],
+      "correct": 1,
+      "explanation": "Zu Spielbeginn muss der Ball 410–450 g wiegen.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q008",
+      "conceptId": "C008",
+      "rule": 2,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Der Ball platzt während des laufenden Spiels im Mittelfeld. Wie wird fortgesetzt?",
+      "options": [
+        "Indirekter Freistoß",
+        "Schiedsrichterball",
+        "Einwurf",
+        "Direkter Freistoß"
+      ],
+      "correct": 1,
+      "explanation": "Wird der Ball während des laufenden Spiels unbrauchbar, wird unterbrochen und mit Schiedsrichterball fortgesetzt.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q009",
+      "conceptId": "C009",
+      "rule": 2,
+      "type": "knowledge",
+      "difficulty": "medium",
+      "question": "Wer entscheidet, ob ein Ersatzball für das Spiel geeignet ist?",
+      "options": [
+        "Heimverein",
+        "Beide Kapitäne gemeinsam",
+        "Schiedsrichter",
+        "Balljunge"
+      ],
+      "correct": 2,
+      "explanation": "Der Schiedsrichter entscheidet über die Eignung des Spielballs.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q010",
+      "conceptId": "C010",
+      "rule": 3,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Wie viele Spieler darf eine Mannschaft im regulären Großfeld höchstens gleichzeitig auf dem Feld haben?",
+      "options": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "correct": 2,
+      "explanation": "Eine Mannschaft besteht aus höchstens elf Spielern.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q011",
+      "conceptId": "C011",
+      "rule": 3,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Unter welcher Spielerzahl darf ein reguläres Spiel grundsätzlich nicht begonnen oder fortgesetzt werden?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "correct": 2,
+      "explanation": "Eine Mannschaft benötigt grundsätzlich mindestens sieben Spieler.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q012",
+      "conceptId": "C012",
+      "rule": 3,
+      "type": "knowledge",
+      "difficulty": "medium",
+      "question": "Welche Aussage über den Kapitän ist richtig?",
+      "options": [
+        "Er darf Schiedsrichterentscheidungen ändern",
+        "Er besitzt keine besonderen Rechte nach den Spielregeln",
+        "Er darf nicht verwarnt werden",
+        "Er entscheidet über die Nachspielzeit"
+      ],
+      "correct": 1,
+      "explanation": "Die Kapitänsbinde verleiht keine Sonderrechte nach den Spielregeln.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q013",
+      "conceptId": "C013",
+      "rule": 3,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Ein Auswechselspieler betritt ohne Erlaubnis das Spielfeld und greift nicht ins Spiel ein. Welche persönliche Strafe ist grundsätzlich vorgesehen?",
+      "options": [
+        "Keine",
+        "Verwarnung",
+        "Feldverweis",
+        "Nur mündliche Ermahnung"
+      ],
+      "correct": 1,
+      "explanation": "Unerlaubtes Betreten durch einen Auswechselspieler ist grundsätzlich verwarnungswürdig.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q014",
+      "conceptId": "C014",
+      "rule": 3,
+      "type": "situation",
+      "difficulty": "hard",
+      "question": "Eine Mannschaft hat wegen einer 2026/27 vorgesehenen vorübergehenden Wartezeit nach einer Auswechslung kurzfristig nur sechs Spieler auf dem Feld. Muss das Spiel allein deshalb sofort abgebrochen werden?",
+      "options": [
+        "Ja, immer",
+        "Nein, bei dieser vorübergehenden Unterzahl nicht automatisch",
+        "Nur wenn der Gegner zustimmt",
+        "Nur in Halbzeit zwei"
+      ],
+      "correct": 1,
+      "explanation": "2026/27 wurde klargestellt, dass eine solche kurzfristige Unterzahl nicht automatisch zum Spielabbruch führt.",
+      "sources": [
+        "dfb_rules",
+        "dfb_changes",
+        "sfv_changes"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q015",
+      "conceptId": "C015",
+      "rule": 3,
+      "type": "knowledge",
+      "difficulty": "medium",
+      "question": "Wie viel Zeit hat ein auszuwechselnder Spieler nach dem Auswechselzeichen 2026/27 grundsätzlich, das Spielfeld zu verlassen?",
+      "options": [
+        "5 Sekunden",
+        "10 Sekunden",
+        "20 Sekunden",
+        "30 Sekunden"
+      ],
+      "correct": 1,
+      "explanation": "Das neue Zeitlimit für das Verlassen des Spielfelds beträgt grundsätzlich zehn Sekunden.",
+      "sources": [
+        "dfb_rules",
+        "dfb_changes",
+        "sfv_changes"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q016",
+      "conceptId": "C016",
+      "rule": 3,
+      "type": "situation",
+      "difficulty": "hard",
+      "question": "Ein auszuwechselnder Spieler überschreitet ohne anerkennenswerten Grund das 10-Sekunden-Zeitlimit. Was passiert mit dem Einwechselspieler?",
+      "options": [
+        "Er darf sofort hinein",
+        "Er darf nach 30 Sekunden hinein",
+        "Er muss eine Minute warten und darf erst bei der folgenden Spielunterbrechung hinein",
+        "Die Auswechslung ist endgültig verboten"
+      ],
+      "correct": 2,
+      "explanation": "Nach Überschreiten des Zeitlimits wartet der Einwechselspieler eine Minute und darf erst bei der nächsten Spielunterbrechung eintreten.",
+      "sources": [
+        "dfb_rules",
+        "dfb_changes",
+        "sfv_changes"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q017",
+      "conceptId": "C017",
+      "rule": 3,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Drei Spieler derselben Mannschaft sollen gleichzeitig ausgewechselt werden. Wie viel Zeit steht ihnen nach dem neuen Protokoll insgesamt grundsätzlich zum Verlassen des Feldes zur Verfügung?",
+      "options": [
+        "10 Sekunden",
+        "20 Sekunden",
+        "30 Sekunden",
+        "Je 10 Sekunden nacheinander"
+      ],
+      "correct": 0,
+      "explanation": "Bei mehreren gleichzeitig angezeigten Wechseln läuft das Zeitlimit gemeinsam; grundsätzlich stehen zehn Sekunden zur Verfügung.",
+      "sources": [
+        "dfb_rules",
+        "dfb_changes"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q018",
+      "conceptId": "C018",
+      "rule": 3,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Ein verletzter Spieler kann bei seiner Auswechslung sichtbar nur langsam zur Linie humpeln. Muss der Schiedsrichter das 10-Sekunden-Limit starr durchsetzen?",
+      "options": [
+        "Ja, ohne Ausnahme",
+        "Nein, bei nachvollziehbaren Gründen kann eine Ausnahme gemacht werden",
+        "Nur der Gegner darf eine Ausnahme erlauben",
+        "Nur der vierte Offizielle entscheidet"
+      ],
+      "correct": 1,
+      "explanation": "Das Protokoll lässt bei nachvollziehbaren Gründen wie einer Verletzung Ausnahmen zu.",
+      "sources": [
+        "dfb_rules",
+        "dfb_changes"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q019",
+      "conceptId": "C019",
+      "rule": 4,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Welcher Gegenstand gehört zur vorgeschriebenen Grundausrüstung?",
+      "options": [
+        "Schienbeinschoner",
+        "Armbanduhr",
+        "Halskette",
+        "Mütze für jeden Feldspieler"
+      ],
+      "correct": 0,
+      "explanation": "Schienbeinschoner gehören zur vorgeschriebenen Grundausrüstung.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q020",
+      "conceptId": "C020",
+      "rule": 4,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Ein Spieler klebt seine Halskette vollständig mit Tape ab. Darf er damit spielen?",
+      "options": [
+        "Ja",
+        "Nein, verbotener Schmuck muss entfernt werden",
+        "Nur als Kapitän",
+        "Nur bei Freundschaftsspielen"
+      ],
+      "correct": 1,
+      "explanation": "Verbotener Schmuck muss entfernt werden; bloßes Abkleben reicht nicht.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q021",
+      "conceptId": "C021",
+      "rule": 4,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Ein Spieler verliert während des Spiels versehentlich einen Schuh und spielt unmittelbar danach den Ball. Muss das Spiel allein deswegen sofort unterbrochen werden?",
+      "options": [
+        "Ja, immer",
+        "Nein, er darf grundsätzlich bis zur nächsten Unterbrechung weiterspielen und die Ausrüstung korrigieren",
+        "Nur bei Ballbesitz",
+        "Nur im eigenen Strafraum"
+      ],
+      "correct": 1,
+      "explanation": "Bei versehentlichem Verlust von Schuh oder Schienbeinschoner darf grundsätzlich bis zur nächsten Unterbrechung weitergespielt werden.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q022",
+      "conceptId": "C022",
+      "rule": 4,
+      "type": "knowledge",
+      "difficulty": "medium",
+      "question": "Was muss für die Farben der beiden Torhüter gelten?",
+      "options": [
+        "Sie müssen identisch sein",
+        "Sie müssen sich von Spielern und Spieloffiziellen unterscheiden",
+        "Beide müssen schwarz tragen",
+        "Es gibt keine Farbvorgabe"
+      ],
+      "correct": 1,
+      "explanation": "Torhüter müssen sich farblich von den anderen Spielern und Spieloffiziellen unterscheiden.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q023",
+      "conceptId": "C023",
+      "rule": 4,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Ein Spieler trägt eine ungefährliche medizinische Schutzausrüstung. Was ist grundsätzlich möglich?",
+      "options": [
+        "Immer verboten",
+        "Zulässig, wenn sie sicher und nicht gefährlich ist",
+        "Nur mit Zustimmung des Gegners",
+        "Nur unter dem Trikot"
+      ],
+      "correct": 1,
+      "explanation": "Ungefährliche Schutzausrüstung kann zulässig sein, wenn sie keine Gefahr darstellt.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q024",
+      "conceptId": "C024",
+      "rule": 4,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Darf ein Spieler elektronische Kommunikationsgeräte benutzen, um während des Spiels mit Außenstehenden zu telefonieren?",
+      "options": [
+        "Ja",
+        "Nein",
+        "Nur der Kapitän",
+        "Nur bei Spielunterbrechungen"
+      ],
+      "correct": 1,
+      "explanation": "Spieler dürfen keine unzulässigen elektronischen Kommunikationsgeräte verwenden.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q025",
+      "conceptId": "C025",
+      "rule": 5,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Wer hat die endgültige Entscheidungsgewalt über Tatsachen im Zusammenhang mit dem Spiel?",
+      "options": [
+        "Heimtrainer",
+        "Kapitän",
+        "Schiedsrichter",
+        "Schiedsrichter-Assistent"
+      ],
+      "correct": 2,
+      "explanation": "Die endgültige Entscheidungsgewalt liegt beim Schiedsrichter.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q026",
+      "conceptId": "C026",
+      "rule": 5,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Nach einem Foul bleibt der Ball bei der gefoulten Mannschaft und es entsteht sofort eine gute Angriffsmöglichkeit. Was kann der Schiedsrichter tun?",
+      "options": [
+        "Immer unterbrechen",
+        "Vorteil anwenden",
+        "Abstoß geben",
+        "Schiedsrichterball geben"
+      ],
+      "correct": 1,
+      "explanation": "Der Schiedsrichter kann Vorteil anwenden, wenn dies der nicht fehlbaren Mannschaft nützt.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q027",
+      "conceptId": "C027",
+      "rule": 5,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Der Schiedsrichter lässt Vorteil laufen, aber innerhalb weniger Sekunden entsteht der erwartete Vorteil nicht. Was kann er tun?",
+      "options": [
+        "Nie mehr zurückgehen",
+        "Zum ursprünglichen Vergehen zurückkehren",
+        "Nur Gelb zeigen und weiterspielen",
+        "Das Spiel beenden"
+      ],
+      "correct": 1,
+      "explanation": "Tritt der erwartete Vorteil nicht kurzfristig ein, kann auf das ursprüngliche Vergehen zurückgegangen werden.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q028",
+      "conceptId": "C028",
+      "rule": 5,
+      "type": "knowledge",
+      "difficulty": "medium",
+      "question": "Wann kann der Schiedsrichter eine Entscheidung grundsätzlich noch ändern?",
+      "options": [
+        "Nie nach dem Pfiff",
+        "Solange das Spiel noch nicht entsprechend fortgesetzt wurde bzw. die maßgebliche Grenze der Änderbarkeit nicht überschritten ist",
+        "Nur in der Halbzeit",
+        "Nur mit Zustimmung beider Kapitäne"
+      ],
+      "correct": 1,
+      "explanation": "Entscheidungen können nur innerhalb der regeltechnisch vorgesehenen Grenzen geändert werden, insbesondere vor der maßgeblichen Spielfortsetzung.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q029",
+      "conceptId": "C029",
+      "rule": 5,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Ein Spieler muss wegen einer Verletzung auf dem Feld behandelt werden und fällt nicht unter eine Ausnahme. Was gilt 2026/27 grundsätzlich nach dem Verlassen des Feldes?",
+      "options": [
+        "Er darf sofort zurück",
+        "Er muss grundsätzlich mindestens eine Minute warten",
+        "Er darf erst zur Halbzeit zurück",
+        "Er darf nicht mehr teilnehmen"
+      ],
+      "correct": 1,
+      "explanation": "Nach einer Behandlung bzw. entsprechenden verletzungsbedingten Unterbrechung gilt grundsätzlich eine Wartezeit von mindestens einer Minute.",
+      "sources": [
+        "dfb_rules",
+        "dfb_changes",
+        "sfv_changes"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q030",
+      "conceptId": "C030",
+      "rule": 5,
+      "type": "situation",
+      "difficulty": "hard",
+      "question": "Darf ein Spieler nach der vorgeschriebenen einminütigen Wartezeit mit Zustimmung des Schiedsrichters auch während des laufenden Spiels wieder eintreten?",
+      "options": [
+        "Nein",
+        "Ja",
+        "Nur der Torhüter",
+        "Nur nach Eckstoß"
+      ],
+      "correct": 1,
+      "explanation": "Nach Ablauf der Wartezeit kann der Wiedereintritt mit Zustimmung des Schiedsrichters auch während des laufenden Spiels erfolgen.",
+      "sources": [
+        "dfb_rules",
+        "dfb_changes",
+        "sfv_changes"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q031",
+      "conceptId": "C031",
+      "rule": 5,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Wer entscheidet, wie viel verlorene Zeit nachgespielt wird?",
+      "options": [
+        "Zeitnehmer",
+        "Heimtrainer",
+        "Schiedsrichter",
+        "Beide Kapitäne"
+      ],
+      "correct": 2,
+      "explanation": "Der Schiedsrichter bestimmt die Nachspielzeit.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q032",
+      "conceptId": "C032",
+      "rule": 5,
+      "type": "situation",
+      "difficulty": "hard",
+      "question": "Ein Spieler begeht ein verwarnungswürdiges Vergehen, der Schiedsrichter lässt Vorteil laufen und will später die persönliche Strafe aussprechen. Ist das grundsätzlich möglich?",
+      "options": [
+        "Nein, Vorteil löscht jede Strafe",
+        "Ja, Vorteil und persönliche Strafe werden getrennt beurteilt",
+        "Nur bei Torerfolg",
+        "Nur wenn der Gegner zustimmt"
+      ],
+      "correct": 1,
+      "explanation": "Eine Vorteilsanwendung lässt eine erforderliche persönliche Strafe nicht automatisch entfallen.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q033",
+      "conceptId": "C033",
+      "rule": 5,
+      "type": "knowledge",
+      "difficulty": "medium",
+      "question": "Was hat bei einer schweren Verletzung Vorrang?",
+      "options": [
+        "Spielfluss",
+        "Sicherheit und notwendige medizinische Versorgung",
+        "Wunsch des Trainers",
+        "Spielstand"
+      ],
+      "correct": 1,
+      "explanation": "Bei einer schweren Verletzung muss der Schiedsrichter die Sicherheit und Versorgung priorisieren.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q034",
+      "conceptId": "C034",
+      "rule": 6,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Welche typische Aufgabe hat ein Schiedsrichter-Assistent?",
+      "options": [
+        "Mannschaftsaufstellung bestimmen",
+        "Abseits anzeigen",
+        "Nachspielzeit allein festlegen",
+        "Trainer verwarnen"
+      ],
+      "correct": 1,
+      "explanation": "Zu den Kernaufgaben gehört die Unterstützung bei Abseitsentscheidungen.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q035",
+      "conceptId": "C035",
+      "rule": 6,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Der Assistent sieht ein klares Vergehen, das der Schiedsrichter nicht erkennen konnte. Was soll er tun?",
+      "options": [
+        "Ignorieren",
+        "Den Schiedsrichter mit dem vereinbarten Zeichen unterstützen",
+        "Selbst das Spiel anpfeifen",
+        "Bis zur Halbzeit warten"
+      ],
+      "correct": 1,
+      "explanation": "Weitere Spieloffizielle unterstützen den Schiedsrichter bei relevanten Wahrnehmungen.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q036",
+      "conceptId": "C036",
+      "rule": 6,
+      "type": "knowledge",
+      "difficulty": "medium",
+      "question": "Wer trifft trotz eines Hinweises des Assistenten die endgültige Entscheidung?",
+      "options": [
+        "Assistent",
+        "Schiedsrichter",
+        "Kapitän",
+        "Heimverein"
+      ],
+      "correct": 1,
+      "explanation": "Die endgültige Entscheidung trifft der Schiedsrichter.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q037",
+      "conceptId": "C037",
+      "rule": 6,
+      "type": "knowledge",
+      "difficulty": "medium",
+      "question": "Welche Aufgabe kann ein vierter Offizieller übernehmen?",
+      "options": [
+        "Den Sieger bestimmen",
+        "Den Schiedsrichter bei administrativen Aufgaben und Auswechslungen unterstützen",
+        "Abseits allein entscheiden",
+        "Den Ball ins Spiel bringen"
+      ],
+      "correct": 1,
+      "explanation": "Der vierte Offizielle unterstützt unter anderem bei administrativen Aufgaben und Wechselvorgängen.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q038",
+      "conceptId": "C038",
+      "rule": 7,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Wie lange dauert eine Halbzeit im regulären Erwachsenenfußball?",
+      "options": [
+        "30 Minuten",
+        "40 Minuten",
+        "45 Minuten",
+        "50 Minuten"
+      ],
+      "correct": 2,
+      "explanation": "Regulär werden zwei Halbzeiten zu je 45 Minuten gespielt.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q039",
+      "conceptId": "C039",
+      "rule": 7,
+      "type": "knowledge",
+      "difficulty": "medium",
+      "question": "Was bedeutet eine angezeigte Nachspielzeit von vier Minuten?",
+      "options": [
+        "Das Spiel endet exakt nach vier Minuten",
+        "Mindestens vier Minuten werden nachgespielt",
+        "Höchstens vier Minuten werden nachgespielt",
+        "Vier Minuten Pause"
+      ],
+      "correct": 1,
+      "explanation": "Die angezeigte Nachspielzeit ist die mindestens nachzuspielende Zeit.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q040",
+      "conceptId": "C040",
+      "rule": 7,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "In der angezeigten Nachspielzeit kommt es zu einer weiteren längeren Unterbrechung. Darf zusätzliche Zeit nachgespielt werden?",
+      "options": [
+        "Nein",
+        "Ja",
+        "Nur bei Verletzungen des Torhüters",
+        "Nur mit Zustimmung der Kapitäne"
+      ],
+      "correct": 1,
+      "explanation": "Auch in der Nachspielzeit neu verlorene Zeit kann zusätzlich berücksichtigt werden.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q041",
+      "conceptId": "C041",
+      "rule": 7,
+      "type": "knowledge",
+      "difficulty": "medium",
+      "question": "Kann die Halbzeit zur Ausführung eines Strafstoßes verlängert werden?",
+      "options": [
+        "Nein",
+        "Ja",
+        "Nur in Pokalspielen",
+        "Nur in Halbzeit zwei"
+      ],
+      "correct": 1,
+      "explanation": "Eine Spielhälfte wird erforderlichenfalls zur Ausführung bzw. Wiederholung eines Strafstoßes verlängert.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q042",
+      "conceptId": "C042",
+      "rule": 7,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Wer bestimmt die Dauer der Halbzeitpause innerhalb der zulässigen Vorgaben?",
+      "options": [
+        "Nur die Heimmannschaft",
+        "Wettbewerbsbestimmungen; Änderungen bedürfen der Zustimmung des Schiedsrichters",
+        "Der Torwart",
+        "Die Zuschauer"
+      ],
+      "correct": 1,
+      "explanation": "Die Wettbewerbsbestimmungen geben den Rahmen vor; der Schiedsrichter überwacht ihn.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q043",
+      "conceptId": "C043",
+      "rule": 7,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Eine Mannschaft verzögert wiederholt Spielfortsetzungen. Welche Zeitfolge muss der Schiedsrichter zusätzlich beachten?",
+      "options": [
+        "Keine",
+        "Verlorene Zeit ist bei der Nachspielzeit zu berücksichtigen",
+        "Die erste Halbzeit wird verkürzt",
+        "Nur die zweite Halbzeit wird verlängert"
+      ],
+      "correct": 1,
+      "explanation": "Durch Verzögerungen verlorene Zeit wird bei der Nachspielzeit berücksichtigt.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q044",
+      "conceptId": "C044",
+      "rule": 8,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Wann ist der Ball beim Anstoß im Spiel?",
+      "options": [
+        "Mit dem Pfiff",
+        "Wenn er mit dem Fuß gespielt wurde und sich eindeutig bewegt",
+        "Wenn er den Mittelkreis verlässt",
+        "Nach der zweiten Berührung"
+      ],
+      "correct": 1,
+      "explanation": "Beim Anstoß ist der Ball nach dem Spielen und eindeutigen Bewegen im Spiel.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q045",
+      "conceptId": "C045",
+      "rule": 8,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Darf aus einem Anstoß direkt ein Tor gegen den Gegner erzielt werden?",
+      "options": [
+        "Ja",
+        "Nein",
+        "Nur nach der Pause",
+        "Nur vom Kapitän"
+      ],
+      "correct": 0,
+      "explanation": "Aus einem Anstoß kann direkt ein Tor gegen den Gegner erzielt werden.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q046",
+      "conceptId": "C046",
+      "rule": 8,
+      "type": "knowledge",
+      "difficulty": "medium",
+      "question": "Wie weit müssen die Gegner beim Anstoß vom Ball entfernt sein?",
+      "options": [
+        "2 m",
+        "5 m",
+        "9,15 m",
+        "11 m"
+      ],
+      "correct": 2,
+      "explanation": "Die Gegner müssen mindestens 9,15 m vom Ball entfernt sein, bis er im Spiel ist.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q047",
+      "conceptId": "C047",
+      "rule": 8,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Der Spieler, der den Anstoß ausgeführt hat, berührt den Ball erneut, bevor ein anderer Spieler ihn berührt. Spielfortsetzung?",
+      "options": [
+        "Weiterspielen",
+        "Indirekter Freistoß für den Gegner, sofern kein anderes schwerer zu ahndendes Vergehen vorliegt",
+        "Wiederholung des Anstoßes",
+        "Schiedsrichterball"
+      ],
+      "correct": 1,
+      "explanation": "Eine unzulässige zweite Ballberührung führt grundsätzlich zum indirekten Freistoß.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q048",
+      "conceptId": "C048",
+      "rule": 8,
+      "type": "knowledge",
+      "difficulty": "medium",
+      "question": "Wo wird ein Schiedsrichterball grundsätzlich ausgeführt?",
+      "options": [
+        "Immer im Mittelkreis",
+        "Am Ort des Balls bei der Unterbrechung, vorbehaltlich der Sonderregel im Strafraum",
+        "Immer auf der Seitenlinie",
+        "Immer am Strafstoßpunkt"
+      ],
+      "correct": 1,
+      "explanation": "Grundsätzlich ist der Ort des Balls bei der Unterbrechung maßgeblich; für den Strafraum gelten besondere Vorgaben.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q049",
+      "conceptId": "C049",
+      "rule": 8,
+      "type": "situation",
+      "difficulty": "hard",
+      "question": "Das Spiel wird außerhalb des Strafraums ohne Vergehen unterbrochen. Es ist eindeutig, welche Mannschaft in Ballbesitz war. Wem wird der Schiedsrichterball gegeben?",
+      "options": [
+        "Dem Schiedsrichter-Assistenten",
+        "Einem Spieler dieser Mannschaft",
+        "Immer dem Heimteam",
+        "Je einem Spieler beider Teams"
+      ],
+      "correct": 1,
+      "explanation": "Ist der Ballbesitz eindeutig, erhält grundsätzlich ein Spieler dieser Mannschaft den Schiedsrichterball.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q050",
+      "conceptId": "C050",
+      "rule": 8,
+      "type": "knowledge",
+      "difficulty": "medium",
+      "question": "Wie weit müssen andere Spieler bei einem Schiedsrichterball grundsätzlich entfernt sein?",
+      "options": [
+        "2 m",
+        "4 m",
+        "5 m",
+        "9,15 m"
+      ],
+      "correct": 1,
+      "explanation": "Alle anderen Spieler müssen mindestens 4 m entfernt sein, bis der Ball im Spiel ist.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q051",
+      "conceptId": "C051",
+      "rule": 9,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Wann ist der Ball an der Seitenlinie aus dem Spiel?",
+      "options": [
+        "Sobald er die Linie berührt",
+        "Wenn er die Linie vollständig überschritten hat",
+        "Wenn der Assistent die Fahne hebt",
+        "Wenn ein Spieler stehen bleibt"
+      ],
+      "correct": 1,
+      "explanation": "Der Ball ist erst aus, wenn er die Linie vollständig überschritten hat.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q052",
+      "conceptId": "C052",
+      "rule": 9,
+      "type": "situation",
+      "difficulty": "easy",
+      "question": "Der Ball prallt vom Pfosten zurück ins Spielfeld. Was gilt?",
+      "options": [
+        "Abstoß",
+        "Spiel läuft weiter",
+        "Schiedsrichterball",
+        "Eckstoß"
+      ],
+      "correct": 1,
+      "explanation": "Pfosten und Latte gehören zum Spiel; bleibt der Ball im Feld, läuft das Spiel grundsätzlich weiter.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q053",
+      "conceptId": "C053",
+      "rule": 9,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Der Ball berührt den Schiedsrichter und bleibt im Feld. Danach wechselt unmittelbar der Ballbesitz. Wie wird fortgesetzt?",
+      "options": [
+        "Weiterspielen",
+        "Schiedsrichterball",
+        "Indirekter Freistoß",
+        "Einwurf"
+      ],
+      "correct": 1,
+      "explanation": "Bei Ballberührung eines Spieloffiziellen und anschließendem Ballbesitzwechsel wird mit Schiedsrichterball fortgesetzt.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q054",
+      "conceptId": "C054",
+      "rule": 9,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Der Ball berührt den Schiedsrichter, bleibt im Feld und daraus beginnt unmittelbar ein aussichtsreicher Angriff. Entscheidung?",
+      "options": [
+        "Weiterspielen",
+        "Schiedsrichterball",
+        "Direkter Freistoß",
+        "Abstoß"
+      ],
+      "correct": 1,
+      "explanation": "Beginnt nach der Schiedsrichterberührung unmittelbar ein aussichtsreicher Angriff, ist Schiedsrichterball vorgesehen.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q055",
+      "conceptId": "C055",
+      "rule": 9,
+      "type": "situation",
+      "difficulty": "hard",
+      "question": "Der Ball berührt den Schiedsrichter, bleibt im Feld und geht anschließend direkt ins Tor. Entscheidung?",
+      "options": [
+        "Tor",
+        "Schiedsrichterball",
+        "Abstoß",
+        "Eckstoß"
+      ],
+      "correct": 1,
+      "explanation": "Geht der Ball nach einer Berührung eines Spieloffiziellen direkt ins Tor, wird mit Schiedsrichterball fortgesetzt.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q056",
+      "conceptId": "C056",
+      "rule": 10,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Wann ist ein Tor erzielt?",
+      "options": [
+        "Wenn der Ball die Torlinie berührt",
+        "Wenn der Ball die Torlinie zwischen Pfosten und unter Latte vollständig überschritten hat und kein vorheriges Vergehen vorliegt",
+        "Wenn der Torwart fällt",
+        "Wenn der Assistent zur Mitte läuft"
+      ],
+      "correct": 1,
+      "explanation": "Der Ball muss die Torlinie vollständig zwischen Pfosten und unter der Latte überschreiten.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q057",
+      "conceptId": "C057",
+      "rule": 10,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Was ist das Spielergebnis bei gleicher Torzahl, wenn der Wettbewerb keinen Sieger verlangt?",
+      "options": [
+        "Heimsieg",
+        "Auswärtssieg",
+        "Unentschieden",
+        "Automatisch Elfmeterschießen"
+      ],
+      "correct": 2,
+      "explanation": "Bei gleicher Torzahl endet das Spiel unentschieden, sofern kein Sieger ermittelt werden muss.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q058",
+      "conceptId": "C058",
+      "rule": 10,
+      "type": "knowledge",
+      "difficulty": "medium",
+      "question": "Welche Methode kann eine Wettbewerbsbestimmung zur Siegerermittlung vorsehen?",
+      "options": [
+        "Golden Goal zwingend",
+        "Elfmeterschießen",
+        "Losentscheid durch Zuschauer",
+        "Mehr Eckstöße"
+      ],
+      "correct": 1,
+      "explanation": "Elfmeterschießen ist eine zulässige Methode zur Siegerermittlung, wenn der Wettbewerb dies vorsieht.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q059",
+      "conceptId": "C059",
+      "rule": 10,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Ein Torhüter wirft den Ball mit der Hand direkt ins gegnerische Tor. Entscheidung?",
+      "options": [
+        "Tor",
+        "Abstoß für den Gegner",
+        "Eckstoß",
+        "Schiedsrichterball"
+      ],
+      "correct": 1,
+      "explanation": "Aus einem direkten Handwurf des Torhüters kann kein Tor gegen den Gegner erzielt werden; es gibt Abstoß.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q060",
+      "conceptId": "C060",
+      "rule": 10,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Ein Spieler erzielt ein Tor, nachdem seine Mannschaft unmittelbar zuvor ein Vergehen begangen hat, das der Schiedsrichter noch ahnden kann. Was gilt?",
+      "options": [
+        "Tor zählt immer",
+        "Tor kann nicht anerkannt werden; das vorherige Vergehen ist zu ahnden",
+        "Nur Gelb, Tor zählt",
+        "Kapitän entscheidet"
+      ],
+      "correct": 1,
+      "explanation": "Ein Tor setzt voraus, dass die angreifende Mannschaft zuvor kein zu ahndendes Vergehen begangen hat.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q061",
+      "conceptId": "C061",
+      "rule": 11,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Ist eine Abseitsstellung allein ein Vergehen?",
+      "options": [
+        "Ja",
+        "Nein",
+        "Nur im Strafraum",
+        "Nur bei einem Pass nach vorne"
+      ],
+      "correct": 1,
+      "explanation": "Eine Abseitsstellung allein ist nicht strafbar.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q062",
+      "conceptId": "C062",
+      "rule": 11,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Kann ein Spieler in der eigenen Spielfeldhälfte in Abseitsstellung stehen?",
+      "options": [
+        "Ja",
+        "Nein",
+        "Nur der Torwart",
+        "Nur beim Freistoß"
+      ],
+      "correct": 1,
+      "explanation": "Für eine Abseitsstellung muss sich der Spieler in der gegnerischen Spielfeldhälfte befinden; die Mittellinie zählt dabei nicht zur gegnerischen Hälfte.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q063",
+      "conceptId": "C063",
+      "rule": 11,
+      "type": "knowledge",
+      "difficulty": "medium",
+      "question": "Welche Körperteile zählen bei der Bestimmung der Abseitsstellung nicht mit?",
+      "options": [
+        "Kopf und Brust",
+        "Hände und Arme",
+        "Füße",
+        "Knie"
+      ],
+      "correct": 1,
+      "explanation": "Hände und Arme aller Spieler werden bei der Abseitsposition nicht berücksichtigt.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q064",
+      "conceptId": "C064",
+      "rule": 11,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Gibt es direkt aus einem Abstoß ein Abseitsvergehen?",
+      "options": [
+        "Ja",
+        "Nein",
+        "Nur bei weitem Abstoß",
+        "Nur beim Torwartabstoß"
+      ],
+      "correct": 1,
+      "explanation": "Direkt aus einem Abstoß gibt es kein Abseitsvergehen.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q065",
+      "conceptId": "C065",
+      "rule": 11,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Gibt es direkt aus einem Einwurf ein Abseitsvergehen?",
+      "options": [
+        "Ja",
+        "Nein",
+        "Nur in Tornähe",
+        "Nur bei weitem Einwurf"
+      ],
+      "correct": 1,
+      "explanation": "Direkt aus einem Einwurf gibt es kein Abseitsvergehen.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q066",
+      "conceptId": "C066",
+      "rule": 11,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Gibt es direkt aus einem Eckstoß ein Abseitsvergehen?",
+      "options": [
+        "Ja",
+        "Nein",
+        "Nur bei kurzer Ecke",
+        "Nur im Torraum"
+      ],
+      "correct": 1,
+      "explanation": "Direkt aus einem Eckstoß gibt es kein Abseitsvergehen.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q067",
+      "conceptId": "C067",
+      "rule": 11,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Ein Angreifer steht beim Zuspiel in Abseitsstellung, läuft aber vom Ball weg und beeinflusst keinen Gegner. Entscheidung?",
+      "options": [
+        "Abseits",
+        "Weiterspielen",
+        "Gelbe Karte",
+        "Direkter Freistoß"
+      ],
+      "correct": 1,
+      "explanation": "Ohne Eingreifen ins Spiel, Beeinflussung eines Gegners oder Vorteil aus der Abseitsstellung liegt kein Abseitsvergehen vor.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q068",
+      "conceptId": "C068",
+      "rule": 11,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Ein Angreifer steht beim Zuspiel in Abseitsstellung und spielt anschließend den Ball. Entscheidung?",
+      "options": [
+        "Grundsätzlich Abseitsvergehen",
+        "Immer weiterspielen",
+        "Direkter Freistoß",
+        "Schiedsrichterball"
+      ],
+      "correct": 0,
+      "explanation": "Durch das Spielen des Balls greift er ins Spiel ein und macht die Abseitsstellung strafbar.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q069",
+      "conceptId": "C069",
+      "rule": 11,
+      "type": "situation",
+      "difficulty": "hard",
+      "question": "Ein Verteidiger spielt den Ball kontrolliert und absichtlich zu einem zuvor im Abseits stehenden Angreifer. Was ist grundsätzlich zu prüfen?",
+      "options": [
+        "Abseits bleibt immer bestehen",
+        "Ob ein bewusstes Spielen des Verteidigers die Abseitsbewertung aufhebt",
+        "Nur ob der Pass hoch war",
+        "Nur die Position des Torhüters"
+      ],
+      "correct": 1,
+      "explanation": "Ein bewusstes Spielen des Verteidigers kann die vorherige Abseitsstellung neutralisieren; eine absichtliche Abwehraktion ist davon zu unterscheiden.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q070",
+      "conceptId": "C070",
+      "rule": 11,
+      "type": "knowledge",
+      "difficulty": "hard",
+      "question": "Was ist bei einer absichtlichen Abwehraktion ('deliberate save') eines Verteidigers hinsichtlich eines zuvor im Abseits stehenden Angreifers grundsätzlich richtig?",
+      "options": [
+        "Sie hebt Abseits immer auf",
+        "Sie hebt die Abseitsstellung nicht wie ein bewusstes Spielen auf",
+        "Sie führt automatisch zu Strafstoß",
+        "Sie ist immer Handspiel"
+      ],
+      "correct": 1,
+      "explanation": "Eine absichtliche Abwehraktion wird bei der Abseitsbewertung anders behandelt als bewusstes Spielen.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q071",
+      "conceptId": "C071",
+      "rule": 11,
+      "type": "knowledge",
+      "difficulty": "hard",
+      "question": "Welcher Moment ist beim Abwurf des Torhüters für die Bestimmung der Abseitsstellung maßgeblich?",
+      "options": [
+        "Erster Handkontakt",
+        "Letzter Kontakt mit dem Ball beim Abwurf",
+        "Bodenkontakt",
+        "Pfiff"
+      ],
+      "correct": 1,
+      "explanation": "Beim Abwurf ist der letzte Kontakt des Torhüters mit dem Ball maßgeblich.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q072",
+      "conceptId": "C072",
+      "rule": 11,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Ein Angreifer steht auf gleicher Höhe mit dem vorletzten Gegenspieler. Ist er allein deshalb im Abseits?",
+      "options": [
+        "Ja",
+        "Nein",
+        "Nur im Strafraum",
+        "Nur bei flachem Pass"
+      ],
+      "correct": 1,
+      "explanation": "Gleiche Höhe begründet keine Abseitsstellung.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q073",
+      "conceptId": "C073",
+      "rule": 12,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Ist jede Berührung des Balls mit Hand oder Arm strafbar?",
+      "options": [
+        "Ja",
+        "Nein",
+        "Nur bei Verteidigern",
+        "Nur im Strafraum"
+      ],
+      "correct": 1,
+      "explanation": "Nicht jede Hand-/Armberührung ist ein strafbares Handspiel.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q074",
+      "conceptId": "C074",
+      "rule": 12,
+      "type": "knowledge",
+      "difficulty": "medium",
+      "question": "Welche Intensitätsstufen werden bei bestimmten Foulspielen unterschieden?",
+      "options": [
+        "Leicht, mittel, schwer",
+        "Fahrlässig, rücksichtslos, übermäßig hart",
+        "Zufällig, geplant, absichtlich",
+        "Langsam, schnell, brutal"
+      ],
+      "correct": 1,
+      "explanation": "Die Regeln unterscheiden bei bestimmten Vergehen fahrlässig, rücksichtslos und übermäßig hart.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q075",
+      "conceptId": "C075",
+      "rule": 12,
+      "type": "knowledge",
+      "difficulty": "medium",
+      "question": "Welche persönliche Strafe ist bei einem rücksichtslosen Foul grundsätzlich vorgesehen?",
+      "options": [
+        "Keine",
+        "Verwarnung",
+        "Feldverweis",
+        "Zeitstrafe nach IFAB zwingend"
+      ],
+      "correct": 1,
+      "explanation": "Rücksichtsloses Foulspiel ist grundsätzlich verwarnungswürdig.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q076",
+      "conceptId": "C076",
+      "rule": 12,
+      "type": "knowledge",
+      "difficulty": "medium",
+      "question": "Welche persönliche Strafe ist bei übermäßig hartem Foulspiel vorgesehen?",
+      "options": [
+        "Keine",
+        "Verwarnung",
+        "Feldverweis",
+        "Nur Ermahnung"
+      ],
+      "correct": 2,
+      "explanation": "Übermäßig hartes Foulspiel ist feldverweiswürdig.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q077",
+      "conceptId": "C077",
+      "rule": 12,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Wie lange darf der Torhüter den Ball mit Hand oder Arm kontrollieren?",
+      "options": [
+        "6 Sekunden",
+        "7 Sekunden",
+        "8 Sekunden",
+        "10 Sekunden"
+      ],
+      "correct": 2,
+      "explanation": "Seit 2025/26 gilt eine Acht-Sekunden-Grenze.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q078",
+      "conceptId": "C078",
+      "rule": 12,
+      "type": "knowledge",
+      "difficulty": "medium",
+      "question": "Was macht der Schiedsrichter bei der Torhüter-Kontrollzeit während der letzten fünf Sekunden?",
+      "options": [
+        "Nichts",
+        "Er zeigt einen sichtbaren Countdown",
+        "Er pfeift jede Sekunde",
+        "Er hebt beide Arme"
+      ],
+      "correct": 1,
+      "explanation": "Die letzten fünf Sekunden werden sichtbar heruntergezählt.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q079",
+      "conceptId": "C079",
+      "rule": 12,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Der Torhüter hält den Ball länger als acht Sekunden, ohne behindert zu werden. Spielfortsetzung?",
+      "options": [
+        "Indirekter Freistoß",
+        "Eckstoß für den Gegner",
+        "Strafstoß",
+        "Schiedsrichterball"
+      ],
+      "correct": 1,
+      "explanation": "Bei Überschreiten der Acht-Sekunden-Grenze erhält der Gegner einen Eckstoß.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q080",
+      "conceptId": "C080",
+      "rule": 12,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Wofür steht die Gelbe Karte?",
+      "options": [
+        "Feldverweis",
+        "Verwarnung",
+        "Toraberkennung",
+        "Spielabbruch"
+      ],
+      "correct": 1,
+      "explanation": "Gelb zeigt eine Verwarnung an.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q081",
+      "conceptId": "C081",
+      "rule": 12,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Wofür steht die Rote Karte?",
+      "options": [
+        "Verwarnung",
+        "Feldverweis",
+        "Abseits",
+        "Vorteil"
+      ],
+      "correct": 1,
+      "explanation": "Rot zeigt einen Feldverweis an.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q082",
+      "conceptId": "C082",
+      "rule": 12,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Ein Spieler tritt einen Gegner fahrlässig im Kampf um den Ball. Welche persönliche Strafe ist wegen der Fahrlässigkeit allein erforderlich?",
+      "options": [
+        "Keine Karte",
+        "Gelb",
+        "Rot",
+        "Zwei Minuten"
+      ],
+      "correct": 0,
+      "explanation": "Ein fahrlässiges Vergehen erfordert wegen der Intensität allein grundsätzlich keine Karte.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q083",
+      "conceptId": "C083",
+      "rule": 12,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Ein Spieler hält einen Gegner fest und verhindert dadurch einen aussichtsreichen Angriff. Was ist zusätzlich zur Spielfortsetzung grundsätzlich zu prüfen?",
+      "options": [
+        "Verwarnung wegen Unterbindens eines aussichtsreichen Angriffs",
+        "Immer Rot",
+        "Keine persönliche Strafe möglich",
+        "Nur Ermahnung des Trainers"
+      ],
+      "correct": 0,
+      "explanation": "Das Unterbinden eines aussichtsreichen Angriffs kann eine Verwarnung erfordern.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q084",
+      "conceptId": "C084",
+      "rule": 12,
+      "type": "situation",
+      "difficulty": "hard",
+      "question": "Ein Verteidiger verhindert durch ein Halten außerhalb des Strafraums eine offensichtliche Torchance. Welche persönliche Strafe ist grundsätzlich vorgesehen?",
+      "options": [
+        "Keine",
+        "Gelb",
+        "Rot",
+        "Nur Ermahnung"
+      ],
+      "correct": 2,
+      "explanation": "Das Vereiteln einer offensichtlichen Torchance durch ein Vergehen außerhalb des Strafraums ist grundsätzlich feldverweiswürdig.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q085",
+      "conceptId": "C085",
+      "rule": 12,
+      "type": "situation",
+      "difficulty": "hard",
+      "question": "Ein Verteidiger begeht im eigenen Strafraum beim Versuch, den Ball zu spielen, ein Foul, das eine offensichtliche Torchance verhindert. Es gibt Strafstoß. Welche persönliche Strafe ist nach der bekannten 'Downgrade'-Regel grundsätzlich möglich?",
+      "options": [
+        "Immer Rot",
+        "Grundsätzlich Gelb statt Rot, wenn die Voraussetzungen erfüllt sind",
+        "Nie eine Karte",
+        "Automatisch zwei Minuten"
+      ],
+      "correct": 1,
+      "explanation": "Bei bestimmten ballorientierten DOGSO-Vergehen im eigenen Strafraum wird die persönliche Strafe bei Strafstoß von Rot auf Gelb reduziert.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q086",
+      "conceptId": "C086",
+      "rule": 12,
+      "type": "situation",
+      "difficulty": "hard",
+      "question": "Ein Verteidiger hält im eigenen Strafraum einen Angreifer fest und verhindert damit eine offensichtliche Torchance. Greift die ballorientierte DOGSO-Herabstufung?",
+      "options": [
+        "Ja, immer Gelb",
+        "Nein, Halten ist kein Versuch, den Ball zu spielen",
+        "Keine Karte",
+        "Nur wenn der Torwart zustimmt"
+      ],
+      "correct": 1,
+      "explanation": "Bei Halten/Ziehen liegt kein Versuch vor, den Ball zu spielen; die Herabstufung greift grundsätzlich nicht.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q087",
+      "conceptId": "C087",
+      "rule": 12,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Ein Spieler beleidigt den Schiedsrichter. Welche persönliche Strafe ist vorgesehen?",
+      "options": [
+        "Keine",
+        "Gelb",
+        "Rot",
+        "Nur Freistoß"
+      ],
+      "correct": 2,
+      "explanation": "Beleidigende, anstößige oder schmähende Äußerungen/Gesten sind feldverweiswürdig.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q088",
+      "conceptId": "C088",
+      "rule": 12,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Ein Spieler begeht ein gefährliches Spiel ohne Körperkontakt. Welche Spielfortsetzung ist grundsätzlich vorgesehen?",
+      "options": [
+        "Direkter Freistoß",
+        "Indirekter Freistoß",
+        "Strafstoß immer",
+        "Schiedsrichterball"
+      ],
+      "correct": 1,
+      "explanation": "Gefährliches Spiel ohne Kontakt wird grundsätzlich mit indirektem Freistoß geahndet.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q089",
+      "conceptId": "C089",
+      "rule": 12,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Ein Spieler spuckt einen Gegner an. Welche persönliche Strafe ist vorgesehen?",
+      "options": [
+        "Keine",
+        "Gelb",
+        "Rot",
+        "Nur Ermahnung"
+      ],
+      "correct": 2,
+      "explanation": "Spucken gegen eine Person ist feldverweiswürdig.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q090",
+      "conceptId": "C090",
+      "rule": 12,
+      "type": "knowledge",
+      "difficulty": "medium",
+      "question": "Darf der Torhüter den Ball mit der Hand aufnehmen, nachdem ein Mitspieler ihn ihm absichtlich mit dem Fuß zugespielt hat?",
+      "options": [
+        "Ja",
+        "Nein",
+        "Nur im Torraum",
+        "Nur einmal pro Halbzeit"
+      ],
+      "correct": 1,
+      "explanation": "Ein absichtliches Zuspiel mit dem Fuß durch einen Mitspieler darf der Torhüter grundsätzlich nicht mit der Hand aufnehmen.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q091",
+      "conceptId": "C091",
+      "rule": 12,
+      "type": "knowledge",
+      "difficulty": "medium",
+      "question": "Darf der Torhüter einen direkt von einem Mitspieler eingeworfenen Ball mit der Hand aufnehmen?",
+      "options": [
+        "Ja",
+        "Nein",
+        "Nur im Torraum",
+        "Nur wenn kein Gegner in der Nähe ist"
+      ],
+      "correct": 1,
+      "explanation": "Ein direkt von einem Mitspieler eingeworfener Ball darf vom Torhüter grundsätzlich nicht mit der Hand aufgenommen werden.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q092",
+      "conceptId": "C092",
+      "rule": 12,
+      "type": "situation",
+      "difficulty": "hard",
+      "question": "Der Schiedsrichter lässt bei einer verhinderten offensichtlichen Torchance Vorteil laufen und die angreifende Mannschaft erzielt unmittelbar ein Tor. Welche 2026/27-Neuerung ist für die persönliche Strafe relevant?",
+      "options": [
+        "Es muss immer Gelb gezeigt werden",
+        "Für DOGSO gibt es nach Torerfolg aus dem Vorteil nicht automatisch noch eine Verwarnung",
+        "Es muss immer Rot gezeigt werden",
+        "Das Tor wird aberkannt"
+      ],
+      "correct": 1,
+      "explanation": "2026/27 entfällt in dieser Konstellation die bisher mögliche Verwarnung allein wegen der verhinderten offensichtlichen Torchance.",
+      "sources": [
+        "dfb_rules",
+        "dfb_changes",
+        "sfv_changes"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q093",
+      "conceptId": "C093",
+      "rule": 12,
+      "type": "situation",
+      "difficulty": "hard",
+      "question": "Ein Spieler verlässt aus Protest gegen eine Schiedsrichterentscheidung das Spielfeld. Ist die vom IFAB 2026 vorgeschlagene automatische Rote Karte in Deutschland zwingend übernommen worden?",
+      "options": [
+        "Ja",
+        "Nein",
+        "Nur im Jugendfußball",
+        "Nur bei Pokalspielen"
+      ],
+      "correct": 1,
+      "explanation": "Diese optionale Verschärfung wurde für Deutschland nicht übernommen.",
+      "sources": [
+        "dfb_rules",
+        "dfb_changes"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q094",
+      "conceptId": "C094",
+      "rule": 12,
+      "type": "situation",
+      "difficulty": "hard",
+      "question": "Ein Spieler bedeckt in einer hitzigen Konfrontation demonstrativ den Mund. Ist dafür in Deutschland 2026/27 automatisch Rot vorgeschrieben?",
+      "options": [
+        "Ja",
+        "Nein",
+        "Nur für Kapitäne",
+        "Nur bei Wiederholung"
+      ],
+      "correct": 1,
+      "explanation": "Die optionale automatische Rote Karte für dieses Verhalten wurde in Deutschland nicht übernommen.",
+      "sources": [
+        "dfb_rules",
+        "dfb_changes"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q095",
+      "conceptId": "C095",
+      "rule": 13,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Kann aus einem direkten Freistoß unmittelbar ein Tor gegen den Gegner erzielt werden?",
+      "options": [
+        "Ja",
+        "Nein",
+        "Nur nach zweiter Berührung",
+        "Nur vom Torwart"
+      ],
+      "correct": 0,
+      "explanation": "Aus einem direkten Freistoß kann direkt ein Tor gegen den Gegner erzielt werden.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q096",
+      "conceptId": "C096",
+      "rule": 13,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Wie zeigt der Schiedsrichter einen indirekten Freistoß an?",
+      "options": [
+        "Arm über dem Kopf",
+        "Beide Arme seitlich",
+        "Hand auf der Brust",
+        "Gar nicht"
+      ],
+      "correct": 0,
+      "explanation": "Der indirekte Freistoß wird mit erhobenem Arm angezeigt.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q097",
+      "conceptId": "C097",
+      "rule": 13,
+      "type": "knowledge",
+      "difficulty": "medium",
+      "question": "Wie weit müssen Gegner bei einem Freistoß grundsätzlich vom Ball entfernt sein?",
+      "options": [
+        "2 m",
+        "4 m",
+        "5 m",
         "9,15 m"
       ],
       "correct": 3,
-      "explanation": "Der Mittelkreis hat einen Radius von 9,15 m.",
+      "explanation": "Grundsätzlich beträgt der vorgeschriebene Abstand 9,15 m.",
       "sources": [
-        "dfb_rules",
-        "sfv_downloads"
+        "dfb_rules"
       ],
       "verifiedFor": "2026/27",
-      "status": "verified"
+      "status": "verified",
+      "tags": []
     },
     {
-      "id": "R01-MITTELKREIS-V3",
-      "conceptId": "R01-MITTELKREIS",
-      "rule": 1,
-      "type": "decision",
-      "difficulty": "easy",
-      "question": "Regel 1 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Der Mittelkreis hat einen Radius von 9,15 m.",
-      "options": [
-        "9,15 m",
-        "5,50 m",
-        "11 m",
-        "16,50 m"
-      ],
-      "correct": 0,
-      "explanation": "Der Mittelkreis hat einen Radius von 9,15 m.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R01-MITTELKREIS-V4",
-      "conceptId": "R01-MITTELKREIS",
-      "rule": 1,
-      "type": "exam",
-      "difficulty": "easy",
-      "question": "Regel 1 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Der Mittelkreis hat einen Radius von 9,15 m.",
-      "options": [
-        "9,15 m",
-        "16,50 m",
-        "5,50 m",
-        "11 m"
-      ],
-      "correct": 0,
-      "explanation": "Der Mittelkreis hat einen Radius von 9,15 m.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R01-STRAFSTOSS-V1",
-      "conceptId": "R01-STRAFSTOSS",
-      "rule": 1,
-      "type": "knowledge",
-      "difficulty": "easy",
-      "question": "Regel 1: Welche Antwort ist richtig?",
-      "scenario": "Der Strafstoßpunkt liegt 11 m von der Torlinie entfernt.",
-      "options": [
-        "9,15 m",
-        "5,50 m",
-        "11 m",
-        "16,50 m"
-      ],
-      "correct": 2,
-      "explanation": "Der Strafstoßpunkt liegt 11 m von der Torlinie entfernt.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R01-STRAFSTOSS-V2",
-      "conceptId": "R01-STRAFSTOSS",
-      "rule": 1,
-      "type": "quickcheck",
-      "difficulty": "easy",
-      "question": "Regel 1 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Der Strafstoßpunkt liegt 11 m von der Torlinie entfernt.",
-      "options": [
-        "9,15 m",
-        "11 m",
-        "16,50 m",
-        "5,50 m"
-      ],
-      "correct": 1,
-      "explanation": "Der Strafstoßpunkt liegt 11 m von der Torlinie entfernt.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R01-STRAFSTOSS-V3",
-      "conceptId": "R01-STRAFSTOSS",
-      "rule": 1,
-      "type": "decision",
-      "difficulty": "easy",
-      "question": "Regel 1 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Der Strafstoßpunkt liegt 11 m von der Torlinie entfernt.",
-      "options": [
-        "11 m",
-        "9,15 m",
-        "5,50 m",
-        "16,50 m"
-      ],
-      "correct": 0,
-      "explanation": "Der Strafstoßpunkt liegt 11 m von der Torlinie entfernt.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R01-STRAFSTOSS-V4",
-      "conceptId": "R01-STRAFSTOSS",
-      "rule": 1,
-      "type": "exam",
-      "difficulty": "easy",
-      "question": "Regel 1 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Der Strafstoßpunkt liegt 11 m von der Torlinie entfernt.",
-      "options": [
-        "9,15 m",
-        "16,50 m",
-        "5,50 m",
-        "11 m"
-      ],
-      "correct": 3,
-      "explanation": "Der Strafstoßpunkt liegt 11 m von der Torlinie entfernt.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R02-BALL-V1",
-      "conceptId": "R02-BALL",
-      "rule": 2,
-      "type": "knowledge",
-      "difficulty": "easy",
-      "question": "Regel 2: Welche Antwort ist richtig?",
-      "scenario": "Der Schiedsrichter entscheidet, ob ein Ball für das Spiel geeignet ist.",
-      "options": [
-        "Der Platzwart allein",
-        "Der Kapitän",
-        "Der Schiedsrichter",
-        "Der Heimtrainer"
-      ],
-      "correct": 2,
-      "explanation": "Der Schiedsrichter entscheidet, ob ein Ball für das Spiel geeignet ist.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R02-BALL-V2",
-      "conceptId": "R02-BALL",
-      "rule": 2,
-      "type": "quickcheck",
-      "difficulty": "easy",
-      "question": "Regel 2 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Der Schiedsrichter entscheidet, ob ein Ball für das Spiel geeignet ist.",
-      "options": [
-        "Der Kapitän",
-        "Der Schiedsrichter",
-        "Der Platzwart allein",
-        "Der Heimtrainer"
-      ],
-      "correct": 1,
-      "explanation": "Der Schiedsrichter entscheidet, ob ein Ball für das Spiel geeignet ist.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R02-BALL-V3",
-      "conceptId": "R02-BALL",
-      "rule": 2,
-      "type": "decision",
-      "difficulty": "easy",
-      "question": "Regel 2 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Der Schiedsrichter entscheidet, ob ein Ball für das Spiel geeignet ist.",
-      "options": [
-        "Der Kapitän",
-        "Der Heimtrainer",
-        "Der Schiedsrichter",
-        "Der Platzwart allein"
-      ],
-      "correct": 2,
-      "explanation": "Der Schiedsrichter entscheidet, ob ein Ball für das Spiel geeignet ist.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R02-BALL-V4",
-      "conceptId": "R02-BALL",
-      "rule": 2,
-      "type": "exam",
-      "difficulty": "easy",
-      "question": "Regel 2 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Der Schiedsrichter entscheidet, ob ein Ball für das Spiel geeignet ist.",
-      "options": [
-        "Der Schiedsrichter",
-        "Der Kapitän",
-        "Der Platzwart allein",
-        "Der Heimtrainer"
-      ],
-      "correct": 0,
-      "explanation": "Der Schiedsrichter entscheidet, ob ein Ball für das Spiel geeignet ist.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R03-ANZAHL-V1",
-      "conceptId": "R03-ANZAHL",
-      "rule": 3,
-      "type": "knowledge",
-      "difficulty": "easy",
-      "question": "Regel 3: Welche Antwort ist richtig?",
-      "scenario": "Im regulären Großfeld stehen höchstens elf Spieler je Mannschaft auf dem Feld.",
-      "options": [
-        "10",
-        "9",
-        "11",
-        "12"
-      ],
-      "correct": 2,
-      "explanation": "Im regulären Großfeld stehen höchstens elf Spieler je Mannschaft auf dem Feld.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R03-ANZAHL-V2",
-      "conceptId": "R03-ANZAHL",
-      "rule": 3,
-      "type": "quickcheck",
-      "difficulty": "easy",
-      "question": "Regel 3 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Im regulären Großfeld stehen höchstens elf Spieler je Mannschaft auf dem Feld.",
-      "options": [
-        "11",
-        "9",
-        "10",
-        "12"
-      ],
-      "correct": 0,
-      "explanation": "Im regulären Großfeld stehen höchstens elf Spieler je Mannschaft auf dem Feld.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R03-ANZAHL-V3",
-      "conceptId": "R03-ANZAHL",
-      "rule": 3,
-      "type": "decision",
-      "difficulty": "easy",
-      "question": "Regel 3 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Im regulären Großfeld stehen höchstens elf Spieler je Mannschaft auf dem Feld.",
-      "options": [
-        "10",
-        "9",
-        "12",
-        "11"
-      ],
-      "correct": 3,
-      "explanation": "Im regulären Großfeld stehen höchstens elf Spieler je Mannschaft auf dem Feld.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R03-ANZAHL-V4",
-      "conceptId": "R03-ANZAHL",
-      "rule": 3,
-      "type": "exam",
-      "difficulty": "easy",
-      "question": "Regel 3 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Im regulären Großfeld stehen höchstens elf Spieler je Mannschaft auf dem Feld.",
-      "options": [
-        "11",
-        "12",
-        "9",
-        "10"
-      ],
-      "correct": 0,
-      "explanation": "Im regulären Großfeld stehen höchstens elf Spieler je Mannschaft auf dem Feld.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R03-MINDESTZAHL-V1",
-      "conceptId": "R03-MINDESTZAHL",
-      "rule": 3,
-      "type": "knowledge",
-      "difficulty": "easy",
-      "question": "Regel 3: Welche Antwort ist richtig?",
-      "scenario": "Ein reguläres Großfeldspiel darf nicht begonnen oder fortgesetzt werden, wenn eine Mannschaft weniger als sieben Spieler hat.",
-      "options": [
-        "7",
-        "6",
-        "5",
-        "8"
-      ],
-      "correct": 0,
-      "explanation": "Ein reguläres Großfeldspiel darf nicht begonnen oder fortgesetzt werden, wenn eine Mannschaft weniger als sieben Spieler hat.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R03-MINDESTZAHL-V2",
-      "conceptId": "R03-MINDESTZAHL",
-      "rule": 3,
-      "type": "quickcheck",
-      "difficulty": "easy",
-      "question": "Regel 3 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Ein reguläres Großfeldspiel darf nicht begonnen oder fortgesetzt werden, wenn eine Mannschaft weniger als sieben Spieler hat.",
-      "options": [
-        "6",
-        "8",
-        "7",
-        "5"
-      ],
-      "correct": 2,
-      "explanation": "Ein reguläres Großfeldspiel darf nicht begonnen oder fortgesetzt werden, wenn eine Mannschaft weniger als sieben Spieler hat.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R03-MINDESTZAHL-V3",
-      "conceptId": "R03-MINDESTZAHL",
-      "rule": 3,
-      "type": "decision",
-      "difficulty": "easy",
-      "question": "Regel 3 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Ein reguläres Großfeldspiel darf nicht begonnen oder fortgesetzt werden, wenn eine Mannschaft weniger als sieben Spieler hat.",
-      "options": [
-        "6",
-        "8",
-        "7",
-        "5"
-      ],
-      "correct": 2,
-      "explanation": "Ein reguläres Großfeldspiel darf nicht begonnen oder fortgesetzt werden, wenn eine Mannschaft weniger als sieben Spieler hat.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R03-MINDESTZAHL-V4",
-      "conceptId": "R03-MINDESTZAHL",
-      "rule": 3,
-      "type": "exam",
-      "difficulty": "easy",
-      "question": "Regel 3 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Ein reguläres Großfeldspiel darf nicht begonnen oder fortgesetzt werden, wenn eine Mannschaft weniger als sieben Spieler hat.",
-      "options": [
-        "8",
-        "6",
-        "7",
-        "5"
-      ],
-      "correct": 2,
-      "explanation": "Ein reguläres Großfeldspiel darf nicht begonnen oder fortgesetzt werden, wenn eine Mannschaft weniger als sieben Spieler hat.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R03-KAPITAEN-V1",
-      "conceptId": "R03-KAPITAEN",
-      "rule": 3,
+      "id": "Q098",
+      "conceptId": "C098",
+      "rule": 13,
       "type": "knowledge",
       "difficulty": "medium",
-      "question": "Regel 3: Welche Antwort ist richtig?",
-      "scenario": "Der Kapitän besitzt durch die Binde keine Sonderrechte nach den Spielregeln.",
+      "question": "Eine Mauer besteht aus mindestens drei Verteidigern. Welchen Mindestabstand müssen Angreifer von dieser Mauer halten?",
       "options": [
-        "Keine Sonderrechte nach den Spielregeln",
-        "Er darf Verwarnungen verhindern",
-        "Er entscheidet bei Streitfällen",
-        "Er darf Entscheidungen aufheben"
-      ],
-      "correct": 0,
-      "explanation": "Der Kapitän besitzt durch die Binde keine Sonderrechte nach den Spielregeln.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R03-KAPITAEN-V2",
-      "conceptId": "R03-KAPITAEN",
-      "rule": 3,
-      "type": "quickcheck",
-      "difficulty": "medium",
-      "question": "Regel 3 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Der Kapitän besitzt durch die Binde keine Sonderrechte nach den Spielregeln.",
-      "options": [
-        "Keine Sonderrechte nach den Spielregeln",
-        "Er darf Entscheidungen aufheben",
-        "Er entscheidet bei Streitfällen",
-        "Er darf Verwarnungen verhindern"
-      ],
-      "correct": 0,
-      "explanation": "Der Kapitän besitzt durch die Binde keine Sonderrechte nach den Spielregeln.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R03-KAPITAEN-V3",
-      "conceptId": "R03-KAPITAEN",
-      "rule": 3,
-      "type": "decision",
-      "difficulty": "medium",
-      "question": "Regel 3 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Der Kapitän besitzt durch die Binde keine Sonderrechte nach den Spielregeln.",
-      "options": [
-        "Er darf Verwarnungen verhindern",
-        "Er entscheidet bei Streitfällen",
-        "Keine Sonderrechte nach den Spielregeln",
-        "Er darf Entscheidungen aufheben"
-      ],
-      "correct": 2,
-      "explanation": "Der Kapitän besitzt durch die Binde keine Sonderrechte nach den Spielregeln.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R03-KAPITAEN-V4",
-      "conceptId": "R03-KAPITAEN",
-      "rule": 3,
-      "type": "exam",
-      "difficulty": "medium",
-      "question": "Regel 3 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Der Kapitän besitzt durch die Binde keine Sonderrechte nach den Spielregeln.",
-      "options": [
-        "Er darf Verwarnungen verhindern",
-        "Er darf Entscheidungen aufheben",
-        "Keine Sonderrechte nach den Spielregeln",
-        "Er entscheidet bei Streitfällen"
-      ],
-      "correct": 2,
-      "explanation": "Der Kapitän besitzt durch die Binde keine Sonderrechte nach den Spielregeln.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R04-SCHMUCK-V1",
-      "conceptId": "R04-SCHMUCK",
-      "rule": 4,
-      "type": "knowledge",
-      "difficulty": "easy",
-      "question": "Regel 4: Welche Antwort ist richtig?",
-      "scenario": "Verbotener bzw. gefährlicher Schmuck muss entfernt werden; Abkleben macht ihn nicht automatisch zulässig.",
-      "options": [
-        "Schmuck ist grundsätzlich erlaubt",
-        "Schmuck entfernen",
-        "Abkleben reicht immer",
-        "Nur den Gegner informieren"
+        "0,5 m",
+        "1 m",
+        "2 m",
+        "4 m"
       ],
       "correct": 1,
-      "explanation": "Verbotener bzw. gefährlicher Schmuck muss entfernt werden; Abkleben macht ihn nicht automatisch zulässig.",
+      "explanation": "Bei einer Mauer aus mindestens drei Verteidigern müssen Angreifer mindestens 1 m Abstand halten.",
       "sources": [
-        "dfb_rules",
-        "sfv_downloads"
+        "dfb_rules"
       ],
       "verifiedFor": "2026/27",
-      "status": "verified"
+      "status": "verified",
+      "tags": []
     },
     {
-      "id": "R04-SCHMUCK-V2",
-      "conceptId": "R04-SCHMUCK",
-      "rule": 4,
-      "type": "quickcheck",
-      "difficulty": "easy",
-      "question": "Regel 4 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Verbotener bzw. gefährlicher Schmuck muss entfernt werden; Abkleben macht ihn nicht automatisch zulässig.",
-      "options": [
-        "Schmuck ist grundsätzlich erlaubt",
-        "Schmuck entfernen",
-        "Abkleben reicht immer",
-        "Nur den Gegner informieren"
-      ],
-      "correct": 1,
-      "explanation": "Verbotener bzw. gefährlicher Schmuck muss entfernt werden; Abkleben macht ihn nicht automatisch zulässig.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R04-SCHMUCK-V3",
-      "conceptId": "R04-SCHMUCK",
-      "rule": 4,
-      "type": "decision",
-      "difficulty": "easy",
-      "question": "Regel 4 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Verbotener bzw. gefährlicher Schmuck muss entfernt werden; Abkleben macht ihn nicht automatisch zulässig.",
-      "options": [
-        "Schmuck entfernen",
-        "Nur den Gegner informieren",
-        "Schmuck ist grundsätzlich erlaubt",
-        "Abkleben reicht immer"
-      ],
-      "correct": 0,
-      "explanation": "Verbotener bzw. gefährlicher Schmuck muss entfernt werden; Abkleben macht ihn nicht automatisch zulässig.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R04-SCHMUCK-V4",
-      "conceptId": "R04-SCHMUCK",
-      "rule": 4,
-      "type": "exam",
-      "difficulty": "easy",
-      "question": "Regel 4 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Verbotener bzw. gefährlicher Schmuck muss entfernt werden; Abkleben macht ihn nicht automatisch zulässig.",
-      "options": [
-        "Schmuck ist grundsätzlich erlaubt",
-        "Nur den Gegner informieren",
-        "Abkleben reicht immer",
-        "Schmuck entfernen"
-      ],
-      "correct": 3,
-      "explanation": "Verbotener bzw. gefährlicher Schmuck muss entfernt werden; Abkleben macht ihn nicht automatisch zulässig.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R04-PFLICHT-V1",
-      "conceptId": "R04-PFLICHT",
-      "rule": 4,
-      "type": "knowledge",
-      "difficulty": "easy",
-      "question": "Regel 4: Welche Antwort ist richtig?",
-      "scenario": "Schienbeinschoner gehören zur vorgeschriebenen Grundausrüstung.",
-      "options": [
-        "Armbanduhr",
-        "Handschuhe für Feldspieler",
-        "Schienbeinschoner",
-        "Kopfschutz"
-      ],
-      "correct": 2,
-      "explanation": "Schienbeinschoner gehören zur vorgeschriebenen Grundausrüstung.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R04-PFLICHT-V2",
-      "conceptId": "R04-PFLICHT",
-      "rule": 4,
-      "type": "quickcheck",
-      "difficulty": "easy",
-      "question": "Regel 4 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Schienbeinschoner gehören zur vorgeschriebenen Grundausrüstung.",
-      "options": [
-        "Schienbeinschoner",
-        "Kopfschutz",
-        "Armbanduhr",
-        "Handschuhe für Feldspieler"
-      ],
-      "correct": 0,
-      "explanation": "Schienbeinschoner gehören zur vorgeschriebenen Grundausrüstung.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R04-PFLICHT-V3",
-      "conceptId": "R04-PFLICHT",
-      "rule": 4,
-      "type": "decision",
-      "difficulty": "easy",
-      "question": "Regel 4 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Schienbeinschoner gehören zur vorgeschriebenen Grundausrüstung.",
-      "options": [
-        "Schienbeinschoner",
-        "Armbanduhr",
-        "Kopfschutz",
-        "Handschuhe für Feldspieler"
-      ],
-      "correct": 0,
-      "explanation": "Schienbeinschoner gehören zur vorgeschriebenen Grundausrüstung.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R04-PFLICHT-V4",
-      "conceptId": "R04-PFLICHT",
-      "rule": 4,
-      "type": "exam",
-      "difficulty": "easy",
-      "question": "Regel 4 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Schienbeinschoner gehören zur vorgeschriebenen Grundausrüstung.",
-      "options": [
-        "Kopfschutz",
-        "Schienbeinschoner",
-        "Armbanduhr",
-        "Handschuhe für Feldspieler"
-      ],
-      "correct": 1,
-      "explanation": "Schienbeinschoner gehören zur vorgeschriebenen Grundausrüstung.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R05-VORTEIL-V1",
-      "conceptId": "R05-VORTEIL",
-      "rule": 5,
-      "type": "knowledge",
+      "id": "Q099",
+      "conceptId": "C099",
+      "rule": 13,
+      "type": "situation",
       "difficulty": "medium",
-      "question": "Regel 5: Welche Antwort ist richtig?",
-      "scenario": "Der Schiedsrichter kann Vorteil anwenden, wenn die nicht fehlbare Mannschaft daraus einen tatsächlichen Vorteil erhält.",
+      "question": "Ein indirekter Freistoß geht ohne weitere Berührung direkt ins gegnerische Tor. Spielfortsetzung?",
       "options": [
-        "Schiedsrichterball",
+        "Tor",
         "Abstoß",
-        "Vorteil anwenden",
-        "Immer sofort unterbrechen"
+        "Eckstoß",
+        "Wiederholung"
       ],
-      "correct": 2,
-      "explanation": "Der Schiedsrichter kann Vorteil anwenden, wenn die nicht fehlbare Mannschaft daraus einen tatsächlichen Vorteil erhält.",
+      "correct": 1,
+      "explanation": "Aus einem indirekten Freistoß kann ohne weitere Ballberührung kein Tor gegen den Gegner erzielt werden; es gibt Abstoß.",
       "sources": [
-        "dfb_rules",
-        "sfv_downloads"
+        "dfb_rules"
       ],
       "verifiedFor": "2026/27",
-      "status": "verified"
+      "status": "verified",
+      "tags": []
     },
     {
-      "id": "R05-VORTEIL-V2",
-      "conceptId": "R05-VORTEIL",
-      "rule": 5,
-      "type": "quickcheck",
+      "id": "Q100",
+      "conceptId": "C100",
+      "rule": 13,
+      "type": "situation",
       "difficulty": "medium",
-      "question": "Regel 5 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Der Schiedsrichter kann Vorteil anwenden, wenn die nicht fehlbare Mannschaft daraus einen tatsächlichen Vorteil erhält.",
+      "question": "Ein direkter Freistoß geht ohne weitere Berührung direkt ins eigene Tor. Spielfortsetzung?",
       "options": [
-        "Immer sofort unterbrechen",
-        "Vorteil anwenden",
+        "Eigentor",
+        "Eckstoß für den Gegner",
+        "Abstoß",
+        "Wiederholung"
+      ],
+      "correct": 1,
+      "explanation": "Aus einem direkten Freistoß kann kein direktes Eigentor erzielt werden; es gibt Eckstoß.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q101",
+      "conceptId": "C101",
+      "rule": 13,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Der Freistoßschütze spielt den Ball ein zweites Mal, bevor ihn ein anderer Spieler berührt. Entscheidung?",
+      "options": [
+        "Weiterspielen",
+        "Indirekter Freistoß für den Gegner, sofern die zweite Berührung kein anderes Vergehen ist",
+        "Wiederholung",
+        "Abstoß"
+      ],
+      "correct": 1,
+      "explanation": "Eine unzulässige zweite Ballberührung wird grundsätzlich mit indirektem Freistoß geahndet.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q102",
+      "conceptId": "C102",
+      "rule": 13,
+      "type": "situation",
+      "difficulty": "hard",
+      "question": "Der Schiedsrichter hat einen Freistoß ausdrücklich blockiert und noch nicht freigegeben. Der Schütze führt ihn trotzdem aus. Was ist grundsätzlich richtig?",
+      "options": [
+        "Ausführung immer gelten lassen",
+        "Die Ausführung wird nicht akzeptiert; die vorgeschriebene Freigabe ist abzuwarten und Disziplinarmaßnahmen sind je nach Verhalten zu prüfen",
+        "Abstoß",
+        "Strafstoß"
+      ],
+      "correct": 1,
+      "explanation": "Ein ausdrücklich blockierter Freistoß darf erst nach Freigabe ausgeführt werden.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q103",
+      "conceptId": "C103",
+      "rule": 14,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Wo muss der Ball beim Strafstoß liegen?",
+      "options": [
+        "Im Torraum",
+        "Auf dem Strafstoßpunkt",
+        "Auf der Strafraumlinie",
+        "Im Mittelkreis"
+      ],
+      "correct": 1,
+      "explanation": "Der Ball muss auf dem Strafstoßpunkt liegen.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q104",
+      "conceptId": "C104",
+      "rule": 14,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "In welche Richtung muss der Ball beim Strafstoß gespielt werden?",
+      "options": [
+        "Nach hinten",
+        "Nach vorne",
+        "Beliebig",
+        "Seitlich zwingend"
+      ],
+      "correct": 1,
+      "explanation": "Der Ball muss nach vorne gespielt werden.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q105",
+      "conceptId": "C105",
+      "rule": 14,
+      "type": "knowledge",
+      "difficulty": "medium",
+      "question": "Muss der Strafstoßschütze eindeutig bestimmt sein?",
+      "options": [
+        "Ja",
+        "Nein",
+        "Nur im Elfmeterschießen",
+        "Nur im Profifußball"
+      ],
+      "correct": 0,
+      "explanation": "Der ausführende Spieler muss eindeutig bestimmt sein.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q106",
+      "conceptId": "C106",
+      "rule": 14,
+      "type": "knowledge",
+      "difficulty": "medium",
+      "question": "Welche Position muss der Torhüter bei der Ausführung grundsätzlich einhalten?",
+      "options": [
+        "Beide Füße zwingend auf der Linie",
+        "Mindestens ein Teil eines Fußes berührt die Torlinie, ist auf ihrer Höhe oder dahinter",
+        "Beide Füße mindestens 1 m vor der Linie",
+        "Beliebig im Torraum"
+      ],
+      "correct": 1,
+      "explanation": "Bei der Ausführung muss mindestens ein Teil eines Fußes die Torlinie berühren, auf ihrer Höhe oder dahinter sein.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q107",
+      "conceptId": "C107",
+      "rule": 14,
+      "type": "situation",
+      "difficulty": "hard",
+      "question": "Der Strafstoßschütze rutscht aus, berührt den Ball versehentlich zweimal und der Ball geht ins Tor. Entscheidung?",
+      "options": [
+        "Tor",
+        "Wiederholung des Strafstoßes",
+        "Indirekter Freistoß",
+        "Abstoß"
+      ],
+      "correct": 1,
+      "explanation": "Bei versehentlicher Doppelberührung und Torerfolg wird der Strafstoß wiederholt.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q108",
+      "conceptId": "C108",
+      "rule": 14,
+      "type": "situation",
+      "difficulty": "hard",
+      "question": "Der Strafstoßschütze berührt den Ball versehentlich zweimal; der Ball geht nicht ins Tor. Entscheidung?",
+      "options": [
+        "Wiederholung",
+        "Indirekter Freistoß für den Gegner",
         "Abstoß",
         "Schiedsrichterball"
       ],
       "correct": 1,
-      "explanation": "Der Schiedsrichter kann Vorteil anwenden, wenn die nicht fehlbare Mannschaft daraus einen tatsächlichen Vorteil erhält.",
+      "explanation": "Ohne Torerfolg führt die versehentliche Doppelberührung zum indirekten Freistoß.",
       "sources": [
-        "dfb_rules",
-        "sfv_downloads"
+        "dfb_rules"
       ],
       "verifiedFor": "2026/27",
-      "status": "verified"
+      "status": "verified",
+      "tags": []
     },
     {
-      "id": "R05-VORTEIL-V3",
-      "conceptId": "R05-VORTEIL",
-      "rule": 5,
-      "type": "decision",
+      "id": "Q109",
+      "conceptId": "C109",
+      "rule": 14,
+      "type": "situation",
       "difficulty": "medium",
-      "question": "Regel 5 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Der Schiedsrichter kann Vorteil anwenden, wenn die nicht fehlbare Mannschaft daraus einen tatsächlichen Vorteil erhält.",
+      "question": "Der Strafstoßschütze spielt den Ball nach vorne zu einem Mitspieler, der regelgerecht in den Strafraum läuft und trifft. Kann das Tor grundsätzlich zählen?",
       "options": [
-        "Vorteil anwenden",
-        "Schiedsrichterball",
-        "Abstoß",
-        "Immer sofort unterbrechen"
+        "Nein, Strafstöße müssen direkt aufs Tor gehen",
+        "Ja, wenn alle Anforderungen erfüllt sind",
+        "Nur im Elfmeterschießen",
+        "Nur nach Torwartberührung"
       ],
-      "correct": 0,
-      "explanation": "Der Schiedsrichter kann Vorteil anwenden, wenn die nicht fehlbare Mannschaft daraus einen tatsächlichen Vorteil erhält.",
+      "correct": 1,
+      "explanation": "Ein Strafstoß muss nach vorne gespielt werden, aber nicht zwingend direkt aufs Tor.",
       "sources": [
-        "dfb_rules",
-        "sfv_downloads"
+        "dfb_rules"
       ],
       "verifiedFor": "2026/27",
-      "status": "verified"
+      "status": "verified",
+      "tags": []
     },
     {
-      "id": "R05-VORTEIL-V4",
-      "conceptId": "R05-VORTEIL",
-      "rule": 5,
-      "type": "exam",
+      "id": "Q110",
+      "conceptId": "C110",
+      "rule": 14,
+      "type": "knowledge",
       "difficulty": "medium",
-      "question": "Regel 5 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Der Schiedsrichter kann Vorteil anwenden, wenn die nicht fehlbare Mannschaft daraus einen tatsächlichen Vorteil erhält.",
+      "question": "Wann ist der Ball beim Strafstoß im Spiel?",
       "options": [
-        "Vorteil anwenden",
+        "Beim Pfiff",
+        "Wenn er mit dem Fuß gespielt wurde und sich eindeutig bewegt",
+        "Wenn er den Torraum erreicht",
+        "Nach Torwartberührung"
+      ],
+      "correct": 1,
+      "explanation": "Der Ball ist im Spiel, sobald er gespielt wurde und sich eindeutig bewegt.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q111",
+      "conceptId": "C111",
+      "rule": 14,
+      "type": "situation",
+      "difficulty": "hard",
+      "question": "Der Torhüter bewegt sich zu früh von der Linie, der Strafstoß geht aber deutlich am Tor vorbei und das Verhalten des Torhüters beeinflusst den Schützen nicht. Muss allein wegen der Torhüterposition zwingend wiederholt werden?",
+      "options": [
+        "Ja, immer",
+        "Nein, eine Wiederholung hängt von den Voraussetzungen der Regel und insbesondere einer relevanten Beeinflussung ab",
+        "Immer Tor",
+        "Immer Eckstoß"
+      ],
+      "correct": 1,
+      "explanation": "Nicht jede geringfügige Vorwärtsbewegung führt bei einem Fehlschuss automatisch zur Wiederholung; die regelgerechten Voraussetzungen sind zu prüfen.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q112",
+      "conceptId": "C112",
+      "rule": 14,
+      "type": "knowledge",
+      "difficulty": "medium",
+      "question": "Dürfen sich die übrigen Spieler bei der Strafstoßausführung innerhalb des Strafraums aufhalten?",
+      "options": [
+        "Ja",
+        "Nein, sie müssen grundsätzlich außerhalb des Strafraums und hinter dem Strafstoßpunkt sein",
+        "Nur Verteidiger",
+        "Nur Angreifer"
+      ],
+      "correct": 1,
+      "explanation": "Die übrigen Spieler müssen grundsätzlich außerhalb des Strafraums, hinter dem Strafstoßpunkt und mindestens 9,15 m vom Punkt entfernt sein.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q113",
+      "conceptId": "C113",
+      "rule": 15,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Wie muss der Ball beim Einwurf grundsätzlich geworfen werden?",
+      "options": [
+        "Mit einer Hand",
+        "Mit beiden Händen von hinten über den Kopf",
+        "Mit dem Fuß",
+        "Von unten nach oben"
+      ],
+      "correct": 1,
+      "explanation": "Der Einwurf erfolgt mit beiden Händen von hinten über den Kopf.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q114",
+      "conceptId": "C114",
+      "rule": 15,
+      "type": "knowledge",
+      "difficulty": "medium",
+      "question": "Welchen Mindestabstand müssen Gegner bei einem Einwurf grundsätzlich zur Stelle des Einwurfs halten?",
+      "options": [
+        "1 m",
+        "2 m",
+        "4 m",
+        "9,15 m"
+      ],
+      "correct": 1,
+      "explanation": "Gegner müssen grundsätzlich mindestens 2 m Abstand halten.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q115",
+      "conceptId": "C115",
+      "rule": 15,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Kann aus einem Einwurf direkt ein Tor gegen den Gegner erzielt werden?",
+      "options": [
+        "Ja",
+        "Nein",
+        "Nur bei weitem Einwurf",
+        "Nur vom Kapitän"
+      ],
+      "correct": 1,
+      "explanation": "Aus einem Einwurf kann kein direktes Tor erzielt werden.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q116",
+      "conceptId": "C116",
+      "rule": 15,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Ein Einwurf geht ohne weitere Berührung direkt ins gegnerische Tor. Spielfortsetzung?",
+      "options": [
+        "Tor",
         "Abstoß",
-        "Immer sofort unterbrechen",
+        "Eckstoß",
+        "Wiederholung"
+      ],
+      "correct": 1,
+      "explanation": "Direkt ins gegnerische Tor führt der Einwurf zum Abstoß.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q117",
+      "conceptId": "C117",
+      "rule": 15,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Ein Einwurf geht ohne weitere Berührung direkt ins eigene Tor. Spielfortsetzung?",
+      "options": [
+        "Eigentor",
+        "Eckstoß für den Gegner",
+        "Abstoß",
+        "Wiederholung"
+      ],
+      "correct": 1,
+      "explanation": "Direkt ins eigene Tor führt der Einwurf zum Eckstoß für den Gegner.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q118",
+      "conceptId": "C118",
+      "rule": 15,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Gibt es direkt aus einem Einwurf ein Abseitsvergehen?",
+      "options": [
+        "Ja",
+        "Nein",
+        "Nur im Strafraum",
+        "Nur bei weitem Einwurf"
+      ],
+      "correct": 1,
+      "explanation": "Direkt aus einem Einwurf gibt es kein Abseitsvergehen.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q119",
+      "conceptId": "C119",
+      "rule": 15,
+      "type": "situation",
+      "difficulty": "hard",
+      "question": "Der Schiedsrichter erkennt absichtliche Verzögerung vor einem Einwurf und startet den 5-Sekunden-Countdown. Die Zeit läuft ab, ohne dass eingeworfen wird. Entscheidung?",
+      "options": [
+        "Einwurf bleibt bei derselben Mannschaft",
+        "Einwurf für die gegnerische Mannschaft",
+        "Indirekter Freistoß",
         "Schiedsrichterball"
       ],
-      "correct": 0,
-      "explanation": "Der Schiedsrichter kann Vorteil anwenden, wenn die nicht fehlbare Mannschaft daraus einen tatsächlichen Vorteil erhält.",
+      "correct": 1,
+      "explanation": "Nach Ablauf des 2026/27-Countdowns wechselt beim Einwurf der Ballbesitz.",
       "sources": [
         "dfb_rules",
-        "sfv_downloads"
+        "dfb_changes",
+        "sfv_changes"
       ],
       "verifiedFor": "2026/27",
-      "status": "verified"
+      "status": "verified",
+      "tags": []
     },
     {
-      "id": "R05-STRAFE-V1",
-      "conceptId": "R05-STRAFE",
-      "rule": 5,
+      "id": "Q120",
+      "conceptId": "C120",
+      "rule": 16,
       "type": "knowledge",
-      "difficulty": "medium",
-      "question": "Regel 5: Welche Antwort ist richtig?",
-      "scenario": "Eine notwendige persönliche Strafe entfällt nicht automatisch, nur weil Vorteil angewendet wurde.",
+      "difficulty": "easy",
+      "question": "Von wo darf ein Abstoß ausgeführt werden?",
       "options": [
-        "Strafe entfällt immer",
-        "Spiel zwingend abbrechen",
-        "Nur Trainer verwarnen",
-        "Persönliche Strafe gesondert beurteilen"
-      ],
-      "correct": 3,
-      "explanation": "Eine notwendige persönliche Strafe entfällt nicht automatisch, nur weil Vorteil angewendet wurde.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R05-STRAFE-V2",
-      "conceptId": "R05-STRAFE",
-      "rule": 5,
-      "type": "quickcheck",
-      "difficulty": "medium",
-      "question": "Regel 5 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Eine notwendige persönliche Strafe entfällt nicht automatisch, nur weil Vorteil angewendet wurde.",
-      "options": [
-        "Strafe entfällt immer",
-        "Persönliche Strafe gesondert beurteilen",
-        "Nur Trainer verwarnen",
-        "Spiel zwingend abbrechen"
+        "Nur vom Torraumeck",
+        "Von einem beliebigen Punkt im Torraum",
+        "Vom Strafstoßpunkt",
+        "Von der Strafraumlinie"
       ],
       "correct": 1,
-      "explanation": "Eine notwendige persönliche Strafe entfällt nicht automatisch, nur weil Vorteil angewendet wurde.",
+      "explanation": "Der Abstoß darf von einem beliebigen Punkt im Torraum ausgeführt werden.",
       "sources": [
-        "dfb_rules",
-        "sfv_downloads"
+        "dfb_rules"
       ],
       "verifiedFor": "2026/27",
-      "status": "verified"
+      "status": "verified",
+      "tags": []
     },
     {
-      "id": "R05-STRAFE-V3",
-      "conceptId": "R05-STRAFE",
-      "rule": 5,
-      "type": "decision",
-      "difficulty": "medium",
-      "question": "Regel 5 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Eine notwendige persönliche Strafe entfällt nicht automatisch, nur weil Vorteil angewendet wurde.",
-      "options": [
-        "Persönliche Strafe gesondert beurteilen",
-        "Spiel zwingend abbrechen",
-        "Nur Trainer verwarnen",
-        "Strafe entfällt immer"
-      ],
-      "correct": 0,
-      "explanation": "Eine notwendige persönliche Strafe entfällt nicht automatisch, nur weil Vorteil angewendet wurde.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R05-STRAFE-V4",
-      "conceptId": "R05-STRAFE",
-      "rule": 5,
-      "type": "exam",
-      "difficulty": "medium",
-      "question": "Regel 5 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Eine notwendige persönliche Strafe entfällt nicht automatisch, nur weil Vorteil angewendet wurde.",
-      "options": [
-        "Nur Trainer verwarnen",
-        "Strafe entfällt immer",
-        "Spiel zwingend abbrechen",
-        "Persönliche Strafe gesondert beurteilen"
-      ],
-      "correct": 3,
-      "explanation": "Eine notwendige persönliche Strafe entfällt nicht automatisch, nur weil Vorteil angewendet wurde.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R06-ASSISTENT-V1",
-      "conceptId": "R06-ASSISTENT",
-      "rule": 6,
+      "id": "Q121",
+      "conceptId": "C121",
+      "rule": 16,
       "type": "knowledge",
-      "difficulty": "easy",
-      "question": "Regel 6: Welche Antwort ist richtig?",
-      "scenario": "Schiedsrichter-Assistenten unterstützen; die endgültige Entscheidung liegt beim Schiedsrichter.",
+      "difficulty": "medium",
+      "question": "Wann ist der Ball beim Abstoß im Spiel?",
       "options": [
-        "Der Schiedsrichter",
-        "Der erste Assistent",
-        "Der Heimkapitän",
-        "Der vierte Offizielle"
-      ],
-      "correct": 0,
-      "explanation": "Schiedsrichter-Assistenten unterstützen; die endgültige Entscheidung liegt beim Schiedsrichter.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R06-ASSISTENT-V2",
-      "conceptId": "R06-ASSISTENT",
-      "rule": 6,
-      "type": "quickcheck",
-      "difficulty": "easy",
-      "question": "Regel 6 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Schiedsrichter-Assistenten unterstützen; die endgültige Entscheidung liegt beim Schiedsrichter.",
-      "options": [
-        "Der erste Assistent",
-        "Der Schiedsrichter",
-        "Der vierte Offizielle",
-        "Der Heimkapitän"
+        "Wenn er den Strafraum verlassen hat",
+        "Wenn er mit dem Fuß gespielt wurde und sich eindeutig bewegt",
+        "Nach der zweiten Berührung",
+        "Nach 9,15 m"
       ],
       "correct": 1,
-      "explanation": "Schiedsrichter-Assistenten unterstützen; die endgültige Entscheidung liegt beim Schiedsrichter.",
+      "explanation": "Der Ball ist beim Abstoß nach dem Spielen und eindeutigen Bewegen im Spiel.",
       "sources": [
-        "dfb_rules",
-        "sfv_downloads"
+        "dfb_rules"
       ],
       "verifiedFor": "2026/27",
-      "status": "verified"
+      "status": "verified",
+      "tags": []
     },
     {
-      "id": "R06-ASSISTENT-V3",
-      "conceptId": "R06-ASSISTENT",
-      "rule": 6,
-      "type": "decision",
-      "difficulty": "easy",
-      "question": "Regel 6 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Schiedsrichter-Assistenten unterstützen; die endgültige Entscheidung liegt beim Schiedsrichter.",
-      "options": [
-        "Der erste Assistent",
-        "Der Schiedsrichter",
-        "Der Heimkapitän",
-        "Der vierte Offizielle"
-      ],
-      "correct": 1,
-      "explanation": "Schiedsrichter-Assistenten unterstützen; die endgültige Entscheidung liegt beim Schiedsrichter.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R06-ASSISTENT-V4",
-      "conceptId": "R06-ASSISTENT",
-      "rule": 6,
-      "type": "exam",
-      "difficulty": "easy",
-      "question": "Regel 6 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Schiedsrichter-Assistenten unterstützen; die endgültige Entscheidung liegt beim Schiedsrichter.",
-      "options": [
-        "Der vierte Offizielle",
-        "Der Heimkapitän",
-        "Der erste Assistent",
-        "Der Schiedsrichter"
-      ],
-      "correct": 3,
-      "explanation": "Schiedsrichter-Assistenten unterstützen; die endgültige Entscheidung liegt beim Schiedsrichter.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R07-NACHSPIEL-V1",
-      "conceptId": "R07-NACHSPIEL",
-      "rule": 7,
+      "id": "Q122",
+      "conceptId": "C122",
+      "rule": 16,
       "type": "knowledge",
-      "difficulty": "medium",
-      "question": "Regel 7: Welche Antwort ist richtig?",
-      "scenario": "Die angezeigte Nachspielzeit ist grundsätzlich eine Mindestzeit.",
+      "difficulty": "easy",
+      "question": "Kann aus einem Abstoß direkt ein Tor gegen den Gegner erzielt werden?",
       "options": [
-        "Mindestzeit",
-        "Höchstzeit",
-        "Nur Empfehlung",
-        "Exakte unveränderbare Restzeit"
+        "Ja",
+        "Nein",
+        "Nur nach Torwartberührung",
+        "Nur in Halbzeit zwei"
       ],
       "correct": 0,
-      "explanation": "Die angezeigte Nachspielzeit ist grundsätzlich eine Mindestzeit.",
+      "explanation": "Aus einem Abstoß kann direkt ein Tor gegen den Gegner erzielt werden.",
       "sources": [
-        "dfb_rules",
-        "sfv_downloads"
+        "dfb_rules"
       ],
       "verifiedFor": "2026/27",
-      "status": "verified"
+      "status": "verified",
+      "tags": []
     },
     {
-      "id": "R07-NACHSPIEL-V2",
-      "conceptId": "R07-NACHSPIEL",
-      "rule": 7,
-      "type": "quickcheck",
-      "difficulty": "medium",
-      "question": "Regel 7 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Die angezeigte Nachspielzeit ist grundsätzlich eine Mindestzeit.",
-      "options": [
-        "Nur Empfehlung",
-        "Höchstzeit",
-        "Exakte unveränderbare Restzeit",
-        "Mindestzeit"
-      ],
-      "correct": 3,
-      "explanation": "Die angezeigte Nachspielzeit ist grundsätzlich eine Mindestzeit.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R07-NACHSPIEL-V3",
-      "conceptId": "R07-NACHSPIEL",
-      "rule": 7,
-      "type": "decision",
-      "difficulty": "medium",
-      "question": "Regel 7 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Die angezeigte Nachspielzeit ist grundsätzlich eine Mindestzeit.",
-      "options": [
-        "Nur Empfehlung",
-        "Höchstzeit",
-        "Exakte unveränderbare Restzeit",
-        "Mindestzeit"
-      ],
-      "correct": 3,
-      "explanation": "Die angezeigte Nachspielzeit ist grundsätzlich eine Mindestzeit.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R07-NACHSPIEL-V4",
-      "conceptId": "R07-NACHSPIEL",
-      "rule": 7,
-      "type": "exam",
-      "difficulty": "medium",
-      "question": "Regel 7 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Die angezeigte Nachspielzeit ist grundsätzlich eine Mindestzeit.",
-      "options": [
-        "Mindestzeit",
-        "Nur Empfehlung",
-        "Exakte unveränderbare Restzeit",
-        "Höchstzeit"
-      ],
-      "correct": 0,
-      "explanation": "Die angezeigte Nachspielzeit ist grundsätzlich eine Mindestzeit.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R08-ANSTOSS-V1",
-      "conceptId": "R08-ANSTOSS",
-      "rule": 8,
+      "id": "Q123",
+      "conceptId": "C123",
+      "rule": 16,
       "type": "knowledge",
       "difficulty": "easy",
-      "question": "Regel 8: Welche Antwort ist richtig?",
-      "scenario": "Beim Anstoß ist der Ball im Spiel, wenn er mit dem Fuß gespielt wurde und sich eindeutig bewegt.",
+      "question": "Gibt es direkt aus einem Abstoß ein Abseitsvergehen?",
       "options": [
-        "Allein durch den Pfiff",
-        "Erst nach zweiter Berührung",
-        "Erst außerhalb des Mittelkreises",
-        "Gespielt und eindeutig bewegt"
-      ],
-      "correct": 3,
-      "explanation": "Beim Anstoß ist der Ball im Spiel, wenn er mit dem Fuß gespielt wurde und sich eindeutig bewegt.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R08-ANSTOSS-V2",
-      "conceptId": "R08-ANSTOSS",
-      "rule": 8,
-      "type": "quickcheck",
-      "difficulty": "easy",
-      "question": "Regel 8 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Beim Anstoß ist der Ball im Spiel, wenn er mit dem Fuß gespielt wurde und sich eindeutig bewegt.",
-      "options": [
-        "Erst nach zweiter Berührung",
-        "Gespielt und eindeutig bewegt",
-        "Allein durch den Pfiff",
-        "Erst außerhalb des Mittelkreises"
+        "Ja",
+        "Nein",
+        "Nur bei langem Abstoß",
+        "Nur außerhalb des Strafraums"
       ],
       "correct": 1,
-      "explanation": "Beim Anstoß ist der Ball im Spiel, wenn er mit dem Fuß gespielt wurde und sich eindeutig bewegt.",
+      "explanation": "Direkt aus einem Abstoß gibt es kein Abseitsvergehen.",
       "sources": [
-        "dfb_rules",
-        "sfv_downloads"
+        "dfb_rules"
       ],
       "verifiedFor": "2026/27",
-      "status": "verified"
+      "status": "verified",
+      "tags": []
     },
     {
-      "id": "R08-ANSTOSS-V3",
-      "conceptId": "R08-ANSTOSS",
-      "rule": 8,
-      "type": "decision",
-      "difficulty": "easy",
-      "question": "Regel 8 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Beim Anstoß ist der Ball im Spiel, wenn er mit dem Fuß gespielt wurde und sich eindeutig bewegt.",
+      "id": "Q124",
+      "conceptId": "C124",
+      "rule": 16,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Ein Angreifer berührt den Ball zuletzt, anschließend überschreitet er die gegnerische Torlinie vollständig, ohne dass ein Tor erzielt wird. Spielfortsetzung?",
       "options": [
-        "Erst nach zweiter Berührung",
-        "Allein durch den Pfiff",
-        "Erst außerhalb des Mittelkreises",
-        "Gespielt und eindeutig bewegt"
+        "Eckstoß",
+        "Abstoß",
+        "Einwurf",
+        "Schiedsrichterball"
       ],
-      "correct": 3,
-      "explanation": "Beim Anstoß ist der Ball im Spiel, wenn er mit dem Fuß gespielt wurde und sich eindeutig bewegt.",
+      "correct": 1,
+      "explanation": "Nach letzter Berührung durch einen Angreifer gibt es beim Überschreiten der gegnerischen Torlinie ohne Tor Abstoß.",
       "sources": [
-        "dfb_rules",
-        "sfv_downloads"
+        "dfb_rules"
       ],
       "verifiedFor": "2026/27",
-      "status": "verified"
+      "status": "verified",
+      "tags": []
     },
     {
-      "id": "R08-ANSTOSS-V4",
-      "conceptId": "R08-ANSTOSS",
-      "rule": 8,
-      "type": "exam",
-      "difficulty": "easy",
-      "question": "Regel 8 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Beim Anstoß ist der Ball im Spiel, wenn er mit dem Fuß gespielt wurde und sich eindeutig bewegt.",
+      "id": "Q125",
+      "conceptId": "C125",
+      "rule": 16,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Der Abstoßschütze berührt den Ball erneut, bevor ein anderer Spieler ihn berührt. Entscheidung?",
       "options": [
-        "Allein durch den Pfiff",
-        "Erst außerhalb des Mittelkreises",
-        "Gespielt und eindeutig bewegt",
-        "Erst nach zweiter Berührung"
+        "Weiterspielen",
+        "Indirekter Freistoß für den Gegner, sofern kein anderes Vergehen vorliegt",
+        "Wiederholung",
+        "Eckstoß"
       ],
-      "correct": 2,
-      "explanation": "Beim Anstoß ist der Ball im Spiel, wenn er mit dem Fuß gespielt wurde und sich eindeutig bewegt.",
+      "correct": 1,
+      "explanation": "Eine unzulässige zweite Ballberührung führt grundsätzlich zum indirekten Freistoß.",
       "sources": [
-        "dfb_rules",
-        "sfv_downloads"
+        "dfb_rules"
       ],
       "verifiedFor": "2026/27",
-      "status": "verified"
+      "status": "verified",
+      "tags": []
     },
     {
-      "id": "R08-SRBALL-V1",
-      "conceptId": "R08-SRBALL",
-      "rule": 8,
-      "type": "knowledge",
+      "id": "Q126",
+      "conceptId": "C126",
+      "rule": 16,
+      "type": "situation",
       "difficulty": "hard",
-      "question": "Regel 8: Welche Antwort ist richtig?",
-      "scenario": "Außerhalb des Strafraums erhält beim Schiedsrichterball grundsätzlich das Team den Ball, das in Ballbesitz war oder gekommen wäre, sofern dies eindeutig ist.",
+      "question": "Der Schiedsrichter erkennt absichtliche Verzögerung vor einem Abstoß und startet den 5-Sekunden-Countdown. Die Zeit läuft ab. Entscheidung?",
       "options": [
-        "Immer das Heimteam",
-        "Das Team mit dem eindeutigen Ballbesitz bzw. zu erwartenden Ballbesitz",
-        "Zwei Spieler kämpfen um den Ball",
-        "Immer das Team der letzten Ballberührung"
-      ],
-      "correct": 1,
-      "explanation": "Außerhalb des Strafraums erhält beim Schiedsrichterball grundsätzlich das Team den Ball, das in Ballbesitz war oder gekommen wäre, sofern dies eindeutig ist.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R08-SRBALL-V2",
-      "conceptId": "R08-SRBALL",
-      "rule": 8,
-      "type": "quickcheck",
-      "difficulty": "hard",
-      "question": "Regel 8 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Außerhalb des Strafraums erhält beim Schiedsrichterball grundsätzlich das Team den Ball, das in Ballbesitz war oder gekommen wäre, sofern dies eindeutig ist.",
-      "options": [
-        "Zwei Spieler kämpfen um den Ball",
-        "Immer das Heimteam",
-        "Immer das Team der letzten Ballberührung",
-        "Das Team mit dem eindeutigen Ballbesitz bzw. zu erwartenden Ballbesitz"
-      ],
-      "correct": 3,
-      "explanation": "Außerhalb des Strafraums erhält beim Schiedsrichterball grundsätzlich das Team den Ball, das in Ballbesitz war oder gekommen wäre, sofern dies eindeutig ist.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R08-SRBALL-V3",
-      "conceptId": "R08-SRBALL",
-      "rule": 8,
-      "type": "decision",
-      "difficulty": "hard",
-      "question": "Regel 8 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Außerhalb des Strafraums erhält beim Schiedsrichterball grundsätzlich das Team den Ball, das in Ballbesitz war oder gekommen wäre, sofern dies eindeutig ist.",
-      "options": [
-        "Zwei Spieler kämpfen um den Ball",
-        "Immer das Team der letzten Ballberührung",
-        "Immer das Heimteam",
-        "Das Team mit dem eindeutigen Ballbesitz bzw. zu erwartenden Ballbesitz"
-      ],
-      "correct": 3,
-      "explanation": "Außerhalb des Strafraums erhält beim Schiedsrichterball grundsätzlich das Team den Ball, das in Ballbesitz war oder gekommen wäre, sofern dies eindeutig ist.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R08-SRBALL-V4",
-      "conceptId": "R08-SRBALL",
-      "rule": 8,
-      "type": "exam",
-      "difficulty": "hard",
-      "question": "Regel 8 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Außerhalb des Strafraums erhält beim Schiedsrichterball grundsätzlich das Team den Ball, das in Ballbesitz war oder gekommen wäre, sofern dies eindeutig ist.",
-      "options": [
-        "Das Team mit dem eindeutigen Ballbesitz bzw. zu erwartenden Ballbesitz",
-        "Immer das Heimteam",
-        "Immer das Team der letzten Ballberührung",
-        "Zwei Spieler kämpfen um den Ball"
-      ],
-      "correct": 0,
-      "explanation": "Außerhalb des Strafraums erhält beim Schiedsrichterball grundsätzlich das Team den Ball, das in Ballbesitz war oder gekommen wäre, sofern dies eindeutig ist.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R09-AUS-V1",
-      "conceptId": "R09-AUS",
-      "rule": 9,
-      "type": "knowledge",
-      "difficulty": "easy",
-      "question": "Regel 9: Welche Antwort ist richtig?",
-      "scenario": "Der Ball ist erst aus dem Spiel, wenn er eine Seiten- oder Torlinie vollständig überschritten hat.",
-      "options": [
-        "Sobald ein Spieler reklamiert",
-        "Vollständig überschritten",
-        "Sobald die Hälfte des Balls außerhalb ist",
-        "Sobald er die Linie berührt"
-      ],
-      "correct": 1,
-      "explanation": "Der Ball ist erst aus dem Spiel, wenn er eine Seiten- oder Torlinie vollständig überschritten hat.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R09-AUS-V2",
-      "conceptId": "R09-AUS",
-      "rule": 9,
-      "type": "quickcheck",
-      "difficulty": "easy",
-      "question": "Regel 9 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Der Ball ist erst aus dem Spiel, wenn er eine Seiten- oder Torlinie vollständig überschritten hat.",
-      "options": [
-        "Sobald ein Spieler reklamiert",
-        "Sobald die Hälfte des Balls außerhalb ist",
-        "Vollständig überschritten",
-        "Sobald er die Linie berührt"
-      ],
-      "correct": 2,
-      "explanation": "Der Ball ist erst aus dem Spiel, wenn er eine Seiten- oder Torlinie vollständig überschritten hat.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R09-AUS-V3",
-      "conceptId": "R09-AUS",
-      "rule": 9,
-      "type": "decision",
-      "difficulty": "easy",
-      "question": "Regel 9 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Der Ball ist erst aus dem Spiel, wenn er eine Seiten- oder Torlinie vollständig überschritten hat.",
-      "options": [
-        "Vollständig überschritten",
-        "Sobald er die Linie berührt",
-        "Sobald die Hälfte des Balls außerhalb ist",
-        "Sobald ein Spieler reklamiert"
-      ],
-      "correct": 0,
-      "explanation": "Der Ball ist erst aus dem Spiel, wenn er eine Seiten- oder Torlinie vollständig überschritten hat.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R09-AUS-V4",
-      "conceptId": "R09-AUS",
-      "rule": 9,
-      "type": "exam",
-      "difficulty": "easy",
-      "question": "Regel 9 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Der Ball ist erst aus dem Spiel, wenn er eine Seiten- oder Torlinie vollständig überschritten hat.",
-      "options": [
-        "Vollständig überschritten",
-        "Sobald die Hälfte des Balls außerhalb ist",
-        "Sobald ein Spieler reklamiert",
-        "Sobald er die Linie berührt"
-      ],
-      "correct": 0,
-      "explanation": "Der Ball ist erst aus dem Spiel, wenn er eine Seiten- oder Torlinie vollständig überschritten hat.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R09-AUSSENPERSON-V1",
-      "conceptId": "R09-AUSSENPERSON",
-      "rule": 9,
-      "type": "knowledge",
-      "difficulty": "hard",
-      "question": "Regel 9: Welche Antwort ist richtig?",
-      "scenario": "Bei der ausdrücklich geregelten unbeabsichtigten Ballberührung durch bestimmte nicht spielberechtigte Personen ohne unfaire Einflussnahme ist ein indirekter Freistoß ohne persönliche Strafe vorgesehen.",
-      "options": [
-        "Direkter Freistoß und Rot",
-        "Strafstoß und Gelb",
-        "Indirekter Freistoß, grundsätzlich keine persönliche Strafe",
+        "Abstoß wiederholen",
+        "Eckstoß für die gegnerische Mannschaft",
+        "Indirekter Freistoß",
         "Einwurf"
       ],
-      "correct": 2,
-      "explanation": "Bei der ausdrücklich geregelten unbeabsichtigten Ballberührung durch bestimmte nicht spielberechtigte Personen ohne unfaire Einflussnahme ist ein indirekter Freistoß ohne persönliche Strafe vorgesehen.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads",
-        "svf_hrt"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R09-AUSSENPERSON-V2",
-      "conceptId": "R09-AUSSENPERSON",
-      "rule": 9,
-      "type": "quickcheck",
-      "difficulty": "hard",
-      "question": "Regel 9 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Bei der ausdrücklich geregelten unbeabsichtigten Ballberührung durch bestimmte nicht spielberechtigte Personen ohne unfaire Einflussnahme ist ein indirekter Freistoß ohne persönliche Strafe vorgesehen.",
-      "options": [
-        "Direkter Freistoß und Rot",
-        "Einwurf",
-        "Indirekter Freistoß, grundsätzlich keine persönliche Strafe",
-        "Strafstoß und Gelb"
-      ],
-      "correct": 2,
-      "explanation": "Bei der ausdrücklich geregelten unbeabsichtigten Ballberührung durch bestimmte nicht spielberechtigte Personen ohne unfaire Einflussnahme ist ein indirekter Freistoß ohne persönliche Strafe vorgesehen.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads",
-        "svf_hrt"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R09-AUSSENPERSON-V3",
-      "conceptId": "R09-AUSSENPERSON",
-      "rule": 9,
-      "type": "decision",
-      "difficulty": "hard",
-      "question": "Regel 9 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Bei der ausdrücklich geregelten unbeabsichtigten Ballberührung durch bestimmte nicht spielberechtigte Personen ohne unfaire Einflussnahme ist ein indirekter Freistoß ohne persönliche Strafe vorgesehen.",
-      "options": [
-        "Einwurf",
-        "Direkter Freistoß und Rot",
-        "Strafstoß und Gelb",
-        "Indirekter Freistoß, grundsätzlich keine persönliche Strafe"
-      ],
-      "correct": 3,
-      "explanation": "Bei der ausdrücklich geregelten unbeabsichtigten Ballberührung durch bestimmte nicht spielberechtigte Personen ohne unfaire Einflussnahme ist ein indirekter Freistoß ohne persönliche Strafe vorgesehen.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads",
-        "svf_hrt"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R09-AUSSENPERSON-V4",
-      "conceptId": "R09-AUSSENPERSON",
-      "rule": 9,
-      "type": "exam",
-      "difficulty": "hard",
-      "question": "Regel 9 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Bei der ausdrücklich geregelten unbeabsichtigten Ballberührung durch bestimmte nicht spielberechtigte Personen ohne unfaire Einflussnahme ist ein indirekter Freistoß ohne persönliche Strafe vorgesehen.",
-      "options": [
-        "Einwurf",
-        "Strafstoß und Gelb",
-        "Indirekter Freistoß, grundsätzlich keine persönliche Strafe",
-        "Direkter Freistoß und Rot"
-      ],
-      "correct": 2,
-      "explanation": "Bei der ausdrücklich geregelten unbeabsichtigten Ballberührung durch bestimmte nicht spielberechtigte Personen ohne unfaire Einflussnahme ist ein indirekter Freistoß ohne persönliche Strafe vorgesehen.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads",
-        "svf_hrt"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R10-TOR-V1",
-      "conceptId": "R10-TOR",
-      "rule": 10,
-      "type": "knowledge",
-      "difficulty": "easy",
-      "question": "Regel 10: Welche Antwort ist richtig?",
-      "scenario": "Ein Tor ist erzielt, wenn der Ball die Torlinie zwischen den Pfosten und unter der Latte vollständig überschritten hat und kein vorheriges Vergehen des angreifenden Teams vorliegt.",
-      "options": [
-        "Ball berührt die Torlinie",
-        "Ball berührt den Pfosten",
-        "Ball vollständig über der Torlinie zwischen Pfosten und unter Latte",
-        "Torwart berührt den Ball"
-      ],
-      "correct": 2,
-      "explanation": "Ein Tor ist erzielt, wenn der Ball die Torlinie zwischen den Pfosten und unter der Latte vollständig überschritten hat und kein vorheriges Vergehen des angreifenden Teams vorliegt.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R10-TOR-V2",
-      "conceptId": "R10-TOR",
-      "rule": 10,
-      "type": "quickcheck",
-      "difficulty": "easy",
-      "question": "Regel 10 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Ein Tor ist erzielt, wenn der Ball die Torlinie zwischen den Pfosten und unter der Latte vollständig überschritten hat und kein vorheriges Vergehen des angreifenden Teams vorliegt.",
-      "options": [
-        "Ball berührt die Torlinie",
-        "Ball berührt den Pfosten",
-        "Ball vollständig über der Torlinie zwischen Pfosten und unter Latte",
-        "Torwart berührt den Ball"
-      ],
-      "correct": 2,
-      "explanation": "Ein Tor ist erzielt, wenn der Ball die Torlinie zwischen den Pfosten und unter der Latte vollständig überschritten hat und kein vorheriges Vergehen des angreifenden Teams vorliegt.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R10-TOR-V3",
-      "conceptId": "R10-TOR",
-      "rule": 10,
-      "type": "decision",
-      "difficulty": "easy",
-      "question": "Regel 10 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Ein Tor ist erzielt, wenn der Ball die Torlinie zwischen den Pfosten und unter der Latte vollständig überschritten hat und kein vorheriges Vergehen des angreifenden Teams vorliegt.",
-      "options": [
-        "Ball vollständig über der Torlinie zwischen Pfosten und unter Latte",
-        "Ball berührt den Pfosten",
-        "Ball berührt die Torlinie",
-        "Torwart berührt den Ball"
-      ],
-      "correct": 0,
-      "explanation": "Ein Tor ist erzielt, wenn der Ball die Torlinie zwischen den Pfosten und unter der Latte vollständig überschritten hat und kein vorheriges Vergehen des angreifenden Teams vorliegt.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R10-TOR-V4",
-      "conceptId": "R10-TOR",
-      "rule": 10,
-      "type": "exam",
-      "difficulty": "easy",
-      "question": "Regel 10 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Ein Tor ist erzielt, wenn der Ball die Torlinie zwischen den Pfosten und unter der Latte vollständig überschritten hat und kein vorheriges Vergehen des angreifenden Teams vorliegt.",
-      "options": [
-        "Ball berührt den Pfosten",
-        "Torwart berührt den Ball",
-        "Ball vollständig über der Torlinie zwischen Pfosten und unter Latte",
-        "Ball berührt die Torlinie"
-      ],
-      "correct": 2,
-      "explanation": "Ein Tor ist erzielt, wenn der Ball die Torlinie zwischen den Pfosten und unter der Latte vollständig überschritten hat und kein vorheriges Vergehen des angreifenden Teams vorliegt.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R11-STELLUNG-V1",
-      "conceptId": "R11-STELLUNG",
-      "rule": 11,
-      "type": "knowledge",
-      "difficulty": "easy",
-      "question": "Regel 11: Welche Antwort ist richtig?",
-      "scenario": "Eine Abseitsstellung allein ist kein Vergehen.",
-      "options": [
-        "Sofort indirekter Freistoß",
-        "Weiterspielen, solange keine strafbare aktive Teilnahme folgt",
-        "Gelbe Karte",
-        "Direkter Freistoß"
-      ],
       "correct": 1,
-      "explanation": "Eine Abseitsstellung allein ist kein Vergehen.",
+      "explanation": "Nach Ablauf des 2026/27-Countdowns erhält der Gegner beim verzögerten Abstoß einen Eckstoß.",
       "sources": [
         "dfb_rules",
-        "sfv_downloads"
+        "dfb_changes",
+        "sfv_changes"
       ],
       "verifiedFor": "2026/27",
-      "status": "verified"
+      "status": "verified",
+      "tags": []
     },
     {
-      "id": "R11-STELLUNG-V2",
-      "conceptId": "R11-STELLUNG",
-      "rule": 11,
-      "type": "quickcheck",
-      "difficulty": "easy",
-      "question": "Regel 11 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Eine Abseitsstellung allein ist kein Vergehen.",
-      "options": [
-        "Weiterspielen, solange keine strafbare aktive Teilnahme folgt",
-        "Sofort indirekter Freistoß",
-        "Gelbe Karte",
-        "Direkter Freistoß"
-      ],
-      "correct": 0,
-      "explanation": "Eine Abseitsstellung allein ist kein Vergehen.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R11-STELLUNG-V3",
-      "conceptId": "R11-STELLUNG",
-      "rule": 11,
-      "type": "decision",
-      "difficulty": "easy",
-      "question": "Regel 11 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Eine Abseitsstellung allein ist kein Vergehen.",
-      "options": [
-        "Gelbe Karte",
-        "Sofort indirekter Freistoß",
-        "Weiterspielen, solange keine strafbare aktive Teilnahme folgt",
-        "Direkter Freistoß"
-      ],
-      "correct": 2,
-      "explanation": "Eine Abseitsstellung allein ist kein Vergehen.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R11-STELLUNG-V4",
-      "conceptId": "R11-STELLUNG",
-      "rule": 11,
-      "type": "exam",
-      "difficulty": "easy",
-      "question": "Regel 11 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Eine Abseitsstellung allein ist kein Vergehen.",
-      "options": [
-        "Sofort indirekter Freistoß",
-        "Direkter Freistoß",
-        "Gelbe Karte",
-        "Weiterspielen, solange keine strafbare aktive Teilnahme folgt"
-      ],
-      "correct": 3,
-      "explanation": "Eine Abseitsstellung allein ist kein Vergehen.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R11-AUSNAHMEN-V1",
-      "conceptId": "R11-AUSNAHMEN",
-      "rule": 11,
-      "type": "knowledge",
-      "difficulty": "medium",
-      "question": "Regel 11: Welche Antwort ist richtig?",
-      "scenario": "Direkt aus Abstoß, Einwurf oder Eckstoß entsteht kein Abseitsvergehen.",
-      "options": [
-        "Freistoß, Strafstoß und Anstoß",
-        "Nur Einwurf",
-        "Nur Abstoß und Freistoß",
-        "Abstoß, Einwurf und Eckstoß"
-      ],
-      "correct": 3,
-      "explanation": "Direkt aus Abstoß, Einwurf oder Eckstoß entsteht kein Abseitsvergehen.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R11-AUSNAHMEN-V2",
-      "conceptId": "R11-AUSNAHMEN",
-      "rule": 11,
-      "type": "quickcheck",
-      "difficulty": "medium",
-      "question": "Regel 11 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Direkt aus Abstoß, Einwurf oder Eckstoß entsteht kein Abseitsvergehen.",
-      "options": [
-        "Nur Einwurf",
-        "Freistoß, Strafstoß und Anstoß",
-        "Nur Abstoß und Freistoß",
-        "Abstoß, Einwurf und Eckstoß"
-      ],
-      "correct": 3,
-      "explanation": "Direkt aus Abstoß, Einwurf oder Eckstoß entsteht kein Abseitsvergehen.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R11-AUSNAHMEN-V3",
-      "conceptId": "R11-AUSNAHMEN",
-      "rule": 11,
-      "type": "decision",
-      "difficulty": "medium",
-      "question": "Regel 11 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Direkt aus Abstoß, Einwurf oder Eckstoß entsteht kein Abseitsvergehen.",
-      "options": [
-        "Nur Abstoß und Freistoß",
-        "Freistoß, Strafstoß und Anstoß",
-        "Abstoß, Einwurf und Eckstoß",
-        "Nur Einwurf"
-      ],
-      "correct": 2,
-      "explanation": "Direkt aus Abstoß, Einwurf oder Eckstoß entsteht kein Abseitsvergehen.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R11-AUSNAHMEN-V4",
-      "conceptId": "R11-AUSNAHMEN",
-      "rule": 11,
-      "type": "exam",
-      "difficulty": "medium",
-      "question": "Regel 11 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Direkt aus Abstoß, Einwurf oder Eckstoß entsteht kein Abseitsvergehen.",
-      "options": [
-        "Abstoß, Einwurf und Eckstoß",
-        "Nur Einwurf",
-        "Freistoß, Strafstoß und Anstoß",
-        "Nur Abstoß und Freistoß"
-      ],
-      "correct": 0,
-      "explanation": "Direkt aus Abstoß, Einwurf oder Eckstoß entsteht kein Abseitsvergehen.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R11-ABWURF-V1",
-      "conceptId": "R11-ABWURF",
-      "rule": 11,
-      "type": "knowledge",
-      "difficulty": "hard",
-      "question": "Regel 11: Welche Antwort ist richtig?",
-      "scenario": "Bei einem Abwurf des Torhüters ist für die Bestimmung der Abseitsstellung der letzte Kontakt mit dem Ball maßgeblich.",
-      "options": [
-        "Der letzte Kontakt des Torhüters mit dem Ball",
-        "Der Bodenkontakt",
-        "Der Pfiff",
-        "Der erste Handkontakt"
-      ],
-      "correct": 0,
-      "explanation": "Bei einem Abwurf des Torhüters ist für die Bestimmung der Abseitsstellung der letzte Kontakt mit dem Ball maßgeblich.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads",
-        "svf_hrt"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R11-ABWURF-V2",
-      "conceptId": "R11-ABWURF",
-      "rule": 11,
-      "type": "quickcheck",
-      "difficulty": "hard",
-      "question": "Regel 11 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Bei einem Abwurf des Torhüters ist für die Bestimmung der Abseitsstellung der letzte Kontakt mit dem Ball maßgeblich.",
-      "options": [
-        "Der Bodenkontakt",
-        "Der erste Handkontakt",
-        "Der letzte Kontakt des Torhüters mit dem Ball",
-        "Der Pfiff"
-      ],
-      "correct": 2,
-      "explanation": "Bei einem Abwurf des Torhüters ist für die Bestimmung der Abseitsstellung der letzte Kontakt mit dem Ball maßgeblich.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads",
-        "svf_hrt"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R11-ABWURF-V3",
-      "conceptId": "R11-ABWURF",
-      "rule": 11,
-      "type": "decision",
-      "difficulty": "hard",
-      "question": "Regel 11 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Bei einem Abwurf des Torhüters ist für die Bestimmung der Abseitsstellung der letzte Kontakt mit dem Ball maßgeblich.",
-      "options": [
-        "Der Pfiff",
-        "Der Bodenkontakt",
-        "Der erste Handkontakt",
-        "Der letzte Kontakt des Torhüters mit dem Ball"
-      ],
-      "correct": 3,
-      "explanation": "Bei einem Abwurf des Torhüters ist für die Bestimmung der Abseitsstellung der letzte Kontakt mit dem Ball maßgeblich.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads",
-        "svf_hrt"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R11-ABWURF-V4",
-      "conceptId": "R11-ABWURF",
-      "rule": 11,
-      "type": "exam",
-      "difficulty": "hard",
-      "question": "Regel 11 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Bei einem Abwurf des Torhüters ist für die Bestimmung der Abseitsstellung der letzte Kontakt mit dem Ball maßgeblich.",
-      "options": [
-        "Der erste Handkontakt",
-        "Der letzte Kontakt des Torhüters mit dem Ball",
-        "Der Bodenkontakt",
-        "Der Pfiff"
-      ],
-      "correct": 1,
-      "explanation": "Bei einem Abwurf des Torhüters ist für die Bestimmung der Abseitsstellung der letzte Kontakt mit dem Ball maßgeblich.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads",
-        "svf_hrt"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R12-KONTAKT-V1",
-      "conceptId": "R12-KONTAKT",
-      "rule": 12,
-      "type": "knowledge",
-      "difficulty": "easy",
-      "question": "Regel 12: Welche Antwort ist richtig?",
-      "scenario": "Nicht jeder Körperkontakt ist ein Foul; Art, Intensität und Umstände sind zu bewerten.",
-      "options": [
-        "Kontakt ist nur im Strafraum Foul",
-        "Jeder Kontakt ist Foul",
-        "Kontakt ist nicht automatisch ein Foul",
-        "Nur der Kapitän darf Kontakt haben"
-      ],
-      "correct": 2,
-      "explanation": "Nicht jeder Körperkontakt ist ein Foul; Art, Intensität und Umstände sind zu bewerten.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R12-KONTAKT-V2",
-      "conceptId": "R12-KONTAKT",
-      "rule": 12,
-      "type": "quickcheck",
-      "difficulty": "easy",
-      "question": "Regel 12 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Nicht jeder Körperkontakt ist ein Foul; Art, Intensität und Umstände sind zu bewerten.",
-      "options": [
-        "Kontakt ist nicht automatisch ein Foul",
-        "Jeder Kontakt ist Foul",
-        "Kontakt ist nur im Strafraum Foul",
-        "Nur der Kapitän darf Kontakt haben"
-      ],
-      "correct": 0,
-      "explanation": "Nicht jeder Körperkontakt ist ein Foul; Art, Intensität und Umstände sind zu bewerten.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R12-KONTAKT-V3",
-      "conceptId": "R12-KONTAKT",
-      "rule": 12,
-      "type": "decision",
-      "difficulty": "easy",
-      "question": "Regel 12 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Nicht jeder Körperkontakt ist ein Foul; Art, Intensität und Umstände sind zu bewerten.",
-      "options": [
-        "Jeder Kontakt ist Foul",
-        "Kontakt ist nicht automatisch ein Foul",
-        "Nur der Kapitän darf Kontakt haben",
-        "Kontakt ist nur im Strafraum Foul"
-      ],
-      "correct": 1,
-      "explanation": "Nicht jeder Körperkontakt ist ein Foul; Art, Intensität und Umstände sind zu bewerten.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R12-KONTAKT-V4",
-      "conceptId": "R12-KONTAKT",
-      "rule": 12,
-      "type": "exam",
-      "difficulty": "easy",
-      "question": "Regel 12 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Nicht jeder Körperkontakt ist ein Foul; Art, Intensität und Umstände sind zu bewerten.",
-      "options": [
-        "Nur der Kapitän darf Kontakt haben",
-        "Jeder Kontakt ist Foul",
-        "Kontakt ist nicht automatisch ein Foul",
-        "Kontakt ist nur im Strafraum Foul"
-      ],
-      "correct": 2,
-      "explanation": "Nicht jeder Körperkontakt ist ein Foul; Art, Intensität und Umstände sind zu bewerten.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R12-INTENSITAET-V1",
-      "conceptId": "R12-INTENSITAET",
-      "rule": 12,
-      "type": "knowledge",
-      "difficulty": "medium",
-      "question": "Regel 12: Welche Antwort ist richtig?",
-      "scenario": "Bei bestimmten Foulspielen wird zwischen fahrlässig, rücksichtslos und übermäßig hart unterschieden.",
-      "options": [
-        "Langsam – schnell – sehr schnell",
-        "Zufällig – geplant – absichtlich",
-        "Leicht – mittel – schwer",
-        "Fahrlässig – rücksichtslos – übermäßig hart"
-      ],
-      "correct": 3,
-      "explanation": "Bei bestimmten Foulspielen wird zwischen fahrlässig, rücksichtslos und übermäßig hart unterschieden.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R12-INTENSITAET-V2",
-      "conceptId": "R12-INTENSITAET",
-      "rule": 12,
-      "type": "quickcheck",
-      "difficulty": "medium",
-      "question": "Regel 12 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Bei bestimmten Foulspielen wird zwischen fahrlässig, rücksichtslos und übermäßig hart unterschieden.",
-      "options": [
-        "Langsam – schnell – sehr schnell",
-        "Zufällig – geplant – absichtlich",
-        "Leicht – mittel – schwer",
-        "Fahrlässig – rücksichtslos – übermäßig hart"
-      ],
-      "correct": 3,
-      "explanation": "Bei bestimmten Foulspielen wird zwischen fahrlässig, rücksichtslos und übermäßig hart unterschieden.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R12-INTENSITAET-V3",
-      "conceptId": "R12-INTENSITAET",
-      "rule": 12,
-      "type": "decision",
-      "difficulty": "medium",
-      "question": "Regel 12 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Bei bestimmten Foulspielen wird zwischen fahrlässig, rücksichtslos und übermäßig hart unterschieden.",
-      "options": [
-        "Leicht – mittel – schwer",
-        "Zufällig – geplant – absichtlich",
-        "Langsam – schnell – sehr schnell",
-        "Fahrlässig – rücksichtslos – übermäßig hart"
-      ],
-      "correct": 3,
-      "explanation": "Bei bestimmten Foulspielen wird zwischen fahrlässig, rücksichtslos und übermäßig hart unterschieden.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R12-INTENSITAET-V4",
-      "conceptId": "R12-INTENSITAET",
-      "rule": 12,
-      "type": "exam",
-      "difficulty": "medium",
-      "question": "Regel 12 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Bei bestimmten Foulspielen wird zwischen fahrlässig, rücksichtslos und übermäßig hart unterschieden.",
-      "options": [
-        "Langsam – schnell – sehr schnell",
-        "Leicht – mittel – schwer",
-        "Fahrlässig – rücksichtslos – übermäßig hart",
-        "Zufällig – geplant – absichtlich"
-      ],
-      "correct": 2,
-      "explanation": "Bei bestimmten Foulspielen wird zwischen fahrlässig, rücksichtslos und übermäßig hart unterschieden.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R12-TORHUETER8-V1",
-      "conceptId": "R12-TORHUETER8",
-      "rule": 12,
-      "type": "knowledge",
-      "difficulty": "medium",
-      "question": "Regel 12: Welche Antwort ist richtig?",
-      "scenario": "Der Torhüter darf den Ball mit Hand/Arm höchstens acht Sekunden kontrollieren; die letzten fünf Sekunden zeigt der Schiedsrichter sichtbar an.",
-      "options": [
-        "6 Sekunden ohne Anzeige",
-        "10 Sekunden; letzte 3 anzeigen",
-        "8 Sekunden; die letzten 5 werden angezeigt",
-        "5 Sekunden insgesamt"
-      ],
-      "correct": 2,
-      "explanation": "Der Torhüter darf den Ball mit Hand/Arm höchstens acht Sekunden kontrollieren; die letzten fünf Sekunden zeigt der Schiedsrichter sichtbar an.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R12-TORHUETER8-V2",
-      "conceptId": "R12-TORHUETER8",
-      "rule": 12,
-      "type": "quickcheck",
-      "difficulty": "medium",
-      "question": "Regel 12 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Der Torhüter darf den Ball mit Hand/Arm höchstens acht Sekunden kontrollieren; die letzten fünf Sekunden zeigt der Schiedsrichter sichtbar an.",
-      "options": [
-        "10 Sekunden; letzte 3 anzeigen",
-        "5 Sekunden insgesamt",
-        "8 Sekunden; die letzten 5 werden angezeigt",
-        "6 Sekunden ohne Anzeige"
-      ],
-      "correct": 2,
-      "explanation": "Der Torhüter darf den Ball mit Hand/Arm höchstens acht Sekunden kontrollieren; die letzten fünf Sekunden zeigt der Schiedsrichter sichtbar an.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R12-TORHUETER8-V3",
-      "conceptId": "R12-TORHUETER8",
-      "rule": 12,
-      "type": "decision",
-      "difficulty": "medium",
-      "question": "Regel 12 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Der Torhüter darf den Ball mit Hand/Arm höchstens acht Sekunden kontrollieren; die letzten fünf Sekunden zeigt der Schiedsrichter sichtbar an.",
-      "options": [
-        "10 Sekunden; letzte 3 anzeigen",
-        "5 Sekunden insgesamt",
-        "8 Sekunden; die letzten 5 werden angezeigt",
-        "6 Sekunden ohne Anzeige"
-      ],
-      "correct": 2,
-      "explanation": "Der Torhüter darf den Ball mit Hand/Arm höchstens acht Sekunden kontrollieren; die letzten fünf Sekunden zeigt der Schiedsrichter sichtbar an.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R12-TORHUETER8-V4",
-      "conceptId": "R12-TORHUETER8",
-      "rule": 12,
-      "type": "exam",
-      "difficulty": "medium",
-      "question": "Regel 12 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Der Torhüter darf den Ball mit Hand/Arm höchstens acht Sekunden kontrollieren; die letzten fünf Sekunden zeigt der Schiedsrichter sichtbar an.",
-      "options": [
-        "5 Sekunden insgesamt",
-        "6 Sekunden ohne Anzeige",
-        "10 Sekunden; letzte 3 anzeigen",
-        "8 Sekunden; die letzten 5 werden angezeigt"
-      ],
-      "correct": 3,
-      "explanation": "Der Torhüter darf den Ball mit Hand/Arm höchstens acht Sekunden kontrollieren; die letzten fünf Sekunden zeigt der Schiedsrichter sichtbar an.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R12-TORHUETERECKE-V1",
-      "conceptId": "R12-TORHUETERECKE",
-      "rule": 12,
-      "type": "knowledge",
-      "difficulty": "medium",
-      "question": "Regel 12: Welche Antwort ist richtig?",
-      "scenario": "Überschreitet der Torhüter ohne Behinderung die zulässige Acht-Sekunden-Kontrollzeit, erhält der Gegner einen Eckstoß.",
-      "options": [
-        "Schiedsrichterball",
-        "Indirekter Freistoß",
-        "Eckstoß für den Gegner",
-        "Strafstoß"
-      ],
-      "correct": 2,
-      "explanation": "Überschreitet der Torhüter ohne Behinderung die zulässige Acht-Sekunden-Kontrollzeit, erhält der Gegner einen Eckstoß.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R12-TORHUETERECKE-V2",
-      "conceptId": "R12-TORHUETERECKE",
-      "rule": 12,
-      "type": "quickcheck",
-      "difficulty": "medium",
-      "question": "Regel 12 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Überschreitet der Torhüter ohne Behinderung die zulässige Acht-Sekunden-Kontrollzeit, erhält der Gegner einen Eckstoß.",
-      "options": [
-        "Strafstoß",
-        "Schiedsrichterball",
-        "Indirekter Freistoß",
-        "Eckstoß für den Gegner"
-      ],
-      "correct": 3,
-      "explanation": "Überschreitet der Torhüter ohne Behinderung die zulässige Acht-Sekunden-Kontrollzeit, erhält der Gegner einen Eckstoß.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R12-TORHUETERECKE-V3",
-      "conceptId": "R12-TORHUETERECKE",
-      "rule": 12,
-      "type": "decision",
-      "difficulty": "medium",
-      "question": "Regel 12 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Überschreitet der Torhüter ohne Behinderung die zulässige Acht-Sekunden-Kontrollzeit, erhält der Gegner einen Eckstoß.",
-      "options": [
-        "Strafstoß",
-        "Indirekter Freistoß",
-        "Schiedsrichterball",
-        "Eckstoß für den Gegner"
-      ],
-      "correct": 3,
-      "explanation": "Überschreitet der Torhüter ohne Behinderung die zulässige Acht-Sekunden-Kontrollzeit, erhält der Gegner einen Eckstoß.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R12-TORHUETERECKE-V4",
-      "conceptId": "R12-TORHUETERECKE",
-      "rule": 12,
-      "type": "exam",
-      "difficulty": "medium",
-      "question": "Regel 12 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Überschreitet der Torhüter ohne Behinderung die zulässige Acht-Sekunden-Kontrollzeit, erhält der Gegner einen Eckstoß.",
-      "options": [
-        "Indirekter Freistoß",
-        "Eckstoß für den Gegner",
-        "Schiedsrichterball",
-        "Strafstoß"
-      ],
-      "correct": 1,
-      "explanation": "Überschreitet der Torhüter ohne Behinderung die zulässige Acht-Sekunden-Kontrollzeit, erhält der Gegner einen Eckstoß.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R13-DIREKT-V1",
-      "conceptId": "R13-DIREKT",
-      "rule": 13,
-      "type": "knowledge",
-      "difficulty": "easy",
-      "question": "Regel 13: Welche Antwort ist richtig?",
-      "scenario": "Aus einem direkten Freistoß kann unmittelbar ein Tor gegen den Gegner erzielt werden.",
-      "options": [
-        "Erst nach zweiter Berührung",
-        "Nie ein direktes Tor",
-        "Direktes Tor ist möglich",
-        "Nur der Torwart darf direkt treffen"
-      ],
-      "correct": 2,
-      "explanation": "Aus einem direkten Freistoß kann unmittelbar ein Tor gegen den Gegner erzielt werden.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R13-DIREKT-V2",
-      "conceptId": "R13-DIREKT",
-      "rule": 13,
-      "type": "quickcheck",
-      "difficulty": "easy",
-      "question": "Regel 13 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Aus einem direkten Freistoß kann unmittelbar ein Tor gegen den Gegner erzielt werden.",
-      "options": [
-        "Direktes Tor ist möglich",
-        "Nur der Torwart darf direkt treffen",
-        "Erst nach zweiter Berührung",
-        "Nie ein direktes Tor"
-      ],
-      "correct": 0,
-      "explanation": "Aus einem direkten Freistoß kann unmittelbar ein Tor gegen den Gegner erzielt werden.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R13-DIREKT-V3",
-      "conceptId": "R13-DIREKT",
-      "rule": 13,
-      "type": "decision",
-      "difficulty": "easy",
-      "question": "Regel 13 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Aus einem direkten Freistoß kann unmittelbar ein Tor gegen den Gegner erzielt werden.",
-      "options": [
-        "Erst nach zweiter Berührung",
-        "Nur der Torwart darf direkt treffen",
-        "Nie ein direktes Tor",
-        "Direktes Tor ist möglich"
-      ],
-      "correct": 3,
-      "explanation": "Aus einem direkten Freistoß kann unmittelbar ein Tor gegen den Gegner erzielt werden.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R13-DIREKT-V4",
-      "conceptId": "R13-DIREKT",
-      "rule": 13,
-      "type": "exam",
-      "difficulty": "easy",
-      "question": "Regel 13 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Aus einem direkten Freistoß kann unmittelbar ein Tor gegen den Gegner erzielt werden.",
-      "options": [
-        "Erst nach zweiter Berührung",
-        "Nie ein direktes Tor",
-        "Direktes Tor ist möglich",
-        "Nur der Torwart darf direkt treffen"
-      ],
-      "correct": 2,
-      "explanation": "Aus einem direkten Freistoß kann unmittelbar ein Tor gegen den Gegner erzielt werden.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R13-INDIREKT-V1",
-      "conceptId": "R13-INDIREKT",
-      "rule": 13,
-      "type": "knowledge",
-      "difficulty": "medium",
-      "question": "Regel 13: Welche Antwort ist richtig?",
-      "scenario": "Einen indirekten Freistoß zeigt der Schiedsrichter mit erhobenem Arm an; für ein Tor muss ein weiterer Spieler den Ball berühren.",
-      "options": [
-        "Beide Arme; direktes Tor möglich",
-        "Fahnenzeichen des Kapitäns",
-        "Erhobener Arm; weitere Ballberührung für ein gültiges Tor nötig",
-        "Kein Zeichen; immer direkt"
-      ],
-      "correct": 2,
-      "explanation": "Einen indirekten Freistoß zeigt der Schiedsrichter mit erhobenem Arm an; für ein Tor muss ein weiterer Spieler den Ball berühren.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R13-INDIREKT-V2",
-      "conceptId": "R13-INDIREKT",
-      "rule": 13,
-      "type": "quickcheck",
-      "difficulty": "medium",
-      "question": "Regel 13 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Einen indirekten Freistoß zeigt der Schiedsrichter mit erhobenem Arm an; für ein Tor muss ein weiterer Spieler den Ball berühren.",
-      "options": [
-        "Fahnenzeichen des Kapitäns",
-        "Kein Zeichen; immer direkt",
-        "Erhobener Arm; weitere Ballberührung für ein gültiges Tor nötig",
-        "Beide Arme; direktes Tor möglich"
-      ],
-      "correct": 2,
-      "explanation": "Einen indirekten Freistoß zeigt der Schiedsrichter mit erhobenem Arm an; für ein Tor muss ein weiterer Spieler den Ball berühren.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R13-INDIREKT-V3",
-      "conceptId": "R13-INDIREKT",
-      "rule": 13,
-      "type": "decision",
-      "difficulty": "medium",
-      "question": "Regel 13 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Einen indirekten Freistoß zeigt der Schiedsrichter mit erhobenem Arm an; für ein Tor muss ein weiterer Spieler den Ball berühren.",
-      "options": [
-        "Beide Arme; direktes Tor möglich",
-        "Erhobener Arm; weitere Ballberührung für ein gültiges Tor nötig",
-        "Kein Zeichen; immer direkt",
-        "Fahnenzeichen des Kapitäns"
-      ],
-      "correct": 1,
-      "explanation": "Einen indirekten Freistoß zeigt der Schiedsrichter mit erhobenem Arm an; für ein Tor muss ein weiterer Spieler den Ball berühren.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R13-INDIREKT-V4",
-      "conceptId": "R13-INDIREKT",
-      "rule": 13,
-      "type": "exam",
-      "difficulty": "medium",
-      "question": "Regel 13 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Einen indirekten Freistoß zeigt der Schiedsrichter mit erhobenem Arm an; für ein Tor muss ein weiterer Spieler den Ball berühren.",
-      "options": [
-        "Beide Arme; direktes Tor möglich",
-        "Erhobener Arm; weitere Ballberührung für ein gültiges Tor nötig",
-        "Kein Zeichen; immer direkt",
-        "Fahnenzeichen des Kapitäns"
-      ],
-      "correct": 1,
-      "explanation": "Einen indirekten Freistoß zeigt der Schiedsrichter mit erhobenem Arm an; für ein Tor muss ein weiterer Spieler den Ball berühren.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R14-DOPPEL-TOR-V1",
-      "conceptId": "R14-DOPPEL-TOR",
-      "rule": 14,
-      "type": "knowledge",
-      "difficulty": "hard",
-      "question": "Regel 14: Welche Antwort ist richtig?",
-      "scenario": "Bei versehentlicher Doppelberührung des Strafstoßschützen und anschließendem Tor wird der Strafstoß wiederholt.",
-      "options": [
-        "Abstoß",
-        "Indirekter Freistoß",
-        "Tor",
-        "Wiederholung des Strafstoßes"
-      ],
-      "correct": 3,
-      "explanation": "Bei versehentlicher Doppelberührung des Strafstoßschützen und anschließendem Tor wird der Strafstoß wiederholt.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads",
-        "svf_hrt"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R14-DOPPEL-TOR-V2",
-      "conceptId": "R14-DOPPEL-TOR",
-      "rule": 14,
-      "type": "quickcheck",
-      "difficulty": "hard",
-      "question": "Regel 14 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Bei versehentlicher Doppelberührung des Strafstoßschützen und anschließendem Tor wird der Strafstoß wiederholt.",
-      "options": [
-        "Abstoß",
-        "Tor",
-        "Wiederholung des Strafstoßes",
-        "Indirekter Freistoß"
-      ],
-      "correct": 2,
-      "explanation": "Bei versehentlicher Doppelberührung des Strafstoßschützen und anschließendem Tor wird der Strafstoß wiederholt.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads",
-        "svf_hrt"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R14-DOPPEL-TOR-V3",
-      "conceptId": "R14-DOPPEL-TOR",
-      "rule": 14,
-      "type": "decision",
-      "difficulty": "hard",
-      "question": "Regel 14 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Bei versehentlicher Doppelberührung des Strafstoßschützen und anschließendem Tor wird der Strafstoß wiederholt.",
-      "options": [
-        "Abstoß",
-        "Wiederholung des Strafstoßes",
-        "Tor",
-        "Indirekter Freistoß"
-      ],
-      "correct": 1,
-      "explanation": "Bei versehentlicher Doppelberührung des Strafstoßschützen und anschließendem Tor wird der Strafstoß wiederholt.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads",
-        "svf_hrt"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R14-DOPPEL-TOR-V4",
-      "conceptId": "R14-DOPPEL-TOR",
-      "rule": 14,
-      "type": "exam",
-      "difficulty": "hard",
-      "question": "Regel 14 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Bei versehentlicher Doppelberührung des Strafstoßschützen und anschließendem Tor wird der Strafstoß wiederholt.",
-      "options": [
-        "Wiederholung des Strafstoßes",
-        "Abstoß",
-        "Indirekter Freistoß",
-        "Tor"
-      ],
-      "correct": 0,
-      "explanation": "Bei versehentlicher Doppelberührung des Strafstoßschützen und anschließendem Tor wird der Strafstoß wiederholt.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads",
-        "svf_hrt"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R14-DOPPEL-KEINTOR-V1",
-      "conceptId": "R14-DOPPEL-KEINTOR",
-      "rule": 14,
-      "type": "knowledge",
-      "difficulty": "hard",
-      "question": "Regel 14: Welche Antwort ist richtig?",
-      "scenario": "Bei versehentlicher Doppelberührung des Strafstoßschützen ohne Torerfolg gibt es indirekten Freistoß für den Gegner.",
-      "options": [
-        "Tor",
-        "Indirekter Freistoß für den Gegner",
-        "Wiederholung",
-        "Schiedsrichterball"
-      ],
-      "correct": 1,
-      "explanation": "Bei versehentlicher Doppelberührung des Strafstoßschützen ohne Torerfolg gibt es indirekten Freistoß für den Gegner.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads",
-        "svf_hrt"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R14-DOPPEL-KEINTOR-V2",
-      "conceptId": "R14-DOPPEL-KEINTOR",
-      "rule": 14,
-      "type": "quickcheck",
-      "difficulty": "hard",
-      "question": "Regel 14 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Bei versehentlicher Doppelberührung des Strafstoßschützen ohne Torerfolg gibt es indirekten Freistoß für den Gegner.",
-      "options": [
-        "Tor",
-        "Wiederholung",
-        "Schiedsrichterball",
-        "Indirekter Freistoß für den Gegner"
-      ],
-      "correct": 3,
-      "explanation": "Bei versehentlicher Doppelberührung des Strafstoßschützen ohne Torerfolg gibt es indirekten Freistoß für den Gegner.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads",
-        "svf_hrt"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R14-DOPPEL-KEINTOR-V3",
-      "conceptId": "R14-DOPPEL-KEINTOR",
-      "rule": 14,
-      "type": "decision",
-      "difficulty": "hard",
-      "question": "Regel 14 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Bei versehentlicher Doppelberührung des Strafstoßschützen ohne Torerfolg gibt es indirekten Freistoß für den Gegner.",
-      "options": [
-        "Tor",
-        "Indirekter Freistoß für den Gegner",
-        "Wiederholung",
-        "Schiedsrichterball"
-      ],
-      "correct": 1,
-      "explanation": "Bei versehentlicher Doppelberührung des Strafstoßschützen ohne Torerfolg gibt es indirekten Freistoß für den Gegner.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads",
-        "svf_hrt"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R14-DOPPEL-KEINTOR-V4",
-      "conceptId": "R14-DOPPEL-KEINTOR",
-      "rule": 14,
-      "type": "exam",
-      "difficulty": "hard",
-      "question": "Regel 14 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Bei versehentlicher Doppelberührung des Strafstoßschützen ohne Torerfolg gibt es indirekten Freistoß für den Gegner.",
-      "options": [
-        "Schiedsrichterball",
-        "Wiederholung",
-        "Indirekter Freistoß für den Gegner",
-        "Tor"
-      ],
-      "correct": 2,
-      "explanation": "Bei versehentlicher Doppelberührung des Strafstoßschützen ohne Torerfolg gibt es indirekten Freistoß für den Gegner.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads",
-        "svf_hrt"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R15-EINWURF-V1",
-      "conceptId": "R15-EINWURF",
-      "rule": 15,
-      "type": "knowledge",
-      "difficulty": "easy",
-      "question": "Regel 15: Welche Antwort ist richtig?",
-      "scenario": "Ein Einwurf wird mit beiden Händen von hinten über den Kopf ausgeführt; direkt daraus kann kein Tor erzielt werden.",
-      "options": [
-        "Mit dem Fuß",
-        "Beliebige Wurftechnik",
-        "Beide Hände von hinten über den Kopf; kein direktes Tor",
-        "Eine Hand; direktes Tor möglich"
-      ],
-      "correct": 2,
-      "explanation": "Ein Einwurf wird mit beiden Händen von hinten über den Kopf ausgeführt; direkt daraus kann kein Tor erzielt werden.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R15-EINWURF-V2",
-      "conceptId": "R15-EINWURF",
-      "rule": 15,
-      "type": "quickcheck",
-      "difficulty": "easy",
-      "question": "Regel 15 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Ein Einwurf wird mit beiden Händen von hinten über den Kopf ausgeführt; direkt daraus kann kein Tor erzielt werden.",
-      "options": [
-        "Eine Hand; direktes Tor möglich",
-        "Beide Hände von hinten über den Kopf; kein direktes Tor",
-        "Beliebige Wurftechnik",
-        "Mit dem Fuß"
-      ],
-      "correct": 1,
-      "explanation": "Ein Einwurf wird mit beiden Händen von hinten über den Kopf ausgeführt; direkt daraus kann kein Tor erzielt werden.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R15-EINWURF-V3",
-      "conceptId": "R15-EINWURF",
-      "rule": 15,
-      "type": "decision",
-      "difficulty": "easy",
-      "question": "Regel 15 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Ein Einwurf wird mit beiden Händen von hinten über den Kopf ausgeführt; direkt daraus kann kein Tor erzielt werden.",
-      "options": [
-        "Mit dem Fuß",
-        "Beide Hände von hinten über den Kopf; kein direktes Tor",
-        "Eine Hand; direktes Tor möglich",
-        "Beliebige Wurftechnik"
-      ],
-      "correct": 1,
-      "explanation": "Ein Einwurf wird mit beiden Händen von hinten über den Kopf ausgeführt; direkt daraus kann kein Tor erzielt werden.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R15-EINWURF-V4",
-      "conceptId": "R15-EINWURF",
-      "rule": 15,
-      "type": "exam",
-      "difficulty": "easy",
-      "question": "Regel 15 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Ein Einwurf wird mit beiden Händen von hinten über den Kopf ausgeführt; direkt daraus kann kein Tor erzielt werden.",
-      "options": [
-        "Beide Hände von hinten über den Kopf; kein direktes Tor",
-        "Mit dem Fuß",
-        "Beliebige Wurftechnik",
-        "Eine Hand; direktes Tor möglich"
-      ],
-      "correct": 0,
-      "explanation": "Ein Einwurf wird mit beiden Händen von hinten über den Kopf ausgeführt; direkt daraus kann kein Tor erzielt werden.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R16-ABSTOSS-V1",
-      "conceptId": "R16-ABSTOSS",
-      "rule": 16,
-      "type": "knowledge",
-      "difficulty": "medium",
-      "question": "Regel 16: Welche Antwort ist richtig?",
-      "scenario": "Ein Abstoß wird von einem beliebigen Punkt im Torraum ausgeführt; der Ball ist im Spiel, wenn er gespielt wurde und sich eindeutig bewegt.",
-      "options": [
-        "Beliebiger Punkt im Torraum; gespielt und eindeutig bewegt",
-        "Strafraumlinie",
-        "Nur Torraumeck; erst außerhalb Strafraum im Spiel",
-        "Strafstoßpunkt"
-      ],
-      "correct": 0,
-      "explanation": "Ein Abstoß wird von einem beliebigen Punkt im Torraum ausgeführt; der Ball ist im Spiel, wenn er gespielt wurde und sich eindeutig bewegt.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R16-ABSTOSS-V2",
-      "conceptId": "R16-ABSTOSS",
-      "rule": 16,
-      "type": "quickcheck",
-      "difficulty": "medium",
-      "question": "Regel 16 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Ein Abstoß wird von einem beliebigen Punkt im Torraum ausgeführt; der Ball ist im Spiel, wenn er gespielt wurde und sich eindeutig bewegt.",
-      "options": [
-        "Nur Torraumeck; erst außerhalb Strafraum im Spiel",
-        "Beliebiger Punkt im Torraum; gespielt und eindeutig bewegt",
-        "Strafraumlinie",
-        "Strafstoßpunkt"
-      ],
-      "correct": 1,
-      "explanation": "Ein Abstoß wird von einem beliebigen Punkt im Torraum ausgeführt; der Ball ist im Spiel, wenn er gespielt wurde und sich eindeutig bewegt.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R16-ABSTOSS-V3",
-      "conceptId": "R16-ABSTOSS",
-      "rule": 16,
-      "type": "decision",
-      "difficulty": "medium",
-      "question": "Regel 16 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Ein Abstoß wird von einem beliebigen Punkt im Torraum ausgeführt; der Ball ist im Spiel, wenn er gespielt wurde und sich eindeutig bewegt.",
-      "options": [
-        "Strafstoßpunkt",
-        "Beliebiger Punkt im Torraum; gespielt und eindeutig bewegt",
-        "Nur Torraumeck; erst außerhalb Strafraum im Spiel",
-        "Strafraumlinie"
-      ],
-      "correct": 1,
-      "explanation": "Ein Abstoß wird von einem beliebigen Punkt im Torraum ausgeführt; der Ball ist im Spiel, wenn er gespielt wurde und sich eindeutig bewegt.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R16-ABSTOSS-V4",
-      "conceptId": "R16-ABSTOSS",
-      "rule": 16,
-      "type": "exam",
-      "difficulty": "medium",
-      "question": "Regel 16 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Ein Abstoß wird von einem beliebigen Punkt im Torraum ausgeführt; der Ball ist im Spiel, wenn er gespielt wurde und sich eindeutig bewegt.",
-      "options": [
-        "Strafraumlinie",
-        "Nur Torraumeck; erst außerhalb Strafraum im Spiel",
-        "Beliebiger Punkt im Torraum; gespielt und eindeutig bewegt",
-        "Strafstoßpunkt"
-      ],
-      "correct": 2,
-      "explanation": "Ein Abstoß wird von einem beliebigen Punkt im Torraum ausgeführt; der Ball ist im Spiel, wenn er gespielt wurde und sich eindeutig bewegt.",
-      "sources": [
-        "dfb_rules",
-        "sfv_downloads"
-      ],
-      "verifiedFor": "2026/27",
-      "status": "verified"
-    },
-    {
-      "id": "R17-ECKSTOSS-V1",
-      "conceptId": "R17-ECKSTOSS",
+      "id": "Q127",
+      "conceptId": "C127",
       "rule": 17,
       "type": "knowledge",
       "difficulty": "easy",
-      "question": "Regel 17: Welche Antwort ist richtig?",
-      "scenario": "Beim Eckstoß bleibt die Eckfahne stehen; aus dem Eckstoß kann direkt ein Tor gegen den Gegner erzielt werden.",
+      "question": "Wann gibt es Eckstoß?",
       "options": [
-        "Eckfahne entfernen; kein direktes Tor",
-        "Eckfahne bleibt; direktes Tor gegen Gegner möglich",
-        "Nur indirektes Tor",
-        "Eckfahne darf immer versetzt werden"
+        "Wenn ein Angreifer den Ball zuletzt berührt und er über die Torlinie geht",
+        "Wenn ein Verteidiger den Ball zuletzt berührt und er vollständig über die eigene Torlinie geht, ohne dass ein Tor erzielt wird",
+        "Bei jedem Pfostentreffer",
+        "Nach jedem Abseits"
       ],
       "correct": 1,
-      "explanation": "Beim Eckstoß bleibt die Eckfahne stehen; aus dem Eckstoß kann direkt ein Tor gegen den Gegner erzielt werden.",
+      "explanation": "Letzte Berührung durch einen Verteidiger und Aus über die eigene Torlinie ohne Tor führt zum Eckstoß.",
       "sources": [
-        "dfb_rules",
-        "sfv_downloads"
+        "dfb_rules"
       ],
       "verifiedFor": "2026/27",
-      "status": "verified"
+      "status": "verified",
+      "tags": []
     },
     {
-      "id": "R17-ECKSTOSS-V2",
-      "conceptId": "R17-ECKSTOSS",
+      "id": "Q128",
+      "conceptId": "C128",
       "rule": 17,
-      "type": "quickcheck",
-      "difficulty": "easy",
-      "question": "Regel 17 – Schnellcheck: Was gilt nach dem aktuellen Regelwerk?",
-      "scenario": "Beim Eckstoß bleibt die Eckfahne stehen; aus dem Eckstoß kann direkt ein Tor gegen den Gegner erzielt werden.",
+      "type": "knowledge",
+      "difficulty": "medium",
+      "question": "Wie weit müssen Gegner beim Eckstoß grundsätzlich vom Eckbereich entfernt sein?",
       "options": [
-        "Eckfahne darf immer versetzt werden",
-        "Eckfahne entfernen; kein direktes Tor",
-        "Eckfahne bleibt; direktes Tor gegen Gegner möglich",
-        "Nur indirektes Tor"
+        "2 m",
+        "4 m",
+        "5,50 m",
+        "9,15 m"
       ],
-      "correct": 2,
-      "explanation": "Beim Eckstoß bleibt die Eckfahne stehen; aus dem Eckstoß kann direkt ein Tor gegen den Gegner erzielt werden.",
+      "correct": 3,
+      "explanation": "Gegner müssen grundsätzlich mindestens 9,15 m vom Eckbereich entfernt sein.",
       "sources": [
-        "dfb_rules",
-        "sfv_downloads"
+        "dfb_rules"
       ],
       "verifiedFor": "2026/27",
-      "status": "verified"
+      "status": "verified",
+      "tags": []
     },
     {
-      "id": "R17-ECKSTOSS-V3",
-      "conceptId": "R17-ECKSTOSS",
+      "id": "Q129",
+      "conceptId": "C129",
       "rule": 17,
-      "type": "decision",
+      "type": "knowledge",
       "difficulty": "easy",
-      "question": "Regel 17 – Entscheidung: Welche Aussage trifft zu?",
-      "scenario": "Beim Eckstoß bleibt die Eckfahne stehen; aus dem Eckstoß kann direkt ein Tor gegen den Gegner erzielt werden.",
+      "question": "Darf die Eckfahne zur Ausführung entfernt werden?",
       "options": [
-        "Eckfahne entfernen; kein direktes Tor",
-        "Eckfahne bleibt; direktes Tor gegen Gegner möglich",
-        "Nur indirektes Tor",
-        "Eckfahne darf immer versetzt werden"
+        "Ja",
+        "Nein",
+        "Nur bei Wind",
+        "Nur mit Zustimmung des Gegners"
       ],
       "correct": 1,
-      "explanation": "Beim Eckstoß bleibt die Eckfahne stehen; aus dem Eckstoß kann direkt ein Tor gegen den Gegner erzielt werden.",
+      "explanation": "Die Eckfahne darf nicht entfernt werden.",
       "sources": [
-        "dfb_rules",
-        "sfv_downloads"
+        "dfb_rules"
       ],
       "verifiedFor": "2026/27",
-      "status": "verified"
+      "status": "verified",
+      "tags": []
     },
     {
-      "id": "R17-ECKSTOSS-V4",
-      "conceptId": "R17-ECKSTOSS",
+      "id": "Q130",
+      "conceptId": "C130",
       "rule": 17,
-      "type": "exam",
+      "type": "knowledge",
       "difficulty": "easy",
-      "question": "Regel 17 – Prüfungssituation: Wähle die korrekte Regelentscheidung.",
-      "scenario": "Beim Eckstoß bleibt die Eckfahne stehen; aus dem Eckstoß kann direkt ein Tor gegen den Gegner erzielt werden.",
+      "question": "Kann aus einem Eckstoß direkt ein Tor gegen den Gegner erzielt werden?",
       "options": [
-        "Nur indirektes Tor",
-        "Eckfahne darf immer versetzt werden",
-        "Eckfahne bleibt; direktes Tor gegen Gegner möglich",
-        "Eckfahne entfernen; kein direktes Tor"
+        "Ja",
+        "Nein",
+        "Nur nach zweiter Berührung",
+        "Nur im Profifußball"
       ],
-      "correct": 2,
-      "explanation": "Beim Eckstoß bleibt die Eckfahne stehen; aus dem Eckstoß kann direkt ein Tor gegen den Gegner erzielt werden.",
+      "correct": 0,
+      "explanation": "Aus einem Eckstoß kann direkt ein Tor gegen den Gegner erzielt werden.",
       "sources": [
-        "dfb_rules",
-        "sfv_downloads"
+        "dfb_rules"
       ],
       "verifiedFor": "2026/27",
-      "status": "verified"
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q131",
+      "conceptId": "C131",
+      "rule": 17,
+      "type": "knowledge",
+      "difficulty": "easy",
+      "question": "Gibt es direkt aus einem Eckstoß ein Abseitsvergehen?",
+      "options": [
+        "Ja",
+        "Nein",
+        "Nur bei kurzer Ecke",
+        "Nur im Torraum"
+      ],
+      "correct": 1,
+      "explanation": "Direkt aus einem Eckstoß gibt es kein Abseitsvergehen.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q132",
+      "conceptId": "C132",
+      "rule": 17,
+      "type": "situation",
+      "difficulty": "medium",
+      "question": "Der Eckstoßschütze spielt den Ball und berührt ihn erneut, bevor ein anderer Spieler ihn berührt. Entscheidung?",
+      "options": [
+        "Weiterspielen",
+        "Indirekter Freistoß für den Gegner, sofern kein anderes Vergehen vorliegt",
+        "Wiederholung",
+        "Abstoß"
+      ],
+      "correct": 1,
+      "explanation": "Eine unzulässige zweite Ballberührung führt grundsätzlich zum indirekten Freistoß.",
+      "sources": [
+        "dfb_rules"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q133",
+      "conceptId": "C133",
+      "rule": 15,
+      "type": "situation",
+      "difficulty": "hard",
+      "question": "Ein Spieler führt einen Einwurf technisch falsch aus. Der Ball landet direkt bei einem Gegner, der sofort eine klare Angriffsmöglichkeit hat. Darf der Schiedsrichter 2026/27 unter den vorgesehenen Voraussetzungen Vorteil laufen lassen?",
+      "options": [
+        "Nein, ein falscher Einwurf muss immer sofort zurückgepfiffen werden",
+        "Ja, die neue Regel erlaubt bei einer falsch ausgeführten Spielfortsetzung unter den vorgesehenen Voraussetzungen Vorteil",
+        "Nur wenn der Einwerfende zustimmt",
+        "Nur im Profifußball"
+      ],
+      "correct": 1,
+      "explanation": "2026/27 wurde die Möglichkeit geschaffen, nach bestimmten falsch ausgeführten Spielfortsetzungen Vorteil anzuwenden.",
+      "sources": [
+        "dfb_rules",
+        "dfb_changes",
+        "sfv_changes"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q134",
+      "conceptId": "C134",
+      "rule": 5,
+      "type": "situation",
+      "difficulty": "hard",
+      "question": "Ein Spieler wird nach einem fairen Zweikampf verletzt. Der Schiedsrichter unterbricht allein wegen dieser Verletzung das Spiel und der Spieler benötigt keine Ausnahme. Was muss der Spieler 2026/27 grundsätzlich tun?",
+      "options": [
+        "Auf dem Feld bleiben",
+        "Das Spielfeld verlassen und grundsätzlich mindestens eine Minute warten",
+        "Sofort ausgewechselt werden",
+        "Bis zur Halbzeit draußen bleiben"
+      ],
+      "correct": 1,
+      "explanation": "Wer durch eine Verletzung eine Spielunterbrechung verursacht bzw. auf dem Feld untersucht oder behandelt wird, muss grundsätzlich hinaus und mindestens eine Minute warten.",
+      "sources": [
+        "dfb_rules",
+        "dfb_changes",
+        "sfv_changes"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
+    },
+    {
+      "id": "Q135",
+      "conceptId": "C135",
+      "rule": 13,
+      "type": "situation",
+      "difficulty": "hard",
+      "question": "Eine Spielfortsetzung wird fehlerhaft ausgeführt, aber der Fehler verschafft dem Gegner unmittelbar einen klaren Vorteil. Welche neue Möglichkeit hat der Schiedsrichter 2026/27 grundsätzlich?",
+      "options": [
+        "Er muss immer sofort unterbrechen",
+        "Er kann unter den vorgesehenen Voraussetzungen Vorteil anwenden",
+        "Er muss Schiedsrichterball geben",
+        "Er muss den ausführenden Spieler immer verwarnen"
+      ],
+      "correct": 1,
+      "explanation": "Die Regeln 2026/27 ermöglichen in bestimmten Fällen Vorteil nach einer fehlerhaften Spielfortsetzung.",
+      "sources": [
+        "dfb_rules",
+        "dfb_changes",
+        "sfv_changes"
+      ],
+      "verifiedFor": "2026/27",
+      "status": "verified",
+      "tags": []
     }
   ]
 }
