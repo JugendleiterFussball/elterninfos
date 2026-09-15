@@ -16,30 +16,44 @@ main{max-width:1100px;margin:auto;padding:34px 18px 70px}.view{display:none}.vie
 <script>
 let RULES=[],QS=[],uIndex=0,uScore=0,uAnswered=false,exam=[],examIndex=0,examScore=0;
 const $=s=>document.querySelector(s);
+let CONFIG={};
 Promise.all([
+  fetch('config.json').then(r => {
+    if (!r.ok) throw new Error('config.json konnte nicht geladen werden');
+    return r.json();
+  }),
   fetch('rules.json').then(r => {
     if (!r.ok) throw new Error('rules.json konnte nicht geladen werden');
     return r.json();
   }),
-  fetch('questions.json')
-    .then(r => r.ok ? r.json() : [])
-    .catch(() => [])
-]).then(([r,q]) => {
+  fetch('questions.json').then(r => r.ok ? r.json() : []).catch(() => [])
+]).then(([config,r,q]) => {
+  CONFIG = config || {};
   RULES = Array.isArray(r) ? r : [];
   QS = Array.isArray(q) ? q.filter(x => x.status === 'verified') : [];
   renderRules();
   loadProgress();
   showPractice();
+  showRuleVersion();
 }).catch(() => {
-  document.body.insertAdjacentHTML('beforeend','<p style="padding:20px">Die Regeldaten konnten nicht geladen werden.</p>');
+  document.body.insertAdjacentHTML('beforeend','<p style="padding:20px">Die Konfiguration oder Regeldaten konnten nicht geladen werden.</p>');
 });
-document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));$('#'+b.dataset.view).classList.add('active')});
+
+function showRuleVersion(){
+  const season = CONFIG?.rules?.season;
+  if(!season) return;
+  const heroText = document.querySelector('.hero p');
+  if(heroText){
+    heroText.insertAdjacentHTML('afterend', `<p style="font-size:13px;color:#c9f1d5;margin-top:10px"><strong>Regelstand:</strong> ${season}</p>`);
+  }
+}
+
 function renderRules(){ $('#rules').innerHTML=RULES.map(r=>`<div class="card"><span class="pill">REGEL ${r.id}</span><h3>${r.title}</h3><p>${r.summary}</p><span class="pill">${r.status}</span></div>`).join('') }
 function showPractice(){
 if(!QS.length){
   $('#uCount').textContent='Noch keine geprüften Fragen';
   $('#uScore').textContent='';
-  $('#uQuestion').innerHTML='<strong>Der Fragenpool wird vorbereitet.</strong><p>Hier erscheinen nur Fragen, die für die aktuelle Saison geprüft und als „verified“ freigegeben wurden.</p>';
+  $('#uQuestion').innerHTML='<strong>Der Fragenpool wird vorbereitet.</strong><p>Hier erscheinen nur Fragen, die geprüft und als „verified“ freigegeben wurden.</p>';
   return;
 } let q=QS[uIndex%QS.length];$('#uCount').textContent=`Frage ${uIndex%QS.length+1} von ${QS.length}`;$('#uScore').textContent=`Richtig: ${uScore}`;$('#uQuestion').innerHTML=`<strong>${q.q}</strong><div class="answers">${q.answers.map((a,i)=>`<button class="ans" onclick="practiceAnswer(${i})">${String.fromCharCode(65+i)} · ${a}</button>`).join('')}</div><div class="feedback" id="uFeedback"></div>`;uAnswered=false}
 function practiceAnswer(i){if(uAnswered)return;uAnswered=true;let q=QS[uIndex%QS.length],buttons=document.querySelectorAll('#uQuestion .ans');buttons[q.correct].classList.add('correct');if(i!==q.correct)buttons[i].classList.add('wrong');else uScore++;let f=$('#uFeedback');f.style.display='block';f.innerHTML=`<strong>${i===q.correct?'✓ Richtig':'✗ Nicht richtig'}</strong><br>${q.explanation}<br><br><button class="reset" onclick="nextPractice()">Nächste Frage →</button>`;saveProgress(i===q.correct)}
