@@ -1,75 +1,1074 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Schiri-Trainer | USV Jugendfußball</title><style>
-:root{--g:#0b6b35;--g2:#1bad58;--d:#07130c;--bg:#f4f7f5;--mut:#66716b;--line:#dfe7e2;--yellow:#f3c623}
-*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--bg);color:#17201b}.hero{background:linear-gradient(110deg,#06100a,#0b2a17 60%,#103d22);color:white;padding:26px 20px 58px}.wrap{max-width:1100px;margin:auto}.back{color:#dff3e6;text-decoration:none;font-weight:800}.tag{margin-top:55px;color:#c9f1d5;font-size:12px;font-weight:900;letter-spacing:.08em}.tag:before{content:"";display:inline-block;width:28px;height:3px;background:var(--yellow);margin-right:9px;vertical-align:middle}.hero h1{font-size:clamp(40px,7vw,68px);line-height:1;margin:14px 0}.hero p{max-width:700px;color:#e9f2ec;font-size:17px}.nav{display:flex;gap:9px;flex-wrap:wrap;margin-top:24px}.nav button{border:1px solid #ffffff55;background:#ffffff10;color:white;border-radius:10px;padding:11px 15px;font-weight:800;cursor:pointer}.nav button.active{background:var(--g2);border-color:var(--g2)}
-main{max-width:1100px;margin:auto;padding:34px 18px 70px}.view{display:none}.view.active{display:block}.official{background:#fff9dd;border:1px solid #eadb92;border-left:6px solid var(--yellow);padding:20px;border-radius:16px;margin-bottom:25px}.official a{color:var(--g);font-weight:900}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.card{background:white;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 7px 22px #0c24160c}.card h3{margin:0 0 7px}.card p{color:var(--mut);font-size:14px}.pill{display:inline-block;background:#e9f5ed;color:var(--g);border-radius:999px;padding:5px 9px;font-size:11px;font-weight:900}.progress{height:9px;background:#dfe7e2;border-radius:9px;overflow:hidden;margin:14px 0}.bar{height:100%;background:var(--g2);width:0}.quiz{max-width:760px}.question{background:white;border:1px solid var(--line);border-radius:18px;padding:23px}.answers{display:grid;gap:10px;margin-top:18px}.ans{border:1px solid var(--line);background:#fafcfb;border-radius:11px;padding:13px;text-align:left;font:inherit;cursor:pointer}.ans.correct{background:#e6f7ec;border-color:#77bf8e}.ans.wrong{background:#fdecec;border-color:#d78c8c}.feedback{margin-top:15px;padding:13px;border-radius:10px;background:#eef5f0;display:none}.quiztop{display:flex;justify-content:space-between;gap:15px;color:var(--mut);font-size:13px;margin-bottom:10px}.big{font-size:36px;font-weight:900}.result{background:white;border-radius:18px;border:1px solid var(--line);padding:25px;display:none}.reset{background:var(--g);color:white;border:0;border-radius:10px;padding:12px 16px;font-weight:900;cursor:pointer}.source{font-size:12px;color:var(--mut);margin-top:25px}
-@media(max-width:800px){.grid{grid-template-columns:1fr}} </style></head><body>
-<header class="hero"><div class="wrap"><a class="back" href="../index.html">← Zur Elterninformation</a><div class="tag">SCHIEDSRICHTER</div><h1>Schiri-Trainer</h1><p>Regeln kennenlernen, Spielsituationen beurteilen und dich Schritt für Schritt auf den Anwärterlehrgang vorbereiten.</p><div class="nav"><button class="active" data-view="start">Start</button><button data-view="lernen">Regeln lernen</button><button data-view="ueben">Üben</button><button data-view="pruefung">Prüfung</button></div></div></header>
-<main>
-<section id="start" class="view active"><div class="official"><strong>Offizielle Ausbildung & Anmeldung</strong><br>Verbindliche Informationen zu Voraussetzungen, Lehrgang und Prüfung gibt es beim Stadtverband Fußball Dresden.<br><br><a href="https://www.svf-dresden.de/schiedsrichter/ausbildung-zum-schiedsrichter/" target="_blank" rel="noopener">SVF Dresden öffnen →</a></div>
-<h2>Dein Lernstand</h2><div class="progress"><div class="bar" id="homebar"></div></div><p id="hometext">Noch keine Fragen beantwortet.</p>
-<div class="grid"><div class="card"><span class="pill">17 REGELN</span><h3>📚 Lernen</h3><p>Alle Regelbereiche als übersichtliche Lernstruktur.</p></div><div class="card"><span class="pill">SOFORT-FEEDBACK</span><h3>🧠 Üben</h3><p>Frage beantworten und die Entscheidung direkt erklärt bekommen.</p></div><div class="card"><span class="pill">SIMULATION</span><h3>🏆 Prüfung</h3><p>10 zufällige Fragen. Später erweitern wir den Pool deutlich.</p></div></div></section>
-<section id="lernen" class="view"><h2>Die 17 Fußballregeln</h2><p>Die Inhalte werden schrittweise zu echten Lernkarten ausgebaut.</p><div class="grid" id="rules"></div><p class="source">Grundstruktur nach den 17 Laws of the Game. Für verbindliche Regelauslegung gilt das aktuelle offizielle Regelwerk.</p></section>
-<section id="ueben" class="view quiz"><h2>Übungstest</h2><div class="quiztop"><span id="uCount"></span><span id="uScore"></span></div><div class="question" id="uQuestion"></div></section>
-<section id="pruefung" class="view quiz"><h2>Prüfungssimulation</h2><p>10 Fragen ohne Auflösung während des Tests. Das Ergebnis kommt am Ende.</p><button class="reset" id="startExam">Prüfung starten</button><div id="examBox" style="margin-top:18px"></div><div class="result" id="examResult"></div></section>
-</main>
-<script>
-let RULES=[],QS=[],uIndex=0,uScore=0,uAnswered=false,exam=[],examIndex=0,examScore=0;
-const $=s=>document.querySelector(s);
-let CONFIG={};
-Promise.all([
-  fetch('config.json').then(r => {
-    if (!r.ok) throw new Error('config.json konnte nicht geladen werden');
-    return r.json();
-  }),
-  fetch('rules.json').then(r => {
-    if (!r.ok) throw new Error('rules.json konnte nicht geladen werden');
-    return r.json();
-  }),
-  fetch('questions.json').then(r => r.ok ? r.json() : []).catch(() => [])
-]).then(([config,r,q]) => {
-  CONFIG = config || {};
-  RULES = Array.isArray(r) ? r : [];
-  QS = Array.isArray(q) ? q.filter(x => x.status === 'verified') : [];
-  renderRules();
-  loadProgress();
-  showPractice();
-  showRuleVersion();
-}).catch((err) => {
-  document.body.insertAdjacentHTML(
-    'beforeend',
-    '<p style="padding:20px;color:red"><strong>Fehler:</strong> ' + err.message + '</p>'
-  );
-  console.error(err);
-});
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-function showRuleVersion(){
-  const season = CONFIG?.rules?.season;
-  if(!season) return;
-  const heroText = document.querySelector('.hero p');
-  if(heroText){
-    heroText.insertAdjacentHTML('afterend', `<p style="font-size:13px;color:#c9f1d5;margin-top:10px"><strong>Regelstand:</strong> ${season}</p>`);
+<title>Schiri-Trainer | USV Jugendfußball</title>
+
+<style>
+:root{
+  --g:#0b6b35;
+  --g2:#1bad58;
+  --d:#07130c;
+  --bg:#f4f7f5;
+  --mut:#66716b;
+  --line:#dfe7e2;
+  --yellow:#f3c623;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  background:var(--bg);
+  color:#17201b;
+}
+
+.hero{
+  background:linear-gradient(110deg,#06100a,#0b2a17 60%,#103d22);
+  color:white;
+  padding:26px 20px 58px;
+}
+
+.wrap{
+  max-width:1100px;
+  margin:auto;
+}
+
+.back{
+  color:#dff3e6;
+  text-decoration:none;
+  font-weight:800;
+}
+
+.tag{
+  margin-top:55px;
+  color:#c9f1d5;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+
+.tag:before{
+  content:"";
+  display:inline-block;
+  width:28px;
+  height:3px;
+  background:var(--yellow);
+  margin-right:9px;
+  vertical-align:middle;
+}
+
+.hero h1{
+  font-size:clamp(40px,7vw,68px);
+  line-height:1;
+  margin:14px 0;
+}
+
+.hero p{
+  max-width:700px;
+  color:#e9f2ec;
+  font-size:17px;
+}
+
+.rule-version{
+  display:none;
+  margin-top:10px;
+  color:#c9f1d5;
+  font-size:13px;
+}
+
+.nav{
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+  margin-top:24px;
+}
+
+.nav button{
+  border:1px solid #ffffff55;
+  background:#ffffff10;
+  color:white;
+  border-radius:10px;
+  padding:11px 15px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.nav button.active{
+  background:var(--g2);
+  border-color:var(--g2);
+}
+
+main{
+  max-width:1100px;
+  margin:auto;
+  padding:34px 18px 70px;
+}
+
+.view{
+  display:none;
+}
+
+.view.active{
+  display:block;
+}
+
+.official{
+  background:#fff9dd;
+  border:1px solid #eadb92;
+  border-left:6px solid var(--yellow);
+  padding:20px;
+  border-radius:16px;
+  margin-bottom:25px;
+}
+
+.official a{
+  color:var(--g);
+  font-weight:900;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:13px;
+}
+
+.card{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:20px;
+  box-shadow:0 7px 22px #0c24160c;
+}
+
+.card h3{
+  margin:0 0 7px;
+}
+
+.card p{
+  color:var(--mut);
+  font-size:14px;
+}
+
+.pill{
+  display:inline-block;
+  background:#e9f5ed;
+  color:var(--g);
+  border-radius:999px;
+  padding:5px 9px;
+  font-size:11px;
+  font-weight:900;
+}
+
+.progress{
+  height:9px;
+  background:#dfe7e2;
+  border-radius:9px;
+  overflow:hidden;
+  margin:14px 0;
+}
+
+.bar{
+  height:100%;
+  background:var(--g2);
+  width:0;
+}
+
+.quiz{
+  max-width:760px;
+}
+
+.question{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:23px;
+}
+
+.answers{
+  display:grid;
+  gap:10px;
+  margin-top:18px;
+}
+
+.ans{
+  border:1px solid var(--line);
+  background:#fafcfb;
+  border-radius:11px;
+  padding:13px;
+  text-align:left;
+  font:inherit;
+  cursor:pointer;
+}
+
+.ans.correct{
+  background:#e6f7ec;
+  border-color:#77bf8e;
+}
+
+.ans.wrong{
+  background:#fdecec;
+  border-color:#d78c8c;
+}
+
+.feedback{
+  margin-top:15px;
+  padding:13px;
+  border-radius:10px;
+  background:#eef5f0;
+  display:none;
+}
+
+.quiztop{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  color:var(--mut);
+  font-size:13px;
+  margin-bottom:10px;
+}
+
+.big{
+  font-size:36px;
+  font-weight:900;
+}
+
+.result{
+  background:white;
+  border-radius:18px;
+  border:1px solid var(--line);
+  padding:25px;
+  display:none;
+}
+
+.reset{
+  background:var(--g);
+  color:white;
+  border:0;
+  border-radius:10px;
+  padding:12px 16px;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.source{
+  font-size:12px;
+  color:var(--mut);
+  margin-top:25px;
+}
+
+.data-warning{
+  display:none;
+  background:#fdecec;
+  border:1px solid #d78c8c;
+  color:#7c2525;
+  padding:14px 16px;
+  border-radius:12px;
+  margin-bottom:20px;
+}
+
+@media(max-width:800px){
+  .grid{
+    grid-template-columns:1fr;
   }
 }
+</style>
+</head>
 
-function renderRules(){ $('#rules').innerHTML=RULES.map(r=>`<div class="card"><span class="pill">REGEL ${r.id}</span><h3>${r.title}</h3><p>${r.summary}</p><span class="pill">${r.status}</span></div>`).join('') }
-function showPractice(){
-if(!QS.length){
-  $('#uCount').textContent='Noch keine geprüften Fragen';
-  $('#uScore').textContent='';
-  $('#uQuestion').innerHTML='<strong>Der Fragenpool wird vorbereitet.</strong><p>Hier erscheinen nur Fragen, die geprüft und als „verified“ freigegeben wurden.</p>';
-  return;
-} let q=QS[uIndex%QS.length];$('#uCount').textContent=`Frage ${uIndex%QS.length+1} von ${QS.length}`;$('#uScore').textContent=`Richtig: ${uScore}`;$('#uQuestion').innerHTML=`<strong>${q.q}</strong><div class="answers">${q.answers.map((a,i)=>`<button class="ans" onclick="practiceAnswer(${i})">${String.fromCharCode(65+i)} · ${a}</button>`).join('')}</div><div class="feedback" id="uFeedback"></div>`;uAnswered=false}
-function practiceAnswer(i){if(uAnswered)return;uAnswered=true;let q=QS[uIndex%QS.length],buttons=document.querySelectorAll('#uQuestion .ans');buttons[q.correct].classList.add('correct');if(i!==q.correct)buttons[i].classList.add('wrong');else uScore++;let f=$('#uFeedback');f.style.display='block';f.innerHTML=`<strong>${i===q.correct?'✓ Richtig':'✗ Nicht richtig'}</strong><br>${q.explanation}<br><br><button class="reset" onclick="nextPractice()">Nächste Frage →</button>`;saveProgress(i===q.correct)}
-function nextPractice(){uIndex++;showPractice()}
-function saveProgress(ok){let p=JSON.parse(localStorage.getItem('schiriProgress')||'{"answered":0,"correct":0}');p.answered++;if(ok)p.correct++;localStorage.setItem('schiriProgress',JSON.stringify(p));loadProgress()}
-function loadProgress(){let p=JSON.parse(localStorage.getItem('schiriProgress')||'{"answered":0,"correct":0}');let pct=p.answered?Math.round(p.correct/p.answered*100):0;$('#homebar').style.width=pct+'%';$('#hometext').textContent=p.answered?`${p.answered} beantwortet · ${p.correct} richtig · ${pct}% Trefferquote`:'Noch keine Fragen beantwortet.'}
-$('#startExam').onclick=()=>{
-if(!QS.length){
-  $('#examBox').innerHTML='<div class="question"><strong>Noch keine Prüfung verfügbar.</strong><p>Eine Prüfung wird freigeschaltet, sobald geprüfte Fragen im Fragenpool vorhanden sind.</p></div>';
-  return;
+<body>
+
+<header class="hero">
+  <div class="wrap">
+
+    <a class="back" href="../index.html">
+      ← Zur Elterninformation
+    </a>
+
+    <div class="tag">SCHIEDSRICHTER</div>
+
+    <h1>Schiri-Trainer</h1>
+
+    <p>
+      Regeln kennenlernen, Spielsituationen beurteilen und dich
+      Schritt für Schritt auf den Anwärterlehrgang vorbereiten.
+    </p>
+
+    <div class="rule-version" id="ruleVersion"></div>
+
+    <div class="nav">
+      <button class="active" data-view="start">Start</button>
+      <button data-view="lernen">Regeln lernen</button>
+      <button data-view="ueben">Üben</button>
+      <button data-view="pruefung">Prüfung</button>
+    </div>
+
+  </div>
+</header>
+
+<main>
+
+  <div class="data-warning" id="dataWarning"></div>
+
+  <section id="start" class="view active">
+
+    <div class="official">
+      <strong>Offizielle Ausbildung & Anmeldung</strong><br>
+
+      Verbindliche Informationen zu Voraussetzungen, Lehrgang und
+      Prüfung gibt es beim Stadtverband Fußball Dresden.
+
+      <br><br>
+
+      <a
+        href="https://www.svf-dresden.de/schiedsrichter/ausbildung-zum-schiedsrichter/"
+        target="_blank"
+        rel="noopener"
+      >
+        SVF Dresden öffnen →
+      </a>
+    </div>
+
+    <h2>Dein Lernstand</h2>
+
+    <div class="progress">
+      <div class="bar" id="homebar"></div>
+    </div>
+
+    <p id="hometext">
+      Noch keine Fragen beantwortet.
+    </p>
+
+    <div class="grid">
+
+      <div class="card">
+        <span class="pill">17 REGELN</span>
+        <h3>📚 Lernen</h3>
+        <p>
+          Alle Regelbereiche als übersichtliche Lernstruktur.
+        </p>
+      </div>
+
+      <div class="card">
+        <span class="pill">SOFORT-FEEDBACK</span>
+        <h3>🧠 Üben</h3>
+        <p>
+          Frage beantworten und die Entscheidung direkt erklärt bekommen.
+        </p>
+      </div>
+
+      <div class="card">
+        <span class="pill">SIMULATION</span>
+        <h3>🏆 Prüfung</h3>
+        <p>
+          Prüfungssimulation mit geprüften Fragen aus unserem Fragenpool.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section id="lernen" class="view">
+
+    <h2>Die 17 Fußballregeln</h2>
+
+    <p>
+      Die Inhalte werden schrittweise zu echten Lernkarten ausgebaut.
+    </p>
+
+    <div class="grid" id="rules"></div>
+
+    <p class="source">
+      Grundstruktur nach den 17 Laws of the Game.
+      Für verbindliche Regelauslegung gilt das aktuelle offizielle Regelwerk.
+    </p>
+
+  </section>
+
+
+  <section id="ueben" class="view quiz">
+
+    <h2>Übungstest</h2>
+
+    <div class="quiztop">
+      <span id="uCount"></span>
+      <span id="uScore"></span>
+    </div>
+
+    <div class="question" id="uQuestion"></div>
+
+  </section>
+
+
+  <section id="pruefung" class="view quiz">
+
+    <h2>Prüfungssimulation</h2>
+
+    <p>
+      Die Auflösung erfolgt erst am Ende der Prüfung.
+    </p>
+
+    <button class="reset" id="startExam">
+      Prüfung starten
+    </button>
+
+    <div id="examBox" style="margin-top:18px"></div>
+
+    <div class="result" id="examResult"></div>
+
+  </section>
+
+</main>
+
+
+<script>
+
+let CONFIG = {};
+let RULES = [];
+let QS = [];
+
+let uIndex = 0;
+let uScore = 0;
+let uAnswered = false;
+
+let exam = [];
+let examIndex = 0;
+let examScore = 0;
+
+const $ = selector => document.querySelector(selector);
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+document.querySelectorAll('.nav button').forEach(button => {
+
+  button.addEventListener('click', () => {
+
+    document.querySelectorAll('.nav button').forEach(b => {
+      b.classList.remove('active');
+    });
+
+    document.querySelectorAll('.view').forEach(view => {
+      view.classList.remove('active');
+    });
+
+    button.classList.add('active');
+
+    const target = document.getElementById(button.dataset.view);
+
+    if(target){
+      target.classList.add('active');
+    }
+
+  });
+
+});
+
+
+/* =========================================================
+   JSON SICHER LADEN
+   ========================================================= */
+
+async function loadJson(filename, fallback){
+
+  try{
+
+    const response = await fetch(
+      new URL(filename, window.location.href),
+      {
+        cache: 'no-store'
+      }
+    );
+
+    if(!response.ok){
+      throw new Error(
+        filename + ' – HTTP ' + response.status
+      );
+    }
+
+    const text = await response.text();
+
+    if(!text.trim()){
+      return fallback;
+    }
+
+    return JSON.parse(text);
+
+  }catch(error){
+
+    console.error(
+      'Fehler beim Laden von ' + filename,
+      error
+    );
+
+    return fallback;
+  }
+
 }
-exam=[...QS].sort(()=>Math.random()-.5).slice(0,10);examIndex=0;examScore=0;$('#examResult').style.display='none';showExam()}
-function showExam(){if(examIndex>=exam.length){let r=$('#examResult');r.style.display='block';r.innerHTML=`<div class="big">${examScore} / ${exam.length}</div><p>Fragen richtig beantwortet.</p><button class="reset" onclick="document.getElementById('startExam').click()">Neue Prüfung</button>`;$('#examBox').innerHTML='';return}let q=exam[examIndex];$('#examBox').innerHTML=`<div class="quiztop"><span>Frage ${examIndex+1} von ${exam.length}</span><span>Keine Auflösung bis zum Ende</span></div><div class="question"><strong>${q.q}</strong><div class="answers">${q.answers.map((a,i)=>`<button class="ans" onclick="examAnswer(${i})">${String.fromCharCode(65+i)} · ${a}</button>`).join('')}</div></div>`}
-function examAnswer(i){if(i===exam[examIndex].correct)examScore++;examIndex++;showExam()}
-</script></body></html>
+
+
+/* =========================================================
+   START
+   ========================================================= */
+
+async function init(){
+
+  CONFIG = await loadJson(
+    'config.json',
+    {}
+  );
+
+  RULES = await loadJson(
+    'rules.json',
+    []
+  );
+
+  QS = await loadJson(
+    'questions.json',
+    []
+  );
+
+
+  if(!Array.isArray(RULES)){
+    RULES = [];
+  }
+
+
+  if(!Array.isArray(QS)){
+    QS = [];
+  }
+
+
+  /*
+    Nur ausdrücklich geprüfte Fragen werden verwendet.
+    Eine leere questions.json mit [] ist völlig in Ordnung.
+  */
+
+  QS = QS.filter(question => {
+    return question.status === 'verified';
+  });
+
+
+  showRuleVersion();
+
+  renderRules();
+
+  loadProgress();
+
+  showPractice();
+
+}
+
+
+/* =========================================================
+   REGELSTAND
+   ========================================================= */
+
+function showRuleVersion(){
+
+  const element = $('#ruleVersion');
+
+  if(
+    CONFIG &&
+    CONFIG.rules &&
+    CONFIG.rules.season
+  ){
+
+    element.innerHTML =
+      '<strong>Regelstand:</strong> ' +
+      CONFIG.rules.season;
+
+    element.style.display = 'block';
+
+  }else{
+
+    element.style.display = 'none';
+
+  }
+
+}
+
+
+/* =========================================================
+   REGELN
+   ========================================================= */
+
+function renderRules(){
+
+  const container = $('#rules');
+
+  if(!RULES.length){
+
+    container.innerHTML =
+      '<div class="card">' +
+      '<h3>Regeln konnten nicht geladen werden.</h3>' +
+      '<p>Bitte später erneut versuchen.</p>' +
+      '</div>';
+
+    return;
+  }
+
+
+  container.innerHTML = RULES.map(rule => {
+
+    return `
+      <div class="card">
+
+        <span class="pill">
+          REGEL ${rule.id}
+        </span>
+
+        <h3>
+          ${rule.title}
+        </h3>
+
+        <p>
+          ${rule.summary}
+        </p>
+
+        <span class="pill">
+          ${rule.status}
+        </span>
+
+      </div>
+    `;
+
+  }).join('');
+
+}
+
+
+/* =========================================================
+   ÜBUNG
+   ========================================================= */
+
+function showPractice(){
+
+  if(!QS.length){
+
+    $('#uCount').textContent =
+      'Noch keine geprüften Fragen';
+
+    $('#uScore').textContent = '';
+
+    $('#uQuestion').innerHTML = `
+      <strong>
+        Der Fragenpool wird vorbereitet.
+      </strong>
+
+      <p>
+        Hier erscheinen nur Fragen, die geprüft
+        und als „verified“ freigegeben wurden.
+      </p>
+    `;
+
+    return;
+  }
+
+
+  const question =
+    QS[uIndex % QS.length];
+
+
+  $('#uCount').textContent =
+    `Frage ${uIndex % QS.length + 1} von ${QS.length}`;
+
+
+  $('#uScore').textContent =
+    `Richtig: ${uScore}`;
+
+
+  $('#uQuestion').innerHTML = `
+
+    <strong>
+      ${question.q}
+    </strong>
+
+    <div class="answers">
+
+      ${question.answers.map((answer,index) => `
+
+        <button
+          class="ans"
+          onclick="practiceAnswer(${index})"
+        >
+          ${String.fromCharCode(65 + index)} · ${answer}
+        </button>
+
+      `).join('')}
+
+    </div>
+
+    <div
+      class="feedback"
+      id="uFeedback"
+    ></div>
+
+  `;
+
+
+  uAnswered = false;
+
+}
+
+
+function practiceAnswer(index){
+
+  if(uAnswered){
+    return;
+  }
+
+
+  uAnswered = true;
+
+
+  const question =
+    QS[uIndex % QS.length];
+
+
+  const buttons =
+    document.querySelectorAll(
+      '#uQuestion .ans'
+    );
+
+
+  buttons[
+    question.correct
+  ].classList.add(
+    'correct'
+  );
+
+
+  const correct =
+    index === question.correct;
+
+
+  if(!correct){
+
+    buttons[
+      index
+    ].classList.add(
+      'wrong'
+    );
+
+  }else{
+
+    uScore++;
+
+  }
+
+
+  const feedback =
+    $('#uFeedback');
+
+
+  feedback.style.display =
+    'block';
+
+
+  feedback.innerHTML = `
+
+    <strong>
+      ${correct ? '✓ Richtig' : '✗ Nicht richtig'}
+    </strong>
+
+    <br>
+
+    ${question.explanation || ''}
+
+    <br><br>
+
+    <button
+      class="reset"
+      onclick="nextPractice()"
+    >
+      Nächste Frage →
+    </button>
+
+  `;
+
+
+  saveProgress(correct);
+
+}
+
+
+function nextPractice(){
+
+  uIndex++;
+
+  showPractice();
+
+}
+
+
+/* =========================================================
+   LERNSTAND
+   ========================================================= */
+
+function saveProgress(correct){
+
+  let progress;
+
+  try{
+
+    progress = JSON.parse(
+      localStorage.getItem(
+        'schiriProgress'
+      ) ||
+      '{"answered":0,"correct":0}'
+    );
+
+  }catch(error){
+
+    progress = {
+      answered:0,
+      correct:0
+    };
+
+  }
+
+
+  progress.answered++;
+
+
+  if(correct){
+    progress.correct++;
+  }
+
+
+  localStorage.setItem(
+    'schiriProgress',
+    JSON.stringify(progress)
+  );
+
+
+  loadProgress();
+
+}
+
+
+function loadProgress(){
+
+  let progress;
+
+  try{
+
+    progress = JSON.parse(
+      localStorage.getItem(
+        'schiriProgress'
+      ) ||
+      '{"answered":0,"correct":0}'
+    );
+
+  }catch(error){
+
+    progress = {
+      answered:0,
+      correct:0
+    };
+
+  }
+
+
+  const percent =
+    progress.answered
+      ? Math.round(
+          progress.correct /
+          progress.answered *
+          100
+        )
+      : 0;
+
+
+  $('#homebar').style.width =
+    percent + '%';
+
+
+  $('#hometext').textContent =
+    progress.answered
+      ? `${progress.answered} beantwortet · ${progress.correct} richtig · ${percent}% Trefferquote`
+      : 'Noch keine Fragen beantwortet.';
+
+}
+
+
+/* =========================================================
+   PRÜFUNG
+   ========================================================= */
+
+$('#startExam').addEventListener(
+  'click',
+  startExam
+);
+
+
+function startExam(){
+
+  if(!QS.length){
+
+    $('#examBox').innerHTML = `
+
+      <div class="question">
+
+        <strong>
+          Noch keine Prüfung verfügbar.
+        </strong>
+
+        <p>
+          Eine Prüfung wird freigeschaltet,
+          sobald geprüfte Fragen im Fragenpool
+          vorhanden sind.
+        </p>
+
+      </div>
+
+    `;
+
+    return;
+  }
+
+
+  exam = [...QS]
+    .sort(() => Math.random() - 0.5)
+    .slice(
+      0,
+      Math.min(10,QS.length)
+    );
+
+
+  examIndex = 0;
+
+  examScore = 0;
+
+
+  $('#examResult').style.display =
+    'none';
+
+
+  showExam();
+
+}
+
+
+function showExam(){
+
+  if(examIndex >= exam.length){
+
+    const result =
+      $('#examResult');
+
+
+    result.style.display =
+      'block';
+
+
+    result.innerHTML = `
+
+      <div class="big">
+        ${examScore} / ${exam.length}
+      </div>
+
+      <p>
+        Fragen richtig beantwortet.
+      </p>
+
+      <button
+        class="reset"
+        onclick="startExam()"
+      >
+        Neue Prüfung
+      </button>
+
+    `;
+
+
+    $('#examBox').innerHTML =
+      '';
+
+
+    return;
+  }
+
+
+  const question =
+    exam[examIndex];
+
+
+  $('#examBox').innerHTML = `
+
+    <div class="quiztop">
+
+      <span>
+        Frage ${examIndex + 1}
+        von ${exam.length}
+      </span>
+
+      <span>
+        Keine Auflösung bis zum Ende
+      </span>
+
+    </div>
+
+
+    <div class="question">
+
+      <strong>
+        ${question.q}
+      </strong>
+
+
+      <div class="answers">
+
+        ${question.answers.map((answer,index) => `
+
+          <button
+            class="ans"
+            onclick="examAnswer(${index})"
+          >
+            ${String.fromCharCode(65 + index)} · ${answer}
+          </button>
+
+        `).join('')}
+
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+
+function examAnswer(index){
+
+  if(
+    index ===
+    exam[examIndex].correct
+  ){
+    examScore++;
+  }
+
+
+  examIndex++;
+
+  showExam();
+
+}
+
+
+/* =========================================================
+   APP STARTEN
+   ========================================================= */
+
+init();
+
+</script>
+
+</body>
+</html>
