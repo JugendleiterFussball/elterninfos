@@ -380,13 +380,94 @@ h2{
 
 
 
-.hero .wrap{position:relative}
-.hero-logo{position:absolute;top:0;width:108px;height:108px;object-fit:contain;filter:drop-shadow(0 5px 10px rgba(0,0,0,.28));z-index:2}
-.hero-logo.left{left:-135px}
-.hero-logo.right{right:-135px}
-@media(max-width:1400px){.hero-logo.left{left:0}.hero-logo.right{right:0}.hero .wrap{padding-left:125px;padding-right:125px}}
-@media(max-width:800px){.hero-logo{width:70px;height:70px;top:2px}.hero-logo.left{left:0}.hero-logo.right{right:0}.hero .wrap{padding-left:82px;padding-right:82px}.back{font-size:13px}}
-@media(max-width:500px){.hero-logo{width:54px;height:54px}.hero .wrap{padding-left:0;padding-right:0}.hero-logo.left{left:auto;right:62px}.hero-logo.right{right:0}.back{padding-right:120px}.tag{margin-top:46px}}
+/* Hero im Stil des neuen Schiri-Trainers */
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 72% 32%,rgba(38,126,68,.34),transparent 28%),
+    linear-gradient(100deg,#03150b 0%,#07341c 48%,#0b4a27 72%,#052414 100%);
+  padding:24px 20px 34px;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity:.18;
+  background:
+    linear-gradient(135deg,transparent 66%,rgba(255,255,255,.35) 66.2%,rgba(255,255,255,.35) 66.7%,transparent 66.9%),
+    repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 2px,transparent 2px 7px);
+}
+.hero .wrap{
+  position:relative;
+  z-index:1;
+  max-width:1200px;
+  min-height:238px;
+  padding:0 180px;
+}
+.hero-logo{
+  position:absolute;
+  top:16px;
+  width:148px;
+  height:148px;
+  object-fit:contain;
+  padding:10px;
+  background:rgba(255,255,255,.94);
+  border:2px solid rgba(255,255,255,.8);
+  border-radius:22px;
+  box-shadow:0 12px 30px rgba(0,0,0,.28);
+  z-index:2;
+}
+.hero-logo.left{left:0}
+.hero-logo.right{right:0}
+.back{font-size:15px}
+.tag{margin-top:30px}
+.hero h1{
+  font-size:clamp(48px,6vw,72px);
+  letter-spacing:-.035em;
+  text-shadow:0 3px 18px rgba(0,0,0,.25);
+}
+.hero-text{max-width:690px}
+.nav{
+  margin-top:24px;
+  padding-top:16px;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+.nav button{
+  min-width:112px;
+  padding:12px 17px;
+  border-radius:9px;
+}
+.nav button.active{
+  box-shadow:0 7px 20px rgba(27,173,88,.22);
+}
+@media(max-width:1000px){
+  .hero .wrap{padding:0 125px}
+  .hero-logo{width:104px;height:104px;border-radius:17px;padding:8px}
+  .hero-logo.left{left:0}.hero-logo.right{right:0}
+}
+@media(max-width:800px){
+  .hero{padding-bottom:28px}
+  .hero .wrap{padding:0 88px;min-height:0}
+  .hero-logo{width:72px;height:72px;top:5px;border-radius:13px;padding:6px}
+  .back{font-size:13px}
+  .tag{margin-top:34px}
+  .hero h1{font-size:46px}
+}
+@media(max-width:560px){
+  .hero{padding:16px 14px 24px}
+  .hero .wrap{padding:0; padding-top:72px}
+  .hero-logo{width:62px;height:62px;top:0;border-radius:11px;padding:5px}
+  .hero-logo.left{left:0}.hero-logo.right{right:0}
+  .back{position:absolute;top:20px;left:78px;right:78px;text-align:center;font-size:12px}
+  .tag{margin-top:8px}
+  .hero h1{font-size:42px}
+  .hero-text{font-size:15px}
+  .nav{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .nav button{width:100%;min-width:0}
+}
 .filterbox{background:white;border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:18px}.filters{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.field label{display:block;font-size:12px;font-weight:900;color:var(--muted);margin-bottom:6px}.field select{width:100%;padding:11px;border:1px solid var(--line);border-radius:10px;background:#fff;font:inherit}.practice-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.secondary{background:white;color:var(--green);border:1px solid var(--green);border-radius:10px;padding:11px 14px;font-weight:900;cursor:pointer}.statline{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 18px}.stat{background:#eef5f0;border-radius:999px;padding:7px 10px;font-size:12px;font-weight:800}.scenario{margin-top:12px;padding:13px;background:#f6f9f7;border-left:4px solid var(--green2);border-radius:8px;line-height:1.5}.modehint{font-size:12px;color:var(--muted);margin-top:8px}.ans:disabled{cursor:default}.feedback.good{background:#e6f7ec}.feedback.bad{background:#fdecec}.hidden{display:none!important}@media(max-width:700px){.filters{grid-template-columns:1fr}}
 
 @media(max-width:800px){
@@ -480,25 +561,25 @@ h2{
         class="active"
         data-view="start"
       >
-        Start
+        🏠 Start
       </button>
 
       <button
         data-view="lernen"
       >
-        Regeln lernen
+        📖 Regeln lernen
       </button>
 
       <button
         data-view="ueben"
       >
-        Üben
+        🎓 Üben
       </button>
 
       <button
         data-view="pruefung"
       >
-        Prüfung
+        📋 Prüfung
       </button>
 
     </div>
@@ -600,7 +681,7 @@ h2{
       >
 
         <span class="pill">
-          SOFORT-FEEDBACK
+          135 FRAGEN
         </span>
 
         <h3>
@@ -622,7 +703,7 @@ h2{
       >
 
         <span class="pill">
-          30 FRAGEN
+          PRÜFUNGSSIMULATION
         </span>
 
         <h3>
