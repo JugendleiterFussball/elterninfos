@@ -1,7 +1,6 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "lastReviewed": "2026-09-15",
-
   "currentSeason": "2026/27",
 
   "sources": {
@@ -25,6 +24,26 @@
       "monitor": true
     },
 
+    "sfv_downloads": {
+      "name": "Sächsischer Fußball-Verband – Downloads und Regelwerk",
+      "type": "state_rules",
+      "authority": "SFV Sachsen",
+      "url": "https://www.sfv-online.de/vereinsservice/downloads",
+      "season": "2026/27",
+      "active": true,
+      "monitor": true
+    },
+
+    "sfv_changes": {
+      "name": "Sächsischer Fußball-Verband – Regeländerungen",
+      "type": "state_rule_changes",
+      "authority": "SFV Sachsen",
+      "url": "https://www.sfv-online.de/vereinsservice/downloads",
+      "season": "2026/27",
+      "active": true,
+      "monitor": true
+    },
+
     "svf_referee": {
       "name": "Stadtverband Fußball Dresden – Schiedsrichter",
       "type": "regional_rules",
@@ -36,7 +55,7 @@
     },
 
     "svf_training": {
-      "name": "SVF Dresden – Schiedsrichter-Ausbildung",
+      "name": "Stadtverband Fußball Dresden – Schiedsrichter-Ausbildung",
       "type": "training",
       "authority": "SVF Dresden",
       "url": "https://www.svf-dresden.de/schiedsrichter/ausbildung-zum-schiedsrichter/",
@@ -46,7 +65,7 @@
     },
 
     "svf_hrt": {
-      "name": "SVF Dresden – Hausregeltests",
+      "name": "Stadtverband Fußball Dresden – Hausregeltests",
       "type": "house_rule_tests",
       "authority": "SVF Dresden",
       "url": "https://www.svf-dresden.de/docs/schiedsrichter/hausregeltest/",
@@ -56,24 +75,34 @@
     }
   },
 
+  "sourcePriority": [
+    "dfb_rules",
+    "dfb_changes",
+    "sfv_downloads",
+    "sfv_changes",
+    "svf_referee",
+    "svf_training",
+    "svf_hrt"
+  ],
+
   "ruleDependencies": {
-    "1": ["dfb_rules"],
-    "2": ["dfb_rules"],
-    "3": ["dfb_rules", "dfb_changes", "svf_referee"],
-    "4": ["dfb_rules"],
-    "5": ["dfb_rules", "svf_referee"],
-    "6": ["dfb_rules"],
-    "7": ["dfb_rules", "dfb_changes", "svf_referee"],
-    "8": ["dfb_rules", "dfb_changes"],
-    "9": ["dfb_rules", "dfb_changes"],
-    "10": ["dfb_rules"],
-    "11": ["dfb_rules"],
-    "12": ["dfb_rules", "dfb_changes", "svf_referee", "svf_hrt"],
-    "13": ["dfb_rules", "svf_hrt"],
-    "14": ["dfb_rules", "dfb_changes", "svf_hrt"],
-    "15": ["dfb_rules", "dfb_changes", "svf_hrt"],
-    "16": ["dfb_rules", "dfb_changes", "svf_hrt"],
-    "17": ["dfb_rules", "svf_hrt"]
+    "1": ["dfb_rules", "sfv_downloads"],
+    "2": ["dfb_rules", "sfv_downloads"],
+    "3": ["dfb_rules", "dfb_changes", "sfv_downloads", "sfv_changes", "svf_referee"],
+    "4": ["dfb_rules", "sfv_downloads"],
+    "5": ["dfb_rules", "dfb_changes", "sfv_downloads", "sfv_changes", "svf_referee"],
+    "6": ["dfb_rules", "sfv_downloads"],
+    "7": ["dfb_rules", "dfb_changes", "sfv_downloads", "sfv_changes", "svf_referee"],
+    "8": ["dfb_rules", "dfb_changes", "sfv_downloads", "sfv_changes"],
+    "9": ["dfb_rules", "dfb_changes", "sfv_downloads", "sfv_changes"],
+    "10": ["dfb_rules", "sfv_downloads"],
+    "11": ["dfb_rules", "dfb_changes", "sfv_downloads", "sfv_changes", "svf_hrt"],
+    "12": ["dfb_rules", "dfb_changes", "sfv_downloads", "sfv_changes", "svf_referee", "svf_hrt"],
+    "13": ["dfb_rules", "dfb_changes", "sfv_downloads", "sfv_changes", "svf_hrt"],
+    "14": ["dfb_rules", "dfb_changes", "sfv_downloads", "sfv_changes", "svf_hrt"],
+    "15": ["dfb_rules", "dfb_changes", "sfv_downloads", "sfv_changes", "svf_hrt"],
+    "16": ["dfb_rules", "dfb_changes", "sfv_downloads", "sfv_changes", "svf_hrt"],
+    "17": ["dfb_rules", "dfb_changes", "sfv_downloads", "sfv_changes", "svf_hrt"]
   },
 
   "questionPolicy": {
@@ -83,11 +112,10 @@
 
     "autoDisableOnSourceChange": true,
     "autoPublishAfterChange": false,
-
     "requireHumanVerification": true,
 
+    "minimumVerifiedQuestionsForPractice": 1,
     "minimumVerifiedQuestionsForExam": 30,
-
     "examQuestionCount": 30
   },
 
@@ -97,6 +125,8 @@
     "checkSources": [
       "dfb_rules",
       "dfb_changes",
+      "sfv_downloads",
+      "sfv_changes",
       "svf_referee",
       "svf_training",
       "svf_hrt"
@@ -106,7 +136,8 @@
       "markAffectedRulesForReview": true,
       "markAffectedQuestionsForReview": true,
       "removeUnverifiedQuestionsFromPractice": true,
-      "removeUnverifiedQuestionsFromExam": true
+      "removeUnverifiedQuestionsFromExam": true,
+      "requireHumanVerification": true
     }
   }
 }
