@@ -1,0 +1,10 @@
+{
+  "rules": {
+    "season": "2026/27",
+    "status": "current"
+  },
+  "sources": {
+    "dfb": "DFB Fußball-Regeln",
+    "svf": "Stadtverband Fußball Dresden"
+  }
+}
