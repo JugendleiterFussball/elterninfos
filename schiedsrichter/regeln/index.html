@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Schiri-Trainer | Regel lernen</title>
+
+  <style>
+    :root {
+      --green: #0b6b35;
+      --green-light: #1bad58;
+      --dark: #07130c;
+      --bg: #f4f7f5;
+      --white: #ffffff;
+      --text: #172019;
+      --muted: #647067;
+      --border: #dce5df;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .hero {
+      background:
+        linear-gradient(135deg, rgba(7,19,12,.97), rgba(11,107,53,.92));
+      color: white;
+      padding: 28px 20px 42px;
+    }
+
+    .hero-inner,
+    main {
+      max-width: 950px;
+      margin: auto;
+    }
+
+    .back {
+      display: inline-block;
+      color: white;
+      text-decoration: none;
+      margin-bottom: 28px;
+      opacity: .9;
+    }
+
+    .back:hover {
+      opacity: 1;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: #82e3a9;
+      margin-bottom: 6px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(32px, 7vw, 56px);
+      line-height: 1.05;
+    }
+
+    #ruleVersion {
+      margin-top: 14px;
+      font-size: 14px;
+      opacity: .85;
+    }
+
+    main {
+      padding: 30px 18px 60px;
+    }
+
+    .intro {
+      background: white;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 8px 28px rgba(0,0,0,.06);
+      margin-bottom: 22px;
+      font-size: 18px;
+    }
+
+    .section {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 18px;
+    }
+
+    .section h2 {
+      margin: 0 0 14px;
+      color: var(--green);
+      font-size: 22px;
+    }
+
+    .section ul {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    .section li {
+      margin-bottom: 9px;
+    }
+
+    .memory {
+      background: var(--dark);
+      color: white;
+      border-radius: 18px;
+      padding: 24px;
+      margin-top: 28px;
+    }
+
+    .memory h2 {
+      margin-top: 0;
+      color: #82e3a9;
+    }
+
+    .memory li {
+      margin-bottom: 8px;
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      border-radius: 12px;
+      padding: 13px 18px;
+      font-weight: bold;
+    }
+
+    .btn-back {
+      background: white;
+      color: var(--green);
+      border: 1px solid var(--border);
+    }
+
+    .btn-next {
+      background: var(--green);
+      color: white;
+    }
+
+    .error {
+      background: #fff1f1;
+      border: 1px solid #e5aaaa;
+      color: #8a1f1f;
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding-top: 20px;
+      }
+
+      .intro,
+      .section,
+      .memory {
+        padding: 19px;
+      }
+
+      .navigation {
+        flex-direction: column;
+      }
+
+      .btn {
+        text-align: center;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="hero">
+    <div class="hero-inner">
+
+      <a class="back" href="../index.html">
+        ← Zurück zum Schiri-Trainer
+      </a>
+
+      <div class="eyebrow" id="ruleNumber">
+        SCHIEDSRICHTER
+      </div>
+
+      <h1 id="ruleTitle">
+        Regel wird geladen …
+      </h1>
+
+      <div id="ruleVersion"></div>
+
+    </div>
+  </header>
+
+  <main id="content">
+    <div class="intro">
+      Lerninhalt wird geladen …
+    </div>
+  </main>
+
+  <script>
+    let CONFIG = {};
+    let RULE = {};
+
+    function getRuleNumber() {
+      const params = new URLSearchParams(window.location.search);
+      const number = parseInt(params.get('regel'), 10);
+
+      if (!number || number < 1 || number > 17) {
+        return 1;
+      }
+
+      return number;
+    }
+
+    function ruleFile(number) {
+      return 'regel-' + String(number).padStart(2, '0') + '.json';
+    }
+
+    async function loadJson(url, fallback = null) {
+      try {
+        const response = await fetch(url, { cache: 'no-store' });
+
+        if (!response.ok) {
+          throw new Error('HTTP ' + response.status);
+        }
+
+        return await response.json();
+
+      } catch (error) {
+        console.error('Fehler beim Laden von ' + url, error);
+        return fallback;
+      }
+    }
+
+    function renderRule() {
+      document.title =
+        'Schiri-Trainer | Regel ' + RULE.id + ' – ' + RULE.title;
+
+      document.getElementById('ruleNumber').textContent =
+        'REGEL ' + RULE.id;
+
+      document.getElementById('ruleTitle').textContent =
+        RULE.title;
+
+      if (
+        CONFIG &&
+        CONFIG.rules &&
+        CONFIG.rules.season
+      ) {
+        document.getElementById('ruleVersion').innerHTML =
+          '<strong>Regelstand:</strong> ' +
+          CONFIG.rules.season;
+      }
+
+      let html = '';
+
+      html +=
+        '<div class="intro">' +
+        RULE.intro +
+        '</div>';
+
+      RULE.sections.forEach(section => {
+
+        html +=
+          '<section class="section">' +
+          '<h2>' + section.title + '</h2>' +
+          '<ul>';
+
+        section.items.forEach(item => {
+          html += '<li>' + item + '</li>';
+        });
+
+        html +=
+          '</ul>' +
+          '</section>';
+      });
+
+      if (RULE.memory && RULE.memory.length) {
+
+        html +=
+          '<section class="memory">' +
+          '<h2>Das solltest du dir merken</h2>' +
+          '<ul>';
+
+        RULE.memory.forEach(item => {
+          html += '<li>' + item + '</li>';
+        });
+
+        html +=
+          '</ul>' +
+          '</section>';
+      }
+
+      html += '<div class="navigation">';
+
+      html +=
+        '<a class="btn btn-back" href="../index.html">' +
+        '← Zurück zu den 17 Regeln' +
+        '</a>';
+
+      if (RULE.id < 17) {
+        html +=
+          '<a class="btn btn-next" href="?regel=' +
+          (RULE.id + 1) +
+          '">' +
+          'Regel ' +
+          (RULE.id + 1) +
+          ' →' +
+          '</a>';
+      }
+
+      html += '</div>';
+
+      document.getElementById('content').innerHTML = html;
+    }
+
+    async function init() {
+
+      const number = getRuleNumber();
+
+      CONFIG = await loadJson('../config.json', {});
+
+      RULE = await loadJson(
+        ruleFile(number),
+        null
+      );
+
+      if (!RULE) {
+
+        document.getElementById('ruleNumber').textContent =
+          'SCHIEDSRICHTER';
+
+        document.getElementById('ruleTitle').textContent =
+          'Regel noch nicht verfügbar';
+
+        document.getElementById('content').innerHTML =
+          '<div class="error">' +
+          '<strong>Regel ' + number + '</strong> ' +
+          'ist noch nicht als Lerninhalt angelegt.' +
+          '</div>' +
+          '<div class="navigation">' +
+          '<a class="btn btn-back" href="../index.html">' +
+          '← Zurück zu den 17 Regeln' +
+          '</a>' +
+          '</div>';
+
+        return;
+      }
+
+      renderRule();
+    }
+
+    init();
+  </script>
+
+</body>
+</html>
