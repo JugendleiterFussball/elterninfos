@@ -35,8 +35,12 @@ Promise.all([
   loadProgress();
   showPractice();
   showRuleVersion();
-}).catch(() => {
-  document.body.insertAdjacentHTML('beforeend','<p style="padding:20px">Die Konfiguration oder Regeldaten konnten nicht geladen werden.</p>');
+}).catch((err) => {
+  document.body.insertAdjacentHTML(
+    'beforeend',
+    '<p style="padding:20px;color:red"><strong>Fehler:</strong> ' + err.message + '</p>'
+  );
+  console.error(err);
 });
 
 function showRuleVersion(){
