@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "lastReviewed": "2026-09-15",
+
+  "currentSeason": "2026/27",
+
+  "sources": {
+    "dfb_rules": {
+      "name": "DFB Fußball-Regeln",
+      "type": "rules",
+      "authority": "DFB",
+      "url": "https://www.dfb.de/mehr-fussball/fussball-regeln",
+      "season": "2026/27",
+      "active": true,
+      "monitor": true
+    },
+
+    "dfb_changes": {
+      "name": "DFB Regeländerungen",
+      "type": "rule_changes",
+      "authority": "DFB",
+      "url": "https://www.dfb.de/mehr-fussball/fussball-regeln",
+      "season": "2026/27",
+      "active": true,
+      "monitor": true
+    },
+
+    "svf_referee": {
+      "name": "Stadtverband Fußball Dresden – Schiedsrichter",
+      "type": "regional_rules",
+      "authority": "SVF Dresden",
+      "url": "https://www.svf-dresden.de/schiedsrichter/",
+      "season": "2026/27",
+      "active": true,
+      "monitor": true
+    },
+
+    "svf_training": {
+      "name": "SVF Dresden – Schiedsrichter-Ausbildung",
+      "type": "training",
+      "authority": "SVF Dresden",
+      "url": "https://www.svf-dresden.de/schiedsrichter/ausbildung-zum-schiedsrichter/",
+      "season": "2026/27",
+      "active": true,
+      "monitor": true
+    },
+
+    "svf_hrt": {
+      "name": "SVF Dresden – Hausregeltests",
+      "type": "house_rule_tests",
+      "authority": "SVF Dresden",
+      "url": "https://www.svf-dresden.de/docs/schiedsrichter/hausregeltest/",
+      "season": "2026/27",
+      "active": true,
+      "monitor": true
+    }
+  },
+
+  "ruleDependencies": {
+    "1": ["dfb_rules"],
+    "2": ["dfb_rules"],
+    "3": ["dfb_rules", "dfb_changes", "svf_referee"],
+    "4": ["dfb_rules"],
+    "5": ["dfb_rules", "svf_referee"],
+    "6": ["dfb_rules"],
+    "7": ["dfb_rules", "dfb_changes", "svf_referee"],
+    "8": ["dfb_rules", "dfb_changes"],
+    "9": ["dfb_rules", "dfb_changes"],
+    "10": ["dfb_rules"],
+    "11": ["dfb_rules"],
+    "12": ["dfb_rules", "dfb_changes", "svf_referee", "svf_hrt"],
+    "13": ["dfb_rules", "svf_hrt"],
+    "14": ["dfb_rules", "dfb_changes", "svf_hrt"],
+    "15": ["dfb_rules", "dfb_changes", "svf_hrt"],
+    "16": ["dfb_rules", "dfb_changes", "svf_hrt"],
+    "17": ["dfb_rules", "svf_hrt"]
+  },
+
+  "questionPolicy": {
+    "allowedStatus": "verified",
+    "reviewStatus": "review_required",
+    "disabledStatus": "disabled",
+
+    "autoDisableOnSourceChange": true,
+    "autoPublishAfterChange": false,
+
+    "requireHumanVerification": true,
+
+    "minimumVerifiedQuestionsForExam": 30,
+
+    "examQuestionCount": 30
+  },
+
+  "monitoring": {
+    "enabled": true,
+
+    "checkSources": [
+      "dfb_rules",
+      "dfb_changes",
+      "svf_referee",
+      "svf_training",
+      "svf_hrt"
+    ],
+
+    "onChange": {
+      "markAffectedRulesForReview": true,
+      "markAffectedQuestionsForReview": true,
+      "removeUnverifiedQuestionsFromPractice": true,
+      "removeUnverifiedQuestionsFromExam": true
+    }
+  }
+}
