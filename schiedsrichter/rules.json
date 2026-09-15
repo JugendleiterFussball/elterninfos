@@ -2,103 +2,665 @@
   {
     "id": 1,
     "title": "Spielfeld",
-    "summary": "Linien, Strafraum, Tore und technische Bereiche richtig einordnen.",
-    "status": "Grundlage"
+    "summary": "Aufbau, Linien, Tore, Strafraum und Sicherheit des Spielfelds.",
+    "status": "Grundlage",
+    "intro": "Vor dem Spiel prüft der Schiedsrichter, ob das Spielfeld für eine sichere und regelgerechte Durchführung geeignet ist.",
+    "sections": [
+      {
+        "title": "Das musst du wissen",
+        "items": [
+          "Das Spielfeld ist rechteckig.",
+          "Die längeren Begrenzungslinien heißen Seitenlinien, die kürzeren Torlinien.",
+          "Die Linien gehören zu den Bereichen, die sie begrenzen.",
+          "Die Mittellinie teilt das Spielfeld in zwei Hälften.",
+          "Zum Spielfeld gehören unter anderem Torraum, Strafraum, Mittelkreis und Eckbereiche."
+        ]
+      },
+      {
+        "title": "Wichtige Orientierung",
+        "items": [
+          "Der Mittelkreis hat einen Radius von 9,15 m.",
+          "Der Strafstoßpunkt liegt 11 m von der Torlinie entfernt.",
+          "Der Strafraum reicht 16,5 m ins Spielfeld.",
+          "Der Torraum reicht 5,5 m ins Spielfeld.",
+          "Der Eckbereich hat einen Radius von 1 m.",
+          "Eckfahnenstangen müssen mindestens 1,5 m hoch sein."
+        ]
+      },
+      {
+        "title": "Vor dem Spiel",
+        "items": [
+          "Spielfeld und unmittelbare Umgebung auf Gefahren prüfen.",
+          "Tore müssen sicher befestigt sein.",
+          "Linien und wichtige Markierungen müssen ausreichend erkennbar sein.",
+          "Eckfahnen und Tornetze kontrollieren.",
+          "Die Sicherheit der Spieler hat Vorrang."
+        ]
+      }
+    ],
+    "memory": [
+      "Strafstoßpunkt: 11 m.",
+      "Strafraum: 16,5 m.",
+      "Torraum: 5,5 m.",
+      "Mittelkreis: Radius 9,15 m.",
+      "Linien gehören zum jeweiligen Bereich.",
+      "Sicherheit geht vor."
+    ]
   },
+
   {
     "id": 2,
     "title": "Ball",
-    "summary": "Anforderungen an den Spielball und Vorgehen bei einem defekten Ball.",
-    "status": "Grundlage"
+    "summary": "Eigenschaften des Spielballs und Vorgehen bei einem defekten Ball.",
+    "status": "Grundlage",
+    "intro": "Der Schiedsrichter muss sicherstellen, dass mit einem geeigneten und regelgerechten Ball gespielt wird.",
+    "sections": [
+      {
+        "title": "Der Spielball",
+        "items": [
+          "Der Ball muss kugelförmig sein.",
+          "Er muss aus geeignetem Material bestehen.",
+          "Für offizielle Wettbewerbe gelten festgelegte Anforderungen an Größe, Gewicht und Luftdruck.",
+          "Der Schiedsrichter entscheidet, ob ein Ball für das Spiel geeignet ist."
+        ]
+      },
+      {
+        "title": "Ball wird während des Spiels unbrauchbar",
+        "items": [
+          "Wird der Ball während des laufenden Spiels defekt, wird das Spiel unterbrochen.",
+          "Das Spiel wird entsprechend der Regel mit einem Ersatzball fortgesetzt.",
+          "Wird ein Ball bei einer Spielfortsetzung defekt, bevor er von einem Spieler berührt wurde und bevor die Fortsetzung abgeschlossen ist, wird die Spielfortsetzung wiederholt."
+        ]
+      },
+      {
+        "title": "Praxis",
+        "items": [
+          "Vor dem Spiel geeignete Spielbälle kontrollieren.",
+          "Ein Austausch des Balls erfolgt mit Zustimmung des Schiedsrichters.",
+          "Ein Spieler entscheidet nicht eigenmächtig über einen Ballwechsel."
+        ]
+      }
+    ],
+    "memory": [
+      "Der Schiedsrichter entscheidet über die Eignung des Balls.",
+      "Defekter Ball im laufenden Spiel: unterbrechen.",
+      "Für die Fortsetzung wird ein geeigneter Ersatzball verwendet."
+    ]
   },
+
   {
     "id": 3,
     "title": "Spieler",
-    "summary": "Spielerzahl, Auswechslungen und zusätzliche Personen auf dem Spielfeld.",
-    "status": "Grundlage"
+    "summary": "Spielerzahl, Auswechslungen, Teamoffizielle und zusätzliche Personen.",
+    "status": "Kernregel",
+    "intro": "Regel 3 bestimmt, wer am Spiel teilnehmen darf und wie mit Spielern, Einwechselspielern und zusätzlichen Personen umzugehen ist.",
+    "sections": [
+      {
+        "title": "Spielerzahl",
+        "items": [
+          "Ein reguläres Großfeldteam besteht aus höchstens elf Spielern.",
+          "Einer der Spieler muss Torhüter sein.",
+          "Ein Spiel darf nicht begonnen oder fortgesetzt werden, wenn eine Mannschaft weniger als sieben Spieler hat.",
+          "Für Jugend- und Sonderwettbewerbe können die jeweiligen Wettbewerbsbestimmungen abweichende Spielformen vorsehen."
+        ]
+      },
+      {
+        "title": "Auswechslungen",
+        "items": [
+          "Die zulässige Zahl und das Verfahren richten sich nach Regelwerk und Wettbewerbsbestimmungen.",
+          "Der Schiedsrichter muss über einen vorgesehenen Wechsel informiert werden.",
+          "Ein Einwechselspieler darf das Spielfeld erst nach dem vorgeschriebenen Wechselverfahren betreten."
+        ]
+      },
+      {
+        "title": "Zusätzliche Personen",
+        "items": [
+          "Unberechtigt auf dem Spielfeld befindliche Personen können eine Spielunterbrechung erforderlich machen.",
+          "Entscheidend ist unter anderem, ob die Person in das Spiel eingreift.",
+          "Spieler, Einwechselspieler, ausgewechselte Spieler und Teamoffizielle werden regeltechnisch unterschiedlich behandelt."
+        ]
+      },
+      {
+        "title": "Kapitän",
+        "items": [
+          "Der Kapitän ist Ansprechpartner des Schiedsrichters.",
+          "In Deutschland gilt die Kapitänsregelung auch im Amateur- und Jugendbereich.",
+          "Die Kapitänsbinde gibt dem Spieler keine Sonderrechte gegenüber den Spielregeln."
+        ]
+      }
+    ],
+    "memory": [
+      "Großfeld: höchstens 11 Spieler je Mannschaft.",
+      "Einer davon ist Torhüter.",
+      "Unter 7 Spielern darf ein reguläres Großfeldspiel nicht begonnen oder fortgesetzt werden.",
+      "Kapitän = zentraler Ansprechpartner."
+    ]
   },
+
   {
     "id": 4,
     "title": "Ausrüstung der Spieler",
-    "summary": "Pflichtausrüstung, Schmuck und Sicherheitsanforderungen.",
-    "status": "Grundlage"
+    "summary": "Pflichtausrüstung, Schmuck, Farben und Sicherheit.",
+    "status": "Grundlage",
+    "intro": "Die Ausrüstung darf weder den Spieler selbst noch andere Personen gefährden.",
+    "sections": [
+      {
+        "title": "Pflichtausrüstung",
+        "items": [
+          "Trikot mit Ärmeln.",
+          "Kurze Hose.",
+          "Stutzen.",
+          "Schienbeinschoner.",
+          "Fußballschuhe."
+        ]
+      },
+      {
+        "title": "Schmuck und gefährliche Gegenstände",
+        "items": [
+          "Gefährliche Ausrüstung ist nicht erlaubt.",
+          "Schmuck muss vor dem Spiel entfernt werden.",
+          "Das bloße Abkleben von verbotenem Schmuck macht ihn nicht automatisch zulässig.",
+          "Der Schiedsrichter kontrolliert die Ausrüstung."
+        ]
+      },
+      {
+        "title": "Farben",
+        "items": [
+          "Die Mannschaften müssen unterscheidbare Farben tragen.",
+          "Der Torhüter muss sich farblich von den Feldspielern und Spieloffiziellen unterscheiden.",
+          "Auch die Spieloffiziellen müssen von den Mannschaften unterscheidbar sein."
+        ]
+      }
+    ],
+    "memory": [
+      "Sicherheit zuerst.",
+      "Schienbeinschoner gehören zur Pflichtausrüstung.",
+      "Verbotener Schmuck muss entfernt werden.",
+      "Torhüter und Mannschaften müssen unterscheidbar sein."
+    ]
   },
+
   {
     "id": 5,
     "title": "Schiedsrichter",
-    "summary": "Rechte, Pflichten, Vorteil und Entscheidungen des Schiedsrichters.",
-    "status": "Kernregel"
+    "summary": "Rechte, Pflichten, Vorteil, Disziplin und Entscheidungen.",
+    "status": "Kernregel",
+    "intro": "Der Schiedsrichter leitet das Spiel und setzt die Spielregeln durch.",
+    "sections": [
+      {
+        "title": "Aufgaben",
+        "items": [
+          "Die Spielregeln durchsetzen.",
+          "Das Spiel gemeinsam mit den weiteren Spieloffiziellen leiten.",
+          "Spielzeit und Spielereignisse überwachen.",
+          "Disziplinarmaßnahmen treffen.",
+          "Auf Verletzungen und Sicherheitsprobleme reagieren."
+        ]
+      },
+      {
+        "title": "Vorteil",
+        "items": [
+          "Der Schiedsrichter kann das Spiel weiterlaufen lassen, wenn die nicht fehlbare Mannschaft daraus einen Vorteil erhält.",
+          "Entsteht der erwartete Vorteil nicht innerhalb kurzer Zeit, kann auf das ursprüngliche Vergehen zurückgegangen werden.",
+          "Vorteil bedeutet nicht, dass notwendige persönliche Strafen automatisch entfallen."
+        ]
+      },
+      {
+        "title": "Entscheidungen",
+        "items": [
+          "Entscheidungen werden nach bestem Wissen entsprechend den Spielregeln getroffen.",
+          "Der Schiedsrichter kann eine Entscheidung ändern, wenn er erkennt, dass sie falsch war, solange das Spiel noch nicht entsprechend fortgesetzt wurde beziehungsweise die Regel dies noch zulässt.",
+          "Ruhe, klare Zeichen und nachvollziehbare Kommunikation gehören zur Spielleitung."
+        ]
+      }
+    ],
+    "memory": [
+      "Der Schiedsrichter setzt die Regeln durch.",
+      "Vorteil nur, wenn ein tatsächlicher Vorteil entstehen kann.",
+      "Persönliche Strafe und Spielfortsetzung getrennt beurteilen.",
+      "Klar und ruhig kommunizieren."
+    ]
   },
+
   {
     "id": 6,
     "title": "Weitere Spieloffizielle",
-    "summary": "Aufgaben der Assistenten und weiterer Spieloffizieller.",
-    "status": "Grundlage"
+    "summary": "Aufgaben von Assistenten und weiteren Spieloffiziellen.",
+    "status": "Grundlage",
+    "intro": "Weitere Spieloffizielle unterstützen den Schiedsrichter bei der Leitung des Spiels.",
+    "sections": [
+      {
+        "title": "Schiedsrichterassistenten",
+        "items": [
+          "Unterstützung bei Abseitsentscheidungen.",
+          "Anzeigen, wenn der Ball das Spielfeld vollständig verlassen hat.",
+          "Unterstützung bei der Zuordnung von Einwurf, Abstoß oder Eckstoß.",
+          "Unterstützung bei Vergehen, die der Schiedsrichter nicht oder schlechter wahrnehmen konnte."
+        ]
+      },
+      {
+        "title": "Zusammenarbeit",
+        "items": [
+          "Der Schiedsrichter bleibt für die endgültige Entscheidung verantwortlich.",
+          "Vor dem Spiel sollten Zuständigkeiten und Zusammenarbeit abgesprochen werden.",
+          "Klare Blickkontakte und vereinbarte Zeichen erleichtern die Zusammenarbeit."
+        ]
+      }
+    ],
+    "memory": [
+      "Assistenten unterstützen.",
+      "Der Schiedsrichter trifft die endgültige Entscheidung.",
+      "Gute Absprache vor dem Spiel verhindert Missverständnisse."
+    ]
   },
+
   {
     "id": 7,
     "title": "Dauer des Spiels",
-    "summary": "Spielzeit, Halbzeitpause und Nachspielzeit.",
-    "status": "Grundlage"
+    "summary": "Spielzeit, Halbzeit, Nachspielzeit und verlorene Zeit.",
+    "status": "Grundlage",
+    "intro": "Der Schiedsrichter ist für die Spielzeit verantwortlich und berücksichtigt verlorene Spielzeit.",
+    "sections": [
+      {
+        "title": "Spielzeit",
+        "items": [
+          "Im regulären Erwachsenenfußball besteht ein Spiel aus zwei Halbzeiten zu je 45 Minuten.",
+          "Im Jugendbereich gelten alters- und wettbewerbsabhängige Spielzeiten.",
+          "Die Halbzeitpause richtet sich nach den geltenden Bestimmungen."
+        ]
+      },
+      {
+        "title": "Nachspielzeit",
+        "items": [
+          "Verlorene Spielzeit wird am Ende der jeweiligen Halbzeit berücksichtigt.",
+          "Gründe können unter anderem Auswechslungen, Verletzungen, Zeitspiel, Disziplinarmaßnahmen und andere Verzögerungen sein.",
+          "Die angezeigte Nachspielzeit ist grundsätzlich eine Mindestzeit."
+        ]
+      }
+    ],
+    "memory": [
+      "Verlorene Zeit berücksichtigen.",
+      "Jugendspielzeiten können abweichen.",
+      "Angezeigte Nachspielzeit = mindestens nachzuspielende Zeit."
+    ]
   },
+
   {
     "id": 8,
-    "title": "Beginn und Fortsetzung",
-    "summary": "Anstoß, Schiedsrichterball und andere Fortsetzungen.",
-    "status": "Kernregel"
+    "title": "Beginn und Fortsetzung des Spiels",
+    "summary": "Anstoß und Schiedsrichterball.",
+    "status": "Kernregel",
+    "intro": "Regel 8 legt fest, wie ein Spiel begonnen und nach bestimmten Unterbrechungen fortgesetzt wird.",
+    "sections": [
+      {
+        "title": "Anstoß",
+        "items": [
+          "Mit dem Anstoß beginnen beide Halbzeiten und gegebenenfalls Abschnitte einer Verlängerung.",
+          "Nach einem Tor führt die Mannschaft den Anstoß aus, gegen die das Tor erzielt wurde.",
+          "Der Ball ist im Spiel, wenn er mit dem Fuß gespielt wurde und sich eindeutig bewegt."
+        ]
+      },
+      {
+        "title": "Schiedsrichterball",
+        "items": [
+          "Der Schiedsrichterball dient der Fortsetzung, wenn das Spiel unterbrochen wurde und die Regeln keine andere Spielfortsetzung vorsehen.",
+          "Nach der aktuellen Regelung wird er grundsätzlich dort ausgeführt, wo sich der Ball bei der Unterbrechung befand.",
+          "Er wird der Mannschaft zugesprochen, die in Ballbesitz war oder eindeutig in Ballbesitz gekommen wäre.",
+          "Ist dies nicht eindeutig, erhält ihn die Mannschaft, die den Ball zuletzt berührt hat.",
+          "Für Situationen im Strafraum gelten besondere Vorgaben."
+        ]
+      }
+    ],
+    "memory": [
+      "Anstoß: Ball muss sich eindeutig bewegen.",
+      "Nach einem Tor stößt die Mannschaft an, die das Tor kassiert hat.",
+      "Beim Schiedsrichterball ist der vorherige beziehungsweise zu erwartende Ballbesitz wichtig."
+    ]
   },
+
   {
     "id": 9,
     "title": "Ball im und aus dem Spiel",
-    "summary": "Wann der Ball im Spiel ist und wann nicht.",
-    "status": "Grundlage"
+    "summary": "Wann der Ball im Spiel ist und wann eine Unterbrechung vorliegt.",
+    "status": "Grundlage",
+    "intro": "Ob der Ball im oder aus dem Spiel ist, entscheidet häufig über die richtige Spielfortsetzung.",
+    "sections": [
+      {
+        "title": "Ball aus dem Spiel",
+        "items": [
+          "Der Ball ist aus dem Spiel, wenn er eine Seiten- oder Torlinie vollständig überschritten hat.",
+          "Dies gilt am Boden und in der Luft.",
+          "Der Ball ist ebenfalls aus dem Spiel, wenn der Schiedsrichter das Spiel unterbricht."
+        ]
+      },
+      {
+        "title": "Ball bleibt im Spiel",
+        "items": [
+          "Berührt der Ball Pfosten, Latte oder Eckfahne und bleibt auf dem Spielfeld, läuft das Spiel grundsätzlich weiter.",
+          "Auch eine Berührung eines Spieloffiziellen führt nicht automatisch zu einer Unterbrechung.",
+          "Für bestimmte Auswirkungen einer Schiedsrichterberührung bestehen besondere Regeln."
+        ]
+      },
+      {
+        "title": "Berührung durch Personen außerhalb des laufenden Spiels",
+        "items": [
+          "Bei einer unabsichtlichen und unfairen Einfluss vermeidenden Berührung durch bestimmte Personen außerhalb des Spielfelds kann eine besondere Spielfortsetzung erforderlich sein.",
+          "Entscheidend sind Person, Absicht und Einfluss auf das Spiel."
+        ]
+      }
+    ],
+    "memory": [
+      "Die Linie muss vollständig überschritten sein.",
+      "Pfosten oder Latte bedeuten nicht automatisch Aus.",
+      "Bei ungewöhnlichen Ballberührungen immer Person und Einfluss prüfen."
+    ]
   },
+
   {
     "id": 10,
     "title": "Bestimmung des Spielausgangs",
     "summary": "Torerzielung und Verfahren zur Ermittlung eines Siegers.",
-    "status": "Grundlage"
+    "status": "Grundlage",
+    "intro": "Regel 10 erklärt, wann ein Tor erzielt ist und wie ein Sieger ermittelt werden kann.",
+    "sections": [
+      {
+        "title": "Tor",
+        "items": [
+          "Ein Tor ist erzielt, wenn der Ball die Torlinie zwischen den Pfosten und unter der Querlatte vollständig überschritten hat.",
+          "Vor dem Tor darf kein Regelverstoß der Mannschaft vorliegen, die das Tor erzielt.",
+          "Die vollständige Überschreitung der Torlinie ist entscheidend."
+        ]
+      },
+      {
+        "title": "Sieger",
+        "items": [
+          "Gewonnen hat die Mannschaft mit mehr erzielten Toren.",
+          "Bei gleicher Torzahl ist das Spiel unentschieden, sofern der Wettbewerb keinen Sieger verlangt.",
+          "Wettbewerbsbestimmungen können Verlängerung und Elfmeterschießen zur Siegerermittlung vorsehen."
+        ]
+      }
+    ],
+    "memory": [
+      "Ball vollständig über der Torlinie = mögliche Torerzielung.",
+      "Zwischen Pfosten und unter der Latte.",
+      "Vorheriges Vergehen der angreifenden Mannschaft beachten."
+    ]
   },
+
   {
     "id": 11,
     "title": "Abseits",
     "summary": "Abseitsstellung, strafbares Abseits und Ausnahmen.",
-    "status": "Kernregel"
+    "status": "Kernregel",
+    "intro": "Eine Abseitsstellung allein ist noch kein Vergehen. Entscheidend ist, ob der Spieler anschließend aktiv am Spiel teilnimmt.",
+    "sections": [
+      {
+        "title": "Abseitsstellung",
+        "items": [
+          "Beurteilt wird grundsätzlich der Moment, in dem ein Mitspieler den Ball spielt oder berührt.",
+          "Ein Spieler ist nicht allein deshalb zu bestrafen, weil er sich in einer Abseitsstellung befindet.",
+          "Für die Stellung sind Ball, vorletzter Gegenspieler und Position des Angreifers maßgeblich."
+        ]
+      },
+      {
+        "title": "Strafbares Abseits",
+        "items": [
+          "Eingreifen ins Spiel.",
+          "Beeinflussen eines Gegenspielers.",
+          "Erlangen eines Vorteils aus der Abseitsstellung nach bestimmten Abprall- oder Abwehrsituationen."
+        ]
+      },
+      {
+        "title": "Kein Abseits direkt aus",
+        "items": [
+          "Abstoß.",
+          "Einwurf.",
+          "Eckstoß."
+        ]
+      }
+    ],
+    "memory": [
+      "Abseitsstellung allein ist nicht strafbar.",
+      "Moment des Zuspiels beziehungsweise der relevanten Ballberührung beachten.",
+      "Kein direktes Abseits nach Abstoß, Einwurf oder Eckstoß.",
+      "Aktive Teilnahme entscheidet."
+    ]
   },
+
   {
     "id": 12,
     "title": "Fouls und sonstiges Fehlverhalten",
-    "summary": "Direkte und indirekte Freistöße sowie persönliche Strafen.",
-    "status": "Kernregel"
+    "summary": "Foulspiele, Handspiel, persönliche Strafen und Disziplin.",
+    "status": "Kernregel",
+    "intro": "Regel 12 gehört zu den wichtigsten Regeln für die praktische Spielleitung.",
+    "sections": [
+      {
+        "title": "Foulspiel beurteilen",
+        "items": [
+          "Nicht jeder Körperkontakt ist ein Foul.",
+          "Der Schiedsrichter beurteilt Art, Intensität und Umstände des Kontakts.",
+          "Bei bestimmten Vergehen wird zwischen fahrlässig, rücksichtslos und übermäßig hart unterschieden.",
+          "Je nach Vergehen folgt ein direkter oder indirekter Freistoß beziehungsweise im eigenen Strafraum ein Strafstoß."
+        ]
+      },
+      {
+        "title": "Persönliche Strafen",
+        "items": [
+          "Gelbe Karte bedeutet Verwarnung.",
+          "Gelb-Rot bedeutet Feldverweis nach einer zweiten Verwarnung, soweit diese Kartenregel im Wettbewerb Anwendung findet.",
+          "Rote Karte bedeutet Feldverweis.",
+          "Persönliche Strafe und Spielfortsetzung müssen jeweils korrekt bestimmt werden."
+        ]
+      },
+      {
+        "title": "Handspiel",
+        "items": [
+          "Nicht jede Berührung des Balls mit Hand oder Arm ist strafbar.",
+          "Absicht, Armhaltung und die konkrete Spielsituation sind wichtige Beurteilungsfaktoren.",
+          "Die Grenze zwischen Arm und Schulter ist bei der Bewertung zu beachten."
+        ]
+      },
+      {
+        "title": "Torhüter und Zeitspiel",
+        "items": [
+          "Der Torhüter darf den Ball mit Hand oder Arm höchstens acht Sekunden kontrollieren.",
+          "Der Schiedsrichter zeigt die letzten fünf Sekunden sichtbar an.",
+          "Wird die zulässige Zeit überschritten, erhält die gegnerische Mannschaft einen Eckstoß."
+        ]
+      }
+    ],
+    "memory": [
+      "Kontakt ist nicht automatisch Foul.",
+      "Fahrlässig – rücksichtslos – übermäßig hart unterscheiden.",
+      "Nicht jede Handberührung ist Handspiel.",
+      "Torhüter: 8 Sekunden, letzte 5 Sekunden anzeigen.",
+      "Bei Überschreitung: Eckstoß."
+    ]
   },
+
   {
     "id": 13,
     "title": "Freistöße",
-    "summary": "Direkte und indirekte Freistöße, Abstand und Ausführung.",
-    "status": "Kernregel"
+    "summary": "Direkter und indirekter Freistoß, Ausführung und Abstände.",
+    "status": "Kernregel",
+    "intro": "Nach vielen Regelverstößen wird das Spiel mit einem direkten oder indirekten Freistoß fortgesetzt.",
+    "sections": [
+      {
+        "title": "Direkter Freistoß",
+        "items": [
+          "Aus einem direkten Freistoß kann unmittelbar ein Tor gegen die gegnerische Mannschaft erzielt werden.",
+          "Begeht ein Spieler ein entsprechendes Vergehen im eigenen Strafraum, kann daraus ein Strafstoß werden."
+        ]
+      },
+      {
+        "title": "Indirekter Freistoß",
+        "items": [
+          "Der Schiedsrichter zeigt einen indirekten Freistoß mit erhobenem Arm an.",
+          "Für ein gültiges Tor muss der Ball nach der Ausführung von einem weiteren Spieler berührt worden sein."
+        ]
+      },
+      {
+        "title": "Ausführung",
+        "items": [
+          "Der Ball muss ruhig liegen.",
+          "Der Ball ist im Spiel, wenn er mit dem Fuß gespielt wurde und sich eindeutig bewegt.",
+          "Gegenspieler müssen grundsätzlich den vorgeschriebenen Abstand einhalten.",
+          "Der ausführende Spieler darf den Ball nicht erneut spielen, bevor ein anderer Spieler ihn berührt hat."
+        ]
+      }
+    ],
+    "memory": [
+      "Direkt = unmittelbares Tor möglich.",
+      "Indirekt = Armzeichen des Schiedsrichters.",
+      "Ball muss sich eindeutig bewegen.",
+      "Grundabstand der Gegner: 9,15 m, sofern keine Sonderregel greift."
+    ]
   },
+
   {
     "id": 14,
     "title": "Strafstoß",
-    "summary": "Voraussetzungen, Ausführung und Vergehen beim Strafstoß.",
-    "status": "Kernregel"
+    "summary": "Ausführung, Positionen, Vergehen und Doppelberührung.",
+    "status": "Kernregel",
+    "intro": "Ein Strafstoß wird verhängt, wenn ein Spieler im eigenen Strafraum ein Vergehen begeht, das bei entsprechender Situation mit direktem Freistoß zu ahnden ist.",
+    "sections": [
+      {
+        "title": "Vor der Ausführung",
+        "items": [
+          "Der Ball liegt auf dem Strafstoßpunkt.",
+          "Der Schütze muss eindeutig bestimmt sein.",
+          "Der Torhüter befindet sich regelgerecht auf beziehungsweise an seiner Torlinie.",
+          "Die übrigen Spieler müssen die vorgeschriebenen Positionen und Abstände einhalten."
+        ]
+      },
+      {
+        "title": "Ausführung",
+        "items": [
+          "Der Ball muss nach vorne gespielt werden.",
+          "Der Ball ist im Spiel, wenn er mit dem Fuß gespielt wurde und sich eindeutig bewegt.",
+          "Der Schütze darf den Ball erst wieder spielen, nachdem ihn ein anderer Spieler berührt hat."
+        ]
+      },
+      {
+        "title": "Versehentliche Doppelberührung",
+        "items": [
+          "Berührt der Schütze den Ball bei der Ausführung versehentlich zweimal und der Ball geht ins Tor, wird der Strafstoß wiederholt.",
+          "Geht der Ball nach der versehentlichen Doppelberührung nicht ins Tor, wird auf indirekten Freistoß entschieden.",
+          "Eine absichtliche zweite Berührung wird nach den dafür geltenden Regeln beurteilt."
+        ]
+      }
+    ],
+    "memory": [
+      "Strafstoßpunkt: 11 m.",
+      "Ball muss nach vorne gespielt werden.",
+      "Schütze darf nicht unmittelbar ein zweites Mal spielen.",
+      "Versehentliche Doppelberührung + Tor = Wiederholung."
+    ]
   },
+
   {
     "id": 15,
     "title": "Einwurf",
-    "summary": "Korrekte Ausführung und typische Fehler.",
-    "status": "Grundlage"
+    "summary": "Korrekte Ausführung, Position und typische Fehler.",
+    "status": "Grundlage",
+    "intro": "Hat der Ball die Seitenlinie vollständig überschritten, wird das Spiel grundsätzlich mit einem Einwurf für die gegnerische Mannschaft des letzten Ballberührers fortgesetzt.",
+    "sections": [
+      {
+        "title": "Ausführung",
+        "items": [
+          "Der Spieler steht mit dem Gesicht zum Spielfeld.",
+          "Ein Teil jedes Fußes befindet sich auf der Seitenlinie oder außerhalb des Spielfelds auf dem Boden.",
+          "Der Ball wird mit beiden Händen von hinten über den Kopf eingeworfen.",
+          "Der Einwurf erfolgt an der Stelle, an der der Ball das Spielfeld verlassen hat."
+        ]
+      },
+      {
+        "title": "Wichtig",
+        "items": [
+          "Aus einem Einwurf kann nicht direkt ein Tor erzielt werden.",
+          "Beim Einwurf gibt es für den einwerfenden Mitspieler keine direkte Abseitsstellung.",
+          "Gegenspieler müssen den vorgeschriebenen Mindestabstand einhalten."
+        ]
+      }
+    ],
+    "memory": [
+      "Beide Hände.",
+      "Von hinten über den Kopf.",
+      "Beide Füße regelgerecht am Boden.",
+      "Kein direktes Tor aus Einwurf.",
+      "Kein direktes Abseits aus Einwurf."
+    ]
   },
+
   {
     "id": 16,
     "title": "Abstoß",
-    "summary": "Ausführung, Gegnerabstand und Ball im Spiel.",
-    "status": "Grundlage"
+    "summary": "Wann es Abstoß gibt und wie er ausgeführt wird.",
+    "status": "Grundlage",
+    "intro": "Ein Abstoß wird gegeben, wenn der Ball zuletzt von einem Spieler der angreifenden Mannschaft berührt wurde und die Torlinie vollständig überschreitet, ohne dass ein Tor erzielt wurde.",
+    "sections": [
+      {
+        "title": "Ausführung",
+        "items": [
+          "Der Ball wird von einem beliebigen Punkt innerhalb des Torraums gespielt.",
+          "Der Ball muss ruhig liegen.",
+          "Der Ball ist im Spiel, wenn er mit dem Fuß gespielt wurde und sich eindeutig bewegt.",
+          "Gegenspieler müssen sich bis zur regelgerechten Ausführung außerhalb des Strafraums befinden."
+        ]
+      },
+      {
+        "title": "Wichtig",
+        "items": [
+          "Aus einem Abstoß kann direkt ein Tor gegen die gegnerische Mannschaft erzielt werden.",
+          "Aus einem Abstoß entsteht für einen Mitspieler des ausführenden Teams keine direkte Abseitsstrafbarkeit.",
+          "Der ausführende Spieler darf den Ball nicht erneut spielen, bevor ein anderer Spieler ihn berührt hat."
+        ]
+      }
+    ],
+    "memory": [
+      "Abstoß nach Aus über die eigene Torlinie durch letzten Kontakt des Angreifers.",
+      "Ausführung aus dem Torraum.",
+      "Ball im Spiel, sobald er gespielt wurde und sich eindeutig bewegt.",
+      "Kein direktes Abseits aus Abstoß."
+    ]
   },
+
   {
     "id": 17,
     "title": "Eckstoß",
-    "summary": "Ausführung und Abstände beim Eckstoß.",
-    "status": "Grundlage"
+    "summary": "Wann es Eckstoß gibt, Ausführung und Abstände.",
+    "status": "Grundlage",
+    "intro": "Ein Eckstoß wird gegeben, wenn der Ball zuletzt von einem Spieler der verteidigenden Mannschaft berührt wurde und die eigene Torlinie vollständig überschreitet, ohne dass ein Tor erzielt wurde.",
+    "sections": [
+      {
+        "title": "Ausführung",
+        "items": [
+          "Der Ball wird in den Eckbereich gelegt, der der Stelle des Überquerens der Torlinie am nächsten liegt.",
+          "Die Eckfahne darf für die Ausführung nicht entfernt werden.",
+          "Der Ball muss ruhig liegen.",
+          "Der Ball ist im Spiel, wenn er mit dem Fuß gespielt wurde und sich eindeutig bewegt."
+        ]
+      },
+      {
+        "title": "Gegenspieler",
+        "items": [
+          "Gegenspieler müssen den vorgeschriebenen Abstand zum Eckbereich einhalten, bis der Ball im Spiel ist.",
+          "Der ausführende Spieler darf den Ball nicht erneut spielen, bevor ein anderer Spieler ihn berührt hat."
+        ]
+      },
+      {
+        "title": "Torerzielung",
+        "items": [
+          "Aus einem Eckstoß kann direkt ein Tor gegen die gegnerische Mannschaft erzielt werden.",
+          "Geht der Ball direkt in das eigene Tor des ausführenden Teams, wird nicht auf Eigentor entschieden; die vorgeschriebene Spielfortsetzung ist zu beachten."
+        ]
+      }
+    ],
+    "memory": [
+      "Letzter Kontakt Verteidiger + Ball über eigene Torlinie = grundsätzlich Eckstoß.",
+      "Eckfahne bleibt stehen.",
+      "Gegnerabstand: 9,15 m vom Eckbereich.",
+      "Direktes Tor ins gegnerische Tor ist möglich."
+    ]
   }
 ]
