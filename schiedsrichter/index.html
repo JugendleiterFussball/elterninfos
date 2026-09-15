@@ -16,15 +16,42 @@ main{max-width:1100px;margin:auto;padding:34px 18px 70px}.view{display:none}.vie
 <script>
 let RULES=[],QS=[],uIndex=0,uScore=0,uAnswered=false,exam=[],examIndex=0,examScore=0;
 const $=s=>document.querySelector(s);
-Promise.all([fetch('rules.json').then(r=>r.json()),fetch('questions.json').then(r=>r.json())]).then(([r,q])=>{RULES=r;QS=q;renderRules();loadProgress();showPractice()}).catch(()=>{document.body.insertAdjacentHTML('beforeend','<p style="padding:20px">Hinweis: Für die Vorschau über eine lokale Datei können JSON-Dateien vom Browser blockiert werden. Über GitHub Pages funktioniert der Datenabruf normal.</p>')});
+Promise.all([
+  fetch('rules.json').then(r => {
+    if (!r.ok) throw new Error('rules.json konnte nicht geladen werden');
+    return r.json();
+  }),
+  fetch('questions.json')
+    .then(r => r.ok ? r.json() : [])
+    .catch(() => [])
+]).then(([r,q]) => {
+  RULES = Array.isArray(r) ? r : [];
+  QS = Array.isArray(q) ? q.filter(x => x.status === 'verified') : [];
+  renderRules();
+  loadProgress();
+  showPractice();
+}).catch(() => {
+  document.body.insertAdjacentHTML('beforeend','<p style="padding:20px">Die Regeldaten konnten nicht geladen werden.</p>');
+});
 document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));$('#'+b.dataset.view).classList.add('active')});
 function renderRules(){ $('#rules').innerHTML=RULES.map(r=>`<div class="card"><span class="pill">REGEL ${r.id}</span><h3>${r.title}</h3><p>${r.summary}</p><span class="pill">${r.status}</span></div>`).join('') }
-function showPractice(){if(!QS.length)return; let q=QS[uIndex%QS.length];$('#uCount').textContent=`Frage ${uIndex%QS.length+1} von ${QS.length}`;$('#uScore').textContent=`Richtig: ${uScore}`;$('#uQuestion').innerHTML=`<strong>${q.q}</strong><div class="answers">${q.answers.map((a,i)=>`<button class="ans" onclick="practiceAnswer(${i})">${String.fromCharCode(65+i)} · ${a}</button>`).join('')}</div><div class="feedback" id="uFeedback"></div>`;uAnswered=false}
+function showPractice(){
+if(!QS.length){
+  $('#uCount').textContent='Noch keine geprüften Fragen';
+  $('#uScore').textContent='';
+  $('#uQuestion').innerHTML='<strong>Der Fragenpool wird vorbereitet.</strong><p>Hier erscheinen nur Fragen, die für die aktuelle Saison geprüft und als „verified“ freigegeben wurden.</p>';
+  return;
+} let q=QS[uIndex%QS.length];$('#uCount').textContent=`Frage ${uIndex%QS.length+1} von ${QS.length}`;$('#uScore').textContent=`Richtig: ${uScore}`;$('#uQuestion').innerHTML=`<strong>${q.q}</strong><div class="answers">${q.answers.map((a,i)=>`<button class="ans" onclick="practiceAnswer(${i})">${String.fromCharCode(65+i)} · ${a}</button>`).join('')}</div><div class="feedback" id="uFeedback"></div>`;uAnswered=false}
 function practiceAnswer(i){if(uAnswered)return;uAnswered=true;let q=QS[uIndex%QS.length],buttons=document.querySelectorAll('#uQuestion .ans');buttons[q.correct].classList.add('correct');if(i!==q.correct)buttons[i].classList.add('wrong');else uScore++;let f=$('#uFeedback');f.style.display='block';f.innerHTML=`<strong>${i===q.correct?'✓ Richtig':'✗ Nicht richtig'}</strong><br>${q.explanation}<br><br><button class="reset" onclick="nextPractice()">Nächste Frage →</button>`;saveProgress(i===q.correct)}
 function nextPractice(){uIndex++;showPractice()}
 function saveProgress(ok){let p=JSON.parse(localStorage.getItem('schiriProgress')||'{"answered":0,"correct":0}');p.answered++;if(ok)p.correct++;localStorage.setItem('schiriProgress',JSON.stringify(p));loadProgress()}
 function loadProgress(){let p=JSON.parse(localStorage.getItem('schiriProgress')||'{"answered":0,"correct":0}');let pct=p.answered?Math.round(p.correct/p.answered*100):0;$('#homebar').style.width=pct+'%';$('#hometext').textContent=p.answered?`${p.answered} beantwortet · ${p.correct} richtig · ${pct}% Trefferquote`:'Noch keine Fragen beantwortet.'}
-$('#startExam').onclick=()=>{exam=[...QS].sort(()=>Math.random()-.5).slice(0,10);examIndex=0;examScore=0;$('#examResult').style.display='none';showExam()}
+$('#startExam').onclick=()=>{
+if(!QS.length){
+  $('#examBox').innerHTML='<div class="question"><strong>Noch keine Prüfung verfügbar.</strong><p>Eine Prüfung wird freigeschaltet, sobald geprüfte Fragen im Fragenpool vorhanden sind.</p></div>';
+  return;
+}
+exam=[...QS].sort(()=>Math.random()-.5).slice(0,10);examIndex=0;examScore=0;$('#examResult').style.display='none';showExam()}
 function showExam(){if(examIndex>=exam.length){let r=$('#examResult');r.style.display='block';r.innerHTML=`<div class="big">${examScore} / ${exam.length}</div><p>Fragen richtig beantwortet.</p><button class="reset" onclick="document.getElementById('startExam').click()">Neue Prüfung</button>`;$('#examBox').innerHTML='';return}let q=exam[examIndex];$('#examBox').innerHTML=`<div class="quiztop"><span>Frage ${examIndex+1} von ${exam.length}</span><span>Keine Auflösung bis zum Ende</span></div><div class="question"><strong>${q.q}</strong><div class="answers">${q.answers.map((a,i)=>`<button class="ans" onclick="examAnswer(${i})">${String.fromCharCode(65+i)} · ${a}</button>`).join('')}</div></div>`}
 function examAnswer(i){if(i===exam[examIndex].correct)examScore++;examIndex++;showExam()}
 </script></body></html>
